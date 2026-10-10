@@ -1,0 +1,66 @@
+problem_code,area,definition,example_rows
+login_credentials_rejected,Login,Correct email/password rejected in the app ('invalid credentials' / 'login error') while the web works,158; 169; 262; 325; 348; 351
+login_sso_fails,Login,SSO / Google / ADFS / OneLogin sign-in never completes: loops; white screen; never returns to the app,56; 96; 243; 248; 261
+login_needs_browser,Login,"Error 'please install a browser to continue signing in' although a browser is installed",16; 30; 68
+login_forced_google,Login,App forces sign-in with a Google account (or Google reCAPTCHA) the user does not want,23; 133; 247
+login_subdomain_rejected,Login,"Subdomain / URL / domain field: 'invalid' or 'not found', hyphen not accepted, cannot type in it",123; 125; 152; 209; 320; 336
+login_access_revoked,Login,'Access revoked' or 'access token expired/revoked' error that blocks login or signs the user out,199; 224; 251; 334; 360; 382
+login_session_not_kept,Login,Logged out repeatedly / has to log in again every time the app opens (no error named),55; 79; 85; 138; 356; 395
+login_code_not_received,Login,Login/verification code never arrives by email,387
+login_after_update,Login,Cannot log in since an update or reinstall - no other detail given,19; 71; 255; 431
+login_unspecified,Login,Cannot log in and the review gives no detail at all (not scored as duplicates),33; 145; 239; 372; 397
+account_signup_problem,Account,Cannot create an account / sign up / is forced to give a phone number / 'create a portal' loop,128; 180; 264; 295
+install_fails,Install,App will not download or install (or asks to reinstall in a loop),271; 389; 421; 443
+forced_update_loop,Stability,App demands an update that does not exist in the Play Store - locked out,81; 102; 103; 104
+crash_on_open,Stability,App crashes or closes immediately on opening (or right after sign-in),64; 93; 88; 353
+crash_on_login,Stability,App crashes while logging in,188; 215; 278
+crash_notification_settings,Stability,Crash when opening or changing notification settings/schedule,9; 201
+crash_on_compose_or_edit,Stability,Crash when composing a new ticket or editing a ticket,13; 310
+crash_other_action,Stability,Crash on some other specific action (say which in notes),3; 206
+crash_unspecified,Stability,Keeps crashing - no trigger given (not scored as duplicates),50; 208; 281; 309
+stuck_loading,Stability,"Stuck on loading / 'initialising' / spinner / blank white screen",94; 112; 155; 312
+no_internet_false_error,Stability,Says 'no internet connection' / 'could not connect' although internet works,124; 317; 329; 359
+slow_performance,Performance,App or tickets very slow to load / reply / open,60; 76; 91; 105; 279; 331
+app_not_working_unspecified,Stability,"'Doesn't work' / 'stopped working' with no detail (not scored as duplicates)",111; 154; 193; 83; 87
+notif_not_received,Notifications,Notifications for new tickets/chats do not arrive at all,8; 10; 12; 40; 59; 98; 260; 403; 408
+notif_delayed_or_screen_off,Notifications,Notifications arrive late or only when the phone is unlocked / screen on,166; 319; 396; 388
+notif_spurious_or_repeated,Notifications,Too many / repeated notifications or notifications for nothing new,25; 46; 57; 14
+notif_cannot_clear,Notifications,Notifications cannot be deleted or cleared,21; 106
+notif_toggle_broken,Notifications,Cannot turn notifications on/off in settings (toggle loops or does nothing),39; 374
+notif_sound,Notifications,"Notification sound/ringtone missing, cannot be customised, or stops playing",67; 321; 361; 438
+notif_opens_blank,Notifications,Tapping a notification opens a blank screen or an error,97
+tickets_not_showing,Tickets,Ticket list or ticket view blank / empty / tickets cannot be opened,36; 221; 258; 343; 440
+tickets_out_of_date,Tickets,Ticket list/updates not refreshed or arrive minutes late,34; 157; 171
+pull_to_refresh_missing,Tickets,Pull-to-refresh / manual refresh removed or not working,52; 92; 226; 378
+ticket_filter_sort_missing,Tickets,"Cannot filter, sort or pick views (e.g. own / agent-wise / status) in the app",28; 42; 72; 144; 405; 424; 426; 432
+ticket_search_broken,Tickets,Ticket search missing or returns errors / no results,35; 77; 84
+ticket_field_save_resets,Tickets,Ticket field / type / status will not save or resets,5; 140; 409
+ticket_close_reopens,Tickets,Closing a ticket reopens it (or deleted/spam tickets come back),26; 263
+ticket_create_unavailable,Tickets,Cannot create a new ticket in the app,61; 78; 189
+reply_fails,Tickets,Reply / note fails to send or disappears after sending,164; 259; 211
+ticket_merge_bulk_missing,Tickets,Cannot merge tickets or bulk-edit several tickets,301; 316; 335; 449
+back_button_navigation,Tickets,Back button does not return to the ticket list or closes the app,51; 140; 213; 392
+assign_team_missing,Tickets,Cannot assign a ticket/work order to a team or agent,1; 136
+ticket_status_hidden,Tickets,Ticket status / colours / key info removed from the list,191; 381; 45
+macros_not_working,Macros & canned replies,Macros missing / will not load / will not apply,162; 186; 190; 230; 249; 314; 323
+canned_responses_broken,Macros & canned replies,Canned responses missing or variables not filled in,422; 428; 439
+text_input_buggy,Text & editing,"Keyboard / typing / paste / dictation glitches, or typed text lost when switching apps",130; 197; 210; 303
+cc_field_problem,Text & editing,CC field missing or cannot add CC addresses,386; 391
+images_attachments_not_shown,Media,Images or attachments do not show in tickets/chats,115; 142; 198; 228
+no_tablet_landscape,Layout,No landscape mode / no tablet layout,126; 173; 234; 236; 241; 332; 333
+dark_mode_missing,Layout,Asks for dark mode,29; 58; 63; 339; 410; 415; 437
+display_white_unreadable,Layout,Screen turns white / text unreadable after an update,149; 160; 385
+redesign_disliked,Design,New design/update is worse and hard to use (no specific failure),80; 134; 170; 203; 212; 245; 379
+app_renamed,Design,App renamed to 'Support' / 'Support Desk' or generic icon - cannot find it,48; 172; 257
+review_popup,Design,Repeated pop-ups asking to rate the app,15; 280; 342; 401
+missing_features_vs_web,Features,Mobile app lacks features of the web version (general),2; 90; 246; 254; 269; 276
+agent_availability_toggle,Chat & calls,Cannot change agent availability / on-call / phone status,161; 338; 411; 430
+calls_not_working,Chat & calls,Calls not received / not connecting / cannot make calls,47; 377; 434; 446
+chat_problem,Chat & calls,Live chat times out / widget closes / cannot join chats,118; 120; 181
+analytics_reports_broken,Analytics,Analytics / reports / dashboard numbers wrong or unusable,20; 75; 182
+support_no_response,Support & billing,Company support slow or never replies,17; 41; 65; 183; 270; 402
+billing_plan_complaint,Support & billing,"Pricing, plan downgrade, trial or charging complaint",22; 44; 122; 141
+privacy_spam,Privacy,"Spam calls/emails, data selling, trackers",24; 27; 283; 346
+not_about_this_app,Not a problem,Review is about another company/product or is unrelated,165; 347; 399
+not_a_problem,Not a problem,"Praise, question, vague rant or opinion with no specific failure",6; 131; 139; 147; 150; 205
+other,Other,Nothing fits - describe it in notes (and propose a new code in the Labels tab),

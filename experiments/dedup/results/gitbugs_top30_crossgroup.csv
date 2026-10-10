@@ -1,0 +1,341 @@
+rank,cos,issue_a,group_a,issue_b,group_b,text_a,text_b,verdict,reason
+1,0.849,119657,dup_135786,130443,dup_208668,"Drag and drop Notebook cells broken. Create a new Jupyter Notebook
+Insert a new Markdown cell
+Set some text in the Markdown cell
+Try to drag the Markdown cell to be above the default code cell already there
+The first half of this gif shows how trying to drag another Markdown cell seems to ""fix"" the problem and the second half shows the bug:","Can't drag markdown cells in edit mode. Create a new blank Jupyter Notebook file - there should be a single python cell
+Create a new markdown cell
+With the bug
+Moving your cursor anywhere around the edge of the cell will turn it into the grab icon
+However, attempting to actually click and drag will not do anything
+Expected behavior
+I expect that if the cursor shows a grab icon, I will be able to drag the cell to other places in the notebook
+(I also expect that the grabable area will be the same for Python and Markdown cells, but that's very minor by comparison)
+Extension version: 2021.8.1195043623",unsure,both notebook markdown-cell dragging; different trigger (above code cell vs edit mode)
+2,0.812,48442,lone_48442,129702,dup_124128,"closing extension host window doesn't terminate debug session. Regression in VS Code Insiders:
+start extension host debugging
+close extension host window
+Observe: debug session doesn't stop
+This did worked in VS Code 1.22",Stopping an extension debug session doesn't close the Extension Development Host.,different,opposite bugs: closing window does not stop session vs stopping session does not close window
+3,0.788,124870,dup_126237,176985,dup_165202,"Potential race condition issue when installing the Python extension. Hi there!
+When running user studies we noticed that a lot of users when installing the Python extension for the first time saw this notification about Pylance (that is now automatically installed with the Python extension):
+The Python extension seems to start activation after Pylance tries to activate, or something like that. There are some failures in the logs below which I don't completely understand. But the problem is that right now on first install, a lot of users are having to reload the window to start using IntelliSense, which isn't ideal :(
+I was also able to repro this by uninstalling the Python extension, then installing it again and opening a Python file to trigger activation.
+If the solution would need to go in the Python extension side, I'm happy to move this issue to our repo. Just figured I'd get some light from you on how we can solve this 😊","Race condition when installing extensions which depend on the Python extension. I have had multiple people report to me (including myself and @kieferrm ) that they are getting notifications when trying to use a new GitHub Codespaces of various extensions which rely on the Python extension that the Python extension itself isn't installed. My guess is that while the VS Code server is launching and installing various extensions, it is installing extensions like Pylint before the Python extension (has either started or completed), and that's causing VS Code to claim the Python extension isn't installed.
+An example screenshot:
+<img width=""409"" alt=""MicrosoftTeams-image (2)"" src=""
+And the line from the Pylint extention that declares the Python extension dependency: .",unsure,both race condition on installing Python-dependent extensions; different context (Pylance vs Codespaces)
+4,0.786,48442,lone_48442,124128,dup_124128,"closing extension host window doesn't terminate debug session. Regression in VS Code Insiders:
+start extension host debugging
+close extension host window
+Observe: debug session doesn't stop
+This did worked in VS Code 1.22","Extension development window is not torn down when debugging stops. Debug an extension
+Hit stop
+The extension host window is still alive
+I'm pretty sure this is new today, I was doing js-debug work yesterday and didn't notice it (but might have been behind an Insiders)",different,opposite bugs: same as #2
+5,0.741,120004,dup_124934,121560,dup_131136,"Weird letter spacing in Integrated Terminal for VS Code. Hi,
+The letter spacing for the integrated terminal is all messed up after an update. I have tried rolling back to an older version as well as resetting any font settings but nothing has worked so far to fix it.","Wrong spacing of text in integrated terminal. Open VSCode in Python . Powershell projects
+Open Terminal - font is not set correctly.
+As it is visible on the screenshots, I have set the following option, but even without it problem persists. Changing this setting (changing font family, removing it or whatever else) and saving *settings.json* sets the correct spacing in the terminal font.
+So that's what happening:
+With extensions:
+Without extensions:",unsure,both wrong terminal letter spacing; cause unclear (update vs font setting)
+6,0.74,117489,dup_117489,119657,dup_135786,"Can't drag in full width of markdown notebook cell. Split from #117423
+With `""notebook.experimental.useMarkdownRenderer"": true`
+Open a notebook with a markdown cell
+Try clicking and dragging to the left of the markdown cell
+Bug**
+There's a gap where you can't actually drag the cell","Drag and drop Notebook cells broken. Create a new Jupyter Notebook
+Insert a new Markdown cell
+Set some text in the Markdown cell
+Try to drag the Markdown cell to be above the default code cell already there
+The first half of this gif shows how trying to drag another Markdown cell seems to ""fix"" the problem and the second half shows the bug:",different,gap on left edge of cell vs drag above code cell
+7,0.739,117489,dup_117489,130443,dup_208668,"Can't drag in full width of markdown notebook cell. Split from #117423
+With `""notebook.experimental.useMarkdownRenderer"": true`
+Open a notebook with a markdown cell
+Try clicking and dragging to the left of the markdown cell
+Bug**
+There's a gap where you can't actually drag the cell","Can't drag markdown cells in edit mode. Create a new blank Jupyter Notebook file - there should be a single python cell
+Create a new markdown cell
+With the bug
+Moving your cursor anywhere around the edge of the cell will turn it into the grab icon
+However, attempting to actually click and drag will not do anything
+Expected behavior
+I expect that if the cursor shows a grab icon, I will be able to drag the cell to other places in the notebook
+(I also expect that the grabable area will be the same for Python and Markdown cells, but that's very minor by comparison)
+Extension version: 2021.8.1195043623",different,gap on left edge vs edit-mode drag
+8,0.734,93001,dup_205471,164485,dup_164485,"resolving multiple tasks with type npm and same script fails. Create 2 tasks with ""type"": ""npm"" and same ""script""
+Expected both tasks to be resolved by their label
+VsCode will list only one of those tasks when listing available tasks with ""Tasks: Run Task"".
+Depending tasks will fail with ""Couldn't resolve dependent task 'x' in workspace folder 'y'"" in the ""Tasks"" output.
+tasks.json:**
+package.json:**
+Extensions: none","Could not find the task: Similar (npm) tasks causes only last defined one to be recognized. I have two very similar tasks in VS Code. They're pretty much identical except for a pre task I need to run which echos different text into a .env file. What I have found so far is that between my _start-dev_ and _start-local_ tasks, whichever is defined last is the only one that can be found. This is true even when I have more than two similar tasks.
+Configure the following launch.json and tasks.json:
+launch.json:**
+{
+""version"": ""0.2.0"",
+""configurations"": [
+{
+""name"": ""Start Dev"",
+""type"": ""chrome"",
+""request"": ""launch"",
+""url"": ""
+""webRoot"": ""${workspaceFolder}"",
+""preLaunchTask"": ""start-dev"",
+""postDebugTask"": ""Terminate All Tasks""
+},
+{
+""name"": ""Start Local"",
+""type"": ""chrome"",
+""request"": ""launch"",
+""url"": ""
+""webRoot"": ""${workspaceFolder}"",
+""preLaunchTask"": ""start-local"",
+""postDebugTask"": ""Terminate All Tasks""
+},
+]
+}
+tasks.json:**
+{
+""version"": ""2.0.0"",
+""tasks"": [
+{
+""label"": ""start-dev"",
+""type"": ""npm"",",same,both: two npm tasks with the same script -> only one task recognised
+9,0.72,109323,dup_115247,113553,dup_111248,"Integrated terminal: Random laggy experience. VSCode Version and OS Version:
+I don't think it can be reproduced easily on other machines.
+Open VSCode
+Type anything in the integrated terminal
+The lagging happens very frequently, about once per 10 ~ 30 seconds.
+I can also see this if I open Developer Tools for profiling:
+(I can upload this profiling log if needed)","Extreme laggy when .... your are not ready for this guys!. After several years of frustrating random laggy code sessions requiring to restarts vscode , disable and test all plugins one by one and sometime reboot machine!
+I have just discovered that some window applications can affect permanently vscode and give a permanant lag !!!
+Big wtf here !
+Am happy because now i will get no more lag in vscode and no more reboot or restart.
+But I also feel anxious to realize that opening an app can affect vscode!
+i think this need a video to capture this weird behavior for ever, and hope this can also help to find why you get LAGGS on a nextgen machine !!
+Never open `MicrosoftVirtualKeyboard` in your current Window sessions.**
+So if you find vscode slow, think about testing your applications in the background which could affect this one without understanding why.
+@+",different,terminal typing lag vs general editor lag
+10,0.713,81860,lone_81860,109939,dup_160648,"Two launch configurations with the same preLaunchTask trigger ""already running"" warning. With the following .vscode/launch.json:
+Launching the ""all"" configuration works properly, but presents the following:","""F5"" run the wrong ""preLaunchTask"", if preLaunchTask is a default custom task name. This issue comes up when VsCode has to run the `preLaunchTask` mentioned in the launch.json, before launching the debugger.
+Define a custom task e.g. `CustomTask` for .cpp files.
+From the command pallet choose `Task: configure task` and generate a custom task. A custom task with _default task name_ and _default configurations_ will be created like below:
+Open a launch.json file and define a launch task as below. Set the `preLaunchTask` to the task that was generated in the previous step:
+press F5, the default task will run as the `preLaunchTask` with default configurations as expected.
+Now modify the task in tasks.json file (don't change the default name though), and don't change the launch.json either.
+press F5, again the default task will run as the `preLaunchTask` with default configurations, and the new changes won't take into consideration.
+This issue happens only when the default task name is bein",different,'already running' warning vs wrong preLaunchTask chosen
+11,0.712,119751,dup_124446,136374,dup_135951,"Visual glitches (squares) on Terminal with Zoom < 100%. VS Code have too large interface font size by default, so I use it with Zoom < 100% (at 80%).
+And after last couple of updates (from version 1.51 maybe or earlier) the Terminal starts to show the visual gliches, here is screenshot:
+If I change terminal window size, or touch the Zoom (in or out) - they are immediately disappearing, but shows again after some later interactions. With Zoom = 100% this issue is not reproducible.
+Clearing terminal via `clear` or `reset` commands didn't help.","Terminal dimensions aren't correct when zoom level is high. Repro:
+Set window.zoomLevel to 2'
+Try repro",unsure,both terminal size wrong with zoom; opposite zoom directions
+12,0.711,119751,dup_124446,121891,dup_116870,"Visual glitches (squares) on Terminal with Zoom < 100%. VS Code have too large interface font size by default, so I use it with Zoom < 100% (at 80%).
+And after last couple of updates (from version 1.51 maybe or earlier) the Terminal starts to show the visual gliches, here is screenshot:
+If I change terminal window size, or touch the Zoom (in or out) - they are immediately disappearing, but shows again after some later interactions. With Zoom = 100% this issue is not reproducible.
+Clearing terminal via `clear` or `reset` commands didn't help.","Terminal reporting the wrong width causing weird visual artifacts. A dozen of us here are suffering weird terminal glitches that we've tracked down to the wrong terminal width being reported.
+I'm not sure if this is a VSCode problem or not but it's only happening in the integrated terminal since the last update.
+It presents as autocomplete going onto the wrong line or overwriting what we're typing.
+We're all using a linux docker development container in VSCode on MacOSX.
+After resizing the terminal pane the problem seems to go away for a while.
+`tput cols` outputs `80 `when the terminal in this state. After resizing by a few pixels the output jumps up to the correct value `300+`
+`echo $TERM` reports `xterm-256color`
+`infocmp screen reports`",unsure,"zoom glitches vs wrong reported width; plausibly same cause, not stated"
+13,0.71,144431,dup_144205,154475,dup_154511,"Cannot push to git repository. Save code
+Click on commit
+Type in message and press enter
+Sync Changes
+Error: fatal: 'o' does not appear to be a git repository","Github commit error. When I try to commit my work to Github repository, i get the error pop-up that says ""git status code 500"". I think it's because of the recent update. Please check this.",different,remote misconfigured ('o' not a repo) vs HTTP 500 on commit
+14,0.708,173226,dup_173831,201099,dup_201271,"VS Code not detecting git repository after update. Open VS Code workspace
+Open Source Control tab in Activity Bar
+I have been using VS Code to edit this same project for four years. Just today, after updating to 1.75.0, VS Code no longer recognizes my workspace as a valid Git repository, despite it still having a `.git` folder present.
+I disabled all extensions and re-installed VS Code to ensure that my install was not corrupted. I also tried deleting the `.git` folder in the workspace directory and re-cloning it from my origin repository. The problem persists.
+Curiously, it seems to be restricted to this one workspace. I have another workspace that I have been editing with VS Code for the same duration of time and it is not affected. VS Code detects the git repository there just fine.
+I am convinced it is not a problem with my Git executable or my repository, as when use `git` in my terminal or install the extension GitLens (both of which utilize the same `git.exe` executable as VS Co","Source Control Not Updating for specific repository. Hey,
+Since last friday, my source control menu is no longer updating for only one repository. This only happens with one specific repository, but the git commands (from command line and git-gui) work for this specific repository, so it would seem that the git repository itself is working correctly.
+When I open the repo in vscode, it seems to be largely correct - the changes are correctly shown as either staged or changes depending on their state. However, using the controls in the source code will not be reflected in section. This is shown in these images:
+Initially the shown infomation is correct (the terminal is a git bash with 'git status' output shown)
+Then I use the 'Unstage Changes' button for each file and repeat the git status
+Note that the git status output shows the files have been unstaged, but the Source Control section does not. Furthermore, if I repeat this process with the changes initally unstaged, a similar beahviour",different,repo not detected after update vs SCM not refreshing one repo
+15,0.707,41085,lone_41085,173226,dup_173831,"Git: File events don't work if .git is outside the opened folder. The following bug only seems to happen when two folders belonging to the **same parent git repository** are added to the workspace. For example, here myApp is the repository:
+open an empty VSCode window
+add the `foo` folder to the workspace
+add the `bar` folder to the workspace
+open one of the test.js file
+open the integrated terminal and type `git checkout -b new_branch`
+What happens?
+The branch sticks to `master` in the bottom left corner of vscode.
+Note:* Exiting VSCode and opening the previous workspace will correctly show the new_branch as current branch.
+Reproduces without extensions: Yes
+edit:**
+Problem also happens with *macOS* High Sierra. See my last comment.","VS Code not detecting git repository after update. Open VS Code workspace
+Open Source Control tab in Activity Bar
+I have been using VS Code to edit this same project for four years. Just today, after updating to 1.75.0, VS Code no longer recognizes my workspace as a valid Git repository, despite it still having a `.git` folder present.
+I disabled all extensions and re-installed VS Code to ensure that my install was not corrupted. I also tried deleting the `.git` folder in the workspace directory and re-cloning it from my origin repository. The problem persists.
+Curiously, it seems to be restricted to this one workspace. I have another workspace that I have been editing with VS Code for the same duration of time and it is not affected. VS Code detects the git repository there just fine.
+I am convinced it is not a problem with my Git executable or my repository, as when use `git` in my terminal or install the extension GitLens (both of which utilize the same `git.exe` executable as VS Co",different,.git outside folder file events vs repo not detected after update
+16,0.707,46941,lone_46941,117337,dup_133827,"Can't input Chinese in Linux system. As the title, I can't input the Chines character in linux system.
+When I input it, the vscode will not reponse and crash.
+My system is fedora 27. The input method have been tried are fcitx and hime. Locale settings is zh_TW.
+By the way, before I change locale to zh_TW, I can't even open the file contents Chinese character.
+Could anyone help me to solve this problem? Many thanks.
+Really need to using chinese because I'm writing the website need!!
+Reproduces only with extensions","Can't input chinese characters at terminal unless using Microsoft Pinyin. open any project, press ctrl+~ to open terminal.
+make sure your input method is Sogou Pinyin(or any other chinese input method, except Microsoft Pinyin).
+try to type chinese, you would find that there is no chinese characters on the screen, but English letters would be OK.
+change to use Microsoft Pinyin, all will be fine.",different,editor crash on Linux IME vs terminal input with non-Microsoft IME
+17,0.707,119751,dup_124446,199296,dup_168337,"Visual glitches (squares) on Terminal with Zoom < 100%. VS Code have too large interface font size by default, so I use it with Zoom < 100% (at 80%).
+And after last couple of updates (from version 1.51 maybe or earlier) the Terminal starts to show the visual gliches, here is screenshot:
+If I change terminal window size, or touch the Zoom (in or out) - they are immediately disappearing, but shows again after some later interactions. With Zoom = 100% this issue is not reproducible.
+Clearing terminal via `clear` or `reset` commands didn't help.","Terminal Sticky Scroll Zoom View Buggy (can disappear or be partially visible). Testing #199240
+When using the `workbench.action.zoomOut` and `workbench.action.zoomIn` commands, it is possible that sticky scroll suddenly disappears or is only partially visible until the user resizes the panel.
+<img width=""802"" alt=""image"" src=""",different,terminal glitch at zoom<100% vs sticky scroll with zoom commands
+18,0.705,173226,dup_173831,201271,dup_201271,"VS Code not detecting git repository after update. Open VS Code workspace
+Open Source Control tab in Activity Bar
+I have been using VS Code to edit this same project for four years. Just today, after updating to 1.75.0, VS Code no longer recognizes my workspace as a valid Git repository, despite it still having a `.git` folder present.
+I disabled all extensions and re-installed VS Code to ensure that my install was not corrupted. I also tried deleting the `.git` folder in the workspace directory and re-cloning it from my origin repository. The problem persists.
+Curiously, it seems to be restricted to this one workspace. I have another workspace that I have been editing with VS Code for the same duration of time and it is not affected. VS Code detects the git repository there just fine.
+I am convinced it is not a problem with my Git executable or my repository, as when use `git` in my terminal or install the extension GitLens (both of which utilize the same `git.exe` executable as VS Co","Sometimes the code changes not visible on the git icon , unless I restart my vs code. After update my vs code version , its occurs many time",different,repo not detected vs git decorations stale
+19,0.702,119683,dup_117489,130443,dup_208668,"Dragging a cell sometimes doesn't work. Testing #119118
+It looks like either the cursor or the hit target aren't correct, since it makes it look like you can drag, but you can't","Can't drag markdown cells in edit mode. Create a new blank Jupyter Notebook file - there should be a single python cell
+Create a new markdown cell
+With the bug
+Moving your cursor anywhere around the edge of the cell will turn it into the grab icon
+However, attempting to actually click and drag will not do anything
+Expected behavior
+I expect that if the cursor shows a grab icon, I will be able to drag the cell to other places in the notebook
+(I also expect that the grabable area will be the same for Python and Markdown cells, but that's very minor by comparison)
+Extension version: 2021.8.1195043623",unsure,both notebook cell drag fails; different hit-target description
+20,0.701,117883,dup_117123,130268,dup_185014,"i need using terminal. when i use the terminal, it is blank, none of all, including cmd or powershell. But i have set all in the settings.json.","Default terminal profile setting is ignored. I have a custom terminal profile in my settings.json file like I always have. This terminal always opened by default prior to today's update. Today, however, the PowerShell terminal is always opening by default (either when opening VS Code fresh or clicking the + icon in the terminal area to create a new one). I found the setting `terminal.integrated.defaultProfile.windows` and set that to my profile, but it has no effect. I do not have either `terminal.integrated.shell.windows` or `terminal.integrated.shellArgs.windows` specified, so the default profile should be honored, but it's not. Setting the default profile to one of the built-in options, like Command Prompt, also has no effect. Opening my custom profile manually using the dropdown to explicitly choose it works just fine, it just refuses to open by default.
+These are the only lines in settings.json that contain the text `terminal` (other than a bunch of lines that are just hex color c",different,terminal blank vs default profile ignored
+21,0.699,131340,dup_124667,185365,dup_185365,"Terminal.show(true) does not preserve focus. I encountered this while making an extension for sending commands to the terminal. When the terminal is showing, preserveFocus works. However, when it is hidden or not running, preserveFocus doesn't work. It focuses on the terminal in these cases, no matter if I use vscode.window.activeTerminal.show(true).
+When the terminal is hidden:
+Run the terminal
+Hide the terminal
+vscode.window.activeTerminal.show(true)
+When the terminal is not running
+Close the terminal
+newTerminal = vscode.window.createTerminal();
+newTerminal.show(true)","toggleTerminal may not focus terminal anymore. Repro:
+Open terminal
+Focus editor
+ctrl+`
+Regression in
+cc @connor4312",different,preserveFocus not honoured vs toggle does not focus (opposite)
+22,0.698,97475,dup_160648,176670,dup_157756,"Task started with vscode.tasks.executeTask doesn't generate any completition notification if dependency task fails, preventing its execution. In my extension, I need to provide users a flexible way to perform some operation (copy build output to a local folder that will be then deployed to a device). Since the way to do it is heavily dependent on language/tools used I decided to let user define a task with a specific name that would be executed by the extension. Everything works fine when a single task is defined, things start to get messy when task has some dependencies (generated using dependson). Dependent tasks are correctly executed, but if one of them fails there is no way to detect the issue from the callbacks provided by vscode.tasks.
+To reproduce the issue:
+Create a task ""A"" and a task ""B"" with a dependency:
+in an extension find a task named ""A"" and execute it, waiting for its completition:
+when task A completes or fails (replace true with false in command to make it fail), th","Error message complaining about build task. The Makefile Tools extension creates a task when users want to build their code bases. The task uses ""make"" executable as command with arguments that we deduce from user settings.
+This is how we write the task: .
+Around line 340 (task creation, inside function doBuildTarget). Do you spot anything wrong that we do there? So that is the typescript implementation of the Makefile Tools extension.
+When we run the extension in VSCode and the user builds their code (which will hit the code I pointed above), the task appears to run fine (as it does for several releases already) but we see his message in ""Tasks Output Window"" that recently appeared.
+Please advise, what can we do so that we don't see this message in the tasks window. Should we use the task API in a different way or this is a bug in your code base?
+The bug report in our repository is and there are many more duplicates that recently were signaled.",different,no completion event on dependency failure vs build task error message
+23,0.698,146093,dup_147254,173226,dup_173831,"Source control directs user to install git for Windows when on Linux. Fresh install of VSCode via Ubuntu Software app
+Open VSCode
+Click Source Control
+Click ""Download Git for Windows"" - expected ""Download Git for Linux""
+Extensions: none","VS Code not detecting git repository after update. Open VS Code workspace
+Open Source Control tab in Activity Bar
+I have been using VS Code to edit this same project for four years. Just today, after updating to 1.75.0, VS Code no longer recognizes my workspace as a valid Git repository, despite it still having a `.git` folder present.
+I disabled all extensions and re-installed VS Code to ensure that my install was not corrupted. I also tried deleting the `.git` folder in the workspace directory and re-cloning it from my origin repository. The problem persists.
+Curiously, it seems to be restricted to this one workspace. I have another workspace that I have been editing with VS Code for the same duration of time and it is not affected. VS Code detects the git repository there just fine.
+I am convinced it is not a problem with my Git executable or my repository, as when use `git` in my terminal or install the extension GitLens (both of which utilize the same `git.exe` executable as VS Co",different,wrong 'download git for Windows' link vs repo not detected
+24,0.697,93001,dup_205471,102885,dup_160648,"resolving multiple tasks with type npm and same script fails. Create 2 tasks with ""type"": ""npm"" and same ""script""
+Expected both tasks to be resolved by their label
+VsCode will list only one of those tasks when listing available tasks with ""Tasks: Run Task"".
+Depending tasks will fail with ""Couldn't resolve dependent task 'x' in workspace folder 'y'"" in the ""Tasks"" output.
+tasks.json:**
+package.json:**
+Extensions: none","VSCode is having issues when more than 1 shell type tasks have the same task as a dependency. When we had two tasks that had the same dependent task, the task that is the dependency would run, and then one of the dependent tasks would take up the existing terminal and the other would spawn in a new terminal. However, now we have three tasks with the same task as a dependency. Now we are seeing two of the dependent tasks both try to run the task they have as their dependency, which causes issues because there can be only one instance of the task that is the dependency running at a time. The expected behavior to me is to have task that is the dependency run and then one of the dependent tasks would re-use that terminal while the other two spawn in new terminals.",different,npm same-script tasks vs shared dependency task
+25,0.696,144431,dup_144205,154837,dup_154511,"Cannot push to git repository. Save code
+Click on commit
+Type in message and press enter
+Sync Changes
+Error: fatal: 'o' does not appear to be a git repository","Commit button when there are no commit messge. Hello,
+In the new update, when i use Source Control and try to commit an blank commit, It gives me an error that does not explain the error.
+the git output
+In previous versions it gives a prompt to insert the message",different,push fails (bad remote) vs blank commit error
+26,0.693,120004,dup_124934,121892,dup_131136,"Weird letter spacing in Integrated Terminal for VS Code. Hi,
+The letter spacing for the integrated terminal is all messed up after an update. I have tried rolling back to an older version as well as resetting any font settings but nothing has worked so far to fix it.","Terminal Font space wide. In terminal Windows I see display font spaced out and cursor location is not alligned properly
+ease paste.",unsure,both terminal font spacing; different platform detail
+27,0.693,164485,dup_164485,205471,dup_205471,"Could not find the task: Similar (npm) tasks causes only last defined one to be recognized. I have two very similar tasks in VS Code. They're pretty much identical except for a pre task I need to run which echos different text into a .env file. What I have found so far is that between my _start-dev_ and _start-local_ tasks, whichever is defined last is the only one that can be found. This is true even when I have more than two similar tasks.
+Configure the following launch.json and tasks.json:
+launch.json:**
+{
+""version"": ""0.2.0"",
+""configurations"": [
+{
+""name"": ""Start Dev"",
+""type"": ""chrome"",
+""request"": ""launch"",
+""url"": ""
+""webRoot"": ""${workspaceFolder}"",
+""preLaunchTask"": ""start-dev"",
+""postDebugTask"": ""Terminate All Tasks""
+},
+{
+""name"": ""Start Local"",
+""type"": ""chrome"",
+""request"": ""launch"",
+""url"": ""
+""webRoot"": ""${workspaceFolder}"",
+""preLaunchTask"": ""start-local"",
+""postDebugTask"": ""Terminate All Tasks""
+},
+]
+}
+tasks.json:**
+{
+""version"": ""2.0.0"",
+""tasks"": [
+{
+""label"": ""start-dev"",
+""type"": ""npm"",","Tasks running same npm script in other cwd are ignored and ""don't exist"". Use the following `tasks.json`:
+Try running `service.a` task. It won't exist.
+Expected behavior:
+I expect both tasks to exist and be able to get launched. It seems that `service.b` overwrites `service.a` because both run `example` script, but the task manager doesn't seem to understand that the options are different (different cwd). To work around this, I need to name scripts different, which causes issues for a monorepo structure.",same,"both: npm tasks with the same script, one is ignored / does not exist"
+28,0.693,126690,dup_129174,185365,dup_185365,"Focusing terminal editor doesn't focus the terminal. Repro 1:
+Open a terminal editor in a second editor group
+Focus the first editor group
+Click the terminal tab, the terminal cursor won't be active
+Repro 2:
+Open a terminal editor in a second editor group
+Focus the first editor group
+Run focus right editor group command, the terminal tab is active but first editor is still focused
+<img width=""1304"" alt=""Screen Shot 2021-06-18 at 8 21 37 AM"" src=""","toggleTerminal may not focus terminal anymore. Repro:
+Open terminal
+Focus editor
+ctrl+`
+Regression in
+cc @connor4312",unsure,both terminal focus; different trigger (editor tab vs toggle)
+29,0.69,121066,dup_124934,121891,dup_116870,"Rendering glitch integrated terminal when window maximised. VS Code Version:
+Chrome: 87.0.4280.141
+_Windows_NT x64 10.0.19042
+Steps to Reproduce:
+Open the integrated terminal pane by typing Ctrl+`
+Observe that the pane looks like this
+Observe that this only occurs when the window is maximised.
+Observe that anything that triggers a resize fixes it.
+Observe that changing the integrated terminal letter spacing also fixes it.
+Yes**","Terminal reporting the wrong width causing weird visual artifacts. A dozen of us here are suffering weird terminal glitches that we've tracked down to the wrong terminal width being reported.
+I'm not sure if this is a VSCode problem or not but it's only happening in the integrated terminal since the last update.
+It presents as autocomplete going onto the wrong line or overwriting what we're typing.
+We're all using a linux docker development container in VSCode on MacOSX.
+After resizing the terminal pane the problem seems to go away for a while.
+`tput cols` outputs `80 `when the terminal in this state. After resizing by a few pixels the output jumps up to the correct value `300+`
+`echo $TERM` reports `xterm-256color`
+`infocmp screen reports`",unsure,terminal rendering glitch when maximised vs wrong width; plausibly related
+30,0.689,120370,dup_135786,130443,dup_208668,"Can not select text in markdown cell. Can't select text from a markdown preview, it always tries to drag the cell.","Can't drag markdown cells in edit mode. Create a new blank Jupyter Notebook file - there should be a single python cell
+Create a new markdown cell
+With the bug
+Moving your cursor anywhere around the edge of the cell will turn it into the grab icon
+However, attempting to actually click and drag will not do anything
+Expected behavior
+I expect that if the cursor shows a grab icon, I will be able to drag the cell to other places in the notebook
+(I also expect that the grabable area will be the same for Python and Markdown cells, but that's very minor by comparison)
+Extension version: 2021.8.1195043623",different,cannot select text (drags instead) vs cannot drag (opposite)

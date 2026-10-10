@@ -1,0 +1,33 @@
+row,Krisha,Krushnam,Sanyogita,review
+16,login_needs_browser,login_needs_browser,login_sso_fails,"Please install a browser to sign in, not sure if this is a bug with sso but the app can't sign in, works fine on browsers. I use this for work and this is very annoying."
+22,billing_plan_complaint,billing_plan_complaint,agent_availability_toggle,Functional but they reduced the agent count for free users to 2 instead of 10. Moving to another solution now.
+23,privacy_spam,login_forced_google,login_forced_google,Uninstalled and stopped using it. The app forces me to be tracked by google (via recaptha) otherwise it refuses access.
+32,missing_features_vs_web,ticket_filter_sort_missing,tickets_not_showing,Be good to have easy access to tickets you created. Not just the ones assigned to you..(access to the customer portal)
+36,ticket_filter_sort_missing,ticket_filter_sort_missing,tickets_not_showing,Cant view tickets assign to me. List is empty when filter enabled. App is unusable with thousands of tickets.
+66,notif_opens_blank,notif_not_received,notif_not_received,"It was all working well until suddenly now the whole notifications pane shows no notifications at all. As an admin, unable to really see tickets due to this issue/bug since the last update."
+70,other,not_a_problem,not_a_problem,bait and switch
+74,reply_fails,slow_performance,slow_performance,the apps require a lot of time to edit and sending the email. USELESS!!!
+79,login_session_not_kept,login_session_not_kept,login_unspecified,Have to login everytime I open the app. Using SSO login.
+82,app_not_working_unspecified,crash_on_open,crash_on_open,"Doesn't work and was never told. We've been missing emails for weeks now. 
+
+The app doesn't open. I deleted and tried to reinstall but the reinstall 
+
+won't start. Love helpscout but this is ridiculous"
+106,notif_toggle_broken,notif_delayed_or_screen_off,notif_cannot_clear,"This app is literally unusable. No canned messages, it rings 30 mins after the chat comes through and it does this regardless if the app is running or even logged into. I have force stopped and it still does it. And it has notifications you can't clear even after the issue is resolved. This is an absolute joke from a company that has one purpose. You need to hire some real devs because the ones you have now are clearly not capable."
+115,images_attachments_not_shown,app_not_working_unspecified,images_attachments_not_shown,Images do not show. No notifications. Bad UI and UX
+116,missing_features_vs_web,other,other,"A bit lacking compared to , for example, tawk.to. There's no settings or options to speak of. I would like to see far more choices about notifications etc. Very basic. Also it is a massive battery hog - even when it is just in the background."
+147,other,not_a_problem,not_a_problem,I don't like it 😐
+149,redesign_disliked,display_white_unreadable,display_white_unreadable,I get visual bug where app goes white and can't see letters from menu options
+150,other,not_a_problem,not_a_problem,Very bad
+176,app_not_working_unspecified,other,notif_not_received,Now unable to use dual apps after upgraded to Android Pie
+186,macros_not_working,other,macros_not_working,Unable to properly use macros or merge.
+200,dark_mode_missing,dark_mode_missing,login_unspecified,It does not say what field is missing... And I cant find the dark mode...
+210,text_input_buggy,other,text_input_buggy,I like the new interface for the app but I'm having a lot of issues with SwiftKey keyboard and Google's voice to text. Sometimes I'm unable to delete items and is not spacing stuff correctly. I'm not having any issues with any other apps I am currently writing this review with voice to text as working fine.
+214,missing_features_vs_web,missing_features_vs_web,other,"It works, I guess, but it's extremely barebones. No reports, explore, or access to settings to change automations, triggers, and other important stuff. Also, it doesn't work properly in landscape mode. They really need to so another pass at this app and add much needed functionality."
+224,login_session_not_kept,login_access_revoked,login_access_revoked,Keeps telling me that my token is expired or revoked and signing me out. Please fix.
+229,macros_not_working,other,macros_not_working,"Albeit looking nicely, it doesn't keep my most used macros, cannot replace words in the box while selected. Will add more feedback."
+248,login_sso_fails,login_sso_fails,login_unspecified,i couldn't able to login .. the login page is not loading.. i can see only white screen after selecting SSO
+278,crash_on_login,crash_unspecified,crash_on_login,"Keeps on crashing whether you select biometric or pin based login unreliable app, will let you login once in a while. tried atleast 100 times, was able to login a few time, rest crashes."
+288,cc_field_problem,missing_features_vs_web,other,"Cannot even tag people correctly within the app (like you can on desktop - literally doesnt even register it even when you do it the same as on pc), doesn't work with an email signature without it automatically formatting it a weird way (like as an email thread). Would be a good app, but it's so buggy you'll have to use the desktop version anyway"
+289,app_not_working_unspecified,slow_performance,slow_performance,"Slow, constantly buggy. ugh I hate this app."
+293,missing_features_vs_web,not_a_problem,text_input_buggy,Can't copy text or links from tickets.....nice

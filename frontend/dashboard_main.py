@@ -1,44 +1,65 @@
-import sys
-import os
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
 import streamlit as st
 
-from components.header import render_header
-from components.sidebar import render_sidebar
-from views.overview import render_overview
-from utils.theme import inject_theme
+from pages.overview import render_overview
+from pages.sentiment import render_sentiment
+from pages.clusters import render_clusters
+from pages.case_intelligence import render_case_intelligence
+from pages.incident_response import render_incident_response
+from pages.chatbot import render_chatbot
+
+
+# --------------------------------
+# PAGE CONFIG
+# --------------------------------
 
 st.set_page_config(
     page_title="InsightDesk",
-    page_icon="🧭",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    page_icon="📊",
+    layout="wide"
 )
 
-inject_theme()
-render_header()
 
-page = render_sidebar()
+# --------------------------------
+# SIDEBAR
+# --------------------------------
+
+st.sidebar.title("InsightDesk")
+
+st.sidebar.caption(
+    "AI Complaint Intelligence"
+)
+
+page = st.sidebar.radio(
+    "Navigation",
+    [
+        "Overview",
+        "Sentiment",
+        "Clusters",
+        "Case Intelligence",
+        "Incident Response",
+        "AI Assistant",
+    ]
+)
+
+
+# --------------------------------
+# PAGE ROUTING
+# --------------------------------
 
 if page == "Overview":
     render_overview()
-elif page == "Clusters":
-    st.title("Clusters")
-    st.caption("BERTopic complaint clusters")
+
 elif page == "Sentiment":
-    st.title("Sentiment")
-    st.caption("RoBERTa anger scoring")
-elif page == "Spikes":
-    st.title("Spikes")
-    st.caption("Z-score anomaly detection")
-elif page == "Diagnostics":
-    st.title("Diagnostics")
-    st.caption("Model health and pipeline status")
-elif page == "Chatbot":
-    st.title("Chatbot")
-    st.caption("Ask questions about complaint data")
-elif page == "Admin":
-    st.title("Admin")
-    st.caption("Configuration and escalation settings")
+    render_sentiment()
+
+elif page == "Clusters":
+    render_clusters()
+
+elif page == "Case Intelligence":
+    render_case_intelligence()
+
+elif page == "Incident Response":
+    render_incident_response()
+
+elif page == "AI Assistant":
+    render_chatbot()

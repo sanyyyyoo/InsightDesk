@@ -1,0 +1,13 @@
+issue_id,core_sentence,l1_sub_issue,decided_by,complaints
+invoice_missing_details,Generated invoices are missing the company billing address.,invoice_missing_billing_address,Krisha (ground_truth_corrections.csv),4
+invoice_missing_details,The invoice doesn't show a proper tax breakdown for accounting purposes.,invoice_missing_tax_breakdown,Krisha (ground_truth_corrections.csv),4
+invoice_missing_details,Tax ID isn't showing up anywhere on the downloaded invoice.,invoice_missing_tax_id,"Sanyogita/Claude, applying Krisha's rule",4
+invoice_missing_details,"Invoice PDF is incomplete, some line items are blank.",invoice_blank_line_items,"Sanyogita/Claude, applying Krisha's rule",4
+sync_not_updating,Records updated by a teammate don't reflect on my screen without a manual refresh.,sync_teammate_updates_stale,Krisha (ground_truth_corrections.csv),8
+sync_not_updating,Changes I make aren't syncing across devices.,sync_cross_device,Krisha (ground_truth_corrections.csv),8
+sync_not_updating,Cross-device sync just isn't happening anymore.,sync_cross_device,"Sanyogita/Claude, applying Krisha's rule",8
+sync_not_updating,Sync between the web app and mobile app is broken.,sync_cross_device,Krisha (ground_truth_corrections.csv),8
+sync_not_updating,Data updated on desktop doesn't show up on mobile until much later.,sync_cross_device,"Sanyogita/Claude, applying Krisha's rule",8
+mfa_setup_fails,MFA enrollment keeps timing out before I can finish setup.,mfa_enrollment_timeout,Krisha (ground_truth_corrections.csv),4
+mfa_setup_fails,The authenticator app won't pair no matter how many times I scan the code.,mfa_authenticator_pairing,Krisha (ground_truth_corrections.csv),4
+mfa_setup_fails,Setting up two-factor authentication fails at the QR code step.,mfa_authenticator_pairing,"Sanyogita/Claude, applying Krisha's rule",4
