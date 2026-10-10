@@ -32,6 +32,7 @@ create table if not exists cases (
     emotion             text,
     emotion_confidence  double precision,
     spike_status        boolean not null default false,
+    is_vague            boolean not null default false,   -- R1: judge found no concrete symptom
     spike_score         double precision,
     spike_detected_at   timestamptz,
     created_at          timestamptz not null default now(),

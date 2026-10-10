@@ -22,7 +22,10 @@ from backend.database.supabase import (
 from backend.services.spike_detection import (
     detect_spike,
     detect_spikes_bulk,
+    detect_group_from_history,
 )
+from backend.services.alert_groups import build_groups
+from backend.services.escalation_policy import escalation_check
 
 
 router = APIRouter(
@@ -299,12 +302,21 @@ def dashboard_case_intelligence(
         # RESPONSE
         # ----------------------------------
 
+        in_group_spike = any(
+            case_id in g["case_ids"] for g in compute_group_spikes()
+        )
+
+        escalation = escalation_check(case, spike, in_group_spike)
+
         return {
             "case": case,
             "complaints": complaints,
             "topic": topic,
             "spike": spike,
             "rca": rca,
+            "in_group_spike": in_group_spike,
+            "escalation": escalation,
+            "rca_recommended": escalation["eligible"],
         }
 
     except HTTPException:
@@ -548,6 +560,117 @@ def dashboard_spikes():
 
 
 # ==========================================
+# GROUP SPIKES (related cases counted together)
+# ==========================================
+
+def compute_group_spikes():
+    """Alert-group spikes (see /group-spikes); also used by case intelligence and escalation."""
+
+    cases = {c["case_id"]: c for c in get_cases()}
+
+    group_of = build_groups(get_complaints())
+
+    members = {}
+    for case_id, group_id in group_of.items():
+        members.setdefault(group_id, []).append(case_id)
+
+    multi = {g: sorted(m) for g, m in members.items() if len(m) >= 2}
+
+    history = get_case_history_bulk(
+        [c for m in multi.values() for c in m]
+    ) if multi else []
+
+    rows_by_case = {}
+    for row in history:
+        rows_by_case.setdefault(row["case_id"], []).append(row)
+
+    spikes = []
+
+    for group_id, case_ids in multi.items():
+
+        rows = [r for c in case_ids for r in rows_by_case.get(c, [])]
+
+        result = detect_group_from_history(rows)
+
+        if result["spike"]:
+
+            spikes.append(
+                {
+                    "group_id": group_id,
+                    "case_ids": case_ids,
+                    "representative_texts": [
+                        cases.get(c, {}).get("representative_text")
+                        for c in case_ids
+                    ],
+                    **result,
+                }
+            )
+
+    return spikes
+
+
+@router.get("/vague-summary")
+def dashboard_vague_summary():
+    """
+    Complaints the dedup judge found too vague to group ("app is useless"):
+    each is its own case, kept out of RCA and escalation, and counted here
+    per product as a general-dissatisfaction signal.
+    """
+
+    try:
+
+        vague = [c for c in get_cases() if c.get("is_vague")]
+
+        product_of = {}
+        for row in get_complaints():
+            if row.get("case_id") is not None:
+                product_of.setdefault(row["case_id"], row.get("product") or "unknown")
+
+        cases_by = Counter()
+        complaints_by = Counter()
+        for c in vague:
+            p = product_of.get(c["case_id"], "unknown")
+            cases_by[p] += 1
+            complaints_by[p] += int(c.get("report_count") or 1)
+
+        return {
+            "vague_cases": len(vague),
+            "vague_complaints": sum(complaints_by.values()),
+            "by_product": [
+                {"product": p, "cases": cases_by[p], "complaints": complaints_by[p]}
+                for p in sorted(cases_by, key=lambda k: -complaints_by[k])
+            ],
+        }
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
+
+
+@router.get("/group-spikes")
+def dashboard_group_spikes():
+    """
+    Spikes of alert groups: related cases of one product counted together
+    (cases themselves are unchanged; RCA stays per case). Only groups that
+    join two or more cases are checked; each alert lists its cases.
+    """
+
+    try:
+
+        return compute_group_spikes()
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
+
+
+# ==========================================
 # RCA
 # ==========================================
 
@@ -596,9 +719,34 @@ def dashboard_rca(
 
 @router.post("/cases/{case_id}/escalate")
 def dashboard_escalate_case(
-    case_id: int
+    case_id: int,
+    force: bool = False,
 ):
     try:
+        case = get_case(case_id)
+
+        if not case:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Case {case_id} not found.",
+            )
+
+        policy = escalation_check(
+            case,
+            detect_spike(case_id),
+            any(case_id in g["case_ids"] for g in compute_group_spikes()),
+        )
+
+        if not policy["eligible"] and not force:
+            raise HTTPException(
+                status_code=409,
+                detail={
+                    "message": "Case does not meet the escalation policy. "
+                               "Use force=true to escalate anyway.",
+                    **policy,
+                },
+            )
+
         success = escalate_case(case_id)
 
         if not success:
@@ -615,6 +763,8 @@ def dashboard_escalate_case(
             "status": "success",
             "case_id": case_id,
             "message": f"Case #{case_id} escalated successfully.",
+            "forced": bool(force and not policy["eligible"]),
+            "policy": policy,
         }
 
     except HTTPException:
