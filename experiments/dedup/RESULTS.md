@@ -114,3 +114,38 @@ Threshold sweep, first representative, stock phrases removed (original order):
    - a three-way decision (merge / uncertain / new) around the threshold,
      sending the uncertain band to operator review;
    - fine-tuning the cross-encoder on complaint pairs, then recalibrating.
+
+## 5. E4: text normalisation before dedup (held-out issues)
+
+Protocol (`compare_pipelines.py --text <mode>`): 5 random splits of the 32
+issues into halves; each pipeline's threshold is picked on one half
+(best pairwise F1 with precision >= 0.90) and scored on the other half,
+then swapped: 10 held-out runs per row. Each held-out half has 16 issues.
+
+| Text mode | LLM calls | Pipeline | Pair P | Pair R | Pair F1 | Cases (16 issues) | Contaminated |
+|---|---:|---|---:|---:|---:|---:|---:|
+| raw | 0 | v1 (CE) | 0.900 ± 0.064 | 0.215 ± 0.027 | 0.345 ± 0.031 | 56.2 | 5.4 |
+| raw | 0 | online-cos | 0.917 ± 0.048 | 0.462 ± 0.051 | 0.612 ± 0.037 | 34.4 | 4.8 |
+| raw | 0 | batch-cos | 0.891 ± 0.109 | 0.697 ± 0.075 | 0.774 ± 0.038 | 22.7 | 2.1 |
+| boilerplate (E4a) | 0 | v1 (CE) | 0.895 ± 0.118 | 0.472 ± 0.162 | 0.593 ± 0.140 | 36.3 | 2.5 |
+| boilerplate (E4a) | 0 | online-cos | 0.900 ± 0.102 | 0.694 ± 0.162 | 0.765 ± 0.091 | 23.9 | 2.4 |
+| boilerplate (E4a) | 0 | batch-cos | 0.893 ± 0.071 | 0.775 ± 0.065 | 0.825 ± 0.024 | 19.4 | 2.5 |
+| LLM issue statement (E4b) | 50 | v1 (CE) | 0.880 ± 0.119 | 0.516 ± 0.074 | 0.640 ± 0.034 | 31.5 | 2.5 |
+| LLM issue statement (E4b) | 50 | online-cos | 0.917 ± 0.064 | 0.736 ± 0.106 | 0.810 ± 0.053 | 22.4 | 3.0 |
+| LLM issue statement (E4b) | 50 | batch-cos | 0.906 ± 0.084 | 0.860 ± 0.079 | 0.877 ± 0.047 | 18.8 | 1.8 |
+
+- E4a (label-free boilerplate suppression) removed exactly the generator's
+  10 stock phrases and nothing else: its cleaned text is identical to the
+  hand-stripped text for all 488 complaints, so its rows equal the
+  `stripped` run (`pipelines_all-MiniLM-L6-v2_stripped.csv`).
+- E4b used 50 Groq calls (10 complaints per call, 2 retries), cached in
+  `results/llm_normalized.csv`.
+- Independent check: `verify_results.py` rebuilds every online-cos and
+  batch-cos run and recounts pairs with scikit-learn's
+  `pair_confusion_matrix`: 80/80 runs match (`results/verify_all.log`).
+- Held-out precision varies a lot between splits (sd 0.06-0.12, worst
+  single run 0.64), i.e. a threshold tuned on some issues does not always
+  transfer to others. This is the case for the uncertain band + review.
+- Caveat: the synthetic filler is repeated verbatim, which makes E4a easy.
+  Real complaints vary their filler, so E4a vs E4b must be repeated on
+  real data before drawing conclusions.
