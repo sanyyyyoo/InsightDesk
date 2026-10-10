@@ -1,0 +1,11 @@
+The attached spreadsheet has 450 app-store reviews of customer-support apps (tab "Reviews") and a code list (tab "Codebook": code | area | definition). Please label every review by reading it yourself, the way a human labeller would. Do not write code, keyword rules or any automatic classifier to do it.
+
+Instructions (the same ones our human labellers followed):
+InsightDesk duplicate labelling - pick the SPECIFIC problem for each review. Same product + same code = duplicates.
+1. problem_code: pick from the code list (tab "Codebook").
+2. Vague review ('can't login', 'keeps crashing', 'doesn't work' with no detail) -> the *_unspecified code. Do not guess.
+3. No failure (praise, question, rant) -> not_a_problem. About another company -> not_about_this_app. Two problems -> main one, other in notes.
+4. Nothing fits -> 'other' + describe in notes.
+5. Unsure -> pick the closest code and set confidence = unsure.
+
+Fill the columns problem_code, confidence (sure / unsure) and notes for all 450 rows, keep the id column unchanged, and give me the completed spreadsheet as an .xlsx file to download. If you cannot finish all rows in one reply, do them in order and continue when I say "continue".
