@@ -1,0 +1,109 @@
+variant,pipeline,held_out,kind,threshold,tp,fp,fn,P,R,F1,reviews,dup_pairs
+v2 MiniLM (cleaned),online,Freshdesk,lopo,0.78,6,1,131,0.8571428571428571,0.043795620437956206,0.08333333333333334,98,137
+v2 MiniLM (cleaned),online,Freshdesk,self,0.82,3,0,134,1.0,0.021897810218978103,0.04285714285714286,98,137
+v2 MiniLM (cleaned),online,Freshdesk,pooled,0.82,3,0,134,1.0,0.021897810218978103,0.04285714285714286,98,137
+v2 MiniLM (cleaned),online,HappyFox,lopo,0.82,0,0,0,1.0,0.0,0.0,5,0
+v2 MiniLM (cleaned),online,HappyFox,self,0.36,0,0,0,1.0,0.0,0.0,5,0
+v2 MiniLM (cleaned),online,HappyFox,pooled,0.82,0,0,0,1.0,0.0,0.0,5,0
+v2 MiniLM (cleaned),online,Help Scout,lopo,0.82,0,0,18,1.0,0.0,0.0,21,18
+v2 MiniLM (cleaned),online,Help Scout,self,0.58,6,0,12,1.0,0.3333333333333333,0.5,21,18
+v2 MiniLM (cleaned),online,Help Scout,pooled,0.82,0,0,18,1.0,0.0,0.0,21,18
+v2 MiniLM (cleaned),online,LiveAgent,lopo,0.82,0,0,1,1.0,0.0,0.0,8,1
+v2 MiniLM (cleaned),online,LiveAgent,self,0.54,1,0,0,1.0,1.0,1.0,8,1
+v2 MiniLM (cleaned),online,LiveAgent,pooled,0.82,0,0,1,1.0,0.0,0.0,8,1
+v2 MiniLM (cleaned),online,Zendesk,lopo,0.82,0,0,514,1.0,0.0,0.0,184,514
+v2 MiniLM (cleaned),online,Zendesk,self,0.78,0,0,514,1.0,0.0,0.0,184,514
+v2 MiniLM (cleaned),online,Zendesk,pooled,0.82,0,0,514,1.0,0.0,0.0,184,514
+v2 MiniLM (cleaned),online,Zoho Desk,lopo,0.82,0,0,10,1.0,0.0,0.0,22,10
+v2 MiniLM (cleaned),online,Zoho Desk,self,0.6,1,0,9,1.0,0.1,0.18181818181818182,22,10
+v2 MiniLM (cleaned),online,Zoho Desk,pooled,0.82,0,0,10,1.0,0.0,0.0,22,10
+v2 MiniLM (cleaned),batch,Freshdesk,lopo,0.78,1,1,136,0.5,0.0072992700729927005,0.014388489208633093,98,137
+v2 MiniLM (cleaned),batch,Freshdesk,self,0.82,1,0,136,1.0,0.0072992700729927005,0.014492753623188404,98,137
+v2 MiniLM (cleaned),batch,Freshdesk,pooled,0.82,1,0,136,1.0,0.0072992700729927005,0.014492753623188404,98,137
+v2 MiniLM (cleaned),batch,HappyFox,lopo,0.82,0,0,0,1.0,0.0,0.0,5,0
+v2 MiniLM (cleaned),batch,HappyFox,self,0.36,0,0,0,1.0,0.0,0.0,5,0
+v2 MiniLM (cleaned),batch,HappyFox,pooled,0.82,0,0,0,1.0,0.0,0.0,5,0
+v2 MiniLM (cleaned),batch,Help Scout,lopo,0.82,0,0,18,1.0,0.0,0.0,21,18
+v2 MiniLM (cleaned),batch,Help Scout,self,0.54,4,0,14,1.0,0.2222222222222222,0.3636363636363636,21,18
+v2 MiniLM (cleaned),batch,Help Scout,pooled,0.82,0,0,18,1.0,0.0,0.0,21,18
+v2 MiniLM (cleaned),batch,LiveAgent,lopo,0.82,0,0,1,1.0,0.0,0.0,8,1
+v2 MiniLM (cleaned),batch,LiveAgent,self,0.58,1,0,0,1.0,1.0,1.0,8,1
+v2 MiniLM (cleaned),batch,LiveAgent,pooled,0.82,0,0,1,1.0,0.0,0.0,8,1
+v2 MiniLM (cleaned),batch,Zendesk,lopo,0.82,0,0,514,1.0,0.0,0.0,184,514
+v2 MiniLM (cleaned),batch,Zendesk,self,0.78,0,0,514,1.0,0.0,0.0,184,514
+v2 MiniLM (cleaned),batch,Zendesk,pooled,0.82,0,0,514,1.0,0.0,0.0,184,514
+v2 MiniLM (cleaned),batch,Zoho Desk,lopo,0.82,0,0,10,1.0,0.0,0.0,22,10
+v2 MiniLM (cleaned),batch,Zoho Desk,self,0.6,1,0,9,1.0,0.1,0.18181818181818182,22,10
+v2 MiniLM (cleaned),batch,Zoho Desk,pooled,0.82,0,0,10,1.0,0.0,0.0,22,10
+SimCSE + synonyms,online,Freshdesk,lopo,0.46,10,7,127,0.5882352941176471,0.072992700729927,0.12987012987012986,98,137
+SimCSE + synonyms,online,Freshdesk,self,0.56,5,0,132,1.0,0.0364963503649635,0.0704225352112676,98,137
+SimCSE + synonyms,online,Freshdesk,pooled,0.54,8,1,129,0.8888888888888888,0.058394160583941604,0.1095890410958904,98,137
+SimCSE + synonyms,online,HappyFox,lopo,0.54,0,0,0,1.0,0.0,0.0,5,0
+SimCSE + synonyms,online,HappyFox,self,0.3,0,0,0,1.0,0.0,0.0,5,0
+SimCSE + synonyms,online,HappyFox,pooled,0.54,0,0,0,1.0,0.0,0.0,5,0
+SimCSE + synonyms,online,Help Scout,lopo,0.56,1,0,17,1.0,0.05555555555555555,0.10526315789473684,21,18
+SimCSE + synonyms,online,Help Scout,self,0.32,4,0,14,1.0,0.2222222222222222,0.3636363636363636,21,18
+SimCSE + synonyms,online,Help Scout,pooled,0.54,1,0,17,1.0,0.05555555555555555,0.10526315789473684,21,18
+SimCSE + synonyms,online,LiveAgent,lopo,0.54,0,0,1,1.0,0.0,0.0,8,1
+SimCSE + synonyms,online,LiveAgent,self,0.3,1,0,0,1.0,1.0,1.0,8,1
+SimCSE + synonyms,online,LiveAgent,pooled,0.54,0,0,1,1.0,0.0,0.0,8,1
+SimCSE + synonyms,online,Zendesk,lopo,0.54,9,1,505,0.9,0.017509727626459144,0.034351145038167934,184,514
+SimCSE + synonyms,online,Zendesk,self,0.48,17,1,497,0.9444444444444444,0.033073929961089495,0.06390977443609022,184,514
+SimCSE + synonyms,online,Zendesk,pooled,0.54,9,1,505,0.9,0.017509727626459144,0.034351145038167934,184,514
+SimCSE + synonyms,online,Zoho Desk,lopo,0.54,0,0,10,1.0,0.0,0.0,22,10
+SimCSE + synonyms,online,Zoho Desk,self,0.38,1,0,9,1.0,0.1,0.18181818181818182,22,10
+SimCSE + synonyms,online,Zoho Desk,pooled,0.54,0,0,10,1.0,0.0,0.0,22,10
+SimCSE + synonyms,batch,Freshdesk,lopo,0.46,5,3,132,0.625,0.0364963503649635,0.06896551724137931,98,137
+SimCSE + synonyms,batch,Freshdesk,self,0.56,3,0,134,1.0,0.021897810218978103,0.04285714285714286,98,137
+SimCSE + synonyms,batch,Freshdesk,pooled,0.56,3,0,134,1.0,0.021897810218978103,0.04285714285714286,98,137
+SimCSE + synonyms,batch,HappyFox,lopo,0.56,0,0,0,1.0,0.0,0.0,5,0
+SimCSE + synonyms,batch,HappyFox,self,0.3,0,0,0,1.0,0.0,0.0,5,0
+SimCSE + synonyms,batch,HappyFox,pooled,0.56,0,0,0,1.0,0.0,0.0,5,0
+SimCSE + synonyms,batch,Help Scout,lopo,0.56,1,0,17,1.0,0.05555555555555555,0.10526315789473684,21,18
+SimCSE + synonyms,batch,Help Scout,self,0.4,2,0,16,1.0,0.1111111111111111,0.19999999999999998,21,18
+SimCSE + synonyms,batch,Help Scout,pooled,0.56,1,0,17,1.0,0.05555555555555555,0.10526315789473684,21,18
+SimCSE + synonyms,batch,LiveAgent,lopo,0.56,0,0,1,1.0,0.0,0.0,8,1
+SimCSE + synonyms,batch,LiveAgent,self,0.34,0,0,1,1.0,0.0,0.0,8,1
+SimCSE + synonyms,batch,LiveAgent,pooled,0.56,0,0,1,1.0,0.0,0.0,8,1
+SimCSE + synonyms,batch,Zendesk,lopo,0.56,8,1,506,0.8888888888888888,0.01556420233463035,0.030592734225621417,184,514
+SimCSE + synonyms,batch,Zendesk,self,0.46,23,2,491,0.92,0.04474708171206226,0.08534322820037106,184,514
+SimCSE + synonyms,batch,Zendesk,pooled,0.56,8,1,506,0.8888888888888888,0.01556420233463035,0.030592734225621417,184,514
+SimCSE + synonyms,batch,Zoho Desk,lopo,0.56,0,0,10,1.0,0.0,0.0,22,10
+SimCSE + synonyms,batch,Zoho Desk,self,0.38,1,0,9,1.0,0.1,0.18181818181818182,22,10
+SimCSE + synonyms,batch,Zoho Desk,pooled,0.56,0,0,10,1.0,0.0,0.0,22,10
+LLM issue statement (comparison),online,Freshdesk,lopo,0.94,1,0,136,1.0,0.0072992700729927005,0.014492753623188404,98,137
+LLM issue statement (comparison),online,Freshdesk,self,0.8,10,1,127,0.9090909090909091,0.072992700729927,0.13513513513513514,98,137
+LLM issue statement (comparison),online,Freshdesk,pooled,0.82,6,0,131,1.0,0.043795620437956206,0.08391608391608392,98,137
+LLM issue statement (comparison),online,HappyFox,lopo,0.82,0,0,0,1.0,0.0,0.0,5,0
+LLM issue statement (comparison),online,HappyFox,self,0.44,0,0,0,1.0,0.0,0.0,5,0
+LLM issue statement (comparison),online,HappyFox,pooled,0.82,0,0,0,1.0,0.0,0.0,5,0
+LLM issue statement (comparison),online,Help Scout,lopo,0.82,0,0,18,1.0,0.0,0.0,21,18
+LLM issue statement (comparison),online,Help Scout,self,0.7,1,0,17,1.0,0.05555555555555555,0.10526315789473684,21,18
+LLM issue statement (comparison),online,Help Scout,pooled,0.82,0,0,18,1.0,0.0,0.0,21,18
+LLM issue statement (comparison),online,LiveAgent,lopo,0.82,0,0,1,1.0,0.0,0.0,8,1
+LLM issue statement (comparison),online,LiveAgent,self,0.74,0,0,1,1.0,0.0,0.0,8,1
+LLM issue statement (comparison),online,LiveAgent,pooled,0.82,0,0,1,1.0,0.0,0.0,8,1
+LLM issue statement (comparison),online,Zendesk,lopo,0.8,6,2,508,0.75,0.011673151750972763,0.02298850574712644,184,514
+LLM issue statement (comparison),online,Zendesk,self,0.94,0,0,514,1.0,0.0,0.0,184,514
+LLM issue statement (comparison),online,Zendesk,pooled,0.82,5,1,509,0.8333333333333334,0.009727626459143969,0.019230769230769232,184,514
+LLM issue statement (comparison),online,Zoho Desk,lopo,0.82,1,0,9,1.0,0.1,0.18181818181818182,22,10
+LLM issue statement (comparison),online,Zoho Desk,self,0.58,3,0,7,1.0,0.3,0.4615384615384615,22,10
+LLM issue statement (comparison),online,Zoho Desk,pooled,0.82,1,0,9,1.0,0.1,0.18181818181818182,22,10
+LLM issue statement (comparison),batch,Freshdesk,lopo,0.94,1,0,136,1.0,0.0072992700729927005,0.014492753623188404,98,137
+LLM issue statement (comparison),batch,Freshdesk,self,0.82,6,0,131,1.0,0.043795620437956206,0.08391608391608392,98,137
+LLM issue statement (comparison),batch,Freshdesk,pooled,0.82,6,0,131,1.0,0.043795620437956206,0.08391608391608392,98,137
+LLM issue statement (comparison),batch,HappyFox,lopo,0.82,0,0,0,1.0,0.0,0.0,5,0
+LLM issue statement (comparison),batch,HappyFox,self,0.44,0,0,0,1.0,0.0,0.0,5,0
+LLM issue statement (comparison),batch,HappyFox,pooled,0.82,0,0,0,1.0,0.0,0.0,5,0
+LLM issue statement (comparison),batch,Help Scout,lopo,0.82,0,0,18,1.0,0.0,0.0,21,18
+LLM issue statement (comparison),batch,Help Scout,self,0.7,1,0,17,1.0,0.05555555555555555,0.10526315789473684,21,18
+LLM issue statement (comparison),batch,Help Scout,pooled,0.82,0,0,18,1.0,0.0,0.0,21,18
+LLM issue statement (comparison),batch,LiveAgent,lopo,0.82,0,0,1,1.0,0.0,0.0,8,1
+LLM issue statement (comparison),batch,LiveAgent,self,0.74,0,0,1,1.0,0.0,0.0,8,1
+LLM issue statement (comparison),batch,LiveAgent,pooled,0.82,0,0,1,1.0,0.0,0.0,8,1
+LLM issue statement (comparison),batch,Zendesk,lopo,0.82,5,1,509,0.8333333333333334,0.009727626459143969,0.019230769230769232,184,514
+LLM issue statement (comparison),batch,Zendesk,self,0.94,0,0,514,1.0,0.0,0.0,184,514
+LLM issue statement (comparison),batch,Zendesk,pooled,0.82,5,1,509,0.8333333333333334,0.009727626459143969,0.019230769230769232,184,514
+LLM issue statement (comparison),batch,Zoho Desk,lopo,0.82,1,0,9,1.0,0.1,0.18181818181818182,22,10
+LLM issue statement (comparison),batch,Zoho Desk,self,0.58,3,0,7,1.0,0.3,0.4615384615384615,22,10
+LLM issue statement (comparison),batch,Zoho Desk,pooled,0.82,1,0,9,1.0,0.1,0.18181818181818182,22,10

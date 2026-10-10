@@ -1,0 +1,74 @@
+[
+ {
+  "a": "I have tried to contact support team many times as I had some confusion about the plan I need to purchase for the email support. But, I never received any response.There are...",
+  "b": "Horrible tech support. I requested a week ago for a sales rep to contact me, I was assured MULTIPLE times that I would be reached out to. If their support is this bad before I pay...",
+  "same": true,
+  "cos": 0.412
+ },
+ {
+  "a": "Why cant i log in? The app is updated, it is the correct address, correct email and password, but it still says password is incorrect. But i can log in just fine via browser",
+  "b": "Can't login using this app, using the website works but the app never sends the code to my email.",
+  "same": false,
+  "cos": 0.643
+ },
+ {
+  "a": "This app is always getting crashed while trying to login.",
+  "b": "App crashes upon opening after notification and trying to reply to a ticket. When I reported this their support sent a long list of troubleshooting instructions and then...",
+  "same": false,
+  "cos": 0.575
+ },
+ {
+  "a": "Missing tablet mode, if I want to use landscape mode I have to use the website which often does not work well on mobile (drop down menus appear and disappear without allowing to...",
+  "b": "Absolutely rubbish. No side view. You would have thought they would support Android tablets since it's highly convenient for business travelers on the go.",
+  "same": true,
+  "cos": 0.468
+ },
+ {
+  "a": "I am not getting a call after clicking on'click here to call the patient'",
+  "b": "I'm not receiving the calls itself.",
+  "same": true,
+  "cos": 0.52
+ },
+ {
+  "a": "Awful updated view, the ticket's views are all over and not user friendly. Now Public Reply and Internal Notes are mixed and the views are so sensitive. What's the point of having...",
+  "b": "This app needs to basically be rewritten from scratch. The notifications, back button UX, and navigation all make no sense. Further, the performance is really horrid in terms of...",
+  "same": true,
+  "cos": 0.35
+ },
+ {
+  "a": "Slow, constantly buggy. ugh I hate this app.",
+  "b": "The app is so slow. It takes up to 5-10 minutes to update your inbox if it even works. Half of the time it will load of minutes and then show a box \"an error occurred, please try...",
+  "same": false,
+  "cos": 0.592
+ },
+ {
+  "a": "I only ever used the app to check on the status of tickets and then would jump on the computer if I needed to respond, but the latest update removes the colors in the list of...",
+  "b": "Ever since the update, my list of tickets refreshes just fine but whenever I try to view them I get \"Could not connect\". The app is now worthless.",
+  "same": false,
+  "cos": 0.639
+ },
+ {
+  "a": "I have tried to contact support team many times as I had some confusion about the plan I need to purchase for the email support. But, I never received any response.There are...",
+  "b": "Zendesk exemplifies the \"who cares\" attitude. Worked with multiple companies using Zendesk and it's always the same... I leave outraged at the company that hired Zendesk. Great...",
+  "same": true,
+  "cos": 0.272
+ },
+ {
+  "a": "I use this app for work. I can no longer understand what is going on. Who responded to who. Lame update. Go back to the way it was!",
+  "b": "This app needs to basically be rewritten from scratch. The notifications, back button UX, and navigation all make no sense. Further, the performance is really horrid in terms of...",
+  "same": true,
+  "cos": 0.442
+ },
+ {
+  "a": "Got the latest update a few days ago and ever since, I am unable to login because the built in browser doesn't show the login system from my corporate ADFS system. I am unable to...",
+  "b": "Recent updates do not allow me login. The was very useful until the last update but now it has become completely useless. Hope they fix the issue quickly.",
+  "same": false,
+  "cos": 0.577
+ },
+ {
+  "a": "Worst app, not working properly and ticket raised is not responded till now",
+  "b": "I am tried of being asked to rate the app every time I interact with the app. If rating the app doesn't make it stop I'll probably switch to a different ticket system.",
+  "same": false,
+  "cos": 0.568
+ }
+]
