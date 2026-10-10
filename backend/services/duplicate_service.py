@@ -1,5 +1,9 @@
+import os
+
 from backend.services.preprocess import clean_text
 from datetime import datetime, timezone
+
+from backend.services import dedup_r1
 
 from backend.services.embedding_service import (
     generate_embedding,
@@ -32,6 +36,10 @@ from backend.services.sentiment.sentiment_service import (
 # Precision = 95.24%, Recall = 57.14%, F1 = 71.43%.
 
 SIMILARITY_THRESHOLD = -2.21
+
+# "cross_encoder" (default, the original pipeline) or "r1" (LLM-judged
+# pipeline tested offline; see backend/services/dedup_r1.py)
+DEDUP_MODE = os.getenv("DEDUP_MODE", "cross_encoder").lower()
 def increment_report_count(
     case_id: int,
     user_id: str
@@ -146,30 +154,52 @@ def process_complaint(complaint):
     )
 
     # ----------------------------------------------------
-    # Step 4 : Retrieve Candidate Cases
+    # Steps 4-5 : Find the matching case
     # ----------------------------------------------------
 
-    candidate_cases = retrieve_similar_cases(
-        embedding
-    )
+    decision = None
 
-    # ----------------------------------------------------
-    # Step 5 : Cross Encoder Re-ranking
-    # ----------------------------------------------------
+    if DEDUP_MODE == "r1":
 
-    best_case_id, similarity_score = rerank_candidate_cases(
-        complaint_text=cleaned_text,
-        candidate_cases=candidate_cases
-    )
+        decision = dedup_r1.decide(
+            complaint_id,
+            embedding,
+            complaint.complaint_text,
+            product=complaint.product,
+        )
+
+        best_case_id = decision.case_id
+        is_match = best_case_id is not None
+
+    else:
+
+        candidate_cases = retrieve_similar_cases(
+            embedding
+        )
+
+        best_case_id, similarity_score = rerank_candidate_cases(
+            complaint_text=cleaned_text,
+            candidate_cases=candidate_cases
+        )
+
+        is_match = (
+            best_case_id is not None
+            and similarity_score >= SIMILARITY_THRESHOLD
+        )
+
+    route = decision.route if decision else "cross_encoder"
 
     # ----------------------------------------------------
     # Step 6 : Duplicate Case Found
     # ----------------------------------------------------
 
-    if (
-        best_case_id is not None
-        and similarity_score >= SIMILARITY_THRESHOLD
-    ):
+    if is_match:
+
+        if decision is not None:
+            dedup_r1.add_member(
+                decision.target,
+                embedding
+            )
 
         # Same user has already reported this case recently
         if user_reported_case_recently(
@@ -190,7 +220,8 @@ def process_complaint(complaint):
                 "complaint_id": complaint_id,
                 "case_id": best_case_id,
                 "is_duplicate": True,
-                "status": "Merged with recent report"
+                "status": "Merged with recent report",
+                "dedup_route": route,
             }
 
         # Genuine new report for an existing case
@@ -211,7 +242,8 @@ def process_complaint(complaint):
             "complaint_id": complaint_id,
             "case_id": best_case_id,
             "is_duplicate": True,
-            "status": "Existing case assigned"
+            "status": "Existing case assigned",
+            "dedup_route": route,
         }
 
     # ----------------------------------------------------
@@ -232,11 +264,28 @@ def process_complaint(complaint):
         case_id
     )
     # Store representative embedding in Pinecone
-    store_case_embedding(
-        case_id=case_id,
-        embedding=embedding,
-        representative_text=cleaned_text
-    )
+    if decision is not None and decision.vague:
+        try:
+            # needs the cases.is_vague column (migration 2026-10-10); never block ingestion
+            update_case(case_id, {"is_vague": True})
+        except Exception as exc:
+            print(f"could not mark case {case_id} as vague: {exc}")
+
+    if decision is not None:
+        dedup_r1.start_case(
+            case_id,
+            embedding,
+            complaint_id,
+            complaint.complaint_text,
+            product=complaint.product,
+            vague=decision.vague,
+        )
+    else:
+        store_case_embedding(
+            case_id=case_id,
+            embedding=embedding,
+            representative_text=cleaned_text
+        )
     enrich_case_with_sentiment(
     case_id
     )
@@ -252,7 +301,8 @@ def process_complaint(complaint):
         "complaint_id": complaint_id,
         "case_id": case_id,
         "is_duplicate": False,
-        "status": "New case created"
+        "status": "New case created",
+        "dedup_route": route,
     }
 
 
