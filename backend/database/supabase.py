@@ -714,7 +714,7 @@ def get_case_history(case_id):
         supabase
         .table("complaint_windows")
         .select(
-            "complaint_ct"
+            "complaint_ct, window_start"
         )
         .eq(
             "case_id",
