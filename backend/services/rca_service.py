@@ -147,11 +147,14 @@ Sentiment:
 Sentiment Confidence:
 {context["sentiment"]["confidence"]}
 
-Current Complaint Count:
+Complaints In Latest 6-Hour Window:
 {context["spike"]["current"]}
 
-Z Score:
-{context["spike"]["z_score"]}
+Normal Rate Per 6-Hour Window (last 7 days):
+{context["spike"].get("baseline_rate", "unknown")}
+
+Spike Detected:
+{"yes (critical)" if context["spike"].get("critical") else "yes" if context["spike"].get("spike") else "no"}
 
 Recent Complaints:
 {complaint_text}
