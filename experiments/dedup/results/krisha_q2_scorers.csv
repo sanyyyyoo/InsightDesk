@@ -1,0 +1,17 @@
+text,labels,scorer,roc_auc,recall_at_P90
+cleaned,original,MiniLM cosine,0.9184,0.6533333333333333
+cleaned,corrected,MiniLM cosine,0.9212500000000001,0.7
+cleaned,original,STS-B CE (v1),0.8264888888888888,0.32
+cleaned,corrected,STS-B CE (v1),0.8364285714285715,0.34285714285714286
+cleaned,original,Quora CE,0.7294222222222222,0.26666666666666666
+cleaned,corrected,Quora CE,0.7633928571428571,0.2857142857142857
+cleaned,original,MS-MARCO CE (production before f9fcf73),0.7696000000000001,0.28
+cleaned,corrected,MS-MARCO CE (production before f9fcf73),0.8082142857142857,0.3
+raw,original,MiniLM cosine,0.9091555555555555,0.7466666666666667
+raw,corrected,MiniLM cosine,0.9096428571428572,0.6857142857142857
+raw,original,STS-B CE (v1),0.8231111111111111,0.3333333333333333
+raw,corrected,STS-B CE (v1),0.8198214285714286,0.35714285714285715
+raw,original,Quora CE,0.6707555555555555,0.24
+raw,corrected,Quora CE,0.6871428571428573,0.2571428571428571
+raw,original,MS-MARCO CE (production before f9fcf73),0.7811555555555556,0.29333333333333333
+raw,corrected,MS-MARCO CE (production before f9fcf73),0.8144642857142858,0.3142857142857143

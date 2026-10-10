@@ -1,0 +1,21 @@
+pair_precision,pair_recall,pair_f1,cases,contaminated_cases,cross_issue_assignments,pipeline,split_seed,threshold
+0.8970398970398971,0.6400367309458218,0.7470525187566989,29,3,12,online-cos (experiments/dedup/models/minilm-simcse),0,0.38
+0.9506933744221879,0.566574839302112,0.7100115074798619,32,3,12,batch-cos (experiments/dedup/models/minilm-simcse),0,0.36
+0.9841112214498511,0.6217063989962359,0.7620146097654749,31,1,4,online-cos (experiments/dedup/models/minilm-simcse),0,0.42
+0.8715328467153285,0.7490589711417817,0.8056680161943319,19,6,28,batch-cos (experiments/dedup/models/minilm-simcse),0,0.3
+0.8579040852575488,0.7347870182555781,0.7915869980879542,21,3,24,online-cos (experiments/dedup/models/minilm-simcse),1,0.34
+0.9530791788856305,0.6592292089249493,0.7793764988009594,25,2,12,batch-cos (experiments/dedup/models/minilm-simcse),1,0.32
+1.0,0.6977777777777778,0.8219895287958116,31,0,0,online-cos (experiments/dedup/models/minilm-simcse),1,0.4
+0.9259259259259259,0.7777777777777778,0.8454106280193238,23,2,8,batch-cos (experiments/dedup/models/minilm-simcse),1,0.32
+0.9223839223839224,0.8066666666666666,0.8606530876172002,22,4,13,online-cos (experiments/dedup/models/minilm-simcse),2,0.34
+0.9438990182328191,0.8157575757575758,0.8751625487646295,22,3,12,batch-cos (experiments/dedup/models/minilm-simcse),2,0.3
+0.8753056234718827,0.6748350612629594,0.7621075039914849,23,6,17,online-cos (experiments/dedup/models/minilm-simcse),2,0.32
+0.9788639365918098,0.6983977379830348,0.8151815181518153,25,2,8,batch-cos (experiments/dedup/models/minilm-simcse),2,0.3
+0.9885468861846815,0.7253151260504201,0.8367161466222357,29,1,4,online-cos (experiments/dedup/models/minilm-simcse),3,0.4
+0.9775280898876404,0.7310924369747899,0.8365384615384615,28,2,8,batch-cos (experiments/dedup/models/minilm-simcse),3,0.36
+0.7825059101654847,0.708779443254818,0.7438202247191011,20,6,36,online-cos (experiments/dedup/models/minilm-simcse),3,0.34
+0.8056265984654731,0.6745182012847966,0.7342657342657343,20,7,40,batch-cos (experiments/dedup/models/minilm-simcse),3,0.3
+0.9840637450199203,0.6190476190476191,0.76,32,1,4,online-cos (experiments/dedup/models/minilm-simcse),4,0.4
+0.908745247148289,0.5989974937343359,0.7220543806646526,26,3,16,batch-cos (experiments/dedup/models/minilm-simcse),4,0.34
+0.9899307740717432,0.7228860294117647,0.8355909694555113,25,1,4,online-cos (experiments/dedup/models/minilm-simcse),4,0.4
+0.9223300970873787,0.6985294117647058,0.794979079497908,24,3,20,batch-cos (experiments/dedup/models/minilm-simcse),4,0.34

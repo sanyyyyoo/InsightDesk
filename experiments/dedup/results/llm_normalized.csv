@@ -1,0 +1,489 @@
+complaint_ref,issue_statement
+1,OTP not received during login attempt.
+2,"Verification code never arrives on phone, preventing sign‑in."
+3,OTP delivery broken; no code after 20‑minute wait.
+4,Two‑factor login stuck; code never appears.
+5,"SMS code never arrives, causing sign‑in failures each attempt."
+6,OTP text message not received despite multiple retries.
+7,OTP not received during login attempt.
+8,"Verification code never arrives on phone, preventing sign‑in."
+9,OTP delivery broken; no code after 20‑minute wait.
+10,Two‑factor login stuck; code never appears.
+11,"Two-factor login fails; SMS OTP never arrives, preventing sign‑in."
+12,"OTP text message not received after multiple retries, blocking login."
+13,Login attempt fails; OTP never received consistently.
+14,"Verification code never arrives on phone, preventing sign‑in."
+15,OTP delivery broken; waited 20 minutes with no code.
+16,Two-factor login stuck; code never shows up consistently.
+17,Signing in fails; SMS OTP does not arrive.
+18,No OTP text message received after several retries.
+19,"Login fails; OTP never received, affecting daily work."
+20,"Verification code never arrives on phone, blocking sign‑in."
+21,OTP delivery fails; no code received after 20 minutes.
+22,Two-factor login stuck; authentication code never appears.
+23,Sign-in fails; SMS authentication code never arrives consistently.
+24,OTP text messages not received after multiple retries.
+25,Password reset link displays error page.
+26,Forgot password reset link is broken.
+27,Password reset link leads to blank screen.
+28,Password reset link expires instantly.
+29,Password reset flow returns 404 error on link click.
+30,Password reset link displays error page.
+31,Password reset link is broken when clicked.
+32,Password reset link leads to a blank screen.
+33,Password reset link expires instantly.
+34,Password reset flow throws 404 upon clicking emailed link.
+35,Password reset link shows error page.
+36,Password reset link is broken when clicked.
+37,Password reset link leads to a blank screen.
+38,Password reset link expires instantly.
+39,Password reset flow throws 404 upon clicking emailed link.
+40,Password reset link shows error page.
+41,Password reset link is broken when clicked.
+42,Password reset email arrives but link leads to blank screen.
+43,"Password reset link expires instantly, preventing reset."
+44,Password reset flow returns 404 error upon clicking emailed link.
+45,App logs user out randomly during work sessions.
+46,Session expires every few minutes despite active usage.
+47,"App signs out automatically, requiring frequent re-login."
+48,"Random logouts occur throughout the day, disrupting work."
+49,"Session dies while actively typing, causing interruption."
+50,User experiences random logouts in the middle of work.
+51,Session management: session expires every few minutes despite active use.
+52,"Authentication: app signs out automatically, requiring repeated login."
+53,"Authentication: random logouts occurring throughout the day, highly disruptive."
+54,Session management: session dies while actively typing.
+55,Authentication: random logout in middle of work.
+56,Session management: session expires every few minutes despite active use.
+57,"Authentication: app signs out automatically, requiring repeated login."
+58,"Authentication: random logouts occurring throughout the day, highly disruptive."
+59,Session management: session dies while actively typing.
+60,Authentication: random logout in middle of work.
+61,Session management: session expires every few minutes despite active usage.
+62,"Authentication: app signs out automatically, requiring repeated login."
+63,"Authentication: random logouts occur throughout the day, disrupting usage."
+64,"Session management: session dies while actively typing, halting work."
+65,SSO: authentication error when signing in via company account.
+66,"SSO login: spinner never completes, causing login hang."
+67,SSO: token error thrown when logging in via identity provider.
+68,SAML login: redirects back with 'invalid token' message consistently.
+69,SSO: authentication error persists for company account sign‑in.
+70,"SSO login: spinner never completes, issue remains."
+71,Identity provider login throws token error.
+72,SAML login redirects back with invalid token message.
+73,Single sign-on via company account fails with authentication error.
+74,SSO login spins indefinitely and never completes.
+75,Identity provider login throws token error.
+76,SAML login redirects back with invalid token message.
+77,Single sign-on via company account fails with authentication error.
+78,SSO login spins indefinitely and never completes.
+79,Identity provider login throws token error.
+80,SAML login redirects back with invalid token message.
+81,Login: account locked after one failed login attempt.
+82,Login: account locked despite entering correct password.
+83,Login: account lockout triggered incorrectly; support has not unlocked.
+84,Login: flagged as suspicious and account locked without reason.
+85,Login: account locked after one failed login attempt.
+86,"Login: account locked despite correct password, affecting daily work."
+87,Login: account lockout triggered incorrectly; support has not unlocked.
+88,"Login: flagged as suspicious and account locked without reason, affecting daily work."
+89,"Login: account locked after one failed attempt, occurring consistently."
+90,"Login: account locked despite correct password, recurring issue."
+91,Account lockout triggered incorrectly; support has not unlocked it.
+92,Account flagged as suspicious and locked out without reason.
+93,Account locked after a single failed login attempt.
+94,Account locked despite entering correct password.
+95,Account lockout triggered incorrectly; support has not unlocked it.
+96,Account flagged as suspicious and locked out consistently without reason.
+97,Two-factor authentication setup fails at QR code step.
+98,Authenticator app fails to pair after scanning QR code repeatedly.
+99,MFA enrollment times out before completing setup.
+100,Two-factor authentication setup fails at QR code step.
+101,Authenticator app fails to pair after scanning QR code repeatedly.
+102,MFA enrollment times out before completing setup.
+103,Two-factor authentication setup fails at QR code step.
+104,Authenticator app fails to pair after scanning QR code repeatedly.
+105,MFA enrollment times out before completing setup.
+106,Two-factor authentication setup fails at QR code step.
+107,Authenticator app fails to pair after scanning QR code repeatedly.
+108,MFA enrollment times out before completing setup.
+109,Cannot update account email address; update request fails.
+110,Changing login email fails with generic error each time.
+111,Account email update fails – cannot change linked email address.
+112,Login email change fails with generic error on every attempt.
+113,Account email update fails – cannot change linked email address.
+114,Login email change fails with generic error on every attempt.
+115,Account email update fails – cannot change linked email address.
+116,Login email change fails with generic error on every attempt.
+117,Subscription billing charged twice for same month.
+118,Invoice shows two separate card charges for a single invoice.
+119,Billing deducts amount twice within same billing cycle consistently.
+120,Statement shows duplicate charge for the plan.
+121,"Billing feature: duplicate charge, billed twice for a single month."
+122,"Billing: duplicate subscription charge this month, issue still occurring."
+123,Billing: two separate card charges for one invoice.
+124,Billing: amount deducted twice in same billing cycle.
+125,Billing: duplicate charge appears on statement for this plan.
+126,"Billing: billed twice for a single month, affecting daily work."
+127,Billing: charged twice for same subscription this month.
+128,Billing: two separate card charges for one invoice.
+129,"Billing: amount deducted twice in same billing cycle, affecting daily work."
+130,"Billing: duplicate charge on statement for this plan, occurring consistently."
+131,Billing: duplicate charge for single month.
+132,Billing: charged twice for same subscription this month.
+133,Billing: two separate charges appear for one invoice on card.
+134,Billing: amount deducted twice in same billing cycle.
+135,Billing: duplicate charge on statement for this plan.
+136,Billing: billed twice for a single month of service.
+137,"Refund: cancellation weeks ago, refund not received."
+138,Refund: approved but money never arrived in account.
+139,"Refund: status shows completed, amount missing from bank."
+140,"Refund: promised over two weeks ago, still waiting."
+141,Refund processing: request accepted but funds not credited to account.
+142,"Refund processing: cancellation weeks ago, refund still not received."
+143,Refund processing: approved refund never appears in account.
+144,Refund processing: status shows completed but amount missing from bank.
+145,Refund processing: promised refund over two weeks ago still pending.
+146,Refund processing: request accepted but funds not credited to account.
+147,"Refund processing: cancellation weeks ago, refund still not received."
+148,Refund processing: approved refund never appears in account.
+149,Refund processing: status shows completed but amount missing from bank.
+150,Refund processing: promised refund over two weeks ago still pending.
+151,Refund processing: accepted refund not credited to account.
+152,"Refund processing: cancellation weeks ago, refund still not received."
+153,Refund processing: approved refund never arrived in account.
+154,Refund processing: status shows completed but amount missing from bank.
+155,Refund processing: promised refund overdue by over two weeks.
+156,Refund processing: accepted refund not credited to account.
+157,Invoice generation: missing proper tax breakdown for accounting.
+158,Invoice generation: missing company billing address on generated invoices.
+159,"Invoice PDF: incomplete, some line items blank."
+160,Invoice download: Tax ID not displayed on invoice.
+161,Invoice tax breakdown missing; issue persists consistently.
+162,Generated invoices lack company billing address; occurred again.
+163,Invoice PDF incomplete with blank line items; recurring issue.
+164,Tax ID not displayed on downloaded invoice; repeated occurrence.
+165,Invoice tax breakdown missing; affecting daily work.
+166,Generated invoices missing company billing address; still happening.
+167,"Invoice PDF incomplete, some line items blank; still happening."
+168,Tax ID absent on downloaded invoice; consistently occurring.
+169,Invoice tax breakdown missing; encountered once more.
+170,Generated invoices missing company billing address; affecting daily work.
+171,Invoice PDF generation produces incomplete files with blank line items.
+172,Downloaded invoice omits Tax ID field.
+173,Plan upgrade fails during payment step.
+174,"Plan upgrade transaction errors out, preventing upgrade."
+175,Plan upgrade charges card without upgrading account.
+176,"Upgrade button spins indefinitely, never completing the upgrade."
+177,Plan upgrade fails during payment step.
+178,"Plan upgrade transaction errors out, preventing upgrade."
+179,Plan upgrade charges card without upgrading account.
+180,"Upgrade button spins indefinitely, never completing the upgrade."
+181,Plan upgrade fails at payment step.
+182,Tier upgrade transaction errors out.
+183,Plan upgrade charges card but does not upgrade account.
+184,"Upgrade button spins forever, never completes."
+185,Plan upgrade fails at payment step.
+186,Tier upgrade transaction errors out.
+187,Plan upgrade charges card but does not upgrade account.
+188,"Upgrade button spins forever, never completes."
+189,Account wallet balance displays incorrect amount.
+190,Credit balance does not match topped-up amount.
+191,Wallet shows less credit than added last week.
+192,Account wallet balance shows incorrect amount.
+193,"Credit balance doesn't match topped-up amount, occurring consistently."
+194,Wallet shows less credit than added last week.
+195,Account wallet balance shows incorrect amount consistently.
+196,"Credit balance doesn't match topped-up amount, happening consistently."
+197,Wallet shows less credit than added last week.
+198,"Account wallet balance shows incorrect amount, awaiting confirmation."
+199,"Credit balance doesn't match topped-up amount, still happening."
+200,"Wallet shows less credit than added last week, awaiting confirmation."
+201,Payment processing: card declined despite sufficient funds.
+202,Checkout: payment fails despite card working elsewhere.
+203,Payment processing: card declined despite sufficient funds.
+204,Checkout: payment fails despite card working elsewhere.
+205,Payment processing: card declined despite sufficient funds.
+206,Checkout: payment fails despite card working elsewhere.
+207,Payment processing: card declined despite sufficient funds.
+208,Checkout: payment fails despite card working elsewhere.
+209,Subscription settings: cancel option not functional.
+210,Billing page: cancel button unresponsive when clicked.
+211,Settings page subscription cancellation button missing or nonfunctional.
+212,Billing page cancel button unresponsive when clicked.
+213,Settings page lacks functional subscription cancellation option.
+214,Billing page cancel button consistently does nothing on click.
+215,Settings page subscription cancellation unavailable.
+216,Billing page cancel button fails to respond on click.
+217,App crashes immediately on launch every time.
+218,"App closes right after launch, cannot pass loading screen."
+219,App crashes on startup on device every time.
+220,App force-closes instantly upon opening.
+221,"App startup crashes, returning to home screen"
+222,App crashes immediately upon opening
+223,"App closes after launch, cannot pass loading screen"
+224,App crashes on startup consistently on device
+225,App force-closes the moment it is opened
+226,"App startup crashes, returning to home screen"
+227,App crashes immediately upon opening
+228,"App closes after launch, cannot pass loading screen"
+229,App crashes on startup consistently on device
+230,App force-closes the moment it is opened
+231,"App crashes on launch, returning to home screen."
+232,Application crashes immediately upon opening.
+233,"App closes right after launch, unable to pass loading screen."
+234,"App crashes on startup on device, occurring every time."
+235,"App force-closes immediately upon opening, consistently."
+236,"App crashes on launch, returning to home screen."
+237,Dashboard takes over a minute to load basic data.
+238,"Page loading extremely slow, single page takes forever."
+239,Pages hang long before loading due to degraded performance.
+240,"Dashboard lags badly, barely usable during peak hours."
+241,Unbearable loading times over the last few weeks.
+242,"Dashboard loads basic data in over a minute, consistently."
+243,"All pages load painfully slow, single page takes forever."
+244,"Pages hang for long periods before loading, performance severely degraded."
+245,"Dashboard lags badly, barely usable during peak hours."
+246,"Loading times unbearable over the last few weeks, recurring issue."
+247,"Dashboard takes over a minute to load basic data, ongoing issue."
+248,"All pages load painfully slow, single page takes forever, ongoing problem."
+249,"Pages hang long before loading, performance severely degraded."
+250,"Dashboard lags badly, barely usable during peak hours."
+251,"App loading times extremely slow, consistently over weeks."
+252,Dashboard loading basic data takes over one minute.
+253,"All pages load extremely slowly, single page takes forever consistently."
+254,"Pages hang for long periods before loading, overall performance degraded."
+255,"Dashboard lags severely, barely usable during peak hours."
+256,"Overall loading times unbearable, consistently slow over recent weeks."
+257,Changes fail to sync across devices.
+258,"Desktop data updates delayed on mobile, appear much later."
+259,Web-to-mobile app sync is broken.
+260,Teammate record updates not reflected without manual refresh.
+261,Cross-device sync not occurring; changes fail to sync across devices.
+262,Cross-device sync failing; changes do not sync across devices.
+263,Desktop updates delayed on mobile; data appears much later.
+264,Web and mobile app sync broken; data not syncing between platforms.
+265,Teammate updates not reflected without manual refresh; screen shows stale data.
+266,Cross-device sync stopped; changes no longer sync across devices.
+267,Changes fail to sync across devices; cross-device synchronization not working.
+268,Desktop changes appear on mobile after long delay; sync latency high.
+269,Sync between web and mobile apps broken; data not updating across platforms.
+270,Teammate updates require manual refresh; changes not auto-reflected on screen.
+271,Cross-device sync fails to synchronize data across devices.
+272,Cross-device sync consistently fails to synchronize changes across devices.
+273,"Desktop data updates delayed on mobile, not appearing promptly."
+274,"Web and mobile app sync broken, data not shared between platforms."
+275,Teammate record updates not reflected without manual refresh.
+276,Cross-device sync consistently fails to synchronize changes across devices.
+277,Cross-device sync consistently fails to synchronize changes across devices.
+278,"Desktop data updates delayed on mobile, not appearing promptly."
+279,"Web and mobile app sync broken, data not shared between platforms."
+280,Teammate record updates not reflected without manual refresh.
+281,"Cross-device sync not occurring, changes fail to propagate across devices."
+282,"Changes made do not sync across devices, preventing updates from appearing elsewhere."
+283,"Desktop data updates delayed on mobile, not appearing until much later."
+284,"Web and mobile app sync broken, data not synchronizing between platforms."
+285,Teammate record updates not reflected on screen without manual refresh.
+286,"Cross-device sync not happening, changes fail to propagate across devices."
+287,"Changes made are not syncing across devices, consistently failing to propagate."
+288,"Desktop data updates appear on mobile much later, causing delayed sync."
+289,"Web-to-mobile sync broken, data not updating between applications."
+290,Teammate record updates require manual refresh to appear on screen.
+291,Cross-device sync not occurring.
+292,Changes not syncing across devices.
+293,Desktop updates delayed on mobile.
+294,Web and mobile app sync broken.
+295,Teammate updates not auto-reflect without manual refresh.
+296,Cross-device sync not occurring.
+297,Feature broken after latest update.
+298,Core feature stopped working after app update.
+299,"Bug introduced in new version, occurring consistently."
+300,Daily workflow broken in newest release.
+301,Feature stopped working after latest update.
+302,Core feature fails completely after app update.
+303,"Bug introduced in new version, not present before update."
+304,Workflow broken in newest release.
+305,Feature stopped working after latest update.
+306,Core feature fails completely after app update.
+307,"Bug appears in new version, not present before."
+308,Workflow broken in newest release.
+309,Feature stopped working after latest update.
+310,Core feature fails completely after app update.
+311,Update introduced bug causing consistent connection drops.
+312,New release broke daily workflow.
+313,App connection keeps dropping during use.
+314,Frequent disconnections require page reloads during work.
+315,Random network connection drops during active use.
+316,App connection keeps dropping while in use.
+317,Frequent disconnections force page reloads.
+318,"Random network connection drops consistently, not a one-off."
+319,Connection keeps dropping while using the app.
+320,"Consistent disconnections require page reloads, not a one-off."
+321,Network connection drops randomly during active use.
+322,Connection keeps dropping while using the app.
+323,"User gets disconnected, must reload page constantly."
+324,Network connection drops randomly during active use.
+325,Search returns no results for existing ticket terms.
+326,Search bar returns empty results regardless of input.
+327,Search returns no results for existing ticket terms.
+328,Search bar returns empty results regardless of input.
+329,Search returns no results for existing ticket terms.
+330,Search bar returns empty results regardless of input.
+331,Search returns no results for existing ticket terms.
+332,Search bar returns empty results for any query.
+333,File attachments fail to upload regardless of file size.
+334,Screenshot upload to ticket hangs and never completes.
+335,File attachments fail to upload regardless of file size.
+336,Screenshot upload to ticket hangs and never completes.
+337,File attachments fail to upload regardless of file size.
+338,Screenshot upload to ticket hangs and never completes.
+339,File attachments fail to upload regardless of file size.
+340,Screenshot upload to ticket hangs and never completes.
+341,"Support ticket system: no reply after three days, affecting daily work."
+342,Support request: no response received yet.
+343,"Support ticket: no reply despite multiple follow-ups, affecting daily work."
+344,Support team: still awaiting any response.
+345,Support ticket: radio silence since ticket opened.
+346,"Support ticket system: no reply after three days, recurring issue."
+347,"Support request: no response yet, affecting daily work."
+348,Support ticket: no reply after multiple follow-ups.
+349,Support team: still waiting for any response.
+350,Support ticket: radio silence since ticket opened.
+351,Support ticket system: no response after three days
+352,Support request: no reply received yet
+353,Support ticket: no reply despite multiple follow-ups
+354,Support team: awaiting any response to opened ticket
+355,Support ticket: radio silence since ticket opened
+356,Support ticket system: no response after three days
+357,Support request: no reply received yet
+358,Support ticket: no reply despite multiple follow-ups
+359,Support team: awaiting any response to opened ticket
+360,Support ticket: radio silence since ticket opened
+361,"Support agent failed to resolve issue, leaving problem unresolved."
+362,Chat support provided generic answers that did not address the issue.
+363,Support ticket was closed without fixing the reported problem.
+364,Received copy-pasted response unrelated to the actual question.
+365,"Support agent failed to resolve issue, leaving problem unresolved."
+366,Chat support provided generic answers that did not address the issue.
+367,Support ticket was closed without fixing the reported problem.
+368,Received copy-pasted response unrelated to the actual question.
+369,"Support agent failed to resolve issue, leaving problem unresolved."
+370,Chat support provided generic answers that did not address the issue.
+371,Ticketing system closes tickets without fixing the issue
+372,Support replies with copy-pasted answers unrelated to the question
+373,Support agent fails to resolve the problem
+374,Chat support provides generic answers that don't address the issue
+375,Ticketing system closes tickets without fixing the issue
+376,Support replies with copy-pasted answers unrelated to the question
+377,Ticketing system closes tickets before issue resolution
+378,Support marks tickets as resolved while problem persists
+379,Ticket must be repeatedly reopened because issue remains unfixed
+380,Ticketing system closes tickets before issue resolution
+381,Support ticket marked resolved but issue persists.
+382,Ticket repeatedly reopened because fix never applied.
+383,"Ticket closed before actual resolution, disrupting daily work."
+384,Support ticket marked resolved but issue persists.
+385,Ticket repeatedly reopened; problem never truly fixed.
+386,"Ticket closed prematurely before issue resolved, occurring consistently."
+387,Support ticket marked resolved but issue persists.
+388,Ticket repeatedly reopened; problem never truly fixed.
+389,Live chat shows available but no agent responds.
+390,Chat widget remains idle with no agent picking up.
+391,Live chat support shows as available but no agent responds.
+392,Chat widget remains idle with no agent picking it up.
+393,Live chat support shows as available but no agent responds.
+394,"Chat widget sits idle, no agent picks up; request for review noted."
+395,Live chat support shows as available but no agent responds.
+396,Chat widget remains idle with no agent picking it up.
+397,Escalation request made but no action taken.
+398,Manager review requested three times with no follow‑up.
+399,Escalation request made but no action taken.
+400,Manager review requested three times with no follow‑up.
+401,Escalation request not processed after initial submission.
+402,Manager review request ignored despite three follow-ups.
+403,Escalation request not processed after initial submission.
+404,Manager review request ignored despite three follow-ups.
+405,CSV report export fails every attempt.
+406,Export button unresponsive; no file downloaded.
+407,Export data attempt throws error; no download.
+408,CSV export broken for several days.
+409,Export process spins indefinitely; no file generated.
+410,Exporting reports to CSV fails consistently each try.
+411,Export button does nothing; no file is downloaded.
+412,Export data throws an error; no file downloads.
+413,CSV export broken for several days; no file generated.
+414,Export spins indefinitely and never produces a file.
+415,Exporting reports to CSV fails each attempt.
+416,Export button does nothing; no file is downloaded.
+417,Export data throws an error; no file downloads.
+418,CSV export broken for several days; no file generated.
+419,Export spins indefinitely and never produces a file.
+420,Exporting reports to CSV fails each attempt.
+421,"Export button does nothing, no file is downloaded."
+422,"Export data throws an error, no file downloads."
+423,CSV export is broken.
+424,"Export spins indefinitely, never produces a file."
+425,API integration stopped working after platform update.
+426,API calls returning new errors.
+427,Webhook integration no longer fires events.
+428,API responses returning malformed data unexpectedly.
+429,API integration stopped working after platform update.
+430,API calls returning new errors.
+431,Webhook integration not firing events
+432,API responses returning malformed data
+433,API integration stopped working after platform update
+434,API calls returning unexpected errors
+435,Webhook integration not firing events
+436,API responses returning malformed data
+437,API integration stopped working after platform update
+438,API calls returning unexpected errors
+439,Webhook integration not firing events
+440,API responses returning malformed data
+441,"Team member permission changes are not saved, occurring consistently."
+442,"Teammate access level reverts automatically after setting, happening consistently."
+443,Configured role permissions reset to default after saving.
+444,"Team member permission changes fail to save, occurring consistently."
+445,Teammate access level reverts back on its own after being set.
+446,"Role permissions reset to default after configuration, happening consistently."
+447,Team member permission changes do not persist after saving.
+448,Teammate access level reverts automatically after being set.
+449,Role permissions keep resetting to default after configuration.
+450,"Team member permission changes are not saved, occurring consistently."
+451,Access level reverts automatically after setting teammate's permission.
+452,Role permissions reset to default after configuration.
+453,No notification received when a new ticket is assigned.
+454,Notification alerts for updates have completely stopped.
+455,No alerts sent when ticket status changes; must check manually.
+456,Push notifications stopped working a week ago.
+457,No notification received when a new ticket is assigned.
+458,Notification alerts for updates have completely stopped.
+459,No alerts sent when ticket status changes; must check manually.
+460,Push notifications stopped working a week ago.
+461,Ticket assignment notifications not received.
+462,Update notification alerts have stopped delivering.
+463,Ticket status change alerts not sent.
+464,Push notifications stopped working consistently since last week.
+465,Ticket assignment notifications not received consistently.
+466,Update notification alerts have stopped delivering.
+467,Ticket status change alerts not sent.
+468,Push notifications stopped working since last week.
+469,Analytics dashboard displays inaccurate numbers.
+470,Dashboard report totals are incorrect.
+471,Analytics dashboard miscalculates figures compared to raw data.
+472,Analytics dashboard shows numbers that don't match reality.
+473,Dashboard report totals do not add up correctly.
+474,Analytics dashboard miscalculates figures compared to raw data.
+475,Analytics dashboard shows numbers that don't match reality.
+476,Dashboard report totals do not add up correctly.
+477,Analytics dashboard miscalculates figures compared to raw data.
+478,Analytics dashboard shows numbers that don't match reality.
+479,Dashboard report totals do not add up correctly.
+480,Analytics dashboard miscalculates figures compared to raw data.
+481,"Ticket bulk update feature only updates one ticket at a time, not multiple."
+482,Ticket list bulk actions have no effect on selected items.
+483,"Ticket bulk update feature only updates one ticket at a time, not multiple."
+484,Ticket list bulk actions have no effect on selected items.
+485,"Ticket bulk update feature only updates one ticket at a time, not multiple."
+486,Ticket list bulk actions have no effect on selected items.
+487,"Ticket bulk update feature only updates one ticket at a time, not multiple."
+488,Ticket list bulk actions have no effect on selected items.

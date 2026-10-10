@@ -1,0 +1,450 @@
+{"row": 120, "code": "chat_problem", "raw_code": "chat_problem", "confidence": "sure", "notes": "Chats time out after five minutes, preventing replies."}
+{"row": 306, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Also reports slow ticket loading and confusing back-button/navigation behavior."}
+{"row": 139, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General usability opinion; no specific failure described."}
+{"row": 268, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Redirects users to install another app instead of allowing browser use."}
+{"row": 117, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "unsure", "notes": "Cannot access a self-hosted enterprise account; exact login failure is unclear."}
+{"row": 249, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": null}
+{"row": 352, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Also reports ticket fields not saving and errors when submitting tickets."}
+{"row": 128, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "sure", "notes": "Asks how to create an account."}
+{"row": 289, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "unsure", "notes": "Reports slowness and bugs without a specific failure; general crash behavior is not described."}
+{"row": 315, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Unable to sign in using their domain."}
+{"row": 198, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Old chats do not load; image messages also omit accompanying text."}
+{"row": 390, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Hashtags only; no app issue described."}
+{"row": 125, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Subdomain reported as invalid or not found."}
+{"row": 227, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "unsure", "notes": "After being logged out, adding the address freezes; exact domain error is not explicit."}
+{"row": 341, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications are unreliable and must be checked manually."}
+{"row": 64, "code": "crash_on_open", "raw_code": "crash_on_open", "confidence": "sure", "notes": "Latest version crashes immediately on opening."}
+{"row": 91, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Takes a long time to load."}
+{"row": 435, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "unsure", "notes": "\u201cDomain not support\u201d suggests domain/account URL incompatibility, but detail is sparse."}
+{"row": 30, "code": "login_needs_browser", "raw_code": "login_needs_browser", "confidence": "sure", "notes": "Requests a browser despite browsers being installed."}
+{"row": 26, "code": "ticket_close_reopens", "raw_code": "ticket_close_reopens", "confidence": "sure", "notes": "Deleted/spam tickets reappear after refresh."}
+{"row": 264, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "sure", "notes": "Repeatedly asks the user to create a portal instead of allowing sign-in."}
+{"row": 408, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications stopped after an update and remain unfixed."}
+{"row": 148, "code": "review_popup", "raw_code": "review_popup", "confidence": "unsure", "notes": "Describes rating prompts that route positive and negative feedback differently."}
+{"row": 432, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Filtering is inadequate compared with the web version."}
+{"row": 112, "code": "stuck_loading", "raw_code": "stuck_loading", "confidence": "sure", "notes": "Stuck on \u201cinitialising\u201d and cannot log in."}
+{"row": 302, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Ticket loading is very slow; ticket closing is also unintuitive."}
+{"row": 164, "code": "reply_fails", "raw_code": "reply_fails", "confidence": "sure", "notes": "Unable to submit a response; sending repeatedly fails."}
+{"row": 65, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "sure", "notes": "Sales/support team repeatedly fails to follow up on a demo request."}
+{"row": 254, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Admin features and many web-version capabilities are absent."}
+{"row": 258, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Tickets often fail to load/open."}
+{"row": 368, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Cannot clearly select tickets by team member; also requests dark mode."}
+{"row": 77, "code": "ticket_search_broken", "raw_code": "ticket_search_broken", "confidence": "sure", "notes": "Cannot search for tickets; also reports missing filtering."}
+{"row": 426, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "No agent-wise filtering."}
+{"row": 163, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Same credentials work on web but not in the app."}
+{"row": 201, "code": "crash_notification_settings", "raw_code": "crash_notification_settings", "confidence": "sure", "notes": "Opening notification settings crashes the app."}
+{"row": 36, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Assigned-ticket list is empty when a filter is enabled."}
+{"row": 4, "code": "notif_cannot_clear", "raw_code": "notif_cannot_clear", "confidence": "unsure", "notes": "Cannot clear many notifications; also reports unwanted notifications and unresolved subscription support."}
+{"row": 334, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Access-revoked message signs the user out automatically."}
+{"row": 283, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "sure", "notes": "Phone number is required and repeated spam calls follow registration."}
+{"row": 118, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "unsure", "notes": "Difficult to sort tickets; also reports difficulty joining live chat."}
+{"row": 323, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Macros do not apply."}
+{"row": 272, "code": "crash_unspecified", "raw_code": "crash_unspecified", "confidence": "unsure", "notes": "Says the app is slow and keeps closing, without specifying when it closes."}
+{"row": 221, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Ticket screen is blank and other views show no tickets."}
+{"row": 440, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Cannot view tickets despite a group ticket count being shown."}
+{"row": 429, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Dislikes the app\u2019s usability and prefers the web version; no specific failure."}
+{"row": 21, "code": "notif_cannot_clear", "raw_code": "notif_cannot_clear", "confidence": "sure", "notes": "Notifications cannot be deleted."}
+{"row": 387, "code": "login_code_not_received", "raw_code": "login_code_not_received", "confidence": "sure", "notes": "Login verification code never arrives by email."}
+{"row": 216, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "App allows notifications on mobile data but prevents replying unless connected to Wi-Fi."}
+{"row": 147, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General dislike without a specific failure."}
+{"row": 354, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Live chat access and complete ticket viewing/replying are unavailable despite admin privileges."}
+{"row": 138, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "Repeatedly logs out; session is not retained."}
+{"row": 82, "code": "crash_on_open", "raw_code": "crash_on_open", "confidence": "sure", "notes": "App does not open; reinstall attempt also will not start. Also reports missing emails."}
+{"row": 373, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "UI is confusing for users accustomed to the desktop version."}
+{"row": 156, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Correct credentials work on laptop but mobile login returns an error."}
+{"row": 437, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests dark mode."}
+{"row": 209, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Cannot enter the URL/domain field and therefore cannot sign in."}
+{"row": 320, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Domain field rejects a subdomain containing a hyphen."}
+{"row": 255, "code": "login_after_update", "raw_code": "login_after_update", "confidence": "sure", "notes": "Login stopped working after a recent update."}
+{"row": 389, "code": "install_fails", "raw_code": "install_fails", "confidence": "sure", "notes": "App will not install."}
+{"row": 14, "code": "notif_spurious_or_repeated", "raw_code": "notif_spurious_or_repeated", "confidence": "sure", "notes": "Receives too many notifications for the same ticket; also dislikes usability and missing ticket-list customization."}
+{"row": 301, "code": "ticket_merge_bulk_missing", "raw_code": "ticket_merge_bulk_missing", "confidence": "sure", "notes": "Bulk edit lacks fields such as assignee, group and category; also wants notifications limited to assigned tickets."}
+{"row": 29, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests dark mode."}
+{"row": 53, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "unsure", "notes": "Says the app frequently fails but gives no specific failure."}
+{"row": 324, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "sure", "notes": "Google sign-in does not work; also reports email sign-in trouble without further detail."}
+{"row": 38, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "URL login is not working; exact error is not described."}
+{"row": 211, "code": "reply_fails", "raw_code": "reply_fails", "confidence": "sure", "notes": "Cannot reply to tickets because the app says an agent is already talking to the customer."}
+{"row": 372, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Cannot log in; no further detail."}
+{"row": 129, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "sure", "notes": "Describes alleged account and customer-support problems involving other services/companies, not a specific failure of the Zendesk app."}
+{"row": 24, "code": "privacy_spam", "raw_code": "privacy_spam", "confidence": "sure", "notes": "Alleges data selling and reports unsolicited emails and spam calls."}
+{"row": 407, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "Update causes automatic sign-outs and repeated authorization; also says reinstall is needed after updates and editing existing notes is missing."}
+{"row": 406, "code": "agent_availability_toggle", "raw_code": "agent_availability_toggle", "confidence": "unsure", "notes": "Requests a feature to turn agents on/off in Freshdesk; closest code is agent availability toggle."}
+{"row": 292, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Cannot mark a ticket unread again from the mobile app; no code specifically covers this action."}
+{"row": 196, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "unsure", "notes": "Questions a change to the default public reply and says preview is missing; closest fit is missing mobile features."}
+{"row": 237, "code": "other", "raw_code": "other", "confidence": "sure", "notes": "Links in agent replies are displayed as plain text instead of becoming clickable hyperlinks."}
+{"row": 71, "code": "login_after_update", "raw_code": "login_after_update", "confidence": "sure", "notes": "Cannot log in after reinstalling the app."}
+{"row": 290, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General opinion without a specific failure."}
+{"row": 410, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests a dark theme."}
+{"row": 395, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "App logs the user out every few hours."}
+{"row": 154, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Says the app does not work but gives no detail."}
+{"row": 89, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "Android tablet layout is stretched and lacks the two-column tablet interface available on iPad."}
+{"row": 296, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Vague negative opinion without a specific failure."}
+{"row": 251, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Login on Android tablet fails with an expired or revoked access-token error."}
+{"row": 447, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Sarcastic/general rating statement without a specific failure."}
+{"row": 189, "code": "ticket_create_unavailable", "raw_code": "ticket_create_unavailable", "confidence": "sure", "notes": "Cannot create a ticket."}
+{"row": 423, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Reports missing original ticket date/time and dark mode; primary issue is missing mobile functionality."}
+{"row": 347, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "sure", "notes": "Review concerns an order and retailer support rather than a specific problem with Zendesk itself."}
+{"row": 383, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "unsure", "notes": "Broad complaint that the system is restrictive and unintuitive; no particular failure is specified."}
+{"row": 187, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Uploading or adding attachments takes an extremely long time."}
+{"row": 273, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General negative opinion without a specific failure."}
+{"row": 144, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Ticket sorting and filtering are difficult/unusable; also criticizes the GUI."}
+{"row": 417, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Cannot filter jobs by site or group."}
+{"row": 158, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Login error persists despite password reset and trying different emails and domains."}
+{"row": 265, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Tasks cannot be viewed in the app; only tickets are available."}
+{"row": 322, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "unsure", "notes": "Cannot create an account and cannot log in; signup failure is one of the main stated issues."}
+{"row": 130, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "sure", "notes": "Keyboard input has random capitalization and cursor movement while typing."}
+{"row": 326, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Unable to log in with no additional detail."}
+{"row": 217, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "App forces portrait mode and lacks a tablet/landscape layout."}
+{"row": 275, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "unsure", "notes": "Sign-in requires repeating setup from scratch; exact cause is unclear."}
+{"row": 141, "code": "billing_plan_complaint", "raw_code": "billing_plan_complaint", "confidence": "sure", "notes": "Complains about additional charges and continued billing after cancellation; also criticizes WhatsApp integration and customer tracking."}
+{"row": 76, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Tickets load extremely slowly."}
+{"row": 152, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Organization URL contains hyphens that cannot be entered normally; workaround was copy/paste."}
+{"row": 23, "code": "login_forced_google", "raw_code": "login_forced_google", "confidence": "sure", "notes": "Refuses access unless Google reCAPTCHA tracking is accepted."}
+{"row": 450, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "unsure", "notes": "Reports the service has been unusable for a week and login is blocked, but gives no specific app error."}
+{"row": 259, "code": "reply_fails", "raw_code": "reply_fails", "confidence": "sure", "notes": "Replies posted from the phone disappear and are absent later."}
+{"row": 105, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Opening a message takes over 30 seconds."}
+{"row": 263, "code": "ticket_close_reopens", "raw_code": "ticket_close_reopens", "confidence": "sure", "notes": "Closing a ticket immediately causes it to reopen."}
+{"row": 418, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "unsure", "notes": "Finding the correct account domain is described as a recurring login maze; also complains about the discontinued free plan."}
+{"row": 331, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Tickets open extremely slowly; also criticizes the UI."}
+{"row": 37, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "unsure", "notes": "Access is repeatedly denied and reinstalling is needed daily; exact access error is not specified."}
+{"row": 256, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Says mobile notifications were removed after an update."}
+{"row": 175, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "unsure", "notes": "Cannot log in due to IP restrictions although the website works; no matching specific login code."}
+{"row": 199, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Explicit \u201cAccess has been revoked\u201d message blocks login."}
+{"row": 111, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Only says the app does not work, with no further detail."}
+{"row": 172, "code": "app_renamed", "raw_code": "app_renamed", "confidence": "sure", "notes": "Complains that the app name and icon were changed to generic branding."}
+{"row": 47, "code": "calls_not_working", "raw_code": "calls_not_working", "confidence": "sure", "notes": "Incoming calls are not received."}
+{"row": 270, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "sure", "notes": "Support has not responded to an email after a week."}
+{"row": 134, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Dislikes the updated ticket view and confusing separation of chat/status and reply types."}
+{"row": 97, "code": "notif_opens_blank", "raw_code": "notif_opens_blank", "confidence": "sure", "notes": "Tapping an Android notification opens a blank screen or mailbox error."}
+{"row": 110, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications do not arrive for new tickets or chats."}
+{"row": 87, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "unsure", "notes": "Says the latest version does not work on the phone without describing the failure."}
+{"row": 18, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "unsure", "notes": "Says they cannot get help from anyone; response failure is implied but not detailed."}
+{"row": 6, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General request for improvements without identifying a specific failure."}
+{"row": 348, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Correct email and password are rejected with an invalid-credentials error after a release."}
+{"row": 239, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Cannot get into the app, with no further login detail."}
+{"row": 380, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "Agents are routinely logged out; also says the app sometimes does not work."}
+{"row": 267, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "unsure", "notes": "Main complaint is that support is difficult to contact and unhelpful."}
+{"row": 425, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "unsure", "notes": "Cannot proceed with trying the app because it requires a URI link; onboarding/signup context is implied."}
+{"row": 338, "code": "agent_availability_toggle", "raw_code": "agent_availability_toggle", "confidence": "sure", "notes": "Cannot change the on-call setting; also reports very high CPU/RAM usage."}
+{"row": 291, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "unsure", "notes": "Says they cannot access the app on the phone without explaining the error."}
+{"row": 414, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "\u201cBakwaas\u201d is a vague negative opinion with no specific failure."}
+{"row": 416, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General opinion that the app should be more user-friendly, without a specific failure."}
+{"row": 238, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "App logs the user out multiple times each day."}
+{"row": 40, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications are not arriving."}
+{"row": 27, "code": "privacy_spam", "raw_code": "privacy_spam", "confidence": "unsure", "notes": "Alleges the app/email account was compromised and emails sent to all Gmail contacts; security issue does not precisely match a listed code."}
+{"row": 13, "code": "crash_on_compose_or_edit", "raw_code": "crash_on_compose_or_edit", "confidence": "sure", "notes": "App crashes when opening the menu to edit a ticket after an update."}
+{"row": 288, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "unsure", "notes": "Tagging people does not work as on desktop and email signatures format incorrectly; mobile functionality differs from web."}
+{"row": 166, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "unsure", "notes": "Notifications are absent intermittently and sync is sometimes late."}
+{"row": 374, "code": "notif_toggle_broken", "raw_code": "notif_toggle_broken", "confidence": "sure", "notes": "Notification settings toggle loops and will not turn on."}
+{"row": 45, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Dislikes the new layout because new tickets are harder to distinguish and fewer tickets fit on screen."}
+{"row": 78, "code": "ticket_create_unavailable", "raw_code": "ticket_create_unavailable", "confidence": "sure", "notes": "Cannot create a new ticket in the current mobile app."}
+{"row": 69, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "unsure", "notes": "Says navigation is terrible and avoids the app in favor of the browser, with no precise navigation action described."}
+{"row": 377, "code": "calls_not_working", "raw_code": "calls_not_working", "confidence": "sure", "notes": "Cannot make or receive calls in the mobile app."}
+{"row": 278, "code": "crash_on_login", "raw_code": "crash_on_login", "confidence": "sure", "notes": "App crashes during biometric/PIN login attempts."}
+{"row": 52, "code": "pull_to_refresh_missing", "raw_code": "pull_to_refresh_missing", "confidence": "sure", "notes": "Pull-down refresh function has disappeared; also notes missing web-version features."}
+{"row": 243, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "sure", "notes": "Explicitly says SSO cannot be used."}
+{"row": 74, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "unsure", "notes": "Editing and sending email take too long; no specific sending failure is described."}
+{"row": 274, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "unsure", "notes": "Reports the app does not work on Android but gives no specific failure."}
+{"row": 309, "code": "crash_unspecified", "raw_code": "crash_unspecified", "confidence": "sure", "notes": "Says the app keeps crashing after a recent update without naming a trigger."}
+{"row": 419, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Cannot log in and only receives a generic \u201cPlease try again\u201d message."}
+{"row": 365, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Email/password login reports an error even though browser login works; Google login also fails."}
+{"row": 391, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "sure", "notes": "Reply text is lost when leaving the app; also reports the missing CC field."}
+{"row": 353, "code": "crash_on_login", "raw_code": "crash_on_login", "confidence": "sure", "notes": "App closes immediately after sign-in."}
+{"row": 219, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Vague negative opinion with no specific app failure."}
+{"row": 340, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Vague complaint about an update without describing a specific failure."}
+{"row": 50, "code": "crash_unspecified", "raw_code": "crash_unspecified", "confidence": "sure", "notes": "Reports repeated crashing but gives no trigger or further detail."}
+{"row": 226, "code": "pull_to_refresh_missing", "raw_code": "pull_to_refresh_missing", "confidence": "sure", "notes": "Pull-to-refresh is not working; also cannot see recently solved tickets and wants chat/text replies."}
+{"row": 236, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "No horizontal mode or screen rotation for tablet use."}
+{"row": 329, "code": "no_internet_false_error", "raw_code": "no_internet_false_error", "confidence": "sure", "notes": "App reports no internet despite other apps connecting; tickets often cannot be opened."}
+{"row": 202, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Dislikes the redesign and ticket/conversation organization; external ticket links also fail to open the specific ticket."}
+{"row": 136, "code": "assign_team_missing", "raw_code": "assign_team_missing", "confidence": "sure", "notes": "Cannot assign work to agents from the app."}
+{"row": 369, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Vague \u201cuseless\u201d opinion with no specific failure."}
+{"row": 300, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Sending a single reply takes many attempts / is extremely slow."}
+{"row": 101, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Says unable to update and locked out, but does not describe an update loop or the exact failure."}
+{"row": 332, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "App does not rotate to landscape on a tablet."}
+{"row": 384, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "After login the app opens the mobile browser/website instead of its native app interface."}
+{"row": 108, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "App reports the entered URL is invalid even though the user believes it is correct."}
+{"row": 223, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Mobile experience lacks web options and landscape mode."}
+{"row": 56, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "sure", "notes": "SSO sign-in does not complete after allowing it and returns an error."}
+{"row": 124, "code": "no_internet_false_error", "raw_code": "no_internet_false_error", "confidence": "unsure", "notes": "Tickets cannot be opened and the app reports no internet; the review does not clearly establish whether connectivity works elsewhere."}
+{"row": 35, "code": "ticket_search_broken", "raw_code": "ticket_search_broken", "confidence": "sure", "notes": "Valid ticket-number searches return no results; also reports broken ticket splitting, hidden CSAT ratings, and lack of external-link settings."}
+{"row": 317, "code": "no_internet_false_error", "raw_code": "no_internet_false_error", "confidence": "sure", "notes": "False \u201cno internet connection\u201d message prevents replying to incoming tickets."}
+{"row": 284, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Asks whether the app is paid or free; no failure reported."}
+{"row": 205, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General dislike without a specific problem."}
+{"row": 113, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Says the app is very limited but gives no particular missing feature."}
+{"row": 212, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Dislikes the new app and wants the old version back."}
+{"row": 401, "code": "review_popup", "raw_code": "review_popup", "confidence": "sure", "notes": "Repeated prompts ask the user to rate the app."}
+{"row": 102, "code": "forced_update_loop", "raw_code": "forced_update_loop", "confidence": "sure", "notes": "App repeatedly demands an update that is not available, locking the user out."}
+{"row": 449, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Several capabilities are missing, including marking spam, custom fields, and merging; no single more-specific code captures the main complaint."}
+{"row": 142, "code": "images_attachments_not_shown", "raw_code": "images_attachments_not_shown", "confidence": "sure", "notes": "Images in tickets do not render."}
+{"row": 311, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Vague negative opinion with no specific failure."}
+{"row": 421, "code": "install_fails", "raw_code": "install_fails", "confidence": "sure", "notes": "Unable to install the Freshdesk app."}
+{"row": 314, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Cannot apply a macro after an update."}
+{"row": 39, "code": "notif_toggle_broken", "raw_code": "notif_toggle_broken", "confidence": "sure", "notes": "Notification toggle in settings no longer works after reinstall/update."}
+{"row": 436, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Says login is not allowed but provides no further detail."}
+{"row": 321, "code": "notif_sound", "raw_code": "notif_sound", "confidence": "sure", "notes": "Notification alerts appear in the event log but sound stops playing."}
+{"row": 191, "code": "ticket_status_hidden", "raw_code": "ticket_status_hidden", "confidence": "sure", "notes": "Ticket status was removed from views; also complains the app was renamed and is hard to find."}
+{"row": 169, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Repeated invalid email/password error during sign-in."}
+{"row": 48, "code": "analytics_reports_broken", "raw_code": "analytics_reports_broken", "confidence": "sure", "notes": "Analytics filters are difficult or unreliable; also dislikes the app\u2019s generic renamed listing."}
+{"row": 285, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "unsure", "notes": "Says a raised ticket has not received a response, but does not identify a specific in-app malfunction."}
+{"row": 224, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Token-expired/revoked message repeatedly signs the user out."}
+{"row": 303, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "sure", "notes": "Text is lost when switching apps; text-entry window is also too small."}
+{"row": 307, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Reports problems with a ujet connection but gives no specific failure that matches a listed code."}
+{"row": 1, "code": "assign_team_missing", "raw_code": "assign_team_missing", "confidence": "sure", "notes": "Team assignment dropdown cannot be scrolled to select a team."}
+{"row": 409, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "sure", "notes": "Copy/paste is broken; changing ticket status is also difficult."}
+{"row": 204, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "unsure", "notes": "Email is not accepted, but the exact login error is not described."}
+{"row": 33, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Difficulty logging in without details about the error."}
+{"row": 70, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "\u201cBait and switch\u201d is too vague to identify a specific app problem."}
+{"row": 228, "code": "images_attachments_not_shown", "raw_code": "images_attachments_not_shown", "confidence": "sure", "notes": "Photos and attachments no longer appear in the app, though they appear on the web."}
+{"row": 93, "code": "crash_on_open", "raw_code": "crash_on_open", "confidence": "sure", "notes": "App crashes whenever it is opened."}
+{"row": 137, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "App is buggy, slow, and unresponsive."}
+{"row": 397, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Cannot log in, with no further details."}
+{"row": 85, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "App repeatedly forgets the login and requires signing in again."}
+{"row": 304, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "unsure", "notes": "Incoherent complaint appears to concern a blocked phone network/IMEI rather than a specific support-app issue."}
+{"row": 161, "code": "agent_availability_toggle", "raw_code": "agent_availability_toggle", "confidence": "sure", "notes": "Cannot change phone status; signing out/closing desktop toggles availability offline."}
+{"row": 83, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Says the app stopped working after an update without specifying what fails."}
+{"row": 207, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "unsure", "notes": "Reports frequent disconnections and general malfunction without a more specific listed symptom."}
+{"row": 107, "code": "stuck_loading", "raw_code": "stuck_loading", "confidence": "sure", "notes": "App hangs and will not open, even after reinstalling."}
+{"row": 225, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General usability opinion without a specific failure."}
+{"row": 194, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "sure", "notes": "Says this is not the app they were looking for."}
+{"row": 358, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "sure", "notes": "Complains that the company does not reply to questions."}
+{"row": 297, "code": "calls_not_working", "raw_code": "calls_not_working", "confidence": "sure", "notes": "Cannot make outgoing calls using the customer-service number; SMS ticket capability is also missing."}
+{"row": 293, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "sure", "notes": "Cannot copy text or links from tickets."}
+{"row": 327, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "unsure", "notes": "Sign-in fails with \u201cnot found,\u201d but the precise cause is unclear."}
+{"row": 153, "code": "pull_to_refresh_missing", "raw_code": "pull_to_refresh_missing", "confidence": "sure", "notes": "Cannot switch from automatic to manual refresh; view refreshes and delays moving between tickets."}
+{"row": 16, "code": "login_needs_browser", "raw_code": "login_needs_browser", "confidence": "sure", "notes": "App asks to install a browser for sign-in even though a browser exists; web sign-in works."}
+{"row": 313, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Requests sorting and grouping for work orders and clearer categories for on-hold/paused work orders."}
+{"row": 123, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Subdomain containing a hyphen cannot be entered."}
+{"row": 178, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "unsure", "notes": "Asks what happened to notifications, implying they are missing, but gives no detail."}
+{"row": 79, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "Must log in every time the app opens while using SSO."}
+{"row": 247, "code": "login_forced_google", "raw_code": "login_forced_google", "confidence": "sure", "notes": "App forces Google sign-in despite the organization not requiring it."}
+{"row": 355, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Access-revoked message blocks app login; also reports a page-not-found error when trying to purchase."}
+{"row": 388, "code": "notif_sound", "raw_code": "notif_sound", "confidence": "sure", "notes": "Cannot set a louder notification ringtone; also reports delayed ticket notifications."}
+{"row": 346, "code": "privacy_spam", "raw_code": "privacy_spam", "confidence": "sure", "notes": "Raises concern about numerous trackers and possible collection/sale of information."}
+{"row": 422, "code": "canned_responses_broken", "raw_code": "canned_responses_broken", "confidence": "sure", "notes": "Canned-response variables appear literally instead of being replaced with ticket metadata."}
+{"row": 333, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "unsure", "notes": "Poor tablet experience is mentioned, but no specific tablet failure is described."}
+{"row": 34, "code": "tickets_out_of_date", "raw_code": "tickets_out_of_date", "confidence": "sure", "notes": "Ticket views are consistently out of date, including statuses and replies."}
+{"row": 197, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "sure", "notes": "Pasting and dictation are buggy on Android."}
+{"row": 109, "code": "ticket_merge_bulk_missing", "raw_code": "ticket_merge_bulk_missing", "confidence": "unsure", "notes": "Says bulk actions are unavailable and tickets appear randomly; exact missing bulk operation is not specified."}
+{"row": 262, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Correct email/password are believed to be rejected during login."}
+{"row": 367, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "unsure", "notes": "Requests easier navigation and sorting across ticket groups; also wants all responses visible and a UI redesign."}
+{"row": 350, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "General negative opinion in Russian with no specific failure described."}
+{"row": 441, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Requests more space for adding pictures; no matching attachment-size/layout code is specific enough."}
+{"row": 25, "code": "notif_spurious_or_repeated", "raw_code": "notif_spurious_or_repeated", "confidence": "sure", "notes": "Repeated notifications arrive for old events with no new ticket updates."}
+{"row": 230, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Macros do not load."}
+{"row": 32, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Wants easy access to tickets they created, not only tickets assigned to them."}
+{"row": 213, "code": "back_button_navigation", "raw_code": "back_button_navigation", "confidence": "sure", "notes": "Back button does not return to the ticket list and requires restarting the app."}
+{"row": 55, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "App logs out immediately after login and cannot be used."}
+{"row": 371, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "sure", "notes": "Review concerns experiences with companies using Zendesk support, not a specific app failure."}
+{"row": 235, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "sure", "notes": "Corporate ADFS sign-in screen does not appear in the built-in browser after an update."}
+{"row": 220, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Access-revoked message blocks login; also mentions missing ticket merging and lost drafts."}
+{"row": 180, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "unsure", "notes": "User has no account and sees only a sign-in option, suggesting no clear sign-up path."}
+{"row": 15, "code": "review_popup", "raw_code": "review_popup", "confidence": "sure", "notes": "App prompts the user to rate it again through a popup."}
+{"row": 342, "code": "review_popup", "raw_code": "review_popup", "confidence": "sure", "notes": "Review/rating prompts interrupt use of the app."}
+{"row": 427, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Explicitly requests dark mode."}
+{"row": 248, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "sure", "notes": "SSO sign-in produces a blank white screen."}
+{"row": 103, "code": "forced_update_loop", "raw_code": "forced_update_loop", "confidence": "sure", "notes": "App demands an update even though the Play Store already has the latest version."}
+{"row": 20, "code": "analytics_reports_broken", "raw_code": "analytics_reports_broken", "confidence": "unsure", "notes": "A customized analytics report\u2019s ticket links/actions do not work as expected."}
+{"row": 413, "code": "install_fails", "raw_code": "install_fails", "confidence": "sure", "notes": "Unable to download the app."}
+{"row": 244, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "App is extremely slow."}
+{"row": 312, "code": "pull_to_refresh_missing", "raw_code": "pull_to_refresh_missing", "confidence": "sure", "notes": "Refresh/reload freezes and does not work."}
+{"row": 392, "code": "back_button_navigation", "raw_code": "back_button_navigation", "confidence": "sure", "notes": "Phone back key or back from an open ticket closes the app."}
+{"row": 106, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Reports missing canned messages, delayed chat ringing, and uncleared notifications; delayed chat alert is the main actionable issue."}
+{"row": 19, "code": "login_after_update", "raw_code": "login_after_update", "confidence": "sure", "notes": "Unable to log in after updating; no more specific login error is described."}
+{"row": 188, "code": "crash_on_login", "raw_code": "crash_on_login", "confidence": "sure", "notes": "App crashes during login and reinstalling does not resolve it."}
+{"row": 192, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Cannot sort or filter tickets by views/status; all open and closed tickets appear together."}
+{"row": 434, "code": "calls_not_working", "raw_code": "calls_not_working", "confidence": "sure", "notes": "Calls do not connect."}
+{"row": 360, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Login is blocked because the access token is expired or revoked."}
+{"row": 150, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Generic negative opinion with no specific failure described."}
+{"row": 184, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "unsure", "notes": "Cannot see all unsolved tickets for the past month; may be a view/filter limitation."}
+{"row": 165, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "sure", "notes": "Review accuses unrelated entities of scamming and does not describe a problem with the support app."}
+{"row": 41, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "sure", "notes": "Developers do not respond promptly to reported service issues."}
+{"row": 208, "code": "crash_unspecified", "raw_code": "crash_unspecified", "confidence": "sure", "notes": "Says the app keeps crashing without identifying a trigger."}
+{"row": 364, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Requests the ability to modify ticket content; no more specific editing failure is described."}
+{"row": 67, "code": "notif_sound", "raw_code": "notif_sound", "confidence": "sure", "notes": "Requests customizable notification sound."}
+{"row": 179, "code": "ticket_field_save_resets", "raw_code": "ticket_field_save_resets", "confidence": "unsure", "notes": "Organization field is missing and some field changes do not sync or are undone in the web interface."}
+{"row": 260, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications stopped working after a recent update."}
+{"row": 351, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Sign-in reports invalid credentials."}
+{"row": 382, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Receives an 'Access Revoked' message during app login."}
+{"row": 242, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "General negative opinion without a concrete app failure."}
+{"row": 415, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests dark mode because the current screen is uncomfortable for sensitive eyes."}
+{"row": 305, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Mobile app lacks call/technician monitoring and support-queue management available on the web."}
+{"row": 104, "code": "forced_update_loop", "raw_code": "forced_update_loop", "confidence": "sure", "notes": "App forces an update although Google Play has no update available."}
+{"row": 155, "code": "stuck_loading", "raw_code": "stuck_loading", "confidence": "sure", "notes": "After updating, app hangs on loading and views cannot be navigated."}
+{"row": 12, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "No notifications after update; reverting to the previous version restored them."}
+{"row": 252, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "unsure", "notes": "App is slow and stuck in portrait orientation; layout limitation is the specific complaint."}
+{"row": 261, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "sure", "notes": "SSO/OneLogin/MFA flow never redirects back to the app."}
+{"row": 143, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Login says the domain does not exist."}
+{"row": 433, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Cannot log in and only reports a generic error."}
+{"row": 403, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications are not working."}
+{"row": 72, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Cannot filter tickets by agent/name or custom fields in the mobile app."}
+{"row": 257, "code": "app_renamed", "raw_code": "app_renamed", "confidence": "sure", "notes": "Objects to the app appearing as 'Support' rather than Zendesk."}
+{"row": 240, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Says it is not logging the user in without further detail."}
+{"row": 376, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Mobile app limits users to their own tickets and lacks group tickets and macros."}
+{"row": 282, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "General UI/UX dissatisfaction without a specific functional failure."}
+{"row": 366, "code": "ticket_search_broken", "raw_code": "ticket_search_broken", "confidence": "sure", "notes": "Requests a way to find tickets other than scrolling through a list."}
+{"row": 393, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "unsure", "notes": "Complains of poor mobile compatibility generally; closest code is the layout/tablet limitation."}
+{"row": 174, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "unsure", "notes": "Email address is rejected as incorrect, but the exact login error is not specified."}
+{"row": 428, "code": "canned_responses_broken", "raw_code": "canned_responses_broken", "confidence": "sure", "notes": "Canned responses are unavailable in the mobile version; ticket notes/summary are also not visible."}
+{"row": 299, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "App is very slow."}
+{"row": 402, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "unsure", "notes": "Ticket has remained unresolved for over a week; likely a support/resolution delay."}
+{"row": 157, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Macros cannot be used; also mentions stale updates and sorting problems."}
+{"row": 51, "code": "back_button_navigation", "raw_code": "back_button_navigation", "confidence": "sure", "notes": "Back button does not exit the app as expected."}
+{"row": 145, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Unable to log in to check tickets, with no further detail."}
+{"row": 114, "code": "crash_on_open", "raw_code": "crash_on_open", "confidence": "sure", "notes": "App does not start."}
+{"row": 42, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Cannot filter open tickets."}
+{"row": 86, "code": "forced_update_loop", "raw_code": "forced_update_loop", "confidence": "unsure", "notes": "Update leads to a loop and the app is unusable; likely forced-update/update loop."}
+{"row": 88, "code": "crash_on_open", "raw_code": "crash_on_open", "confidence": "sure", "notes": "App fails to start after the latest update."}
+{"row": 84, "code": "ticket_search_broken", "raw_code": "ticket_search_broken", "confidence": "sure", "notes": "In-app search frequently returns a server error."}
+{"row": 250, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "unsure", "notes": "Describes a clunky, slow-to-use app; no narrower issue is clear."}
+{"row": 319, "code": "notif_delayed_or_screen_off", "raw_code": "notif_delayed_or_screen_off", "confidence": "sure", "notes": "Notifications arrive much later, when the phone is unlocked."}
+{"row": 438, "code": "notif_sound", "raw_code": "notif_sound", "confidence": "sure", "notes": "Requests the removed custom notification ringtone."}
+{"row": 195, "code": "stuck_loading", "raw_code": "stuck_loading", "confidence": "unsure", "notes": "Initial install shows only the sign-in button and back arrow, with no usable input."}
+{"row": 58, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests dark mode."}
+{"row": 115, "code": "images_attachments_not_shown", "raw_code": "images_attachments_not_shown", "confidence": "unsure", "notes": "Images do not display; also reports missing notifications and poor UI/UX."}
+{"row": 94, "code": "stuck_loading", "raw_code": "stuck_loading", "confidence": "sure", "notes": "After upgrade the app fails to load and shows a white screen."}
+{"row": 370, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Cannot see who is viewing a ticket in the mobile app."}
+{"row": 131, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Generic insult without a specific failure."}
+{"row": 126, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "App does not support landscape mode."}
+{"row": 66, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications pane shows no notifications after an update."}
+{"row": 277, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "unsure", "notes": "Text is difficult to zoom and interact with; closest fit is text/display interaction rather than a specific missing feature."}
+{"row": 8, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "New-ticket notifications do not appear."}
+{"row": 7, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "unsure", "notes": "App kicks the user out and password reset is difficult; repeated sign-out is the clearest issue."}
+{"row": 337, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "App repeatedly forgets login and requires reauthentication; also reports broken search, deep links, and views."}
+{"row": 159, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "unsure", "notes": "Login says 'no found' error; likely domain/account lookup issue but details are unclear."}
+{"row": 399, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "sure", "notes": "Review is about the Libon app and getting money back, not a customer-support app in this dataset."}
+{"row": 119, "code": "agent_availability_toggle", "raw_code": "agent_availability_toggle", "confidence": "unsure", "notes": "Starting the app does not always make the agent available; also mentions login, limited features, and UI."}
+{"row": 168, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Unclear, non-specific comment with no identifiable app failure."}
+{"row": 344, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "App opens in an embedded browser and will not keep the user logged in."}
+{"row": 95, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "unsure", "notes": "Vague complaint about the upgrade without a specific failure."}
+{"row": 279, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Inbox takes 5\u201310 minutes to update and the app spends long periods loading."}
+{"row": 49, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Login succeeds inconsistently but no precise cause or error is given."}
+{"row": 5, "code": "ticket_field_save_resets", "raw_code": "ticket_field_save_resets", "confidence": "sure", "notes": "Ticket type field resets when the user tries to save/close a ticket."}
+{"row": 121, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Says the app is literally broken without details."}
+{"row": 135, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Insult/rant with no specific failure."}
+{"row": 149, "code": "display_white_unreadable", "raw_code": "display_white_unreadable", "confidence": "sure", "notes": "White visual bug makes menu text unreadable."}
+{"row": 182, "code": "analytics_reports_broken", "raw_code": "analytics_reports_broken", "confidence": "unsure", "notes": "First-response-time metric appears stuck despite the user's reported response behavior."}
+{"row": 328, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Says the app is not working properly without details."}
+{"row": 381, "code": "ticket_status_hidden", "raw_code": "ticket_status_hidden", "confidence": "sure", "notes": "Ticket status colors were removed from the ticket list after an update."}
+{"row": 336, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Cannot type the subdomain."}
+{"row": 361, "code": "notif_sound", "raw_code": "notif_sound", "confidence": "sure", "notes": "Notification sound setting is ignored after an update; notifications may also be missing."}
+{"row": 446, "code": "calls_not_working", "raw_code": "calls_not_working", "confidence": "sure", "notes": "Click-to-call does not result in a call."}
+{"row": 231, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "unsure", "notes": "Unable to log in on a new phone and reports poor SSO integration; exact failure is not detailed."}
+{"row": 31, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Only says the app never works and gives a generic error."}
+{"row": 151, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "Login is intermittent and the app reports that the token has expired, signing the user out."}
+{"row": 133, "code": "login_forced_google", "raw_code": "login_forced_google", "confidence": "sure", "notes": "App requires Google sign-in even though the user's Zendesk login uses a different email."}
+{"row": 44, "code": "billing_plan_complaint", "raw_code": "billing_plan_complaint", "confidence": "sure", "notes": "Complains that paid plans are pushed on legacy users."}
+{"row": 190, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Macros cannot be used, forcing manual typing."}
+{"row": 343, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Cannot open tickets because they are marked unsupported."}
+{"row": 176, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Cannot use dual apps after upgrading to Android Pie; no more specific code fits."}
+{"row": 316, "code": "ticket_merge_bulk_missing", "raw_code": "ticket_merge_bulk_missing", "confidence": "sure", "notes": "Cannot merge multiple tickets in the Android app."}
+{"row": 386, "code": "cc_field_problem", "raw_code": "cc_field_problem", "confidence": "sure", "notes": "Cannot add CC email addresses unless they already exist in the system."}
+{"row": 442, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "unsure", "notes": "Describes inadequate onboarding/training and difficulty reaching support; support availability is the main actionable issue."}
+{"row": 345, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "unsure", "notes": "Asks for help getting started and signing up for an account; exact signup blocker is unclear."}
+{"row": 127, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "unsure", "notes": "Requests tablet support/side view; closest code is missing tablet layout."}
+{"row": 96, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "sure", "notes": "Google SSO enters an indefinite login loop for the account associated with the app."}
+{"row": 233, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Mobile views do not offer New/Open ticket filters."}
+{"row": 444, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "unsure", "notes": "Frequently prevented from logging in; exact error or trigger is not specified."}
+{"row": 81, "code": "forced_update_loop", "raw_code": "forced_update_loop", "confidence": "sure", "notes": "App forces an update that is not available, leaving it unusable."}
+{"row": 349, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "Angry general complaint about Zendesk's customer service without a specific app failure."}
+{"row": 286, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Cannot log in to an account that works on a computer, with no specific app error given."}
+{"row": 63, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests dark mode; uninstalled because it is absent."}
+{"row": 394, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Quick views are not available in the mobile app."}
+{"row": 420, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "The app logs the user out every time it is opened."}
+{"row": 271, "code": "install_fails", "raw_code": "install_fails", "confidence": "sure", "notes": "The app will not download."}
+{"row": 378, "code": "pull_to_refresh_missing", "raw_code": "pull_to_refresh_missing", "confidence": "unsure", "notes": "Reports a persistent refresh issue on a Lenovo tablet; exact refresh behavior is not specified."}
+{"row": 177, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Asks how to sign in without describing a specific error."}
+{"row": 445, "code": "display_white_unreadable", "raw_code": "display_white_unreadable", "confidence": "unsure", "notes": "Ticket threads with more than a few responses are unreadable; also reports generic app errors and dissatisfaction."}
+{"row": 404, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Opening the app takes longer than the web-based version."}
+{"row": 357, "code": "not_about_this_app", "raw_code": "not_about_this_app", "confidence": "sure", "notes": "The complaint is about the Zendesk web interface and switching its UI, not the mobile app."}
+{"row": 92, "code": "pull_to_refresh_missing", "raw_code": "pull_to_refresh_missing", "confidence": "sure", "notes": "Redesign appears to have broken pull-to-refresh; also mentions search and plan-incompatible Snooze."}
+{"row": 54, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "Reports slow performance; duplicate tickets are also mentioned."}
+{"row": 160, "code": "display_white_unreadable", "raw_code": "display_white_unreadable", "confidence": "sure", "notes": "Screen is described as blindingly white and the reply form/layout is difficult to use."}
+{"row": 17, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "sure", "notes": "Support staff are slow to fix issues and stop replying to emails."}
+{"row": 310, "code": "crash_on_compose_or_edit", "raw_code": "crash_on_compose_or_edit", "confidence": "sure", "notes": "The app crashes whenever the compose button is tapped to create a ticket."}
+{"row": 10, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "New notifications do not arrive after the latest update."}
+{"row": 245, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Prefers the older app version and asks to revert."}
+{"row": 362, "code": "login_access_revoked", "raw_code": "login_access_revoked", "confidence": "sure", "notes": "The app logs the user out with an access-token-revoked message; copy/paste and workflow issues are secondary."}
+{"row": 385, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests dark mode; also says gray text on white is difficult to read."}
+{"row": 431, "code": "login_after_update", "raw_code": "login_after_update", "confidence": "sure", "notes": "Cannot log in after reinstalling the app."}
+{"row": 186, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Macros do not work; ticket merging is also unavailable or problematic."}
+{"row": 62, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "unsure", "notes": "Says no tickets are received/visible, without explaining whether they are missing from the list or not assigned."}
+{"row": 210, "code": "text_input_buggy", "raw_code": "text_input_buggy", "confidence": "sure", "notes": "Keyboard and voice-to-text editing have deletion and spacing problems."}
+{"row": 206, "code": "crash_on_open", "raw_code": "crash_on_open", "confidence": "sure", "notes": "The app crashes when opened from a notification while trying to reply to a ticket."}
+{"row": 193, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Says the app has not worked since yesterday, without further detail."}
+{"row": 22, "code": "billing_plan_complaint", "raw_code": "billing_plan_complaint", "confidence": "sure", "notes": "Complains that the free plan agent limit was reduced from 10 to 2."}
+{"row": 229, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Frequently used macros are not retained; editing selected text is also problematic."}
+{"row": 43, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "unsure", "notes": "Says the latest version does not work, without describing a specific failure."}
+{"row": 98, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "Notifications do not arrive."}
+{"row": 173, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "Requests landscape/tablet support."}
+{"row": 241, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "Reports that tablet support is unavailable."}
+{"row": 412, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "unsure", "notes": "Has not received any tickets after using the app for ten days; it is unclear whether this is assignment or display behavior."}
+{"row": 325, "code": "login_credentials_rejected", "raw_code": "login_credentials_rejected", "confidence": "sure", "notes": "Correct credentials and address work in the browser but the app says the password is incorrect."}
+{"row": 294, "code": "login_subdomain_rejected", "raw_code": "login_subdomain_rejected", "confidence": "sure", "notes": "Cannot change the portal URL entered by mistake."}
+{"row": 162, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Macros are not working."}
+{"row": 132, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "sure", "notes": "Says the app is not working without further detail."}
+{"row": 443, "code": "install_fails", "raw_code": "install_fails", "confidence": "unsure", "notes": "The app asks to reinstall, but the store/app shows Open instead; reinstall flow is stuck."}
+{"row": 232, "code": "slow_performance", "raw_code": "slow_performance", "confidence": "sure", "notes": "The app is very slow in China even when using a VPN after an update."}
+{"row": 379, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Update worsened message spacing and details layout; prefers the older format."}
+{"row": 99, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "unsure", "notes": "Cannot log in and receives a Bad Request error, without enough detail to identify a more specific login category."}
+{"row": 400, "code": "app_not_working_unspecified", "raw_code": "app_not_working_unspecified", "confidence": "unsure", "notes": "An unexplained message appears and prevents any action; the error itself is not described."}
+{"row": 80, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Requests reverting recent design changes that hurt productivity."}
+{"row": 122, "code": "billing_plan_complaint", "raw_code": "billing_plan_complaint", "confidence": "sure", "notes": "Account trial is reported as already expired despite being created that day; support allegedly marked it resolved."}
+{"row": 448, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "Vague, mildly positive statement with no specific problem described."}
+{"row": 68, "code": "login_needs_browser", "raw_code": "login_needs_browser", "confidence": "sure", "notes": "The app says to install a browser even though the user is trying to sign in; support has not resolved it."}
+{"row": 200, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Reports unclear missing-field validation and inability to find dark mode; neither issue is described precisely enough for a more specific code."}
+{"row": 59, "code": "notif_not_received", "raw_code": "notif_not_received", "confidence": "sure", "notes": "New-ticket alerts do not appear."}
+{"row": 430, "code": "agent_availability_toggle", "raw_code": "agent_availability_toggle", "confidence": "sure", "notes": "The ticket/agent availability switch is missing."}
+{"row": 276, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Says not all features available in the app are available compared with the laptop/web version."}
+{"row": 46, "code": "notif_spurious_or_repeated", "raw_code": "notif_spurious_or_repeated", "confidence": "sure", "notes": "Notifications arrive when no tickets are queued and outside the selected notification hours."}
+{"row": 396, "code": "notif_delayed_or_screen_off", "raw_code": "notif_delayed_or_screen_off", "confidence": "sure", "notes": "Notifications do not appear when the screen is off."}
+{"row": 411, "code": "agent_availability_toggle", "raw_code": "agent_availability_toggle", "confidence": "sure", "notes": "Availability turns off automatically."}
+{"row": 100, "code": "ticket_close_reopens", "raw_code": "ticket_close_reopens", "confidence": "sure", "notes": "Adding a note closes the ticket unexpectedly; also reports the app lacks web-version functionality."}
+{"row": 339, "code": "dark_mode_missing", "raw_code": "dark_mode_missing", "confidence": "sure", "notes": "Requests dark mode."}
+{"row": 75, "code": "analytics_reports_broken", "raw_code": "analytics_reports_broken", "confidence": "sure", "notes": "Dashboard ticket counts are inconsistent and the current-day count is wrong."}
+{"row": 171, "code": "tickets_out_of_date", "raw_code": "tickets_out_of_date", "confidence": "sure", "notes": "New-ticket updates do not arrive until the user manually refreshes."}
+{"row": 318, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "unsure", "notes": "Generic complaint about the new update without a specific failure."}
+{"row": 3, "code": "crash_other_action", "raw_code": "crash_other_action", "confidence": "sure", "notes": "The app crashes/closes when disabling App Lock in settings."}
+{"row": 222, "code": "macros_not_working", "raw_code": "macros_not_working", "confidence": "sure", "notes": "Asks where the macro replies have gone."}
+{"row": 73, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "Calls the app a fake copy but gives no concrete failure."}
+{"row": 280, "code": "review_popup", "raw_code": "review_popup", "confidence": "sure", "notes": "The app repeatedly asks the user to rate it."}
+{"row": 146, "code": "crash_on_open", "raw_code": "crash_on_open", "confidence": "unsure", "notes": "Cannot open the app on mobile; the exact failure mechanism is not described."}
+{"row": 215, "code": "crash_on_login", "raw_code": "crash_on_login", "confidence": "sure", "notes": "The app repeatedly crashes while logging in."}
+{"row": 181, "code": "chat_problem", "raw_code": "chat_problem", "confidence": "sure", "notes": "The website chat closes/kicks customers out when they use the back button."}
+{"row": 266, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Cannot sign in, with no specific error described."}
+{"row": 281, "code": "crash_unspecified", "raw_code": "crash_unspecified", "confidence": "sure", "notes": "Reports many crashes without a particular trigger."}
+{"row": 57, "code": "notif_sound", "raw_code": "notif_sound", "confidence": "sure", "notes": "Notification sound plays for agent replies rather than only incoming customer emails; sorting is also unreliable."}
+{"row": 170, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "The update makes it difficult to tell who responded to whom; asks to revert."}
+{"row": 234, "code": "no_tablet_landscape", "raw_code": "no_tablet_landscape", "confidence": "sure", "notes": "Reports tablet version is unavailable."}
+{"row": 398, "code": "login_after_update", "raw_code": "login_after_update", "confidence": "unsure", "notes": "Cannot log in as in the older version; update-related cause is implied but not confirmed."}
+{"row": 405, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Cannot filter open/pending tickets by the current agent and desired statuses."}
+{"row": 308, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "unsure", "notes": "General negative opinion of the app and preference for using the mobile browser; no specific failure."}
+{"row": 330, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "General negative opinion without a specific failure."}
+{"row": 359, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Ticket list refreshes, but opening a ticket returns a connection error so ticket details cannot be viewed."}
+{"row": 28, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Ticket filtering is unavailable in the app, requiring the web version."}
+{"row": 424, "code": "ticket_filter_sort_missing", "raw_code": "ticket_filter_sort_missing", "confidence": "sure", "notes": "Requests a filter option."}
+{"row": 295, "code": "account_signup_problem", "raw_code": "account_signup_problem", "confidence": "sure", "notes": "Cannot create an account because phone-number entry is required and validation rejects the number."}
+{"row": 167, "code": "login_unspecified", "raw_code": "login_unspecified", "confidence": "sure", "notes": "Does not understand how to log in; no specific error described."}
+{"row": 375, "code": "login_forced_google", "raw_code": "login_forced_google", "confidence": "sure", "notes": "Says their organization does not use Google and objects to the new app/login experience; also mentions views and notifications."}
+{"row": 60, "code": "tickets_not_showing", "raw_code": "tickets_not_showing", "confidence": "sure", "notes": "Tickets do not appear immediately and loading takes a long time."}
+{"row": 253, "code": "no_internet_false_error", "raw_code": "no_internet_false_error", "confidence": "unsure", "notes": "Cannot connect for 15 minutes, but the review does not establish that internet connectivity otherwise works."}
+{"row": 140, "code": "back_button_navigation", "raw_code": "back_button_navigation", "confidence": "sure", "notes": "Cannot return to the ticket list after opening tickets from notifications; ticket-type selection and partial copying are secondary issues."}
+{"row": 61, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "sure", "notes": "Asks how to raise tickets on Android; no failure is reported."}
+{"row": 246, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Says important Zendesk features are unavailable in the app."}
+{"row": 9, "code": "crash_notification_settings", "raw_code": "crash_notification_settings", "confidence": "sure", "notes": "The app crashes/restarts when selecting a time for the notification schedule."}
+{"row": 90, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Several customer/message-management actions available on desktop are missing from the app."}
+{"row": 298, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "General recommendation against the app with no specific failure described."}
+{"row": 218, "code": "login_sso_fails", "raw_code": "login_sso_fails", "confidence": "unsure", "notes": "A work D365-connected login redirects to the browser and cannot be used in the mobile app; exact SSO mechanism is unclear."}
+{"row": 116, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Requests more settings and notification options than the basic app provides; battery usage is a secondary complaint."}
+{"row": 439, "code": "canned_responses_broken", "raw_code": "canned_responses_broken", "confidence": "sure", "notes": "Canned responses do not sync correctly with links."}
+{"row": 356, "code": "login_session_not_kept", "raw_code": "login_session_not_kept", "confidence": "sure", "notes": "The login token is lost on every launch and the user must sign in again."}
+{"row": 11, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "General dissatisfaction and intent to switch systems, without a specific app failure."}
+{"row": 287, "code": "not_a_problem", "raw_code": "not_a_problem", "confidence": "unsure", "notes": "Still learning the app and does not describe a problem."}
+{"row": 335, "code": "ticket_merge_bulk_missing", "raw_code": "ticket_merge_bulk_missing", "confidence": "sure", "notes": "Cannot mass-edit or merge tickets; token issue is reported as resolved."}
+{"row": 185, "code": "other", "raw_code": "other", "confidence": "unsure", "notes": "Inbound customer emails are not being routed to the account; this appears to be an email-ingestion/routing issue not otherwise covered by the codebook."}
+{"row": 214, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Reports missing reports, exploration and settings compared with desktop; landscape support is also lacking."}
+{"row": 2, "code": "analytics_reports_broken", "raw_code": "analytics_reports_broken", "confidence": "sure", "notes": "Reports missing reporting features and broken widgets; general ticket-handling usability issues are secondary."}
+{"row": 203, "code": "redesign_disliked", "raw_code": "redesign_disliked", "confidence": "sure", "notes": "Dislikes the new design because content is hard to see/find and it causes confusion about which tickets teammates have taken."}
+{"row": 183, "code": "assign_team_missing", "raw_code": "assign_team_missing", "confidence": "unsure", "notes": "Wants tickets visible to the whole group rather than assigned to individual agents; also reports that support did not respond about plan questions."}
+{"row": 269, "code": "missing_features_vs_web", "raw_code": "missing_features_vs_web", "confidence": "sure", "notes": "Reports missing task, contact and account-management features and prefers the web version."}
+{"row": 363, "code": "support_no_response", "raw_code": "support_no_response", "confidence": "sure", "notes": "Support/sales repeatedly promised to contact the user but never followed through."}

@@ -1,0 +1,21 @@
+pair_precision,pair_recall,pair_f1,cases,contaminated_cases,cross_issue_assignments,pipeline,split_seed,threshold
+0.7692307692307693,0.06389776357827476,0.11799410029498524,229,4,4,online-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.72
+0.7037037037037037,0.06070287539936102,0.11176470588235293,227,6,6,batch-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.7
+1.0,0.0,0.0,249,0,0,online-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.94
+1.0,0.0,0.0,249,0,0,batch-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.94
+0.8421052631578947,0.04610951008645533,0.08743169398907102,240,2,2,online-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.74
+0.8421052631578947,0.04610951008645533,0.08743169398907102,240,2,2,batch-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.74
+0.5,0.004291845493562232,0.00851063829787234,240,1,1,online-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.88
+0.5,0.004291845493562232,0.00851063829787234,240,1,1,batch-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.88
+0.8421052631578947,0.07582938388625593,0.13913043478260873,214,2,2,online-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.72
+0.85,0.08056872037914692,0.1471861471861472,213,2,2,batch-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.7
+0.0,0.0,0.0,268,1,1,online-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.88
+0.0,0.0,0.0,268,1,1,batch-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.88
+1.0,0.0,0.0,254,0,0,online-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.88
+1.0,0.0,0.0,254,0,0,batch-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.88
+0.8787878787878788,0.1070110701107011,0.1907894736842105,222,3,3,online-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.72
+0.8709677419354839,0.0996309963099631,0.17880794701986755,222,3,3,batch-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.72
+0.8571428571428571,0.11726384364820847,0.20630372492836677,225,4,4,online-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.7
+0.8260869565217391,0.18566775244299674,0.30319148936170215,210,10,10,batch-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.66
+1.0,0.06593406593406594,0.12371134020618557,228,0,0,online-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.72
+0.95,0.0695970695970696,0.12969283276450513,225,1,1,batch-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.7

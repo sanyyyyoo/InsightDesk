@@ -1,0 +1,339 @@
+judge,split_seed,held_out_half,complaint_ref,case
+llm,lopo,Zoho Desk,1,0
+llm,lopo,Zoho Desk,2,1
+llm,lopo,Zoho Desk,76,2
+llm,lopo,Zoho Desk,84,3
+llm,lopo,Zoho Desk,89,4
+llm,lopo,Zoho Desk,95,5
+llm,lopo,Zoho Desk,123,6
+llm,lopo,Zoho Desk,155,7
+llm,lopo,Zoho Desk,160,8
+llm,lopo,Zoho Desk,172,9
+llm,lopo,Zoho Desk,173,10
+llm,lopo,Zoho Desk,178,11
+llm,lopo,Zoho Desk,185,12
+llm,lopo,Zoho Desk,186,13
+llm,lopo,Zoho Desk,211,14
+llm,lopo,Zoho Desk,218,15
+llm,lopo,Zoho Desk,234,16
+llm,lopo,Zoho Desk,244,17
+llm,lopo,Zoho Desk,285,18
+llm,lopo,Zoho Desk,290,19
+llm,lopo,Zoho Desk,302,20
+llm,lopo,Zoho Desk,335,21
+llm,lopo,Zendesk,3,0
+llm,lopo,Zendesk,4,1
+llm,lopo,Zendesk,5,2
+llm,lopo,Zendesk,6,3
+llm,lopo,Zendesk,7,4
+llm,lopo,Zendesk,8,1
+llm,lopo,Zendesk,9,5
+llm,lopo,Zendesk,10,6
+llm,lopo,Zendesk,11,7
+llm,lopo,Zendesk,12,4
+llm,lopo,Zendesk,13,3
+llm,lopo,Zendesk,14,8
+llm,lopo,Zendesk,15,9
+llm,lopo,Zendesk,16,10
+llm,lopo,Zendesk,17,11
+llm,lopo,Zendesk,18,12
+llm,lopo,Zendesk,19,4
+llm,lopo,Zendesk,20,13
+llm,lopo,Zendesk,21,14
+llm,lopo,Zendesk,22,15
+llm,lopo,Zendesk,23,16
+llm,lopo,Zendesk,24,6
+llm,lopo,Zendesk,25,17
+llm,lopo,Zendesk,26,18
+llm,lopo,Zendesk,27,19
+llm,lopo,Zendesk,28,20
+llm,lopo,Zendesk,29,4
+llm,lopo,Zendesk,30,4
+llm,lopo,Zendesk,31,4
+llm,lopo,Zendesk,32,4
+llm,lopo,Zendesk,33,4
+llm,lopo,Zendesk,34,4
+llm,lopo,Zendesk,36,21
+llm,lopo,Zendesk,39,10
+llm,lopo,Zendesk,40,22
+llm,lopo,Zendesk,41,23
+llm,lopo,Zendesk,42,24
+llm,lopo,Zendesk,43,25
+llm,lopo,Zendesk,44,26
+llm,lopo,Zendesk,45,27
+llm,lopo,Zendesk,46,24
+llm,lopo,Zendesk,47,10
+llm,lopo,Zendesk,48,28
+llm,lopo,Zendesk,49,29
+llm,lopo,Zendesk,55,23
+llm,lopo,Zendesk,59,30
+llm,lopo,Zendesk,61,31
+llm,lopo,Zendesk,62,32
+llm,lopo,Zendesk,63,10
+llm,lopo,Zendesk,64,33
+llm,lopo,Zendesk,65,34
+llm,lopo,Zendesk,66,33
+llm,lopo,Zendesk,67,35
+llm,lopo,Zendesk,68,36
+llm,lopo,Zendesk,70,37
+llm,lopo,Zendesk,71,33
+llm,lopo,Zendesk,72,4
+llm,lopo,Zendesk,74,23
+llm,lopo,Zendesk,77,38
+llm,lopo,Zendesk,78,39
+llm,lopo,Zendesk,79,40
+llm,lopo,Zendesk,80,41
+llm,lopo,Zendesk,82,42
+llm,lopo,Zendesk,83,43
+llm,lopo,Zendesk,85,44
+llm,lopo,Zendesk,86,37
+llm,lopo,Zendesk,87,45
+llm,lopo,Zendesk,88,46
+llm,lopo,Zendesk,90,47
+llm,lopo,Zendesk,91,48
+llm,lopo,Zendesk,92,49
+llm,lopo,Zendesk,93,50
+llm,lopo,Zendesk,94,38
+llm,lopo,Zendesk,96,51
+llm,lopo,Zendesk,99,10
+llm,lopo,Zendesk,100,52
+llm,lopo,Zendesk,101,53
+llm,lopo,Zendesk,102,54
+llm,lopo,Zendesk,103,10
+llm,lopo,Zendesk,104,53
+llm,lopo,Zendesk,105,10
+llm,lopo,Zendesk,106,28
+llm,lopo,Zendesk,107,55
+llm,lopo,Zendesk,109,56
+llm,lopo,Zendesk,110,57
+llm,lopo,Zendesk,111,58
+llm,lopo,Zendesk,112,22
+llm,lopo,Zendesk,113,22
+llm,lopo,Zendesk,114,59
+llm,lopo,Zendesk,115,60
+llm,lopo,Zendesk,121,10
+llm,lopo,Zendesk,122,61
+llm,lopo,Zendesk,125,62
+llm,lopo,Zendesk,126,63
+llm,lopo,Zendesk,127,64
+llm,lopo,Zendesk,131,65
+llm,lopo,Zendesk,132,66
+llm,lopo,Zendesk,133,67
+llm,lopo,Zendesk,134,68
+llm,lopo,Zendesk,135,69
+llm,lopo,Zendesk,139,70
+llm,lopo,Zendesk,140,71
+llm,lopo,Zendesk,141,72
+llm,lopo,Zendesk,147,7
+llm,lopo,Zendesk,149,73
+llm,lopo,Zendesk,150,74
+llm,lopo,Zendesk,153,75
+llm,lopo,Zendesk,156,76
+llm,lopo,Zendesk,157,77
+llm,lopo,Zendesk,159,78
+llm,lopo,Zendesk,162,79
+llm,lopo,Zendesk,164,80
+llm,lopo,Zendesk,175,81
+llm,lopo,Zendesk,177,82
+llm,lopo,Zendesk,179,83
+llm,lopo,Zendesk,187,84
+llm,lopo,Zendesk,189,85
+llm,lopo,Zendesk,190,86
+llm,lopo,Zendesk,200,87
+llm,lopo,Zendesk,201,88
+llm,lopo,Zendesk,203,89
+llm,lopo,Zendesk,206,90
+llm,lopo,Zendesk,212,91
+llm,lopo,Zendesk,215,92
+llm,lopo,Zendesk,220,4
+llm,lopo,Zendesk,222,50
+llm,lopo,Zendesk,223,62
+llm,lopo,Zendesk,224,93
+llm,lopo,Zendesk,226,94
+llm,lopo,Zendesk,227,10
+llm,lopo,Zendesk,229,95
+llm,lopo,Zendesk,231,96
+llm,lopo,Zendesk,232,50
+llm,lopo,Zendesk,235,97
+llm,lopo,Zendesk,236,98
+llm,lopo,Zendesk,237,99
+llm,lopo,Zendesk,239,100
+llm,lopo,Zendesk,243,101
+llm,lopo,Zendesk,245,102
+llm,lopo,Zendesk,246,103
+llm,lopo,Zendesk,247,104
+llm,lopo,Zendesk,249,105
+llm,lopo,Zendesk,251,106
+llm,lopo,Zendesk,252,107
+llm,lopo,Zendesk,254,108
+llm,lopo,Zendesk,256,109
+llm,lopo,Zendesk,262,110
+llm,lopo,Zendesk,263,93
+llm,lopo,Zendesk,264,111
+llm,lopo,Zendesk,266,50
+llm,lopo,Zendesk,269,112
+llm,lopo,Zendesk,270,113
+llm,lopo,Zendesk,271,114
+llm,lopo,Zendesk,272,115
+llm,lopo,Zendesk,276,10
+llm,lopo,Zendesk,280,116
+llm,lopo,Zendesk,281,117
+llm,lopo,Zendesk,283,118
+llm,lopo,Zendesk,289,119
+llm,lopo,Zendesk,291,120
+llm,lopo,Zendesk,294,121
+llm,lopo,Zendesk,296,122
+llm,lopo,Zendesk,298,123
+llm,lopo,Zendesk,300,124
+llm,lopo,Zendesk,301,22
+llm,lopo,Zendesk,303,125
+llm,lopo,Zendesk,304,126
+llm,lopo,Zendesk,306,84
+llm,lopo,Zendesk,307,127
+llm,lopo,Zendesk,309,93
+llm,lopo,Zendesk,311,128
+llm,lopo,Zendesk,313,129
+llm,lopo,Zendesk,315,130
+llm,lopo,Zendesk,317,131
+llm,lopo,Zendesk,318,132
+llm,lopo,Zendesk,319,133
+llm,lopo,Zendesk,320,134
+llm,lopo,Zendesk,321,135
+llm,lopo,Zendesk,322,132
+llm,lopo,Zendesk,328,136
+llm,lopo,Zendesk,330,137
+llm,lopo,Zendesk,332,138
+llm,lopo,Zendesk,336,139
+llm,lopo,Zendesk,338,140
+llm,lopo,Help Scout,35,0
+llm,lopo,Help Scout,37,0
+llm,lopo,Help Scout,38,1
+llm,lopo,Help Scout,50,2
+llm,lopo,Help Scout,51,2
+llm,lopo,Help Scout,52,3
+llm,lopo,Help Scout,53,4
+llm,lopo,Help Scout,54,5
+llm,lopo,Help Scout,56,6
+llm,lopo,Help Scout,57,7
+llm,lopo,Help Scout,58,8
+llm,lopo,Help Scout,60,2
+llm,lopo,Help Scout,69,9
+llm,lopo,Help Scout,73,10
+llm,lopo,Help Scout,97,11
+llm,lopo,Help Scout,98,12
+llm,lopo,Help Scout,108,13
+llm,lopo,Help Scout,295,14
+llm,lopo,Help Scout,297,15
+llm,lopo,Help Scout,316,16
+llm,lopo,Help Scout,326,17
+llm,lopo,LiveAgent,75,0
+llm,lopo,LiveAgent,81,1
+llm,lopo,LiveAgent,151,0
+llm,lopo,LiveAgent,163,2
+llm,lopo,LiveAgent,205,3
+llm,lopo,LiveAgent,207,4
+llm,lopo,LiveAgent,209,5
+llm,lopo,LiveAgent,225,6
+llm,lopo,Freshdesk,116,0
+llm,lopo,Freshdesk,117,1
+llm,lopo,Freshdesk,118,2
+llm,lopo,Freshdesk,119,3
+llm,lopo,Freshdesk,120,4
+llm,lopo,Freshdesk,124,5
+llm,lopo,Freshdesk,128,6
+llm,lopo,Freshdesk,129,1
+llm,lopo,Freshdesk,136,7
+llm,lopo,Freshdesk,137,8
+llm,lopo,Freshdesk,138,9
+llm,lopo,Freshdesk,142,10
+llm,lopo,Freshdesk,143,11
+llm,lopo,Freshdesk,144,12
+llm,lopo,Freshdesk,145,0
+llm,lopo,Freshdesk,146,0
+llm,lopo,Freshdesk,148,13
+llm,lopo,Freshdesk,152,10
+llm,lopo,Freshdesk,154,10
+llm,lopo,Freshdesk,158,14
+llm,lopo,Freshdesk,161,0
+llm,lopo,Freshdesk,165,15
+llm,lopo,Freshdesk,166,16
+llm,lopo,Freshdesk,167,16
+llm,lopo,Freshdesk,168,17
+llm,lopo,Freshdesk,170,18
+llm,lopo,Freshdesk,171,19
+llm,lopo,Freshdesk,174,20
+llm,lopo,Freshdesk,176,21
+llm,lopo,Freshdesk,180,22
+llm,lopo,Freshdesk,181,23
+llm,lopo,Freshdesk,182,24
+llm,lopo,Freshdesk,183,1
+llm,lopo,Freshdesk,184,25
+llm,lopo,Freshdesk,191,26
+llm,lopo,Freshdesk,192,27
+llm,lopo,Freshdesk,193,28
+llm,lopo,Freshdesk,194,29
+llm,lopo,Freshdesk,195,30
+llm,lopo,Freshdesk,196,24
+llm,lopo,Freshdesk,197,31
+llm,lopo,Freshdesk,198,32
+llm,lopo,Freshdesk,199,33
+llm,lopo,Freshdesk,202,34
+llm,lopo,Freshdesk,204,9
+llm,lopo,Freshdesk,208,35
+llm,lopo,Freshdesk,210,36
+llm,lopo,Freshdesk,213,23
+llm,lopo,Freshdesk,214,23
+llm,lopo,Freshdesk,216,37
+llm,lopo,Freshdesk,217,38
+llm,lopo,Freshdesk,219,39
+llm,lopo,Freshdesk,221,40
+llm,lopo,Freshdesk,228,23
+llm,lopo,Freshdesk,230,41
+llm,lopo,Freshdesk,233,42
+llm,lopo,Freshdesk,238,43
+llm,lopo,Freshdesk,240,0
+llm,lopo,Freshdesk,241,44
+llm,lopo,Freshdesk,242,45
+llm,lopo,Freshdesk,248,46
+llm,lopo,Freshdesk,255,47
+llm,lopo,Freshdesk,257,9
+llm,lopo,Freshdesk,258,9
+llm,lopo,Freshdesk,259,0
+llm,lopo,Freshdesk,260,48
+llm,lopo,Freshdesk,261,49
+llm,lopo,Freshdesk,265,50
+llm,lopo,Freshdesk,267,0
+llm,lopo,Freshdesk,268,0
+llm,lopo,Freshdesk,273,51
+llm,lopo,Freshdesk,274,23
+llm,lopo,Freshdesk,275,52
+llm,lopo,Freshdesk,277,53
+llm,lopo,Freshdesk,278,54
+llm,lopo,Freshdesk,279,55
+llm,lopo,Freshdesk,282,56
+llm,lopo,Freshdesk,284,9
+llm,lopo,Freshdesk,286,9
+llm,lopo,Freshdesk,287,0
+llm,lopo,Freshdesk,288,57
+llm,lopo,Freshdesk,292,58
+llm,lopo,Freshdesk,293,59
+llm,lopo,Freshdesk,299,60
+llm,lopo,Freshdesk,305,61
+llm,lopo,Freshdesk,308,62
+llm,lopo,Freshdesk,310,63
+llm,lopo,Freshdesk,312,64
+llm,lopo,Freshdesk,314,65
+llm,lopo,Freshdesk,323,66
+llm,lopo,Freshdesk,324,67
+llm,lopo,Freshdesk,325,48
+llm,lopo,Freshdesk,327,68
+llm,lopo,Freshdesk,329,69
+llm,lopo,Freshdesk,331,70
+llm,lopo,Freshdesk,333,71
+llm,lopo,Freshdesk,334,72
+llm,lopo,Freshdesk,337,73
+llm,lopo,HappyFox,130,0
+llm,lopo,HappyFox,169,1
+llm,lopo,HappyFox,188,2
+llm,lopo,HappyFox,250,3
+llm,lopo,HappyFox,253,4

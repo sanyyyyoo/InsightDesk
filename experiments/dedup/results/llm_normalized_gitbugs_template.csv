@@ -1,0 +1,501 @@
+complaint_ref,issue_statement
+1,"PHP autocompletion adds double dollar sign to variables (e.g., $_GET → $$_GET)."
+2,Copying files/directories resets permissions to 644 on Linux and macOS.
+3,Breakpoints without source maps shift position and lack unverified indication.
+4,Docked window reverts to original position when opening files.
+5,Windows test fails for ExtHostTypes URI toJSON serialization.
+6,Hiding menu bar gives no hint on how to show it again.
+7,VS Code Alpha not listed in Application Installer after RPM installation on CentOS6.
+8,Extensions cannot override language name; Python intellisense and MagicPython styling fail.
+9,German debug sidebar incorrectly translates 'Block' as 'Blockieren'.
+10,Rapid Ctrl+S presses open duplicate save dialogs for the same file.
+11,Extension Marketplace fails with getaddrinfo ENOTFOUND marketplace.visualstudio.com error behind NTLM proxy.
+12,Editor text selection needs two clicks when integrated terminal is open on macOS.
+13,Find command (Cmd-F) overwrites search text with word under cursor after editing.
+14,New terminal shows brief 'undefined' message upon creation.
+15,Smoke test displays warning in default settings.
+16,IntelliSense suggestion window jumps when near bottom of editor on every keydown.
+17,Node.js debugger detaches after stopping and restarting the application.
+18,Shift+Delete (Alt+Delete on Mac) fails to bypass trash.
+19,Git staging shows 'There was an issue running a git operation' error under concurrent actions.
+20,Exception view zone overlaps characters in editor.
+21,Minimap enabled prevents smooth text selection; must drag over minimap to select line.
+22,"Toggled menu bar causes first theme selection click to be ignored, menu does not apply."
+23,"Settings examples use single quotes, triggering 'Property keys must be doublequoted' error."
+24,CSS intellisense fails to suggest -moz- properties when typing 'moz'.
+25,Git push dialog appears and executes despite no local changes to push.
+26,Extension Host termination shows no crash details or guidance for user.
+27,Terminal context menu copy command is incorrectly disabled.
+28,Bold text in integrated terminal causes selection offset and extra characters on copy.
+29,File events missing on mounted network drive; changes not reflected in editor.
+30,"Leaving and returning to diff editor resets scrollbar to first change, losing position."
+31,SCM branch creation prompts repository selection again after initial choice.
+32,Markdown bullet collapse shows [??] instead of emoji.
+33,git.enabled supports per‑folder resource setting in multi‑folder workspaces.
+34,Hiding Breakpoints view then reloading breaks Debug viewlet.
+35,Git branch indicator stays on master when .git is outside opened folders.
+36,"Cursor click area at line start is too narrow, causing misclicks."
+37,Emmet expands CSS property to text‑emphasis instead of text‑overflow.
+38,"Invalid search location does not default to sidebar, remains unchanged."
+39,Show Notifications with zero messages displays cut‑off header.
+40,Chinese input on Linux causes VS Code to crash and become unresponsive.
+41,Extension host window close does not terminate debug session.
+42,Settings editor titles overflow beyond container.
+43,"""window.restoreFullscreen"": false ignored; window opens maximized after restart."
+44,"Settings UI text contrast below 4.5:1 ratio, failing accessibility standards."
+45,Dragging files onto empty explorer opens folder but ignores file.
+46,"Language pack prompt appears only in English, not in OS language."
+47,NVDA reads menu bar mnemonics as spaces when hovering with mouse.
+48,Native menu shows no keybindings after clean install; changes not reflected.
+49,Middle-click close tab closes empty group despite workbench.editor.closeEmptyGroups=false.
+50,Keybinding command text unreadable in light theme when row selected.
+51,Git: 'Could not hash object' error when staging selected line ranges
+52,Git: Branch switch during sync auto-merges feature1 changes into dev
+53,"Emmet: Expansion fails inside JSX inline functions, menu command unresponsive"
+54,"Alt key forces menu bar focus despite disable setting, breaking quickpick commands"
+55,"Markdown preview loses scroll position, resets to top after tab switch"
+56,JavaScript: if/else and loop keywords no longer highlighted
+57,Multi-root workspace Cmd+click uses invalid path with extra slash
+58,"macOS HTML view load causes complete freeze, unresponsive until force quit"
+59,Emmet: ($@-) count down multiplier expands incorrectly
+60,Debug toolbar entry not suggested in menu contribution point
+61,Terminal rendering shows corrupt texture after system resume from sleep.
+62,Extensions viewlet fails to display built-in extension when searching by its ID.
+63,Download page shows incorrect SHA-256 hash for VSCode 1.33.0 macOS zip.
+64,Update fails with SSL error when behind a MITM company proxy.
+65,Terminal: Clear does not remove previous output when re-running a Python file.
+66,Closing a conpty terminal may hang the VS Code window.
+67,Dragging file into WSL terminal inserts backslash path separators instead of forward slashes.
+68,Remote terminal fails to start on launch when Integrated:Cwd uses unresolved $(workspaceFolder).
+69,Two launch configurations sharing a preLaunchTask cause 'already running' warning.
+70,Markdown preview scrolling does not sync with editor on iPadOS.
+71,"Settings Sync login shows blank browser page, no content, requires returning to VSCode to confirm."
+72,File deletion in VS Code lacks Put Back option in macOS Trash.
+73,"Search Editor registers as working copy after saving, causing duplicate working copies."
+74,"Tasks list ordered alphabetically; request custom order: User, Workspace, Folder tasks."
+75,Sidebar cannot be dragged out when activity bar and sidebar hidden (VS Code 1.43).
+76,"Multiple npm tasks with identical script resolve to single entry, causing dependent task resolution errors."
+77,Chinese input method does not produce characters in VS Code on Linux snap.
+78,Closing dirty notebook without saving loses data; backup not implemented.
+79,Git Pull From command does nothing despite git.fetchOnPull=true setting.
+80,executeTask provides no completion notification when a dependent task fails.
+81,"Terminal text becomes blurry after upgrade to 1.45.0, fixed by toggling maximize."
+82,Custom editor crashes when single-folder workspace is extended to multi-folder.
+83,Issue editor fails to restore; selecting after reload shows missing file system provider error.
+84,workbench.editorAssociations setting breaks git diff view highlighting and editor locking.
+85,WebView tab cannot be moved down easily to create a new editor group.
+86,Pinning dynamic configuration in launch.json removes trailing commas and comments.
+87,"Whitespace rendering in JSON file affects bidi layout, causing incorrect emoji display."
+88,Hovering over large terminal links causes UI lag.
+89,Alt-click in terminal inserts repeated ^[[D escape sequences.
+90,Quick picker edit field not read by screen readers when typing or backspacing.
+91,Notebook code cell shows black horizontal line at bottom after execution.
+92,Multiple tasks sharing same dependency cause duplicate dependency runs and terminal conflicts.
+93,DebugAdapterTrackers code triggers debugger timeout break during extension debugging.
+94,"Overview ruler ignores debugIcon.breakpointForeground, breakpoint always appears red."
+95,Integrated Terminal experiences intermittent lag and long stutter during rapid typing.
+96,Copy from markdown preview pastes only blank space instead of selected text.
+97,PR extension shows errors on left side when reviewing TypeScript file changes.
+98,Source Code Pro renders 'l·l' ligature incorrectly when whitespace rendering is enabled.
+99,Debug Adapter creation times out when running mock debugger on VS Code 1.49/1.50.
+100,"Editor scroll, typing, and find operations are sluggish with delayed screen updates."
+101,Web terminal appears blurry in Safari when running `yarn web` and opening integrated terminal.
+102,"Editor hover aligns to wrong editor when horizontally scrolled, showing hover over left editor."
+103,Terminal shows garbled characters after alt‑clicking a link in HTML preview.
+104,"VS Code terminal runs PowerShell scripts slowly, output lags compared to external terminals."
+105,Terminal details disappear after running Python script; later output stops showing.
+106,Terminal freezes and spikes to 100% CPU when catting a binary file (node).
+107,Sync settings sign‑in fails; Microsoft Account extension error: 'The stub received bad data.'
+108,"Publish to GitHub creates repo but pushes nothing; no error shown, upstream not configured."
+109,Window remains zoomed in after reload following zoom out; reload does not reset zoom.
+110,Editor reverts to custom editor after dragging; 'Open with…' selection not remembered.
+111,Settings Sync shows account signed out after enabling while running from sources.
+112,Integrated terminal experiences frequent lag every 10–30 seconds with no extensions.
+113,Emmet descending order list shortcut fails to produce expected output.
+114,Remote drag-and-drop inserts Windows '\' path separator in Linux terminal.
+115,F5 launches incorrect preLaunchTask when using default custom task name.
+116,Integrated terminal shows 'OOM' popup and crashes on large stdout output.
+117,Integrated terminal hangs entire VS Code window when printing large string at once.
+118,Integrated terminal inserts hundreds of '^[[D' characters when link clicked before script ends.
+119,Terminal lags during scrolling when displaying very long printed line.
+120,"Webview keypress dispatch stops, ctrl+` no longer toggles terminal after several uses."
+121,Integrated terminal randomly drops letters when focused or typing commands.
+122,VSCode console fails to show ipython output after executing print command.
+123,Toggle Editor Type creates corrupted tab that cannot be opened.
+124,Terminal displays corrupted MesloLGS NF font on macOS.
+125,Git push hangs in Source Control when SSH key not named id_rsa.
+126,Stage Selected Ranges converts ANSI file to UTF-8 on staging.
+127,Explorer aborts new file/folder creation during concurrent file changes.
+128,Snippet transformation fails when nested snippets are used.
+129,SCM panel shows conflict count but no file list for git conflicts.
+130,Status bar branch selector omits master branch from list.
+131,Editor hover disappears on mouse move/scroll; cannot scroll hover via keyboard
+132,"Linux editor right‑click context menu flashes and disappears, causing accidental selection"
+133,VSCode becomes extremely laggy when MicrosoftVirtualKeyboard is open
+134,Breadcrumbs dropdown fails to relayout after panel resize
+135,Debug Variables view empty after terminating one of multiple debug sessions
+136,Request to install and activate vscode-smoketest-check extension
+137,Korean keyboard types ₩ instead of backquote for toggleTerminal shortcut
+138,Left arrow key duplicates last Korean character to its left
+139,Option‑clicking terminal link inserts '^[[D' characters before opening
+140,Ubuntu activity bar right‑click on lower‑right icon selects menu item instantly
+141,"Explorer shows empty view after enabling Settings Sync, exception displayed"
+142,Notebook vertical scroll jumps after clearing all cells at bottom
+143,Process Explorer hover feedback disappears intermittently
+144,Workspace reload freezes for seconds due to getCachedChannel blocking
+145,Integrated terminal shows navigation characters temporarily and truncates command history
+146,Settings JSON color picker shows incorrect color panel for #4e0606
+147,Native Notebooks +code button adds markdown cell instead of code after markdown
+148,"workspaceFolderBasename variable fails to resolve on window load, updates after tab change"
+149,Integrated terminal does not accept Chinese input
+150,Emmet SASS snippets incorrectly add trailing semicolon at line end
+151,Emmet expansion adds trailing semicolon in SASS files
+152,Editing box-shadow second color also modifies first color value
+153,"Integrated terminal in WSL fails to wrap long commands, overwriting line"
+154,Terminal window turns black after switching TTY and returning
+155,Emmet inserts ';' and ':' in Stylus files and fails to parse mixins
+156,sqlite3 CLI causes cursor to wrap to line start and arrow keys output characters
+157,TypeScript Server crashes with 'Cannot read property indexOf of undefined'
+158,CLI command opens blank text file instead of creating empty Jupyter notebook
+159,"Terminal opens without initial prompt, appears only after pressing Enter"
+160,VSCode snap build fails to encrypt data via encryptionService
+161,Integrated terminal text overlaps in VS Code.
+162,editor.snippetSuggestions set to none disables JSDoc auto-completion.
+163,"Sogou IME Chinese input fails in terminal tab, English works."
+164,HDInsights extension bypasses proxy despite HTTP_PROXY/NO_PROXY settings.
+165,Terminal opens but displays no content.
+166,Sogou Pinyin cannot be used in terminal.
+167,Snippet variable inserted via intellisense does not transform.
+168,Terminal cannot input Chinese characters.
+169,Drag & Drop inserts path with wrong separator in terminal.
+170,Terminal shows no content; ENOENT error scanning WindowsApps directory.
+171,Integrated Terminal fails to display Chinese characters when using non‑Microsoft Pinyin IME.
+172,Integrated Terminal does not show Chinese input with Sogou Pinyin on Windows.
+173,Markdown notebook cell cannot be dragged to full width; drag area has a non‑responsive gap.
+174,Sign‑in UI omits providerId in the list of extensions requesting authentication.
+175,WSL terminal does not accept Chinese character input.
+176,Integrated Terminal becomes unusable after screen lock; no output and erratic cursor behavior.
+177,Notebook list navigation deletes multiple cells and loses focus when using arrow keys.
+178,PowerShell terminal shows no prompt until key press and clear command leaves residual output.
+179,Terminal window remains blank for all shells despite configuration settings.
+180,Terminal randomly turns black without apparent cause.
+181,Task runner launches multiple instances when triggered repeatedly during window loading
+182,View: Join all editor groups command does nothing after update
+183,Run/Build Task list becomes empty after first task execution without workspace
+184,git.stageSelectedRanges changes file encoding to UTF-8
+185,Notebook reopens scrolled to empty area with missing scroll bar after window resize
+186,Custom profiles do not appear in Select Default Profile list
+187,"Markdown notebook cells clear multi-selection when shift-selecting, due to new renderer"
+188,Terminal windows display black screen after Ubuntu hibernation resume
+189,Notebook version ID remains unchanged after editing code cell
+190,Drag-and-drop a cell to top causes screen glitch
+191,Shift+Click on markdown cells fails to create a selection (macOS).
+192,Dragging a markdown cell cannot reposition it above a code cell.
+193,Split editor group does nothing when active group contains only custom editors.
+194,Cell drag shows cursor but fails to move the cell.
+195,Consecutive markdown cells exhibit unexpected selection behavior.
+196,"Drag, duplicate, or join operations reset focus and scroll position to top."
+197,Terminal shows visual glitches at zoom levels below 100%.
+198,Custom title bar zooms unexpectedly when adjusting application zoom on macOS.
+199,Dragging notebook cells causes scroll position to change unexpectedly after drop.
+200,Copy Cell Down copies the focused cell rather than the toolbar cell.
+201,Integrated Terminal shows abnormal letter spacing after update.
+202,"Terminal wraps input prematurely in Codespace, despite correct output width."
+203,Integrated Terminal displays visual glitches after latest VS Code update.
+204,"Process Explorer list jumps, preventing stable keyboard navigation."
+205,"Markdown preview prevents text selection, dragging cell instead."
+206,Adding a cell creates it in the opposite Notebook document.
+207,"Terminal buffer width truncated on startup, restored after reopening terminal."
+208,Experimental markdown renderer collapses cause notebook visual corruption.
+209,Adding a cell sometimes gives focus to both new and previous cells.
+210,"Integrated Terminal renders incorrectly when window maximized, fixed by resizing."
+211,Integrated Terminal briefly flashes incorrect theme colors after switching themes.
+212,"Remote terminal initial resize missed, causing incorrect column size (80 instead of 110)."
+213,File restored from backup shows Unicode characters replaced by U+FFFD replacement characters.
+214,Tab bar tabs are no longer left-aligned after moving the sash.
+215,Terminal tabs switch to center alignment in full-info mode when tab bar is narrow.
+216,Integrated terminal displays incorrect text spacing that ignores font family changes.
+217,"Terminal panel opens empty after starting build task, but works if opened beforehand."
+218,Ionide extension cannot send code via Alt+Enter or copy/paste to terminal in latest insider build.
+219,Remote terminal provides no feedback when typing after connecting from Mac to Windows.
+220,"TerminalTabsTree crashes, preventing the terminal from opening."
+221,Integrated terminal profiles missing from menu; 'Select Default Profile' does nothing.
+222,Terminal input ignored with NVDA; commands not executed and exit does not close terminal.
+223,Shell path becomes empty string when no matching terminal profile entry exists.
+224,Open terminal profile button displays empty label with no console errors.
+225,Terminal profile dropdown tooltip shows incorrect text instead of 'New With Profile'.
+226,Terminal profiles not listed in dropdown until a new terminal is created.
+227,"Integrated terminal reports incorrect width, causing visual glitches and misaligned autocomplete."
+228,Terminal on Windows displays spaced-out font and misaligned cursor.
+229,Color picker hover shows previous color values instead of newly selected color.
+230,Delete key fails to close selected terminals in terminal tabs.
+231,Terminal test outputs lack title.
+232,Terminal uses wrong font and misplaces cursor when creating zsh on macOS.
+233,Container logs terminal missing label/icon when opened via Remote Containers.
+234,tabSize=1 prevents auto-inserting closing '>' for </a> in empty HTML file.
+235,Markdown cells overlap with other content in notebook.
+236,Notebook image appears behind code cell causing visual glitch.
+237,Emmet wrapWithAbbreviation fails to add className/link to <a> tag in JSX/HTML.
+238,Uploading existing folder in web explorer triggers error after confirming overwrite.
+239,Debug external console uses cmd instead of Windows Terminal despite settings.
+240,"Dynamic Markdown preview always starts at top, not at editor scroll position."
+241,Sign‑in flow hangs on 'Loading...' after launching VS Code
+242,Active terminal not restored after killing the first terminal
+243,Extension host window remains open after stopping extension debugging
+244,TaskPresentationOptions.focus=false ignored when terminal is revealed
+245,Possible race condition during Python extension installation
+246,Markdown inline code renders as plain text in Jupyter cells
+247,Extension dependency notification ignores Restricted Mode enablement state
+248,"GitHub extension fails to activate, showing prompt on new window"
+249,Extension activation failure notification unhelpful in Restricted Mode
+250,Drag‑and‑drop moves leaf folders inside compact folders incorrectly
+251,Folder tree fails to display folder names containing newline characters.
+252,Default terminal profile list omits Git Bash option.
+253,VS Code 1.57 ignores ~/.bashrc environment variables on Linux.
+254,Remote terminal experiences missed keystrokes and jittery cursor under high latency.
+255,Debugger fails to terminate Node process when VS Code quits.
+256,Jupyter extension scrolls to start of cell after execution.
+257,Copy and paste commands ineffective in terminal editor panes.
+258,Activating terminal editor does not move focus to its terminal cursor.
+259,Source control panel throws 'Invalid comparison' error during comparison.
+260,Debug launch shows 'Loaded source not supported' exception in console.
+261,"Text editor ignores clicks on leftmost 1‑2 pixels, sometimes collapses line via chevron."
+262,"Settings UI reload throws 'Cannot read property \""root\"" of undefined' error."
+263,"Jupyter Notebook shows 'No renderer found for \""text/plain\""' error converting code cell to markdown."
+264,Closing first terminal in panel fails to activate the next terminal.
+265,Dragging inline terminal tab onto split writes terminal URI into the terminal.
+266,Backspacing during search randomly reveals unrelated page content.
+267,"Search navigation in Markdown preview skips some highlighted results, causing jumpy traversal."
+268,Split terminal command does nothing after moving terminal into editor area.
+269,"Pasting into Cygwin bash terminal sometimes scrambles text, rotating characters."
+270,Getting Started entries missing 'New' badge appear visually odd.
+271,Notebook cell reordering hides moved subheader until header collapse/expand
+272,Getting started view shows 'new' badge on every item due to empty DOM element
+273,"Switching active terminal moves terminal to wrong group, leaving target terminal blank"
+274,Occurrence highlighting selects incorrect code segment
+275,"Debug focus auto-switches to new child process session, losing focus on stopped session"
+276,Terminal cannot be killed via trash icon without first focusing it
+277,"terminal.show always captures keyboard focus, ignoring show(true) non-focus option"
+278,"Terminal freezes on second run, displaying only a colon"
+279,"Explorer copy relative path setting shows '/', but copies path with '\\' default"
+280,Run Python file opens Terminal panel instead of using existing terminal editor
+281,Integrated Terminal launches PowerShell instead of default cmd.exe on remote workspace launch.
+282,Jupyter Notebook icons appear gray instead of colored in VS Code.
+283,Output panel dropdown context view detaches from select box on panel resize.
+284,TypeScript inlay hint for enumMemberValues does not show expected '= 80' value.
+285,Terminal dropdown still shows PowerShell as default after setting contributed profile as default.
+286,Stopping extension debug session fails to close Extension Development Host.
+287,"Function tooltip z-index lower than Jupyter notebook cell, causing overlap in split editor."
+288,Terminal editor tab shows content from a different terminal tab.
+289,No extension gallery service configured exception appears in console when installing extension from VSIX.
+290,Custom default terminal profile ignored; PowerShell opens instead of configured profile.
+291,Markdown cell drag fails despite grab cursor in Jupyter Notebook editor.
+292,Right-click paste during new file/folder naming cancels input and opens explorer menu.
+293,Code font appears incorrect in notebook markdown cells.
+294,"Right-click in rename textbox loses focus, exiting edit mode in Explorer."
+295,Bracket pair coloring fails for '/' in HTML/JSX when font ligatures are enabled.
+296,"Color decorations on ligature parts affect entire ligature, preventing partial coloring."
+297,"defaultProfile.linux setting ignored for first remote SSH terminal, using server's default shell."
+298,Terminal.show(true) fails to retain focus after showing terminal.
+299,Switching between code and multiple terminal tabs shows incorrect terminal contents.
+300,.env file incorrectly detected as Python instead of Environment file.
+301,File type detection misclassifies Makefile as shell/docker.
+302,Default terminal switched to PowerShell after upgrade.
+303,PowerShell console auto-opens on VS Code launch for any project.
+304,Auto language select assigns CoffeeScript to Git commit files.
+305,Notebook fails to render large cell outputs correctly.
+306,Uninstalled VSIX remains listed with platform warning instead of disappearing.
+307,Window reload reattaches terminal from different workspace.
+308,Git diff view marks all subsequent notebook cells as changed after insertion.
+309,runInTerminal fails for commands exceeding 1023 characters.
+310,Notebook IntelliSense shows incorrect highlight colors for non-selected items.
+311,Notebook widget highlight color sometimes wrong due to conflicting .monaco-list-row.focused CSS rule.
+312,PowerShell terminal duplicates Chinese characters in VS Code.
+313,"Terminal truncates long pasted code, cutting off characters like 'charCodeAt'."
+314,macOS VS Code lacks 'Put Back' option for deleted files or folders.
+315,Integrated terminal does not allow selecting Git Bash as shell.
+316,Emmet wrap abbreviation omits attributes when wrapping anchor (<a>) tags.
+317,"Active Tab indicator positioned too close to terminal's first line, causing cramped view."
+318,Git status icons briefly disappear during file staging operations.
+319,SCM view refresh shifts buttons and hides status letters temporarily.
+320,Terminal size calculations wrong when window.zoomLevel is set high.
+321,"Difftool misaligns diff after inserting a cell, offsetting changes."
+322,Git synchronization loops indefinitely during push to GitHub.
+323,Remote terminal shell environment fails to load .profile after updating to VS Code 1.62.1.
+324,"Git AskPass passes empty string, causing node REPL instead of script execution."
+325,Hovering first disabled menu item makes submenu disappear after timeout.
+326,Terminal drag-and-drop shows incorrect visual feedback when repositioning terminals.
+327,QuickPick filter does not reset after programmatic value change.
+328,`code` command fails to create new file in WSL2.
+329,Process Explorer highlights incorrect process with disabled color on selection.
+330,Git staging uses wrong encoding for files opened with non-UTF-8 encoding.
+331,Remote CLI file creation does nothing when running `code new_file`.
+332,Exploration build shows 'ERR Invalid comparison' error in SCM view.
+333,Single tab hover fails to display shell integration information.
+334,File explorer shows nothing due to file nesting setting issue.
+335,"Notebook cell collapsing requires multiple clicks to change focus, hindering workflow."
+336,Terminal shell integration fails on remote Windows (v1.64.0-insider).
+337,"Enabling shell integration breaks remote Windows terminal, showing platform check error."
+338,Shell integration enabled causes first remote Windows terminal to close with error.
+339,Duplicate build tasks run concurrently; Tasks output channel remains empty.
+340,Two VS Code windows share the same terminal session after restore.
+341,Emmet wrap fails to add id or class attributes to <a> tags
+342,"Git origin name loses 'f' character, showing incorrect name in log/tag"
+343,Buffer clear misplaces and duplicates typed input
+344,"Git extension inserts '/' into branch name, causing sync failure with Bitbucket"
+345,Git push operation fails
+346,Stage selected ranges corrupts non‑UTF‑8 files
+347,Jupyter notebook diff misaligns modified cell with newly added cells
+348,"TerminalCommandDecoration default background is transparent, causing overlapping visual artifacts"
+349,"Large scrollback causes overlapping terminal decorations, appearing darker"
+350,Create New Terminal (Local) fails with missing PowerShell path error
+351,Source Control shows 'Download Git for Windows' prompt on Linux installation.
+352,"HTML RTL whitespace broken in version 1.66, works in 1.65."
+353,Local terminal fails launch: '/usr/bin/zsh' not found on macOS.
+354,Local terminal cannot open: '\bin\bash' not found on Windows.
+355,Source Control offers 'Download Git for Windows' option on Ubuntu Linux.
+356,"Settings editor captures Enter key, preventing normal input."
+357,Create New Integrated Terminal (Local) uses non‑existent '/usr/bin/bash' path on macOS.
+358,Folder rename to different case not detected for deletion.
+359,Redo history lost after saving HTML; FormatOnSave makes no changes.
+360,Extension tree view shows no icons for items with resource URIs.
+361,Shell integration reporting for tasks cannot be enabled.
+362,"Terminal letter clipping causing missing characters, observed with git output on Windows."
+363,Source control status bar items indistinguishable on right-click.
+364,Terminal letters cut off using WebGL renderer due to powerlines clipping change.
+365,ConPTY shell integration decorations positioned one line too high.
+366,Shell status indicators clipped when terminal moved to sidebar.
+367,Extension host NAPI crash causing notebook UI failure and Text Editor errors.
+368,Git commit fails with 'Bad status code: 500' after June VS Code update.
+369,Git amend operation returns 500 error.
+370,Git commit shows 'git status code 500' error popup after recent update.
+371,useEditorAsCommitInput setting causes 500 error when committing empty message.
+372,Git sync fails with 'Git: Bad status code: 500' after VS Code update.
+373,Commit button remains enabled despite no commit message entered.
+374,"Ctrl‑clicking terminal deep link opens file at (0,0) instead of correct line/column."
+375,"Relative file link opens at line 0, column 0 when run in task."
+376,Command decoration margin misaligned in split terminals.
+377,Sticky tab stops cause slight mouse selection breakage.
+378,Zsh shell integration fails to handle line breaks in command continuations.
+379,Terminal Integrated Tabs default icon dropdown takes ~3 seconds to populate.
+380,Shell integration does not serialize newline and semicolon characters in bash/zsh.
+381,Shell task execution pollutes Tasks Output with errors
+382,Command palette input box does not allow left/right arrow navigation while typing
+383,Webview panel remains after extension deactivates when adding a workspace root
+384,Wide characters display only half underline
+385,Git status bar action menu entry name appears duplicated
+386,Default build tasks accumulate each time window reloads
+387,Command Palette missing 'Create Manual Folding Ranges from Selection' in Simplified Chinese
+388,Line breaks inside argument brackets cause invalid bracket pair errors
+389,Adding decoration for undefined command fails with no marker
+390,tsconfig.json relative paths resolve to Windows host paths inside devcontainer
+391,"Webview find widget fades out instead of instantly disappearing when switching tabs, then is lost."
+392,"Integrated terminal fzf history search prepends '^[]633;C^G^[]633;E;__fzf_history__^G' to command, breaking execution."
+393,"Quick pick enable/disable does not preserve focus, moving it to the container."
+394,"Ctrl+click on tsconfig extends opens path with backslash, causing file not found error on WSL/Linux."
+395,Only last defined npm task recognized; earlier tasks give 'Could not find the task' error.
+396,Settings editor focus border colour differs from settings search input box outline colour.
+397,"Quickfixes rarely appear; they work only intermittently, often showing no fix."
+398,"Settings Sync in Codespaces triggers extension dependency errors, e.g., isort missing python."
+399,TSX code inside Markdown code blocks highlighted incorrectly due to embedded grammar token rules.
+400,Local terminal creation fails in dev container because host uses /bin/zsh while container expects /usr/bin/zsh.
+401,Integrated Terminal shares input across multiple VSCode windows after restart
+402,Quick Pick loses focus when enable set to true after show command
+403,"Automatic screen reader detection fails on macOS, requiring manual command"
+404,Notebook diff view corrupted and shows errors after switching profiles
+405,Notebook becomes corrupted with save alert after switching profiles
+406,Integrated Terminal shows only local Zsh history instead of global after update
+407,Screen reader status bar item does not update when VoiceOver toggled on macOS
+408,Unicode highlighting fails to highlight non-breaking space characters
+409,"Source control status bar items lack names, making differentiation impossible"
+410,Terminal: Clear command and Ctrl+Left shortcut cause cursor to jump to bottom
+411,Vim editor first line is cut off in display.
+412,Integrated terminal zsh history stops working after macOS update.
+413,Cleared integrated terminal content reappears after switching sessions.
+414,TypeScript closing bracket displays wrong color compared to opening bracket.
+415,Default WSL bash terminal shows '\usr\bin\bash invalid' error.
+416,Error: Cannot read properties of undefined (reading 'dragStartDisposable').
+417,Screen reader cannot read terminal command history using Up/Down arrows.
+418,Terminal accessibility buffer fails to auto-update after command output.
+419,Editor links are not accessible to screen readers like VoiceOver or NVDA.
+420,"Build task sometimes not detected, cmd+shift+b fails to run."
+421,Source Control fails to detect Git repository after VS Code update.
+422,IntelliSense no longer shows user snippets after latest VS Code update.
+423,Source Control cannot detect repositories and Developer Tools crash after VS Code 1.75 update.
+424,"Java extension error prevents build task detection, causing task not found."
+425,Git repository detection hangs on 'Scanning folder for git repositories' message.
+426,Terminal accessibility buffer omits PostgreSQL client output until after session ends.
+427,Terminal focus places cursor at top of accessible buffer instead of bottom.
+428,"Codespace reconnection ignores configured default shell, using different shell."
+429,Issue Reporter silently fails to create GitHub issue when bugs URL is invalid.
+430,Color hints duplicate near view edges when editor word wrap is enabled.
+431,"VS Code predefined variables produce Windows-style paths on WSL, causing incorrect file paths."
+432,"Markdown preview scroll sync fails when details blocks are collapsed, causing scroll overshoot."
+433,Makefile Tools extension prints unexpected error message in Tasks Output Window during task creation.
+434,Extension installation race condition occurs when dependent on Python extension.
+435,Copilot extension built-in issue reporter fails silently when creating an issue.
+436,GitHub PR extension throws exception when replying to a comment.
+437,"Chat view async tokenization throws exception during clear operation, stack trace in BugIndicatingError."
+438,Source Control Stage/Discard buttons appear disabled for certain files despite context menu availability.
+439,Source Control pane disables Stage and Discard buttons unexpectedly.
+440,First integrated terminal ignores default configuration in VS Code Codespace.
+441,Integrated terminal: ctrl+c sometimes fails to cancel running command
+442,Git merge: no autogenerated commit message when merging branch with conflicts
+443,Settings editor: TypeError reading 'dragStartDisposable' when closing editor
+444,Dart hover tooltip disappears before clicking quick fix option
+445,Integrated terminal: screen reader cannot read recent command input box
+446,toggleTerminal command no longer focuses the terminal after activation
+447,"Delayed PTY host startup leaves terminal service in connecting state, terminal not focused"
+448,Overview ruler misbehaves with collapsed unchanged code sections
+449,Task runner intermittently shows 'Could not find the task …' error
+450,Diff editor displays incorrect diff decorations in right gutter
+451,"DiffEditor2 overview ruler shows decorations relative to hidden regions, appearing stuck at bottom."
+452,Terminal screen reader announces blank instead of characters when navigating with arrow keys (NVDA).
+453,Terminal rendering jittery over tunnel; backspacing sometimes leaves stray characters.
+454,SCM tab shows only first repository when workspace contains multiple repos.
+455,Auto-generated tasks.json uses Windows path separator instead of Linux for containers on Windows.
+456,TypeScript inlay hints intermittently disappear for short periods without reproducible steps.
+457,Search Editor shows duplicate line numbers for a single match in results.
+458,Debugging quick‑fix popup disappears when moving cursor to select suggestion.
+459,search.action.openEditor displays results with incorrect line numbers.
+460,Compound tasks no longer allow multiple instances of the same task to run concurrently.
+461,Terminal rename fails when left-clicking to rename
+462,Task definition rewrite triggers task execution error
+463,Inline chat widget flashes when 'Start listening' button is clicked
+464,Terminal rename in new window errors with 'no argument provided'
+465,"Color selector pop-up disappears after choosing color, selection not applied"
+466,Color Picker closes prematurely when clicking anywhere inside the picker
+467,RGBA color selector closes automatically and inserts incorrect color code
+468,Integrated terminal cannot scroll tmux session when SSHed from local workspace
+469,JSON Sort Document fails with 'Range#create called with invalid arguments' error
+470,"JSON Sort Document crashes, showing 'Range#create called with invalid arguments' on trailing commas"
+471,Task runner cannot run same task concurrently in different directories.
+472,Terminal sticky scroll becomes partially visible after switching terminal instances.
+473,Sticky scroll disappears or is partially visible after zoom in/out commands.
+474,"Occurrences highlight only works within same file, not across multiple files."
+475,tqdm progress bar prints on new lines when Explorer pane is opened.
+476,Incoming/Outgoing source control sections cannot be expanded to show contents.
+477,Incoming/Outgoing fails for long branch name; git error 'Filename too long'.
+478,Source Control UI does not reflect unstaged changes for a specific repository.
+479,Code changes sometimes not visible on Git icon until VS Code is restarted.
+480,Source Control tree remains collapsed after switching to a branch with a long name.
+481,Terminal renaming fails in editor area.
+482,"Git sync push command fails, repository not updated."
+483,Floating window zoom out glitches with window.zoomPerWindow enabled.
+484,Git View Stash shows incorrect left-hand side diff.
+485,Launch shows warning: Node.js environment variables are disabled (node_main.cc error).
+486,Terminal resize right shortcut does not work.
+487,"Tasks ignore npm scripts in other working directories, appear missing."
+488,Insert into Terminal needs two clicks when terminal is closed.
+489,VS Code displays error message on launch.
+490,Cannot drag the last cell in a notebook.
+491,Outline reveals activeEntry when entry filtered out; overlay persists after notebook close.
+492,Outline feature error when opening .ipyn files in VS Code 1.88.0.
+493,Pattern matching bug in serverReadyAction (vscode.debug-server-ready) causing unexpected behavior.
+494,SCM unhandled error due to race condition when reloading window with multiple repos.
+495,Switching branch from terminal causes focus loss after editor state restoration.
+496,Markdown links not discoverable to screen reader users; only visual cue and tooltip.
+497,scm.workingSets.enabled steals focus from integrated terminal during SCM operations.
+498,Enhanced Branch Switching removes terminal focus while restoring editors after git commands.
+499,Go to definition in Chat view fails for TypeScript; cursor does not move to declaration.
+500,"vscode.dev NLS script loading finishes after code loading, causing NLS missing error in Safari incognito."
