@@ -218,17 +218,11 @@ def process_complaint(complaint):
     # Step 7 : Create New Case
     # ----------------------------------------------------
 
-    # Create a new case record in the database. Populate basic fields
-    # such as representative text, initial report count and user ids,
-    # and timestamps.
+    # Create a new case record in the database (create_case sets the
+    # report count, user ids and timestamps).
     new_case = create_case(
-        {
-            "representative_text": cleaned_text,
-            "report_count": 1,
-            "user_ids": [complaint.user_id],
-            "created_at": datetime.now(timezone.utc).isoformat(),
-            "last_reported_at": datetime.now(timezone.utc).isoformat(),
-        }
+        cleaned_text,
+        complaint.user_id
     )
 
     case_id = new_case["case_id"]
