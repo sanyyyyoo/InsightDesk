@@ -1,0 +1,11 @@
+The attached spreadsheet has 20 complaint cases built by a deduplication system from app-store reviews of customer-support apps. Each row shows up to 6 complaints in the case and the system's root-cause analysis (probable_cause + recommended_action). The tab "Instructions" defines the ratings.
+
+Rate every case yourself by reading it, the way a human reviewer would. Do not write code or use keyword rules.
+
+For each of the 20 rows fill:
+- same_problem: correct / mixed / useless (do the complaints describe ONE specific problem?)
+- rca_useful: yes / partly / no (would this probable cause + action help the team fix it?)
+- rca_unsupported_claim: yes / no (does the RCA state a fact the complaints do not give, e.g. a version number or a cause presented as certain?)
+- notes: one short line when something is mixed, wrong or unsupported.
+
+Keep the case column unchanged and give me the completed spreadsheet as an .xlsx file to download.

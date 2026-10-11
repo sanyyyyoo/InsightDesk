@@ -160,7 +160,27 @@ def main():
     # top 20 cases for the team's usefulness review, with a real RCA each
     import backend.services.rca_service as rca
     rca.generate_json = llm
-    top = size.sort_values(ascending=False).head(20).index
+    real = a.groupby("case_id").is_synthetic.max() == False   # noqa: E712  cases with no synthetic complaint
+    sheets = {"top20_case_review.xlsx": size.sort_values(ascending=False).head(20).index,
+              "top20_real_case_review.xlsx": size[real[real].index].sort_values(ascending=False).head(20).index}
+    if os.getenv("RCA_NEXT20"):                     # v3 confirmation: real cases ranked 21-40, v1 and v3 RCAs
+        nxt = size[real[real].index].sort_values(ascending=False).iloc[20:40].index
+        for ver in ("v1", "v3"):
+            rca.RCA_PROMPT_VERSION = ver
+            write_sheet(f"next20_real_case_review_{ver}.xlsx", nxt, a, rca)
+        sheets = {}
+    elif os.getenv("RCA_PROMPT_VERSION", "v1").lower() == "v2":         # A/B test: same real cases, v2 RCA
+        sheets = {"top20_real_case_review_v2.xlsx": sheets["top20_real_case_review.xlsx"]}
+    for sheet, top in sheets.items():
+        if not os.path.exists(os.path.join(OUT, sheet)):      # existing review sheets are kept as they are
+            write_sheet(sheet, top, a, rca)
+    lines.append(f"\nLLM calls made in this run: {llm.calls} (cached answers reused: {len(llm.cache) - llm.calls})")
+    open(os.path.join(OUT, "replay_summary.txt"), "w", encoding="utf-8").write("\n".join(lines))
+    print("\n".join(lines))
+
+
+def write_sheet(sheet, top, a, rca):
+    """Review sheet: each case's samples + a real RCA, with columns for the team's judgement."""
     rows = []
     for cid in top:
         members = a[a.case_id == cid]
@@ -175,10 +195,7 @@ def main():
                      **{f"sample_{k + 1}": t[:300] for k, t in enumerate(members.complaint_text.head(6))},
                      "rca_probable_cause": cause, "rca_recommended_action": action,
                      "same_problem? (correct / mixed / useless)": "", "rca_useful? (yes / partly / no)": "", "notes": ""})
-    pd.DataFrame(rows).to_excel(os.path.join(OUT, "top20_case_review.xlsx"), index=False)
-    lines.append(f"\nLLM calls made in this run: {llm.calls} (cached answers reused: {len(llm.cache) - llm.calls})")
-    open(os.path.join(OUT, "replay_summary.txt"), "w", encoding="utf-8").write("\n".join(lines))
-    print("\n".join(lines))
+    pd.DataFrame(rows).to_excel(os.path.join(OUT, sheet), index=False)
 
 
 if __name__ == "__main__":
