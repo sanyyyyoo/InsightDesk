@@ -431,7 +431,8 @@ def main():
     rca.generate_rca(main_case)                  # as the Streamlit dashboard does
     rc = client.get(f"/dashboard/rca/{main_case}")
     if rc.status_code == 200:
-        check("RCA prompt tells the LLM about the spike", bool(LLM_CALLS) and "Spike Detected:\nyes" in LLM_CALLS[-1])
+        check("RCA prompt tells the LLM about the spike", bool(LLM_CALLS) and ("Spike Detected:\nyes" in LLM_CALLS[-1]          # v1 prompt
+                                                or "Spike detected: yes" in LLM_CALLS[-1]))   # v2/v3 prompt
     check("GET /dashboard/rca/{id} responds", rc.status_code == 200, f"{rc.status_code}, LLM stub calls {len(LLM_CALLS)}")
 
     print("same database, OLD detector (git HEAD version)")
