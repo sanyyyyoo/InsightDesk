@@ -1,3 +1,4 @@
+import os
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
@@ -71,13 +72,130 @@ def fetch_rca_context(case_id):
     return {
         "case": case,
         "complaints": complaints[-5:],
+        # v2 evidence: first complaint in its original wording + up to 7 more, oldest first
+        "evidence": _evidence(complaints),
         "topic": topic,
         "spike": spike,
         "sentiment": sentiment,
     }
 
 
+# "v3" (default since 2026-10-11, passed reports/replay/rca_v3_rule.md), "v2" or "v1" (original)
+RCA_PROMPT_VERSION = os.getenv("RCA_PROMPT_VERSION", "v3").lower()
+
+
+def _evidence(complaints, limit=8):
+    """The case's first complaint (original wording) plus up to limit-1 more, oldest first."""
+    rows = sorted(
+        complaints,
+        key=lambda c: (str(c.get("created_at") or ""), c.get("complaint_id") or 0),
+    )
+    if len(rows) > limit:
+        rows = rows[:1] + rows[-(limit - 1):]
+    return [
+        (c.get("complaint_text") or c.get("text") or "").strip()
+        for c in rows
+    ]
+
+
 def build_prompt(context):
+    if RCA_PROMPT_VERSION == "v3":
+        return build_prompt_v3(context)
+    if RCA_PROMPT_VERSION == "v2":
+        return build_prompt_v2(context)
+    return build_prompt_v1(context)
+
+
+def build_prompt_v2(context):
+    evidence = "\n".join(
+        f"[{n}] {t}" for n, t in enumerate(context.get("evidence") or [], 1)
+    )
+    spike = context["spike"]
+    spike_line = (
+        "yes (critical)" if spike.get("critical")
+        else "yes" if spike.get("spike") else "no"
+    )
+
+    return f"""
+You are the Root Cause Analysis component of InsightDesk. A support team will
+use your answer to decide what to investigate. Customer complaints describe
+SYMPTOMS; they rarely prove a cause. Your job is to state the most likely cause
+as a hypothesis, tied to the evidence, and the next steps that follow from it.
+
+Rules:
+1. probable_cause: start with "Likely:" and describe the cause as a hypothesis.
+   Name only features, behaviours and timings that the complaints mention.
+   Do not state a cause as certain. Do not mention a platform, version, component,
+   update or date unless a complaint mentions it. End with the supporting
+   complaint numbers, e.g. "(complaints 1, 3, 4)".
+2. recommended_action: concrete steps to investigate and fix the REPORTED symptom
+   (what to reproduce, check or log). No new features unless the complaints ask
+   for them. If other problems appear in the complaints, add them at the end as
+   "Also reported (separate): ..." instead of folding them into the cause.
+3. affected_segment: who is affected, only as far as the complaints say.
+4. source_evidence: short quotes from the complaints that support the cause.
+5. confidence: 0.0-1.0, lower when complaints are vague or disagree.
+   severity: exactly one of LOW, MEDIUM, HIGH, CRITICAL.
+
+Return ONLY one valid JSON object, no markdown:
+{{
+    "probable_cause": "string",
+    "affected_segment": "string",
+    "recommended_action": "string",
+    "severity": "LOW|MEDIUM|HIGH|CRITICAL",
+    "confidence": 0.0,
+    "source_evidence": ["string"]
+}}
+
+CASE EVIDENCE
+Complaints (first one = the complaint that started the case):
+{evidence}
+
+Department: {context["topic"]["department"]}
+Complaints in the latest 6-hour window: {spike.get("current")}
+Normal rate per 6-hour window (last 7 days): {spike.get("baseline_rate", "unknown")}
+Spike detected: {spike_line}
+""".strip()
+
+
+V3_RULES_OLD = """Rules:
+1. probable_cause: start with "Likely:" and describe the cause as a hypothesis.
+   Name only features, behaviours and timings that the complaints mention.
+   Do not state a cause as certain. Do not mention a platform, version, component,
+   update or date unless a complaint mentions it. End with the supporting
+   complaint numbers, e.g. "(complaints 1, 3, 4)".
+2. recommended_action: concrete steps to investigate and fix the REPORTED symptom
+   (what to reproduce, check or log). No new features unless the complaints ask
+   for them. If other problems appear in the complaints, add them at the end as
+   "Also reported (separate): ..." instead of folding them into the cause.
+3. affected_segment: who is affected, only as far as the complaints say."""
+
+V3_RULES_NEW = """Rules:
+1. probable_cause: start with "Likely:" and give ONE hypothesis about the ONE
+   symptom that most complaints share (the main problem). Do not combine other
+   symptoms into it, even if they appear in the same complaints. Do not state a
+   cause as certain. End with the numbers of the complaints that report THIS
+   symptom, e.g. "(complaints 1, 3, 4)".
+2. If most complaints ask for something the product does not have (a missing
+   feature or option), the probable_cause is "Likely: feature request - ..." and
+   the recommended_action is product / backlog work, not debugging.
+3. Never add an impact, consequence, device, component, version, update or date
+   that no complaint states.
+4. recommended_action: concrete steps to investigate and fix the MAIN symptom
+   (what to reproduce, check or log). Then list every other problem found in the
+   complaints at the end as "Also reported (separate): ...".
+5. affected_segment: who is affected, only as far as the complaints say."""
+
+
+def build_prompt_v3(context):
+    """v2 + main-symptom-only cause, feature requests, no invented details (reports/replay/rca_v3_rule.md)."""
+    p = build_prompt_v2(context)
+    assert V3_RULES_OLD in p
+    p = p.replace(V3_RULES_OLD, V3_RULES_NEW)
+    return p.replace("4. source_evidence:", "6. source_evidence:").replace("5. confidence:", "7. confidence:")
+
+
+def build_prompt_v1(context):
     complaints = []
 
     for complaint in context["complaints"]:
