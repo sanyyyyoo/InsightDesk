@@ -1,0 +1,7 @@
+streams: Intercom: 179 reviews, 49 vague, Jira Cloud: 200 reviews, 82 vague, ServiceNow Agent: 209 reviews, 68 vague
+  null stream (no outbreak)  C: detected 0.00, false 0.18/100w | C+V: detected 0.00, false 0.37/100w (vague counter adds 0.19)
+  vague outage n=5           C: detected 0.00, false 0.19/100w | C+V: detected 0.46, false 0.36/100w (vague counter adds 0.18)
+  vague outage n=10          C: detected 0.00, false 0.18/100w | C+V: detected 1.00, false 0.37/100w (vague counter adds 0.19)
+  vague outage n=20          C: detected 0.00, false 0.20/100w | C+V: detected 1.00, false 0.36/100w (vague counter adds 0.16)
+
+RULE: vague counter ADOPT (n=10 detection 1.00 >= 0.80? null false 0.37 <= 1.0? added 0.19 <= 0.5?)

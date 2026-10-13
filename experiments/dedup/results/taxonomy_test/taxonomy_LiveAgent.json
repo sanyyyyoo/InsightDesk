@@ -1,0 +1,134 @@
+{
+ "company": "LiveAgent",
+ "history_reviews": 28,
+ "problems": [
+  {
+   "code": "missing_desktop_feature_parity",
+   "definition": "Mobile lacks features present on desktop version."
+  },
+  {
+   "code": "java_error_crash",
+   "definition": "App crashes due to Java error."
+  },
+  {
+   "code": "missing_message_notifications",
+   "definition": "No push notifications for new incoming messages."
+  },
+  {
+   "code": "auto_capitalization_not_working",
+   "definition": "First-letter auto-capitalization does not function."
+  },
+  {
+   "code": "cannot_answer_live_chats",
+   "definition": "Unable to answer live chats within the app."
+  },
+  {
+   "code": "tickets_not_displayed_correctly",
+   "definition": "Some tickets displayed incorrectly."
+  },
+  {
+   "code": "duplicate_ticket_display",
+   "definition": "Ticket list appears duplicated."
+  },
+  {
+   "code": "stuck_on_initializing_screen",
+   "definition": "App remains on initializing screen."
+  },
+  {
+   "code": "app_fails_to_launch",
+   "definition": "App does not launch after installation."
+  },
+  {
+   "code": "push_notifications_not_working",
+   "definition": "Push notifications fail entirely."
+  },
+  {
+   "code": "contacts_not_ordered",
+   "definition": "Contact list is not sorted."
+  },
+  {
+   "code": "limited_chat_management_options",
+   "definition": "Few or no options to manage chats."
+  },
+  {
+   "code": "delayed_chat_notifications",
+   "definition": "Notifications arrive only after chat ends."
+  },
+  {
+   "code": "crashes_on_chat_actions",
+   "definition": "App crashes when performing chat-related actions."
+  },
+  {
+   "code": "outdated_ui_ux",
+   "definition": "User interface and experience appear outdated."
+  },
+  {
+   "code": "missing_remember_password",
+   "definition": "No option to remember password."
+  },
+  {
+   "code": "ticket_notifications_missing",
+   "definition": "No notifications for new tickets."
+  },
+  {
+   "code": "missing_chat_star_sound",
+   "definition": "No sound when a chat is starred."
+  },
+  {
+   "code": "crashes_on_ticket_view",
+   "definition": "App crashes when opening ticket details."
+  },
+  {
+   "code": "attachments_cannot_be_opened",
+   "definition": "Attachments cannot be opened in messages."
+  },
+  {
+   "code": "cannot_capture_mic_sound_for_calls",
+   "definition": "App cannot capture microphone audio for calls."
+  },
+  {
+   "code": "tickets_ordering_incorrect",
+   "definition": "Ticket list ordering prevents seeing recent tickets."
+  },
+  {
+   "code": "cannot_send_pictures_in_chat",
+   "definition": "Unable to send pictures within chat."
+  },
+  {
+   "code": "lag_when_sending_links",
+   "definition": "App lags when sending links in chat."
+  },
+  {
+   "code": "sign_in_failure",
+   "definition": "Cannot sign in as user."
+  },
+  {
+   "code": "cannot_configure_ticket_sound_notifications",
+   "definition": "No option to silence or enable sound per ticket."
+  },
+  {
+   "code": "random_crashes_on_device",
+   "definition": "App randomly crashes on specific device (Tab S 10.5)."
+  },
+  {
+   "code": "unstable_network_connections",
+   "definition": "Connections are unreliable and unstable."
+  },
+  {
+   "code": "missing_canned_responses",
+   "definition": "Canned responses feature is missing."
+  },
+  {
+   "code": "missing_typing_preview",
+   "definition": "Typing preview is not available."
+  },
+  {
+   "code": "missing_geo_client_details",
+   "definition": "Geo and client details are missing."
+  },
+  {
+   "code": "cannot_use_multiple_devices_concurrently",
+   "definition": "Cannot switch to desktop chat or use multiple devices simultaneously."
+  }
+ ]
+}

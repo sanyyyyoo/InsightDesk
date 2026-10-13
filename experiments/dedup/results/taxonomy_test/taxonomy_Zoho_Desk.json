@@ -1,0 +1,162 @@
+{
+ "company": "Zoho Desk",
+ "history_reviews": 89,
+ "problems": [
+  {
+   "code": "ui_flashing_and_minimizing",
+   "definition": "UI flashes between light/dark and app minimizes unexpectedly"
+  },
+  {
+   "code": "crashes_on_oneplus_oxygen_os",
+   "definition": "App crashes constantly on OnePlus devices running Oxygen OS"
+  },
+  {
+   "code": "cannot_close_ticket",
+   "definition": "Unable to close tickets from mobile app"
+  },
+  {
+   "code": "cannot_open_external_website",
+   "definition": "App fails to open external cmcell website link"
+  },
+  {
+   "code": "child_tickets_not_visible_android",
+   "definition": "Child tickets not displayed within parent ticket on Android"
+  },
+  {
+   "code": "sign_in_failure",
+   "definition": "Cannot sign in to the app"
+  },
+  {
+   "code": "filter_limit_six_items",
+   "definition": "Cannot filter more than six items at a time"
+  },
+  {
+   "code": "cannot_filter_own_and_team_tickets",
+   "definition": "Unable to view only own and team tickets simultaneously"
+  },
+  {
+   "code": "no_real_time_updates",
+   "definition": "Ticket list updates only after manual refresh, not real-time"
+  },
+  {
+   "code": "merge_tickets_failure",
+   "definition": "Unable to merge tickets with latest updates"
+  },
+  {
+   "code": "heic_image_unsupported",
+   "definition": "App does not support HEIC format image attachments"
+  },
+  {
+   "code": "infinite_loading_on_startup",
+   "definition": "App hangs indefinitely on launch after update"
+  },
+  {
+   "code": "reply_crash_on_large_ticket",
+   "definition": "Crashes/freezes when replying to tickets with many responses"
+  },
+  {
+   "code": "edit_ticket_contact_search_missing",
+   "definition": "Cannot search or auto-fill contacts in edit ticket screen"
+  },
+  {
+   "code": "sync_performance_issues",
+   "definition": "Synchronization is slow or fails frequently"
+  },
+  {
+   "code": "export_arabic_tickets_failure",
+   "definition": "Exporting tickets in Arabic language fails"
+  },
+  {
+   "code": "online_status_not_persistent",
+   "definition": "App does not keep agent online; status resets"
+  },
+  {
+   "code": "reply_crash_generic",
+   "definition": "App crashes when replying to any ticket"
+  },
+  {
+   "code": "overall_performance_slowness",
+   "definition": "General app performance is extremely slow"
+  },
+  {
+   "code": "zoho_subscriptions_customer_sync_missing",
+   "definition": "Zoho Subscriptions integration does not sync customer data"
+  },
+  {
+   "code": "login_redirect_to_chrome",
+   "definition": "Login redirects to Chrome instead of default browser"
+  },
+  {
+   "code": "sso_excessive_permission_prompt",
+   "definition": "Office365 SSO asks for unnecessary permissions"
+  },
+  {
+   "code": "customer_lookup_requires_existing_ticket",
+   "definition": "Only customers with prior tickets appear; cannot add new customers"
+  },
+  {
+   "code": "missing_agent_status_toggle",
+   "definition": "No option to set agent online/offline in app"
+  },
+  {
+   "code": "time_feature_download_failure",
+   "definition": "Unable to download or enable time tracking feature"
+  },
+  {
+   "code": "permission_popup_incorrect",
+   "definition": "Incorrect permission pop-ups appear despite proper desktop permissions"
+  },
+  {
+   "code": "knowledge_base_unavailable",
+   "definition": "Cannot access knowledge base from mobile app"
+  },
+  {
+   "code": "cannot_clear_app_history",
+   "definition": "App cannot be removed from device history after installation"
+  },
+  {
+   "code": "missing_reporting_option",
+   "definition": "Reporting feature missing compared to web version"
+  },
+  {
+   "code": "missing_tasks_option",
+   "definition": "Tasks option not available in mobile app"
+  },
+  {
+   "code": "reply_failure_error",
+   "definition": "Replying to tickets returns generic error, no crash"
+  },
+  {
+   "code": "missing_file_attachment_option",
+   "definition": "file attachment feature absent, cannot attach files to tickets"
+  },
+  {
+   "code": "customer_name_sync_failure",
+   "definition": "customer names from web not updated in mobile app"
+  },
+  {
+   "code": "services_list_not_updated",
+   "definition": "services list not refreshed with newly created services"
+  },
+  {
+   "code": "missing_merge_ticket_function",
+   "definition": "merge ticket function missing from mobile app"
+  },
+  {
+   "code": "missing_spam_ticket_function",
+   "definition": "spam ticket function missing in mobile app"
+  },
+  {
+   "code": "push_notifications_new_ticket_missing",
+   "definition": "no push notifications for newly created tickets"
+  },
+  {
+   "code": "edit_ticket_crash",
+   "definition": "app crashes when editing a ticket"
+  },
+  {
+   "code": "create_ticket_crash",
+   "definition": "app crashes when creating a new ticket"
+  }
+ ]
+}

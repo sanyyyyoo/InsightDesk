@@ -1,0 +1,54 @@
+{
+ "company": "Help Scout",
+ "history_reviews": 61,
+ "problems": [
+  {
+   "code": "logout_continuous",
+   "definition": "App logs user out repeatedly, preventing continuous use."
+  },
+  {
+   "code": "push_notifications_missing",
+   "definition": "Push notifications for new tickets or chats never arrive on device."
+  },
+  {
+   "code": "media_repeat_same_content",
+   "definition": "Videos and photos repeat same content; new media only after reinstall."
+  },
+  {
+   "code": "attachment_download_unavailable",
+   "definition": "Attachments cannot be downloaded, showing an unavailable error."
+  },
+  {
+   "code": "ticket_close_cumbersome",
+   "definition": "Closing tickets requires many steps, making the process arduous."
+  },
+  {
+   "code": "search_server_error",
+   "definition": "Search function always returns a server error, never providing results."
+  },
+  {
+   "code": "inbox_selection_wrong",
+   "definition": "Selecting a different inbox redirects to an incorrect inbox."
+  },
+  {
+   "code": "chat_feature_missing",
+   "definition": "Live chat (Beacon) functionality is absent from the mobile app."
+  },
+  {
+   "code": "customer_info_view_missing",
+   "definition": "Cannot view customer details or custom metadata within tickets on mobile."
+  },
+  {
+   "code": "workflow_unavailable_mobile",
+   "definition": "Workflow automation tools are not available in the mobile application."
+  },
+  {
+   "code": "app_crashes_frequently",
+   "definition": "Application crashes frequently during normal usage."
+  },
+  {
+   "code": "conversation_deletion_missing",
+   "definition": "Cannot delete a conversation; delete option is absent."
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{"key": "[36, [[6], [7]]]", "reply": {"case": 0, "area": "login"}}
+{"key": "[59, [[7], [6]]]", "reply": {"case": 2, "area": "login"}}
+{"key": "[68, [[64], [7], [6], [17], [61]]]", "reply": {"case": 1, "area": "login"}}
+{"key": "[102, [[25], [6], [83]]]", "reply": {"case": 1, "area": "user interface"}}
+{"key": "[141, [[25], [8], [83], [78], [127]]]", "reply": {"case": 1, "area": "ticket navigation"}}
+{"key": "[150, [[25], [8], [134], [6], [78]]]", "reply": {"case": 0, "area": "talk management"}}
+{"key": "[201, [[17], [159], [27], [85], [190]]]", "reply": {"case": 1, "area": "performance"}}
+{"key": "[239, [[85], [17], [139], [16], [190]]]", "reply": {"case": 2, "area": "performance"}}
+{"key": "[252, [[83], [6], [139], [134], [78]]]", "reply": {"case": 0, "area": "login"}}
+{"key": "[320, [[48], [164], [224], [139], [8]]]", "reply": {"case": 1, "area": "notifications"}}
+{"key": "[118, [[117]]]", "reply": {"case": 0, "area": "login"}}
+{"key": "[119, [[117]]]", "reply": {"case": 1, "area": "login"}}
+{"key": "[170, [[128], [117], [165], [145], [166]]]", "reply": {"case": 0, "area": "none"}}
+{"key": "[176, [[145]]]", "reply": {"case": 1, "area": "support"}}
+{"key": "[184, [[181]]]", "reply": {"case": 1, "area": "filter"}}
+{"key": "[195, [[117], [166], [138]]]", "reply": {"case": 1, "area": "update"}}
+{"key": "[208, [[181]]]", "reply": {"case": 1, "area": "filter"}}
+{"key": "[210, [[145], [181], [158]]]", "reply": {"case": 0, "area": "ticket access"}}
+{"key": "[216, [[145], [158], [165]]]", "reply": {"case": 0, "area": "ticketing"}}
+{"key": "[265, [[255], [145], [260], [219], [202]]]", "reply": {"case": 0, "area": "sales demo"}}
+{"key": "[279, [[219], [255], [181], [145], [248]]]", "reply": {"case": 0, "area": "privacy"}}
+{"key": "[282, [[238], [255], [219], [273], [145]]]", "reply": {"case": 0, "area": "support"}}

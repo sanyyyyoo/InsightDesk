@@ -1,0 +1,98 @@
+{
+ "company": "Freshdesk",
+ "history_reviews": 111,
+ "problems": [
+  {
+   "code": "ticket_view_truncates_forwarded_messages",
+   "definition": "Ticket view cuts off content after forwarded messages."
+  },
+  {
+   "code": "ticket_filter_settings_not_persistent",
+   "definition": "Filter settings reset after app restart."
+  },
+  {
+   "code": "mobile_ticket_detail_layout_unreadable",
+   "definition": "Ticket details hard to read on mobile layout."
+  },
+  {
+   "code": "out_of_office_setting_missing",
+   "definition": "No out\u2011of\u2011office status option in mobile app."
+  },
+  {
+   "code": "dark_mode_missing",
+   "definition": "No dark/night mode option."
+  },
+  {
+   "code": "leaderboard_dashboard_removed",
+   "definition": "Leaderboard dashboard feature removed."
+  },
+  {
+   "code": "availability_switch_missing",
+   "definition": "Availability switch missing or disabled."
+  },
+  {
+   "code": "attachment_picture_upload_failure",
+   "definition": "Picture attachment upload consistently fails."
+  },
+  {
+   "code": "attachment_addition_toast_popup_blocks_submission",
+   "definition": "Toast popup blocks attachment submission."
+  },
+  {
+   "code": "built_in_camera_integration_missing",
+   "definition": "Built\u2011in camera cannot capture or attach photos."
+  },
+  {
+   "code": "notifications_inaccurate_content",
+   "definition": "Notifications show incorrect ticket titles or stale content."
+  },
+  {
+   "code": "notifications_delayed_unless_app_foreground",
+   "definition": "Notifications delayed unless app is foreground."
+  },
+  {
+   "code": "ticket_note_editing_limited_to_initial",
+   "definition": "Only initial ticket message editable; other notes not."
+  },
+  {
+   "code": "ticket_creation_auto_assigns_wrong_group",
+   "definition": "New tickets auto\u2011assigned to incorrect group."
+  },
+  {
+   "code": "account_features_not_visible_across_devices",
+   "definition": "Full account features missing on some devices."
+  },
+  {
+   "code": "notifications_missing_alert",
+   "definition": "No alert sound or visual cue for notifications."
+  },
+  {
+   "code": "bookings_calendar_not_visible",
+   "definition": "Bookings calendar not displayed in mobile app."
+  },
+  {
+   "code": "properties_update_section_missing",
+   "definition": "Properties update UI hidden or hard to access."
+  },
+  {
+   "code": "admin_ticket_assignment_toggle_missing",
+   "definition": "Admin cannot enable/disable ticket assignment from app."
+  },
+  {
+   "code": "admin_simple_reports_missing",
+   "definition": "Simple reports/dashboard unavailable for admins."
+  },
+  {
+   "code": "notifications_schedule_not_working",
+   "definition": "Scheduled notification times do not trigger."
+  },
+  {
+   "code": "contacts_edit_failure_mobile",
+   "definition": "Editing contacts fails with error on mobile."
+  },
+  {
+   "code": "notification_sound_setting_missing",
+   "definition": "Cannot select notification sound in app."
+  }
+ ]
+}

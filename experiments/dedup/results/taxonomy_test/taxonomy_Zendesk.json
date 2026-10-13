@@ -1,0 +1,158 @@
+{
+ "company": "Zendesk",
+ "history_reviews": 194,
+ "problems": [
+  {
+   "code": "sign_in_verification_code_letters_blocked",
+   "definition": "Verification field blocks letters, only numeric keyboard shown."
+  },
+  {
+   "code": "macros_apply_failure",
+   "definition": "Macros cannot be applied; no results shown."
+  },
+  {
+   "code": "zentalk_missing",
+   "definition": "No Zentalk integration for direct calls."
+  },
+  {
+   "code": "dark_mode_missing",
+   "definition": "App lacks dark mode option."
+  },
+  {
+   "code": "pull_to_refresh_freeze",
+   "definition": "Pull-to-refresh freezes app, blocking ticket updates."
+  },
+  {
+   "code": "notification_tap_no_navigation",
+   "definition": "Tapping notification opens app but not specific ticket."
+  },
+  {
+   "code": "search_results_missing_ticket_numbers",
+   "definition": "Search results omit ticket numbers."
+  },
+  {
+   "code": "search_results_missing_priority",
+   "definition": "Search results omit ticket priority."
+  },
+  {
+   "code": "app_freezes_general",
+   "definition": "App frequently freezes, stopping all actions."
+  },
+  {
+   "code": "query_duplicate_repetition",
+   "definition": "Each query sent about fifty duplicate times."
+  },
+  {
+   "code": "notification_spam_multiple",
+   "definition": "Single ticket generates many duplicate notifications."
+  },
+  {
+   "code": "macro_text_not_populated",
+   "definition": "Selected macro does not insert its text into reply."
+  },
+  {
+   "code": "status_save_ui_lag",
+   "definition": "Saving or sending ticket status feels sluggish."
+  },
+  {
+   "code": "satisfaction_rating_missing",
+   "definition": "Ticket satisfaction rating not displayed."
+  },
+  {
+   "code": "sso_cleartext_not_permitted",
+   "definition": "SSO fails with cleartext not permitted error."
+  },
+  {
+   "code": "sign_in_invalid_credentials_error",
+   "definition": "Sign-in repeatedly reports invalid email or password."
+  },
+  {
+   "code": "notification_not_shown_android",
+   "definition": "Enabled notifications sometimes do not appear on Android."
+  },
+  {
+   "code": "app_crash_on_oreo",
+   "definition": "App consistently crashes on Android Oreo devices."
+  },
+  {
+   "code": "macro_not_working_on_android",
+   "definition": "Macros fail on specific Android devices."
+  },
+  {
+   "code": "required_fields_missing_indicators",
+   "definition": "Required fields lack indicators for missing inputs."
+  },
+  {
+   "code": "view_auto_update_infrequent",
+   "definition": "Views do not auto-update frequently enough."
+  },
+  {
+   "code": "notifications_auto_disable",
+   "definition": "Notifications automatically turn off after being enabled."
+  },
+  {
+   "code": "call_receiving_missing",
+   "definition": "App cannot receive incoming calls."
+  },
+  {
+   "code": "sign_up_failure",
+   "definition": "User cannot complete sign\u2011up process."
+  },
+  {
+   "code": "notification_ticket_updates_missing",
+   "definition": "Push notifications for ticket updates not received."
+  },
+  {
+   "code": "notification_token_expiration",
+   "definition": "Opening notification causes session token to expire, forcing re-login."
+  },
+  {
+   "code": "unexpected_logout",
+   "definition": "App logs user out unexpectedly during use."
+  },
+  {
+   "code": "notification_wrong_queue",
+   "definition": "Notifications include tickets outside the user's assigned queue."
+  },
+  {
+   "code": "ticket_deletion_missing",
+   "definition": "Ability to delete tickets is absent from the app."
+  },
+  {
+   "code": "ticket_merge_missing",
+   "definition": "Merge tickets feature is not available."
+  },
+  {
+   "code": "comment_copy_paste_blocked",
+   "definition": "Copy and paste actions disabled in comment field."
+  },
+  {
+   "code": "notification_dismiss_missing",
+   "definition": "No way to dismiss individual notification alerts."
+  },
+  {
+   "code": "multi_ticket_selection_missing",
+   "definition": "Cannot select multiple tickets simultaneously."
+  },
+  {
+   "code": "macro_extra_steps",
+   "definition": "Applying macros now requires additional unnecessary steps."
+  },
+  {
+   "code": "session_token_expired",
+   "definition": "Session token expires frequently, requiring repeated sign\u2011in."
+  },
+  {
+   "code": "feature_removal_no_warning",
+   "definition": "Features removed without prior warning or notice."
+  },
+  {
+   "code": "domain_login_missing",
+   "definition": "No option to log in using custom domain credentials."
+  },
+  {
+   "code": "false_no_network_error",
+   "definition": "App shows \u201cno network\u201d error despite active connection."
+  }
+ ]
+}
