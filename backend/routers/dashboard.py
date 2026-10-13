@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from collections import Counter
 from backend.services.email_service import (
     escalate_case,
@@ -26,6 +27,7 @@ from backend.services.spike_detection import (
 )
 from backend.services.alert_groups import build_groups
 from backend.services.escalation_policy import escalation_check
+from backend.services import unassigned_spikes
 
 
 router = APIRouter(
@@ -641,6 +643,62 @@ def dashboard_vague_summary():
                 for p in sorted(cases_by, key=lambda k: -complaints_by[k])
             ],
         }
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
+
+
+def _history_chunked(case_ids):
+    rows = []
+    for k in range(0, len(case_ids), unassigned_spikes.CHUNK):
+        rows += get_case_history_bulk(case_ids[k:k + unassigned_spikes.CHUNK])
+    return rows
+
+
+@router.get("/unassigned-spikes")
+def dashboard_unassigned_spikes():
+    """
+    Outage signal (separate from dedup): per product, complaints the judge could not place in a
+    specific case (cases.is_vague), counted per 6-hour window with spike detector v2. An alert
+    means "possible outage or widespread degradation", shown with the product's specific cases
+    active in the same window. Off unless UNASSIGNED_SPIKES=1. See services/unassigned_spikes.py.
+    """
+
+    if not unassigned_spikes.enabled():
+        return {"enabled": False, "products": []}
+
+    try:
+
+        cases = {c["case_id"]: c for c in get_cases()}
+
+        product_of_case = {}
+        for row in get_complaints():
+            if row.get("case_id") is not None:
+                product_of_case.setdefault(row["case_id"], row.get("product") or "unknown")
+
+        vague_by_product = {}
+        for case_id, case in cases.items():
+            if case.get("is_vague"):
+                vague_by_product.setdefault(product_of_case.get(case_id, "unknown"), []).append(case_id)
+
+        results = unassigned_spikes.detect(
+            vague_by_product,
+            _history_chunked([c for ids in vague_by_product.values() for c in ids]),
+            now=datetime.now(timezone.utc),
+        )
+
+        for r in results:
+            if r["spike"]:
+                specific = [c for c, p in product_of_case.items()
+                            if p == r["product"] and not cases.get(c, {}).get("is_vague")]
+                r["related_cases"] = unassigned_spikes.related_cases(
+                    r["product"], r["window_start"], cases, product_of_case, _history_chunked(specific))
+
+        return {"enabled": True, "products": results}
 
     except Exception as e:
 
