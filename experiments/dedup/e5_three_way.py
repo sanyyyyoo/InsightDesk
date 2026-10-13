@@ -274,6 +274,16 @@ Existing cases:
 
 Return JSON: {{"problem_named": true or false, "case": <case number that is the same problem, or 0 if none>}}"""
 
+    # User-level v2, "main problem" (results/user_level_v2_rule.md): two instructions added, nothing else
+    PROMPT_USER2 = PROMPT_USER.replace(
+        '"notifications don\'t arrive" vs "too many notifications").\n',
+        '"notifications don\'t arrive" vs "too many notifications").\n'
+        'Compare the MAIN problem of the new complaint with the MAIN problem of each case. A case\'s first\n'
+        'complaint may mention several problems; only its main one defines the case.\n'
+        'Problems in the same screen or area are still different problems when the user\'s experience differs,\n'
+        'e.g. creating an account vs logging in vs staying logged in; using macros vs sending a reply vs\n'
+        'creating a ticket.\n')
+
     # Decoupled gate (results/decoupled_gate_rule.md): matching without the specificity step ...
     PROMPT_MATCH = PROMPT_GATED.replace(
         'First decide if the new complaint is SPECIFIC: it names a concrete symptom, error or behaviour\n'
@@ -381,7 +391,7 @@ Return JSON: {{"statement": "<feature>: <symptom>"}}"""
                        "gated2": self.PROMPT_GATED2, "uncertain": self.PROMPT_UNCERTAIN,
                        "gated_cb1": self.PROMPT_GATED_CB1, "gated_cb2": self.PROMPT_GATED_CB2,
                        "gated_cb3": self.PROMPT_GATED_CB3, "gated_cb4": self.PROMPT_GATED_CB4,
-                       "match": self.PROMPT_MATCH, "user": self.PROMPT_USER}.get(prompt, self.PROMPT)
+                       "match": self.PROMPT_MATCH, "user": self.PROMPT_USER, "user2": self.PROMPT_USER2}.get(prompt, self.PROMPT)
         self.three_way = prompt == "uncertain"
         if prompt == "gated_fewshot":             # R1 prompt + worked examples from the tuning side
             ex = json.load(open(FEWSHOT_PATH, encoding="utf-8"))
@@ -394,7 +404,7 @@ Return JSON: {{"statement": "<feature>: <symptom>"}}"""
         self.uncertain = set()                    # rows sent to the human review queue
         self.resolver = None                      # optional stand-in for the human (OracleJudge)
         self.show_vague = False                   # E2: keep vague-started cases visible
-        self.gated = prompt in ("gated", "gated2", "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4", "user")
+        self.gated = prompt in ("gated", "gated2", "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4", "user", "user2")
         self.statements = {}                      # case statements, cached separately (one per founder)
         self.statement_path = self.cache_path.replace(".jsonl", "_statements.jsonl")
         if view == "statement" and os.path.exists(self.statement_path):
@@ -759,7 +769,7 @@ def main():
                         help="what the LLM sees of each candidate case")
     parser.add_argument("--judge-prompt", default="v1",
                         choices=["v1", "strict", "gated", "gated2", "uncertain", "gated_fewshot",
-                                 "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4", "match", "user"])
+                                 "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4", "match", "user", "user2"])
     parser.add_argument("--require-top1", action="store_true",
                         help="automatic merge only when the LLM's chosen case is also the top cosine candidate")
     parser.add_argument("--fewshot", default="", help="examples JSON for --judge-prompt gated_fewshot")
