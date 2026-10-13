@@ -24,3 +24,9 @@ Confirmation (one shot, final halves s0A, s1A, s1B pooled): P >= 0.78 AND recall
 with the paired 95% interval (corrected cluster bootstrap) excluding 0.
 Secondary (reported, not decisive): Claude and ChatGPT user-level keys and their agreed pairs;
 case-level (B-cubed) precision; vague share.
+
+## Outcome (2026-10-14 02:14) - U2 NOT ADOPTED (development bar not met; no further iteration)
+Development s0B, user-level key: R1 0.736 / 0.209 / 0.325; v1 0.567 / 0.438 / 0.494; U2 0.671 / 0.422 / 0.518
+(F1 bar 0.375 met, precision bar 0.75 not met). Case-level precision R1 0.93, v1 0.81, U2 0.84.
+Secondary keys: Claude key U2 0.635 / 0.482 / 0.548 (R1 0.779 / 0.267 / 0.397); ChatGPT key U2 0.552 / 0.320 / 0.405.
+The main-problem instructions recovered about half of v1's precision loss (0.567 -> 0.671) at a small recall cost.
