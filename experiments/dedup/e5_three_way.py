@@ -49,6 +49,9 @@ RESULTS = os.path.join(os.path.dirname(__file__), "results")
 LLM_CACHE = os.path.join(RESULTS, "llm_judge_cache.jsonl")
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 CE_BASE = "cross-encoder/ms-marco-MiniLM-L6-v2"
+PRE_GATE = False     # decoupled gate, set from --pre-gate
+SECOND_LOOK = ""     # vague second look, set from --second-look ("", "any", "top1")
+TRAINED_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "external", "training")
 SPLIT_SEEDS = [0, 1, 2, 3, 4]
 HIGH_PRECISION = 0.97
 LOW_SHARE = 0.20
@@ -178,6 +181,24 @@ class CEJudge:
         return float(np.mean(probs)) >= 0.5
 
 
+class TrainedJudge:
+    """Pre-trained cross-encoder (Colab, rule results/training_rule.md) instead of the LLM:
+    scores the new complaint against each candidate case's FIRST complaint (founder, as R1 sees),
+    merges into the highest-probability case if >= 0.5, else new case."""
+
+    def __init__(self, texts, variant):
+        from sentence_transformers import CrossEncoder
+        self.name = "ce" + variant
+        self.texts = texts
+        self.model = CrossEncoder(os.path.join(TRAINED_DIR, "ce_" + variant), num_labels=1)
+
+    def best(self, i, candidates):
+        probs = self.model.predict([(self.texts[i], self.texts[c[0]]) for c in candidates],
+                                   activation_fn=torch.nn.Sigmoid(), show_progress_bar=False)
+        k = int(np.argmax(probs))
+        return k if probs[k] >= 0.5 else -1
+
+
 class LLMJudge:
     """Groq judge. One call per banded complaint, all candidates in one prompt. Cached."""
     name = "llm"
@@ -229,6 +250,64 @@ Existing cases:
 {cases}
 
 Return JSON: {{"specific": true or false, "case": <case number that is the same problem, or 0 if none>}}"""
+
+    # User-level problem definition (results/user_level_rule.md)
+    PROMPT_USER = """You decide whether a new customer complaint reports the SAME problem as an existing case,
+as the USER experiences it: the same thing they cannot do, or the same visible failure
+(e.g. "cannot log in", "logged out repeatedly", "notifications don't arrive", "app crashes",
+"app very slow", "cannot filter tickets", "wants dark mode").
+Users are not developers: different causes, error messages or details of the same experience are the
+SAME problem ("invalid password", "Google sign-in loops" and just "can't log in" are all "cannot log in").
+Different experiences are DIFFERENT problems ("cannot log in" vs "keeps logging me out";
+"notifications don't arrive" vs "too many notifications").
+
+First decide if the new complaint names a problem at all. It names NO problem only if it is praise,
+a question, or a general rant with no problem in it ("useless app", "worst ever", a rating with no reason).
+
+If it names no problem, or no case is the same problem, or you are not sure, answer case 0.
+
+New complaint:
+{new}
+
+Existing cases:
+{cases}
+
+Return JSON: {{"problem_named": true or false, "case": <case number that is the same problem, or 0 if none>}}"""
+
+    # Decoupled gate (results/decoupled_gate_rule.md): matching without the specificity step ...
+    PROMPT_MATCH = PROMPT_GATED.replace(
+        'First decide if the new complaint is SPECIFIC: it names a concrete symptom, error or behaviour\n'
+        '(e.g. "access token revoked", "macros won\'t apply", "crashes when opening settings").\n'
+        'It is NOT specific if it only says something like "can\'t login", "doesn\'t work", "bad app", "too slow".\n\n'
+        'If it is not specific, or no case is the same specific problem, or you are not sure, answer case 0.',
+        'If no case is the same specific problem, or you are not sure, answer case 0.').replace(
+        'Return JSON: {{"specific": true or false, "case":', 'Return JSON: {{"case":')
+    # ... and the specificity question on its own, asked once per complaint with no candidates shown
+    SPECIFIC = """Decide whether this customer complaint is SPECIFIC: it names a concrete symptom, error or behaviour
+(e.g. "access token revoked", "macros won't apply", "crashes when opening settings").
+It is NOT specific if it only says something like "can't login", "doesn't work", "bad app", "too slow".
+
+Complaint:
+{new}
+
+Return JSON: {{"specific": true or false}}"""
+
+    def is_specific(self, i):
+        if not hasattr(self, "spec_cache"):
+            self.spec_cache, self.spec_calls = {}, 0
+            self.spec_path = LLM_CACHE.replace(".jsonl", "_specific.jsonl")
+            if os.path.exists(self.spec_path):
+                for line in open(self.spec_path, encoding="utf-8"):
+                    r = json.loads(line)
+                    self.spec_cache[r["text"]] = r["specific"]
+        t = self.texts[i]
+        if t not in self.spec_cache:
+            reply = self._call(self.SPECIFIC.format(new=t))
+            self.spec_cache[t] = bool(reply.get("specific", True))
+            self.spec_calls += 1
+            with open(self.spec_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"text": t, "specific": self.spec_cache[t]}) + "\n")
+        return self.spec_cache[t]
 
     # Gate wording aligned with the team codebook (results/gate_wording_rule.md)
     PROMPT_GATED_CB1 = PROMPT_GATED.replace('First decide if the new complaint is SPECIFIC: it names a concrete symptom, error or behaviour\n(e.g. "access token revoked", "macros won\'t apply", "crashes when opening settings").\nIt is NOT specific if it only says something like "can\'t login", "doesn\'t work", "bad app", "too slow".\n', 'First decide if the new complaint is SPECIFIC: it says WHAT goes wrong - a feature or action and what\nhappens to it (e.g. "access token revoked", "notifications don\'t arrive", "tickets load very slowly",\n"crashes when opening settings", "keeps logging me out", "can\'t attach files").\nIt is NOT specific only if it names no symptom at all: "bad app", "doesn\'t work", "useless",\n"worst support", praise, or a rating without a problem.\n')
@@ -301,7 +380,8 @@ Return JSON: {{"statement": "<feature>: <symptom>"}}"""
         self.prompt = {"strict": self.PROMPT_STRICT, "gated": self.PROMPT_GATED,
                        "gated2": self.PROMPT_GATED2, "uncertain": self.PROMPT_UNCERTAIN,
                        "gated_cb1": self.PROMPT_GATED_CB1, "gated_cb2": self.PROMPT_GATED_CB2,
-                       "gated_cb3": self.PROMPT_GATED_CB3, "gated_cb4": self.PROMPT_GATED_CB4}.get(prompt, self.PROMPT)
+                       "gated_cb3": self.PROMPT_GATED_CB3, "gated_cb4": self.PROMPT_GATED_CB4,
+                       "match": self.PROMPT_MATCH, "user": self.PROMPT_USER}.get(prompt, self.PROMPT)
         self.three_way = prompt == "uncertain"
         if prompt == "gated_fewshot":             # R1 prompt + worked examples from the tuning side
             ex = json.load(open(FEWSHOT_PATH, encoding="utf-8"))
@@ -314,7 +394,7 @@ Return JSON: {{"statement": "<feature>: <symptom>"}}"""
         self.uncertain = set()                    # rows sent to the human review queue
         self.resolver = None                      # optional stand-in for the human (OracleJudge)
         self.show_vague = False                   # E2: keep vague-started cases visible
-        self.gated = prompt in ("gated", "gated2", "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4")
+        self.gated = prompt in ("gated", "gated2", "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4", "user")
         self.statements = {}                      # case statements, cached separately (one per founder)
         self.statement_path = self.cache_path.replace(".jsonl", "_statements.jsonl")
         if view == "statement" and os.path.exists(self.statement_path):
@@ -363,6 +443,47 @@ Return JSON: {{"statement": "<feature>: <symptom>"}}"""
             print(f"llm: key {self.key_index + 1} limited, switching to key {best + 1}", flush=True)
             self.key_index, self.client = best, self.clients[best]
         return max(0.0, self.free_at[best] - now)
+
+    # Vague second look (results/vague_second_look_rule.md): only for complaints the gate called vague
+    SECOND_LOOK = """This customer complaint is short or general. Decide whether it most likely reports the SAME
+problem as one of the existing cases: the same feature AND the same kind of failure, so that fixing
+that case would very likely fix this complaint too. Sharing only the general area (e.g. both about
+login, or both "not working") is NOT enough. If you are not sure, answer case 0.
+Also name the product area the complaint is about in 1-3 words (e.g. "login", "notifications",
+"crash on launch", "sync"), or "none" if it names no area.
+
+New complaint:
+{new}
+
+Existing cases:
+{cases}
+
+Return JSON: {{"case": <case number that is the same problem, or 0 if none>, "area": "<area or none>"}}"""
+
+    def second_look(self, i, candidates):
+        """Case index (0-based) the vague complaint i most likely belongs to, or -1; area stored."""
+        if not hasattr(self, "sl_cache"):
+            self.sl_cache, self.sl_calls = {}, 0
+            self.sl_path = self.cache_path.replace(".jsonl", "_secondlook.jsonl")
+            if os.path.exists(self.sl_path):
+                for line in open(self.sl_path, encoding="utf-8"):
+                    r = json.loads(line)
+                    self.sl_cache[r["key"]] = r["reply"]
+        shown = [[c[0]] for c in candidates]                 # founder text, as R1's judge sees it
+        key = json.dumps([int(self.refs[i]), [[int(self.refs[m]) for m in sh] for sh in shown]])
+        if key not in self.sl_cache:
+            cases = "\n".join(f"Case {n + 1}: " + self.texts[sh[0]] for n, sh in enumerate(shown))
+            reply = self._call(self.SECOND_LOOK.format(new=self.texts[i], cases=cases))
+            try:
+                ans = int(reply.get("case", 0) or 0)
+            except (TypeError, ValueError):
+                ans = 0
+            self.sl_cache[key] = {"case": ans, "area": str(reply.get("area", "none"))}
+            self.sl_calls += 1
+            with open(self.sl_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"key": key, "reply": self.sl_cache[key]}) + "\n")
+        ans = self.sl_cache[key]["case"]
+        return ans - 1 if 1 <= ans <= len(candidates) else -1
 
     def statement(self, row):
         """Problem statement of a case, generated once from its first complaint."""
@@ -427,7 +548,8 @@ Return JSON: {{"statement": "<feature>: <symptom>"}}"""
                     if self.three_way:
                         decision = str(reply.get("decision", "none")).lower()
                         answer = answer if decision == "merge" else (-2 if decision == "uncertain" else 0)
-                    if self.gated and (not bool(reply.get("specific", True)) or bool(reply.get("vague", False))):
+                    if self.gated and (not bool(reply.get("specific", True)) or bool(reply.get("vague", False))
+                                       or not bool(reply.get("problem_named", True))):
                         answer = -1               # vague: new case, never offered as a candidate
                     break
                 except Exception as exc:
@@ -505,10 +627,25 @@ def three_way(emb, rows, t_high, t_low, judge, exemplars=False):
                     elif exemplars and judge.view not in ("founder", "statement"):
                         shown = [[members[c][0]] + ([matched[c]] if matched[c] != members[c][0] else [])
                                  for c in cands]
-                    pick = judge.choose(i, [members[c] for c in cands], shown)
+                    if PRE_GATE and not judge.is_specific(i):
+                        judge.vague.add(i)                # decoupled gate: vague singleton, never a candidate
+                        pick = -1
+                    else:
+                        pick = judge.choose(i, [members[c] for c in cands], shown)
                     chosen = cands[pick] if pick >= 0 else -1
                     if REQUIRE_TOP1 and chosen >= 0 and chosen != cands[0]:
                         chosen = -1               # LLM and cosine disagree on the best case: no merge
+                    if SECOND_LOOK and chosen < 0 and i in judge.vague and cands:
+                        sl = judge.second_look(i, [members[c] for c in cands])
+                        if sl >= 0 and (SECOND_LOOK != "top1" or sl == 0):
+                            labels[k] = cands[sl]                 # member only: not founder, not exemplar,
+                            members[cands[sl]].append(i)          # so no later decision changes
+                            judge.recovered = getattr(judge, "recovered", 0) + 1
+                            continue
+                elif isinstance(judge, TrainedJudge):
+                    judged_pairs += len(cands)
+                    pick = judge.best(i, [members[c] for c in cands])
+                    chosen = cands[pick] if pick >= 0 else -1
                 else:
                     for c in cands:
                         judged_pairs += 1
@@ -622,7 +759,7 @@ def main():
                         help="what the LLM sees of each candidate case")
     parser.add_argument("--judge-prompt", default="v1",
                         choices=["v1", "strict", "gated", "gated2", "uncertain", "gated_fewshot",
-                                 "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4"])
+                                 "gated_cb1", "gated_cb2", "gated_cb3", "gated_cb4", "match", "user"])
     parser.add_argument("--require-top1", action="store_true",
                         help="automatic merge only when the LLM's chosen case is also the top cosine candidate")
     parser.add_argument("--fewshot", default="", help="examples JSON for --judge-prompt gated_fewshot")
@@ -639,13 +776,20 @@ def main():
                         help="external test: fit band/threshold ONLY on this dataset, test on all of --data")
     parser.add_argument("--lopo", action="store_true",
                         help="leave-one-product-out: calibrate on the other products, test on each product in turn")
+    parser.add_argument("--embed", default="", help="retrieval encoder path (default MiniLM), e.g. the trained bi_C")
+    parser.add_argument("--pre-gate", action="store_true",
+                        help="decoupled gate: specificity asked alone first (results/decoupled_gate_rule.md)")
+    parser.add_argument("--second-look", default="", choices=["", "any", "top1"],
+                        help="vague second look (results/vague_second_look_rule.md): any = VS, top1 = VS1")
     args = parser.parse_args()
     globals()["MAX_CANDIDATES"] = args.top_k
     globals()["FEWSHOT_PATH"] = args.fewshot
     globals()["REQUIRE_TOP1"] = args.require_top1
+    globals()["SECOND_LOOK"] = args.second_look
+    globals()["PRE_GATE"] = args.pre_gate
 
     from sentence_transformers import SentenceTransformer
-    encoder = SentenceTransformer(EMBED_MODEL)
+    encoder = SentenceTransformer(args.embed or EMBED_MODEL)
     if args.calibrate_on:                         # calibration rows first, then the test dataset
         cal = load_ground_truth(path=DATA_PATHS[args.calibrate_on])
         tgt = load_ground_truth(path=DATA_PATHS[args.data])
@@ -661,6 +805,8 @@ def main():
     refs = df["complaint_ref"].values
     issue_ids = np.array(sorted(set(issues)))
     cache_name = f"{args.data}_ext_{args.calibrate_on}" if args.calibrate_on else args.data
+    if args.data == "playstore_user":             # same refs as playstore for the 338 shared reviews: reuse R1's answers
+        cache_name = "playstore"
     llm = LLMJudge(judge_text, refs, cache_name, args.judge_view, args.judge_prompt) if "llm" in args.judges else None
     if llm is not None:
         llm.show_vague = args.show_vague_cases
@@ -690,6 +836,12 @@ def main():
         tag += "_top1agree"
     if "llm" in args.judges and (args.judge_view != "founder_latest" or args.judge_prompt != "v1"):
         tag += f"_{args.judge_view}_{args.judge_prompt}"
+    if args.pre_gate:
+        tag += "_pregate"
+    if args.second_look:
+        tag += "_secondlook" + ("" if args.second_look == "any" else "_top1")
+    if args.embed:
+        tag += "_emb" + os.path.basename(os.path.normpath(args.embed))
     if args.calibrate_on:
         tag += f"_ext_{args.calibrate_on}"
         is_cal = df["_cal"].to_numpy(dtype=bool)
@@ -723,6 +875,7 @@ def main():
                 else:
                     judge = {"oracle": lambda: OracleJudge(issues),
                              "ce": lambda: CEJudge(judge_text, tune, issues, emb, seed),
+                             "ceA": lambda: TrainedJudge(judge_text, "A"), "ceB": lambda: TrainedJudge(judge_text, "B"),
                              "llm": lambda: llm, "llm_human": lambda: llm}[name]()
                     if llm is not None:
                         llm.resolver = OracleJudge(issues) if name == "llm_human" else None
@@ -739,6 +892,8 @@ def main():
                 if llm is not None and name in ("llm", "llm_human"):
                     m["review_queue"] = len(set(test.tolist()) & llm.uncertain)
                     m["vague_gated"] = len(set(test.tolist()) & llm.vague)
+                    m["vague_recovered"] = getattr(llm, "recovered", 0)
+                    llm.recovered = 0
                 m.update({"judge": name, "split_seed": seed, "held_out_half": h,
                           "t_low": t_low, "t_high": t_high, "banded_complaints": banded,
                           "banded_share": banded / len(test), "judge_pairs": pairs,
