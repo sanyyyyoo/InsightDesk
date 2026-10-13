@@ -1,0 +1,18 @@
+Replay of 200 complaints through the app (DEDUP_MODE=r1, real judge openai/gpt-oss-120b)
+
+dedup routes: {"new_judge": 91, "vague": 80, "judge_merge": 16, "new_low": 12, "new_empty": 1}
+cases: 184 | with >= 2 complaints: 14 | largest: 3
+accuracy on the 0 labelled synthetic complaints (0 true pairs): P 0.000 R 0.000 F1 0.000
+cases mixing real and synthetic complaints: 0
+
+per product:
+            complaints  cases
+product                      
+Jira Cloud         200    184
+
+vague summary: {"vague_cases": 80, "vague_complaints": 80, "by_product": [{"product": "Jira Cloud", "cases": 80, "complaints": 80}]}
+
+spikes at the end of the replay: 0 case alerts, 0 group alerts
+note: spikes are evaluated at each case's latest window; historical review dates make this a snapshot, not a live alert stream
+
+LLM calls made in this run: 207 (cached answers reused: 0)

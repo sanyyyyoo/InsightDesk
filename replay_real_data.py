@@ -37,10 +37,12 @@ import pandas as pd  # noqa: E402
 import test_e2e_local as env  # noqa: E402   (in-memory Supabase/Pinecone, clock, app client)
 
 EXP = "D:/PBL/InsightDesk-dedup"
-DATA = os.path.join(EXP, "data", "master_complaints_v2.csv")
+DATA = os.getenv("REPLAY_DATA") or os.path.join(EXP, "data", "master_complaints_v2.csv")
 TRUTH = os.path.join(EXP, "data", "synthetic_ground_truth.csv")
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reports", "replay")
-CACHE = os.path.join(OUT, "replay_llm_cache.jsonl")
+BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reports", "replay")
+CACHE = os.getenv("REPLAY_CACHE") or os.path.join(BASE, "replay_llm_cache.jsonl")   # shared unless REPLAY_CACHE (blind runs)
+NO_PRODUCT = os.getenv("REPLAY_NO_PRODUCT") == "1"           # fair comparison with the main-branch pipeline
+OUT = os.getenv("REPLAY_OUT") or (os.path.join(BASE, "no_product_filter") if NO_PRODUCT else BASE)
 MODEL = "openai/gpt-oss-120b"
 
 sys.path.append(os.path.join(EXP, "experiments", "dedup"))
@@ -82,8 +84,13 @@ class GroqRotating:
                 wait = (int(m.group(1) or 0) * 3600 + int(m.group(2) or 0) * 60 + float(m.group(3)) + 5) if m else 30
                 now = time.time()
                 self.free_at[self.k] = now + wait
+                kind = re.findall(r"tokens per (?:day|minute)|requests per (?:day|minute)", str(exc))
+                print(f"[groq] key {self.k + 1} limited ({kind[0] if kind else str(exc)[:60]}), wait {wait:.0f}s", flush=True)
                 self.k = min(range(len(self.clients)), key=lambda j: self.free_at[j])
-                time.sleep(max(0.0, self.free_at[self.k] - now))
+                pause = max(0.0, self.free_at[self.k] - now)
+                if pause > 0:
+                    print(f"[groq] all keys busy, sleeping {pause:.0f}s (next: key {self.k + 1})", flush=True)
+                time.sleep(pause)
         self.cache[h] = reply
         self.calls += 1
         with open(CACHE, "a", encoding="utf-8") as f:
@@ -107,6 +114,10 @@ def main():
     llm = GroqRotating()
     import backend.llm.provider as provider
     provider.generate_json = llm                 # the R1 judge calls go here (dedup_r1.llm_judge)
+    if NO_PRODUCT:                               # replay only: R1 searches ALL cases, like the main-branch pipeline
+        from backend.services import dedup_r1
+        _decide = dedup_r1.decide
+        dedup_r1.decide = lambda *a, product=None, **k: _decide(*a, product=None, **k)
 
     m = pd.read_csv(DATA).reset_index().rename(columns={"index": "row"})
     m["ts"] = pd.to_datetime(m["date"], errors="coerce").fillna(pd.Timestamp("2026-01-01"))
@@ -163,7 +174,11 @@ def main():
     real = a.groupby("case_id").is_synthetic.max() == False   # noqa: E712  cases with no synthetic complaint
     sheets = {"top20_case_review.xlsx": size.sort_values(ascending=False).head(20).index,
               "top20_real_case_review.xlsx": size[real[real].index].sort_values(ascending=False).head(20).index}
-    if os.getenv("RCA_NEXT20"):                     # v3 confirmation: real cases ranked 21-40, v1 and v3 RCAs
+    if os.getenv("REPLAY_DATA"):                    # other datasets: one top-20 review sheet
+        sheets = {"top20_case_review.xlsx": size.sort_values(ascending=False).head(20).index}
+    elif NO_PRODUCT:
+        sheets = {}
+    elif os.getenv("RCA_NEXT20"):                     # v3 confirmation: real cases ranked 21-40, v1 and v3 RCAs
         nxt = size[real[real].index].sort_values(ascending=False).iloc[20:40].index
         for ver in ("v1", "v3"):
             rca.RCA_PROMPT_VERSION = ver
