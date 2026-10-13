@@ -1,0 +1,17 @@
+
+PLAY STORE final halves (human labels): 505 reviews | correct case existed for 304 | joined it 100 (33%) | leaked 204 | cache misses 0
+    57  27.9% of leaks  LEAK judge: said none
+    55  27.0% of leaks  LEAK judge: vague gate
+    44  21.6% of leaks  LEAK below band
+    21  10.3% of leaks  LEAK retrieval: correct case hidden (started by a vague complaint)
+    17   8.3% of leaks  LEAK retrieval: correct case not in top-5
+     8   3.9% of leaks  LEAK judge: wrong pick
+     2   1.0% of leaks  LEAK auto-merge into wrong case
+
+JIRA only, blind run (agreed Claude/ChatGPT key): 200 reviews | correct case existed for 67 | joined it 11 (16%) | leaked 56 | cache misses 0
+    13  23.2% of leaks  LEAK retrieval: correct case hidden (started by a vague complaint)
+    12  21.4% of leaks  LEAK below band
+    11  19.6% of leaks  LEAK retrieval: correct case not in top-5
+     9  16.1% of leaks  LEAK judge: said none
+     8  14.3% of leaks  LEAK judge: vague gate
+     3   5.4% of leaks  LEAK judge: wrong pick

@@ -1,0 +1,19 @@
+stream: 367 labelled real reviews matched to the app replay | Zendesk: 243 (82 vague), Freshdesk: 124 (35 vague)
+gpt-oss area missing for 0 reviews
+
+=== area counters from gpt-oss areas ===
+  S specific outbreak      C: detected 0.30, false 0.20/100w | C+V: detected 0.36, false 0.35/100w | C+V+A: detected 0.66, false 1.14/100w
+  V vague outage n=5       C: detected 0.00, false 0.22/100w | C+V: detected 0.52, false 0.40/100w | C+V+A: detected 0.57, false 1.19/100w
+  V vague outage n=10      C: detected 0.00, false 0.20/100w | C+V: detected 1.00, false 0.35/100w | C+V+A: detected 1.00, false 1.15/100w
+  V vague outage n=20      C: detected 0.00, false 0.24/100w | C+V: detected 1.00, false 0.39/100w | C+V+A: detected 1.00, false 1.11/100w
+  A area outage n=10       C: detected 0.63, false 0.25/100w | C+V: detected 0.76, false 0.40/100w | C+V+A: detected 1.00, false 1.24/100w
+
+=== area counters from human areas (upper bound) ===
+  S specific outbreak      C: detected 0.30, false 0.20/100w | C+V: detected 0.36, false 0.35/100w | C+V+A: detected 0.86, false 1.29/100w
+  V vague outage n=5       C: detected 0.00, false 0.22/100w | C+V: detected 0.52, false 0.40/100w | C+V+A: detected 0.56, false 1.18/100w
+  V vague outage n=10      C: detected 0.00, false 0.20/100w | C+V: detected 1.00, false 0.35/100w | C+V+A: detected 1.00, false 1.26/100w
+  V vague outage n=20      C: detected 0.00, false 0.24/100w | C+V: detected 1.00, false 0.39/100w | C+V+A: detected 1.00, false 1.16/100w
+  A area outage n=10       C: detected 0.67, false 0.26/100w | C+V: detected 0.78, false 0.40/100w | C+V+A: detected 1.00, false 1.30/100w
+
+RULE vague counter: not adopted (V n=10 detection 1.00 >= 0.80? false 0.35 <= 0.25?)
+RULE area counters (gpt-oss): not adopted (A gain +0.24 >= 0.10? false 1.14 <= 0.43?)

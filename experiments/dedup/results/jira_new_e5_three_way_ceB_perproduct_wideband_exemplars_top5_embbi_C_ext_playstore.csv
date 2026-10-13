@@ -1,0 +1,2 @@
+pair_precision,pair_recall,pair_f1,cases,contaminated_cases,cross_issue_assignments,judge,split_seed,held_out_half,t_low,t_high,banded_complaints,banded_share,judge_pairs,seconds
+0.0,0.0,0.0,92,35,108,ceB,ext,jira_new,0.4273,0.8605862855911255,177,0.885,774,33.5
