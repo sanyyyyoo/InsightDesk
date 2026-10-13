@@ -72,11 +72,14 @@ def main():
     ap.add_argument("--seed", type=int, default=SEED)
     ap.add_argument("--out", default=OUT)
     ap.add_argument("--exclude", nargs="*", default=None, help="earlier samples: no shared report or group")
+    ap.add_argument("--src", default=SRC, help="folder with the reports CSV and train/test.csv (other BugHub projects)")
+    ap.add_argument("--reports", default="mozilla_firefox.csv")
+    ap.add_argument("--department", default="Firefox")
     args = ap.parse_args()
-    m = pd.read_csv(os.path.join(SRC, "mozilla_firefox.csv"),
+    m = pd.read_csv(os.path.join(args.src, args.reports),
                     usecols=["Issue_id", "Title", "Description", "Resolution", "Created_time"]).set_index("Issue_id")
-    te = pd.read_csv(os.path.join(SRC, f"{args.split}.csv"))
-    links = pd.concat([pd.read_csv(os.path.join(SRC, f)) for f in ("test.csv", "train.csv")]) if args.exclude else te
+    te = pd.read_csv(os.path.join(args.src, f"{args.split}.csv"))
+    links = pd.concat([pd.read_csv(os.path.join(args.src, f)) for f in ("test.csv", "train.csv")]) if args.exclude else te
     excluded = set().union(*(set(pd.read_csv(f).row) for f in args.exclude)) if args.exclude else set()
     parent = {}
 
@@ -131,7 +134,7 @@ def main():
     d["ts"] = pd.to_datetime(d.created_at, utc=True)
     d = d.sort_values(["ts", "row"]).drop(columns="ts").reset_index(drop=True)
     d["complaint_ref"] = range(1, len(d) + 1)
-    d["department"] = "Firefox"
+    d["department"] = args.department
     d["scored"] = True
     d = d[["complaint_ref", "department", "issue_id", "complaint_text", "created_at", "row", "problem_code", "scored"]]
     assert d.row.is_unique

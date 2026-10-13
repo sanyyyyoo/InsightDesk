@@ -37,10 +37,19 @@ DATA_PATHS = {
     # team-labelled real Play Store reviews (build_playstore_testset.py)
     "playstore": "data/external/playstore_scored.csv",
     "playstore_all": "data/external/playstore_all.csv",
+    # user-level problems (labels/playstore_user_level_map.csv, approved 2026-10-13)
+    "playstore_user": "data/external/playstore_user.csv",
     # Firefox duplicate-bug benchmark, cross-domain test (build_firefox_dbrd.py)
     "firefox": "data/external/firefox.csv",
     "firefox2": "data/external/firefox2.csv",
     "firefox3": "data/external/firefox3.csv",
+    "thunderbird": "data/external/thunderbird.csv",
+    # new help-desk apps (new_apps_rule.md): the 588-review blind sheet, no labels at run time
+    "new_apps": "data/external/new_apps_all.csv",
+    # Jira Cloud alone (one company), separate blind run with its own caches
+    "jira_new": "data/external/jira_new.csv",
+    # same 200 Jira reviews, issue_id = agreed Claude/ChatGPT key (leak analysis only)
+    "jira_agreed": "data/external/jira_agreed.csv",
 }
 
 
