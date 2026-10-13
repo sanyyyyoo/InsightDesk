@@ -708,6 +708,36 @@ def dashboard_unassigned_spikes():
         )
 
 
+@router.post("/rejoin")
+def dashboard_rejoin():
+    """
+    One case re-joining pass (services/rejoin.py): merges cases that report the same problem,
+    as judged by the LLM on up to 3 complaints per case. Off unless REJOIN_ENABLED=1.
+    Run it periodically (e.g. hourly); each pass merges a case at most once.
+    """
+
+    from backend.services import rejoin
+
+    if not rejoin.enabled():
+        return {"enabled": False, "merges": []}
+
+    try:
+
+        import backend.database.supabase as db
+        from backend.services.embedding_service import model
+
+        merges = rejoin.run_pass(
+            db, lambda texts: model.encode(texts, normalize_embeddings=True, show_progress_bar=False))
+        return {"enabled": True, "merges": [{"kept": int(k), "absorbed": int(a)} for k, a in merges]}
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
+
+
 @router.get("/group-spikes")
 def dashboard_group_spikes():
     """

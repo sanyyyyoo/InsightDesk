@@ -130,6 +130,32 @@ class PineconeStore:
         md["case_id"] = int(case_id)
         self.index.upsert(vectors=[{"id": f"{case_id}:{k}", "values": list(map(float, vec)), "metadata": md}])
 
+    def first_metadata(self, case_id):
+        res = self.index.fetch(ids=[f"{case_id}:0", str(case_id)])
+        vecs = res.get("vectors", {}) if isinstance(res, dict) else res.vectors
+        for v in vecs.values():
+            return dict(v["metadata"] if isinstance(v, dict) else v.metadata)
+        return {}
+
+    def delete_case(self, case_id):
+        self.index.delete(ids=[str(case_id)] + [f"{case_id}:{k}" for k in range(MAX_EXEMPLARS)])
+
+
+def move_case(from_case, to_case, store=None):
+    """Re-joining: the absorbed case's exemplars become exemplars of the kept case (if room and not
+    near-copies, with the kept case's founder text), then the absorbed case leaves the index so the
+    judge is never offered it again."""
+    store = store or default_store()
+    md = store.first_metadata(to_case)
+    kept = store.exemplars(to_case)
+    for vec in store.exemplars(from_case):
+        v = unit(vec)
+        if len(kept) < MAX_EXEMPLARS and (not kept or float(max(unit(e) @ v for e in kept)) < DIVERSE_SIM):
+            store.add(to_case, len(kept), v, {"founder_id": md.get("founder_id"), "founder_text": md.get("founder_text"),
+                                              "vague": bool(md.get("vague", False)), "product": md.get("product")})
+            kept.append(v)
+    store.delete_case(from_case)
+
 
 _default_store = None
 

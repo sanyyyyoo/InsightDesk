@@ -759,7 +759,9 @@ def get_cases():
         .execute()
     )
 
-    return response.data
+    # cases absorbed by a re-joining pass (cases.merged_into) are hidden;
+    # filtered here so this also works before the merged_into migration
+    return [c for c in response.data if not c.get("merged_into")]
 def get_complaints():
 
     response = (
@@ -1001,4 +1003,58 @@ def get_complaint_volume_by_day():
         .execute()
     )
 
+    return response.data
+
+# ==========================================================
+# Case re-joining (backend/services/rejoin.py)
+# ==========================================================
+
+def reassign_case_complaints(from_case_id, to_case_id):
+    """Move every complaint of one case to another (re-joining)."""
+    response = (
+        supabase.table("complaints")
+        .update({"case_id": to_case_id, "is_duplicate": True})
+        .eq("case_id", from_case_id)
+        .execute()
+    )
+    return response.data
+
+
+def move_case_windows(from_case_id, to_case_id):
+    """Add one case's 6-hour complaint counts to another's, then remove them."""
+    rows = (
+        supabase.table("complaint_windows")
+        .select("window_start, window_end, complaint_ct")
+        .eq("case_id", from_case_id)
+        .execute()
+    ).data
+    for r in rows:
+        existing = (
+            supabase.table("complaint_windows")
+            .select("window_id, complaint_ct")
+            .eq("case_id", to_case_id)
+            .eq("window_start", r["window_start"])
+            .execute()
+        ).data
+        if existing:
+            supabase.table("complaint_windows").update(
+                {"complaint_ct": int(existing[0]["complaint_ct"]) + int(r["complaint_ct"])}
+            ).eq("window_id", existing[0]["window_id"]).execute()
+        else:
+            supabase.table("complaint_windows").insert(
+                {"case_id": to_case_id, "window_start": r["window_start"],
+                 "window_end": r["window_end"], "complaint_ct": int(r["complaint_ct"])}
+            ).execute()
+    supabase.table("complaint_windows").delete().eq("case_id", from_case_id).execute()
+    return len(rows)
+
+
+def mark_case_merged(case_id, into_case_id):
+    """Keep the absorbed case's row for the audit trail, hidden from get_cases()."""
+    response = (
+        supabase.table("cases")
+        .update({"merged_into": into_case_id, "report_count": 0, "spike_status": False})
+        .eq("case_id", case_id)
+        .execute()
+    )
     return response.data
