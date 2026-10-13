@@ -1,0 +1,9 @@
+LLM classification: {'none': 162, 'vague': 33, 'coded': 143}
+
+held-out halves s0A, s1A, s1B pooled: 42254 pairs, 1035 true duplicate pairs
+  R1 (open dedup)                          P 0.810 [0.616,0.971]  R 0.259  F1 0.392 [0.227,0.563]
+  T-LLM (auto taxonomy, LLM classify)      P 0.622 [0.423,0.857]  R 0.214  F1 0.319 [0.138,0.517] | F1 vs R1 -0.073, ahead in 17%
+  T+R1 hybrid (approx.)                    P 0.660 [0.482,0.865]  R 0.271  F1 0.384 [0.219,0.564] | F1 vs R1 -0.009, ahead in 45%
+  T-emb (auto taxonomy, no-LLM classify)   P 0.492 [0.263,0.694]  R 0.115  F1 0.186 [0.079,0.307] | F1 vs R1 -0.206, ahead in 0%
+
+RULE: T-LLM not better than R1 (P 0.622 >= 0.80? F1 0.319 >= 0.492?)
