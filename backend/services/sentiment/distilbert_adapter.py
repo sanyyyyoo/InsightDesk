@@ -39,7 +39,13 @@ class DistilBERTAdapter(
         text: str
     ) -> SentimentResult:
 
-        result = self.model(text)[0]
+        # long complaints exceed the model's 512-token limit and crashed /analyze;
+        # sentiment is read from the first 512 tokens
+        result = self.model(
+            text,
+            truncation=True,
+            max_length=512,
+        )[0]
 
         score = float(
             result["score"]

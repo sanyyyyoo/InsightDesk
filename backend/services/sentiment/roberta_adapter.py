@@ -27,8 +27,12 @@ class RoBERTaAdapter(
         text: str
     ) -> SentimentResult:
 
+        # long complaints exceed the model's 512-token limit and crashed /analyze;
+        # sentiment is read from the first 512 tokens
         result = self.model(
-            text
+            text,
+            truncation=True,
+            max_length=512,
         )[0]
         sentiment = result["label"].capitalize()
         return SentimentResult(
