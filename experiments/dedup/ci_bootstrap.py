@@ -33,7 +33,53 @@ def load(f, judge, seed, half):
 
 
 def counts(case, issue, w_issue):
-    """TP, predicted pairs, true pairs with issue weights w (copies), excluding self-copy pairs."""
+    """TP, predicted pairs, true pairs when true group g is drawn w_g times (cluster bootstrap).
+
+    Each draw of a group is its own copy: pairs INSIDE a group count once per copy (weight w_g),
+    pairs ACROSS groups count over all copies (w_g * w_h), pairs between two copies of the same
+    group are not counted. Both kinds then have expected weight 1, so the resampled precision is
+    not biased. (The earlier version, counts_v1, gave within-group pairs weight w_g^2, about 2 in
+    expectation, which pushed precision intervals upward.) With w = 1 both equal the point estimate.
+    """
+    case = np.asarray(case)
+    issue = np.asarray(issue)
+    _, cidx = np.unique(case.astype(str), return_inverse=True)
+    cells, n_cell = np.unique(np.stack([cidx, issue]), axis=1, return_counts=True)
+    cc, ci, n = cells[0], cells[1], n_cell.astype(float)
+    wi = np.asarray(w_issue, dtype=float)[ci]
+    within = wi * c2(n)                                  # same case, same group: once per copy
+    tp = float(within.sum())
+    N = n * wi
+    cross = (np.bincount(cc, weights=N) ** 2 - np.bincount(cc, weights=N ** 2)) / 2.0
+    pred = tp + float(cross.sum())
+    n_iss = np.bincount(issue, minlength=len(w_issue)).astype(float)
+    true = float((np.asarray(w_issue, dtype=float) * c2(n_iss)).sum())
+    return tp, pred, true
+
+
+def bcubed(case, issue, w_issue):
+    """B-cubed P, R, F1 with the same copy rule (a review's case-mates = its own copy's group members
+    in the case + all copies of other groups in the case)."""
+    case = np.asarray(case)
+    issue = np.asarray(issue)
+    _, cidx = np.unique(case.astype(str), return_inverse=True)
+    cells, inv, n_cell = np.unique(np.stack([cidx, issue]), axis=1, return_inverse=True, return_counts=True)
+    inv = np.asarray(inv).ravel()
+    cc, ci, n = cells[0], cells[1], n_cell.astype(float)
+    w = np.asarray(w_issue, dtype=float)
+    N = n * w[ci]
+    other = np.bincount(cc, weights=N)[cc] - N            # all copies of OTHER groups in the case
+    p_cell = n / (n + other)
+    n_iss = np.bincount(issue, minlength=len(w)).astype(float)
+    r_cell = n / n_iss[ci]
+    wr = w[issue]
+    P = float((wr * p_cell[inv]).sum() / wr.sum())
+    R = float((wr * r_cell[inv]).sum() / wr.sum())
+    return P, R, (2 * P * R / (P + R) if P + R else 0.0)
+
+
+def counts_v1(case, issue, w_issue):
+    """Superseded (kept to document the correction): within-group pairs weighted w_g^2."""
     w = w_issue[issue]                       # weight of every review
     self_pairs = c2(w)
     df = pd.DataFrame({"case": case, "issue": issue, "w": w, "s": self_pairs})
