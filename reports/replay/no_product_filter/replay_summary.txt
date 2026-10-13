@@ -1,0 +1,24 @@
+Replay of 1432 complaints through the app (DEDUP_MODE=r1, real judge openai/gpt-oss-120b)
+
+dedup routes: {"judge_merge": 417, "new_judge": 374, "vague": 330, "auto_merge": 307, "new_low": 3, "new_empty": 1}
+cases: 708 | with >= 2 complaints: 182 | largest: 27
+accuracy on the 488 labelled synthetic complaints (4156 true pairs): P 0.950 R 0.475 F1 0.633
+cases mixing real and synthetic complaints: 13
+
+per product:
+                           complaints  cases
+product                                     
+Freshdesk                         235    191
+Generic Helpdesk Software         488     81
+HappyFox                           16     16
+Help Scout                         87     65
+LiveAgent                          42     38
+Zendesk                           437    304
+Zoho Desk                         127    115
+
+vague summary: {"vague_cases": 330, "vague_complaints": 372, "by_product": [{"product": "Zendesk", "cases": 143, "complaints": 159}, {"product": "Freshdesk", "cases": 75, "complaints": 77}, {"product": "Zoho Desk", "cases": 51, "complaints": 51}, {"product": "Generic Helpdesk Software", "cases": 16, "complaints": 38}, {"product": "Help Scout", "cases": 23, "complaints": 23}, {"product": "LiveAgent", "cases": 16, "complaints": 16}, {"product": "HappyFox", "cases": 6, "complaints": 8}]}
+
+spikes at the end of the replay: 0 case alerts, 0 group alerts
+note: spikes are evaluated at each case's latest window; historical review dates make this a snapshot, not a live alert stream
+
+LLM calls made in this run: 121 (cached answers reused: 2179)
