@@ -122,17 +122,20 @@ def get_case(
         case_id:int
 ):
     """
-    Retrieve a case.
+    Retrieve a case, or None if it does not exist.
+
+    (.single() raised PGRST116 for a missing case, which turned the
+    endpoints' 404 into a 500 - found by the Postman API tests.)
     """
     response = (
         supabase.table("cases")
         .select("*")
         .eq("case_id", case_id)
-        .single()
+        .limit(1)
         .execute()
     )
 
-    return response.data
+    return response.data[0] if response.data else None
 
 
 import time
