@@ -1,0 +1,810 @@
+{
+  "info": {
+    "name": "InsightDesk API tests",
+    "description": "Functional API tests for the InsightDesk backend (FastAPI). Run against a LOCAL backend connected to a TEST Supabase project and Pinecone index - never production. Run the folders in order: later requests use the case created in folder 2.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "userId",
+      "value": "postman-user-1"
+    },
+    {
+      "key": "userId2",
+      "value": "postman-user-2"
+    },
+    {
+      "key": "product",
+      "value": "PostmanTestApp"
+    },
+    {
+      "key": "complaintText",
+      "value": "Postman test: the app shows invalid credentials when I log in with the correct password"
+    },
+    {
+      "key": "caseId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Health",
+      "item": [
+        {
+          "name": "API is running",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": []
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "pm.test(\"running message\", () => pm.expect(pm.response.json().message).to.include(\"running\"));",
+                  "pm.test(\"responds within 5 s\", () => pm.expect(pm.response.responseTime).to.be.below(5000));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Ingest complaints (/analyze)",
+      "item": [
+        {
+          "name": "New complaint creates or joins a case",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/analyze",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ]
+            },
+            "description": "Ingests one complaint; stores the returned case_id for the next requests.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"complaint_text\": \"{{complaintText}}\",\n  \"user_id\": \"{{userId}}\",\n  \"rating\": 1,\n  \"source\": \"postman\",\n  \"product\": \"{{product}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "const r = pm.response.json();",
+                  "pm.test(\"has complaint_id, case_id, dedup_route, is_duplicate\", () => {",
+                  "  [\"complaint_id\", \"case_id\", \"dedup_route\", \"is_duplicate\"].forEach(k => pm.expect(r).to.have.property(k));",
+                  "});",
+                  "pm.test(\"dedup_route is a known route\", () =>",
+                  "  pm.expect([\"auto_merge\", \"judge_merge\", \"new_empty\", \"new_low\", \"new_judge\", \"vague\", \"judge_failed\"]).to.include(r.dedup_route));",
+                  "pm.collectionVariables.set(\"caseId\", r.case_id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Same complaint again joins the same case (duplicate)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/analyze",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ]
+            },
+            "description": "An identical complaint from another user must be merged (above the auto-merge threshold).",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"complaint_text\": \"{{complaintText}}\",\n  \"user_id\": \"{{userId2}}\",\n  \"rating\": 1,\n  \"source\": \"postman\",\n  \"product\": \"{{product}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "const r = pm.response.json();",
+                  "pm.test(\"marked as duplicate\", () => pm.expect(r.is_duplicate).to.eql(true));",
+                  "pm.test(\"same case as the first complaint\", () => pm.expect(String(r.case_id)).to.eql(String(pm.collectionVariables.get(\"caseId\"))));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Very long complaint (> 512 tokens) does not crash",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/analyze",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ]
+            },
+            "description": "Regression test for the crash fixed in commit 03f85c8 (index 514 out of bounds).",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"complaint_text\": \"The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update. The app keeps crashing when I open the ticket view after the last update.\",\n  \"user_id\": \"{{userId}}\",\n  \"product\": \"{{product}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "pm.test(\"processed despite length (regression: sentiment truncation)\", () => pm.expect(pm.response.json()).to.have.property(\"case_id\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Missing complaint_text is rejected (422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/analyze",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ]
+            },
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": \"{{userId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 422\", () => pm.response.to.have.status(422));",
+                  "pm.test(\"error names the missing field\", () => pm.expect(JSON.stringify(pm.response.json().detail)).to.include(\"complaint_text\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Wrong type for rating is rejected (422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/analyze",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ]
+            },
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"complaint_text\": \"Login fails\",\n  \"user_id\": \"{{userId}}\",\n  \"rating\": \"five stars\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 422\", () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Missing user_id is rejected (422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/analyze",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "analyze"
+              ]
+            },
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"complaint_text\": \"Login fails\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 422\", () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Cases and dashboard",
+      "item": [
+        {
+          "name": "Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/overview",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "overview"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "pm.test(\"responds within 5 s\", () => pm.expect(pm.response.responseTime).to.be.below(5000));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Case list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/cases",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "cases"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "const cases = pm.response.json();",
+                  "pm.test(\"is an array\", () => pm.expect(cases).to.be.an(\"array\"));",
+                  "pm.test(\"every case has case_id and report_count\", () => cases.forEach(c => {",
+                  "  pm.expect(c).to.have.property(\"case_id\"); pm.expect(c).to.have.property(\"report_count\"); }));",
+                  "pm.test(\"merged (absorbed) cases are hidden\", () => cases.forEach(c => pm.expect(c.merged_into || null).to.eql(null)));",
+                  "pm.test(\"our case is listed\", () => pm.expect(cases.map(c => String(c.case_id))).to.include(String(pm.collectionVariables.get(\"caseId\"))));",
+                  "pm.test(\"responds within 5 s\", () => pm.expect(pm.response.responseTime).to.be.below(5000));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Case intelligence",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/cases/{{caseId}}/intelligence",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "cases",
+                "{{caseId}}",
+                "intelligence"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "const r = pm.response.json();",
+                  "pm.test(\"has case, escalation and rca_recommended\", () => [\"case\", \"escalation\", \"rca_recommended\"].forEach(k => pm.expect(r).to.have.property(k)));",
+                  "pm.test(\"report_count is at least 2 after the duplicate\", () => pm.expect(r.case.report_count).to.be.at.least(2));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Unknown case -> 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/cases/999999999/intelligence",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "cases",
+                "999999999",
+                "intelligence"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Complaint list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/complaints",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "complaints"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "pm.test(\"is an array\", () => pm.expect(pm.response.json()).to.be.an(\"array\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Topics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/topics",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "topics"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Spikes and alerts",
+      "item": [
+        {
+          "name": "Case spikes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/spikes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "spikes"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Alert-group spikes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/group-spikes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "group-spikes"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "pm.test(\"is an array of groups with case_ids\", () => { const g = pm.response.json(); pm.expect(g).to.be.an(\"array\"); g.forEach(x => pm.expect(x).to.have.property(\"case_ids\")); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vague-complaint summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/vague-summary",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "vague-summary"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "pm.test(\"has vague_cases and by_product\", () => { const r = pm.response.json(); pm.expect(r).to.have.property(\"vague_cases\"); pm.expect(r.by_product).to.be.an(\"array\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Unassigned-complaint (outage) alarm",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/unassigned-spikes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "unassigned-spikes"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "const r = pm.response.json();",
+                  "pm.test(\"reports whether the feature flag is on\", () => pm.expect(r.enabled).to.be.a(\"boolean\"));",
+                  "pm.test(\"products is an array\", () => pm.expect(r.products).to.be.an(\"array\"));",
+                  "pm.test(\"an alert carries a hedged message\", () => r.products.filter(p => p.spike).forEach(p => pm.expect(p.message).to.include(\"Possible outage\")));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5. Re-joining",
+      "item": [
+        {
+          "name": "Re-joining pass (off unless REJOIN_ENABLED=1)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/rejoin",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "rejoin"
+              ]
+            },
+            "description": "With REJOIN_ENABLED=1 this merges cases in the database: run it only against a test database."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"JSON body\", () => pm.response.to.be.json);",
+                  "const r = pm.response.json();",
+                  "pm.test(\"reports enabled flag and merges\", () => { pm.expect(r.enabled).to.be.a(\"boolean\"); pm.expect(r.merges).to.be.an(\"array\"); });",
+                  "pm.test(\"when disabled, nothing is merged\", () => { if (!r.enabled) pm.expect(r.merges).to.have.length(0); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6. Escalation and RCA",
+      "item": [
+        {
+          "name": "Escalating a non-eligible case -> 409 with the policy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/cases/{{caseId}}/escalate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "cases",
+                "{{caseId}}",
+                "escalate"
+              ]
+            },
+            "description": "Never sends an email: the case is not eligible. A forced escalation (force=true) is deliberately NOT included because it sends a real email."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// a fresh case with 2 reports and no spike does not meet the policy (>= 3 reports or a spike)",
+                  "pm.test(\"status 409\", () => pm.response.to.have.status(409));",
+                  "pm.test(\"detail explains eligibility\", () => {",
+                  "  const d = pm.response.json().detail; pm.expect(d.eligible).to.eql(false); pm.expect(d.message).to.include(\"force=true\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Escalating an unknown case -> 404",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/cases/999999999/escalate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "cases",
+                "999999999",
+                "escalate"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "RCA for an unknown case -> 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/rca/999999999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "rca",
+                "999999999"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
