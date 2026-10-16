@@ -1,8 +1,11 @@
+import logging
 from collections import Counter
+from dataclasses import asdict, is_dataclass
+
 from backend.services.email_service import (
     escalate_case,
 )
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from backend.database.supabase import (
     get_clustering_statistics,
     get_clustering_metadata,
@@ -17,6 +20,7 @@ from backend.database.supabase import (
     get_rca,
     get_complaint_volume_by_day,
     get_case_history_bulk,
+    get_case_original_texts,
 )
 
 from backend.services.spike_detection import (
@@ -29,6 +33,18 @@ router = APIRouter(
     prefix="/dashboard",
     tags=["Dashboard"],
 )
+
+logger = logging.getLogger(__name__)
+
+
+def get_rca_generator():
+    """
+    The RCA generator, imported lazily (it loads the LLM client).
+    Overridable in tests.
+    """
+    from backend.services.rca_service import generate_rca
+
+    return generate_rca
 
 
 # ==========================================
@@ -337,6 +353,21 @@ def dashboard_complaints():
         )
 
 
+@router.get("/case-texts")
+def dashboard_case_texts():
+    """Readable title per case: the original text of its first complaint."""
+
+    try:
+
+        return {str(k): v for k, v in get_case_original_texts().items()}
+
+    except Exception:
+
+        logger.exception("Reading case texts failed")
+
+        raise HTTPException(status_code=500, detail="Could not read case texts.")
+
+
 # ==========================================
 # TOPICS
 # ==========================================
@@ -590,6 +621,54 @@ def dashboard_rca(
 
             detail=str(e),
         )
+# ==========================================
+# RCA GENERATION (on demand only)
+# ==========================================
+
+@router.post("/cases/{case_id}/rca")
+def dashboard_generate_rca(
+    case_id: int,
+    force: bool = False,
+    generate=Depends(get_rca_generator),
+):
+    """
+    Generate an RCA for one case when an operator asks for it.
+
+    RCAs are never produced automatically. Without force=true an
+    existing RCA is returned unchanged; force=true regenerates it
+    (new LLM call, new row in case_rca).
+    """
+
+    if not get_case(case_id):
+        raise HTTPException(
+            status_code=404,
+            detail=f"Case {case_id} not found.",
+        )
+
+    try:
+        result = generate(
+            case_id,
+            force_regenerate=force,
+        )
+
+    except RuntimeError as e:
+        # rca_service raises RuntimeError when the LLM output is unusable
+        logger.warning("RCA generation failed for case %s: %s", case_id, e)
+        raise HTTPException(
+            status_code=502,
+            detail="The LLM did not return a usable RCA. Please try again.",
+        )
+
+    except Exception:
+        logger.exception("RCA generation failed for case %s", case_id)
+        raise HTTPException(
+            status_code=500,
+            detail="RCA generation failed. Check the LLM provider configuration.",
+        )
+
+    return asdict(result) if is_dataclass(result) else result
+
+
 # ==========================================
 # EMAIL ESCALATION
 # ==========================================

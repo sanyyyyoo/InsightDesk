@@ -750,36 +750,57 @@ def get_case_history_bulk(case_ids):
 
     return response.data
 #collection api 
+PAGE_SIZE = 1000  # Supabase (PostgREST) returns at most 1000 rows per request
+
+
+def _select_all(table: str, order_by: str, columns: str = "*"):
+    """Read every row of a table, one page at a time, in a stable order."""
+    rows = []
+    start = 0
+    while True:
+        response = (
+            supabase
+            .table(table)
+            .select(columns)
+            .order(order_by)
+            .range(start, start + PAGE_SIZE - 1)
+            .execute()
+        )
+        rows.extend(response.data)
+        if len(response.data) < PAGE_SIZE:
+            return rows
+        start += PAGE_SIZE
+
+
 def get_cases():
 
-    response = (
-        supabase
-        .table("cases")
-        .select("*")
-        .execute()
-    )
+    return _select_all("cases", "case_id")
 
-    return response.data
+
 def get_complaints():
 
-    response = (
-        supabase
-        .table("complaints")
-        .select("*")
-        .execute()
-    )
+    return _select_all("complaints", "complaint_id")
 
-    return response.data
+
 def get_topics():
 
-    response = (
-        supabase
-        .table("topics")
-        .select("*")
-        .execute()
-    )
+    return _select_all("topics", "topic_id")
 
-    return response.data
+
+def get_case_original_texts():
+    """
+    {case_id: original text of the case's first complaint}.
+
+    cases.representative_text holds the cleaned text (stop-words removed),
+    which is hard to read on the dashboard.
+    """
+    rows = _select_all("complaints", "complaint_id", "complaint_id,case_id,complaint_text,created_at")
+    rows = [r for r in rows if r.get("case_id") is not None and r.get("complaint_text")]
+    rows.sort(key=lambda r: (r.get("created_at") or "", r["complaint_id"]))
+    texts = {}
+    for r in rows:
+        texts.setdefault(r["case_id"], r["complaint_text"])
+    return texts
 def upsert_complaint_window(
     case_id: int,
     window_hours: int = 6
