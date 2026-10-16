@@ -1,6 +1,18 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime
+
+
+class ComplaintSubmit(BaseModel):
+    """
+    What a logged-in customer sends to /analyze.
+
+    Deliberately has no user_id: the server takes it from the verified
+    Supabase token. Unknown fields (including a user_id) are ignored.
+    """
+    complaint_text: str = Field(min_length=10, max_length=5000)
+    rating: Optional[int] = Field(default=None, ge=1, le=5)
+    product: Optional[str] = Field(default=None, max_length=200)
 
 
 class ComplaintCreate(BaseModel):

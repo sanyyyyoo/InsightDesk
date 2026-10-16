@@ -107,7 +107,7 @@ class Query:
         self.rows = db.tables.setdefault(table, [])
         self.op, self.payload, self.filters = "select", None, []
         self.cols, self.count_mode, self.head = "*", None, False
-        self.order_by, self.lim, self.one = [], None, False
+        self.order_by, self.lim, self.one, self.off = [], None, False, 0
 
     def select(self, cols="*", count=None, head=False):
         if self.op == "select":
@@ -163,6 +163,10 @@ class Query:
         self.lim = n
         return self
 
+
+    def range(self, a, b):
+        self.off, self.lim = a, b - a + 1
+        return self
     def single(self):
         self.one = True
         return self
@@ -205,7 +209,7 @@ class Query:
             hits = sorted(hits, key=lambda r: (_key(r.get(c)) is None, _key(r.get(c))), reverse=desc)
         n = len(hits)
         if self.lim is not None:
-            hits = hits[:self.lim]
+            hits = hits[self.off:self.off + self.lim]
         data = [] if self.head else [self._project(r) for r in hits]
         if self.one:
             data = data[0] if data else None
@@ -309,7 +313,11 @@ def fake_judge_json(prompt):
 if R1:
     import backend.llm.provider as provider
     provider.generate_json = fake_judge_json
-client = TestClient(app)
+# /analyze needs a Supabase login since the auth merge; these tests are not about login
+from backend.auth import AuthUser, get_current_user  # noqa: E402
+_ids = __import__("itertools").count(1)  # a new user per request, like separate customers
+app.dependency_overrides[get_current_user] = lambda: AuthUser(id=f"e2e-user-{next(_ids)}", email=None, role="customer")
+client = TestClient(app, raise_server_exceptions=False)
 
 # ----------------------------------------------------------------------
 # scenario: a quiet week of real Play Store reviews, then a burst
