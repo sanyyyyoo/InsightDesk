@@ -1,5 +1,5 @@
 """
-Offline checks for spike detector v2 (no Supabase, no network).
+Offline checks for the case / alert-group spike detector, Poisson CUSUM (no Supabase, no network).
 
   python test_spike_v2.py
 """
@@ -52,21 +52,21 @@ def scenarios():
         check("quiet week (one complaint), then 4", [1] + [0] * 27 + [4], True),
         check("quiet week, then single complaint", [1] + [0] * 27 + [1], False),
         check("busy case: 5 per window, then 12", [5] * 28 + [12], True),
-        check("busy case: 5 per window, then 8", [5] * 28 + [8], False),
+        check("busy case: 5 per window, then 8 (CUSUM reacts to +1/window)", [5] * 28 + [8], True),
         window_counts(rows([2, 0, 0, 1])) == [2, 0, 0, 1],
         detect_spikes_bulk([{"case_id": 7}], {})[7]["spike"] is False,
     ])
 
 
 def matches_experiment(trials=300, seed=1):
-    """Same decisions as the offline-tested detector (experiments/dedup/spike_sim.py)."""
+    """Same decisions as the offline-confirmed CUSUM (experiments/dedup/spike_review.py, h = 2)."""
     sys.path.insert(0, "D:/PBL/InsightDesk-dedup/experiments/dedup")
     try:
-        from spike_sim import make_detector_v2
+        from spike_review import cusum
     except Exception as e:                      # experiments clone not present
         print("skip equivalence check:", e)
         return True
-    det = make_detector_v2(2, 0.001)
+    det = cusum(2.0)
     rng = np.random.default_rng(seed)
     mismatches = 0
     for _ in range(trials):
