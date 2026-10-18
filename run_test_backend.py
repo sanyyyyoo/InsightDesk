@@ -5,7 +5,8 @@ Reads .env.test (or .env.test.txt) from this folder, refuses to start if it poin
 project, maps SUPABASE_SECRET_KEY to the SUPABASE_KEY the app reads, and makes email impossible
 (blank sender, dummy local SMTP). Values are never printed.
 
-  python run_test_backend.py            # http://127.0.0.1:8000
+  python run_test_backend.py            # http://127.0.0.1:8000 (Postman: re-joining off)
+  python run_test_backend.py --staging  # final pipeline for usability testing: re-joining on
 """
 
 import os
@@ -34,11 +35,16 @@ env.update({
     "EMAIL_ID": "", "EMAIL_PASSWORD": "",          # no sender: escalation emails cannot be sent
     "SMTP_SERVER": "localhost", "SMTP_PORT": "1025",
     "DEDUP_MODE": env.get("DEDUP_MODE") or "r1",   # the current pipeline
-    "REJOIN_ENABLED": "0",                         # re-joining off (Postman checks the disabled path)
+    "REJOIN_ENABLED": "1" if "--staging" in sys.argv else "0",   # Postman checks the disabled path
     "UNASSIGNED_SPIKES": "1",                      # read-only alarm on, so its endpoint is exercised
     "LLM_PROVIDER": env.get("LLM_PROVIDER") or "groq",
     "GROQ_MODEL": env.get("GROQ_MODEL") or "openai/gpt-oss-120b",
 })
+if "--staging" in sys.argv:                         # the test project's own Groq key is invalid: use an experiment key
+    exp = dotenv_values("D:/PBL/InsightDesk-dedup/.env.experiments")
+    key = next((v for k, v in exp.items() if k.startswith("GROQ_API_KEY") and v), None)
+    if key:
+        env["GROQ_API_KEY"] = key.strip()
 os.environ.update(env)                             # set before the app's load_dotenv() calls, which never override
 print(f"Using {os.path.basename(path)}: test project, index {env['PINECONE_INDEX']}, DEDUP_MODE={env['DEDUP_MODE']}, email disabled")
 
