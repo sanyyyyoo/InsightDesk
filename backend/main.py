@@ -1,3 +1,5 @@
+import asyncio
+import logging
 import os
 from contextlib import asynccontextmanager
 
@@ -15,7 +17,34 @@ async def lifespan(app: FastAPI):
     # Load MiniLM, the cross-encoder and Pinecone at startup so the
     # first customer submission doesn't wait for model loading.
     get_pipeline()
+    task = asyncio.create_task(_maintenance_every(float(os.getenv("REJOIN_INTERVAL_HOURS", "6"))))
     yield
+    task.cancel()
+
+
+async def _maintenance_every(hours):
+    """Maintenance that needs no operator: a case re-joining pass (when REJOIN_ENABLED=1) and topic
+    clustering, once per 6-hour window by default; a failure is logged and retried next interval."""
+    from backend.services import rejoin
+
+    while True:
+        await asyncio.sleep(hours * 3600)
+        try:
+            if not rejoin.enabled():
+                raise LookupError("re-joining disabled")
+            from backend.routers.dashboard import dashboard_rejoin
+            result = await asyncio.to_thread(dashboard_rejoin)
+            logging.getLogger(__name__).info("scheduled re-joining pass: %d merges", len(result.get("merges", [])))
+        except LookupError:
+            pass
+        except Exception:
+            logging.getLogger(__name__).exception("scheduled re-joining pass failed")
+        try:                                       # topics carry the department each escalation is routed to
+            from backend.services.clustering_service import cluster_cases
+            result = await asyncio.to_thread(cluster_cases)          # re-clusters only when its own rule says so
+            logging.getLogger(__name__).info("scheduled topic clustering: %s", result.get("status"))
+        except Exception:
+            logging.getLogger(__name__).exception("scheduled topic clustering failed")
 
 
 app = FastAPI(
