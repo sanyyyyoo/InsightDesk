@@ -1,17 +1,17 @@
 """
-Spike detection (v2: zero-filled windows + Poisson test).
+Spike detection for cases and alert groups: zero-filled 6-hour windows + Poisson CUSUM.
 
-complaint_windows holds one row per (case, 6-hour window) that received at
-least one complaint, so empty windows are missing. v2 puts them back as 0,
-builds a smoothed 7-day baseline rate, and flags the current window when it
-has at least MIN_COUNT complaints and that count is very unlikely under the
-baseline (Poisson tail probability < P_SPIKE). A brand-new case is judged
-against the prior rate, so a new problem can alert.
+complaint_windows holds one row per (case, 6-hour window) that received at least one complaint,
+so empty windows are missing; they are put back as 0. Each window's expected rate is a smoothed
+7-day baseline with a prior (a brand-new case is judged against "about one complaint every two
+weeks"). A Poisson CUSUM accumulates evidence of a rise of CUSUM_SHIFT reports per window above
+that baseline and alerts when it reaches CUSUM_H (reset after each alarm).
 
-Chosen and tested offline (experiments/dedup/spike_sim.py,
-results/spike_detector_v2_rule.md): on a fresh Firefox sample it caught 75% of
-simulated outbreaks with 1.7 false alerts per 100 windows; the old z-score
-detector caught 0%.
+Chosen offline (experiments/dedup/spike_review.py, results/cusum_confirm_rule.md): on unseen
+Firefox 3 + Thunderbird streams it caught 76% of simulated outbreaks per case (91% per alert group)
+at 0.38 (0.69) false alerts per 100 windows, against 71% / 84% at 1.20 / 1.75 for the earlier
+Poisson tail test. The tail test (evaluate_counts) is kept for the vague-complaint alarm and for
+the display figures (usual rate, chance if normal).
 """
 
 import math
@@ -32,6 +32,8 @@ MIN_COUNT = 2
 GROUP_MIN_COUNT = 3            # alert groups (several related cases) need one more complaint
 P_SPIKE = 0.001
 P_CRITICAL = 0.00001
+CUSUM_SHIFT = 1.0             # rise of interest: one more report per window than usual
+CUSUM_H = 2.0                 # alarm level (cusum_confirm_rule.md)
 
 
 def compute_z_score(
@@ -138,9 +140,33 @@ def evaluate_counts(counts, min_count=MIN_COUNT):
     }
 
 
+def evaluate_cusum(counts):
+    """Poisson CUSUM on zero-filled counts (last entry = current window), plus the tail-test figures for display."""
+
+    score, fire = 0.0, False
+    for t, count in enumerate(counts):
+        previous = counts[max(0, t - BASELINE_WINDOWS):t]
+        rate = (sum(previous) + PRIOR_COUNT) / (len(previous) + PRIOR_WINDOWS)
+        k = CUSUM_SHIFT / math.log((rate + CUSUM_SHIFT) / rate)
+        score = max(0.0, score + count - k)
+        fire = score >= CUSUM_H
+        if fire and t < len(counts) - 1:
+            score = 0.0                                   # reset after an earlier alarm
+
+    result = evaluate_counts(counts)
+    result.update({
+        "spike": bool(fire),
+        "critical": bool(fire and result["p_value"] < P_CRITICAL),
+        "cusum": float(round(score, 2)),
+        "cusum_threshold": CUSUM_H,
+        "detector": "poisson_cusum",
+    })
+    return result
+
+
 def detect_from_history(history):
 
-    result = evaluate_counts(
+    result = evaluate_cusum(
         window_counts(history)
     )
 
@@ -156,9 +182,8 @@ def detect_group_from_history(history):
     """Spike check for an alert group: complaint_windows rows of all its cases,
     summed per window (window_counts adds rows with the same window_start)."""
 
-    result = evaluate_counts(
-        window_counts(history),
-        min_count=GROUP_MIN_COUNT,
+    result = evaluate_cusum(
+        window_counts(history)
     )
 
     if history:
