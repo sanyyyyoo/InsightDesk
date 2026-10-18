@@ -104,7 +104,7 @@ export function CasesPage() {
                       {visible.map((c) => (
                         <tr key={c.case_id} className="clickable" onClick={() => navigate(`/admin/cases/${c.case_id}`)}>
                           <td>#{c.case_id}</td>
-                          <td className="clamp-2">{title(c)}</td>
+                          <td><div className="clamp-2">{title(c)}</div></td>
                           <td className="small">{(c.topic_id != null && topicName.get(c.topic_id)) || "–"}</td>
                           <td className="num">{formatNumber(c.report_count)}</td>
                           <td>

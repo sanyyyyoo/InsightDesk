@@ -55,7 +55,7 @@ export function IncidentsPage() {
                   {rows.map((s) => (
                     <tr key={s.case_id} className="clickable" onClick={() => navigate(`/admin/cases/${s.case_id}`)}>
                       <td>#{s.case_id}</td>
-                      <td className="clamp-2">{title(s)}</td>
+                      <td><div className="clamp-2">{title(s)}</div></td>
                       <td className="num">{formatNumber(s.current)}</td>
                       <td className="num">{formatExpected(s.baseline_rate)}</td>
                       <td className="num">{formatChance(s.p_value)}</td>
@@ -90,7 +90,7 @@ export function IncidentsPage() {
                   {d.map((g) => (
                     <tr key={String(g.group_id)} className="clickable" onClick={() => navigate(`/admin/cases/${g.case_ids[0]}`)}>
                       <td>{g.case_ids.map((c) => `#${c}`).join(", ")}</td>
-                      <td className="clamp-2">{title({ case_id: g.case_ids[0], representative_text: g.representative_texts?.[0] })}</td>
+                      <td><div className="clamp-2">{title({ case_id: g.case_ids[0], representative_text: g.representative_texts?.[0] })}</div></td>
                       <td className="num">{formatNumber(g.current)}</td>
                       <td className="num">{formatChance(g.p_value)}</td>
                       <td>
