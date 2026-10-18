@@ -89,7 +89,7 @@ export function OverviewPage() {
                         {sortBy(data.spike_cases, (s) => -(s.p_value ?? 1), "desc").map((s) => (
                           <tr key={s.case_id} className="clickable" onClick={() => navigate(`/admin/cases/${s.case_id}`)}>
                             <td>#{s.case_id}</td>
-                            <td className="clamp-2">{title(s)}</td>
+                            <td><div className="clamp-2">{title(s)}</div></td>
                             <td className="num">{formatNumber(s.current)}</td>
                             <td className="num">{formatChance(s.p_value)}</td>
                             <td>

@@ -140,7 +140,7 @@ export function SubmitComplaintPage() {
                 <tbody>
                   {history.map((h) => (
                     <tr key={`${h.complaint_id}-${h.text}`}>
-                      <td className="clamp-2">{h.text}</td>
+                      <td><div className="clamp-2">{h.text}</div></td>
                       <td>#{h.case_id}</td>
                       <td>{h.is_duplicate ? "Grouped with similar reports" : "New case"}</td>
                     </tr>
