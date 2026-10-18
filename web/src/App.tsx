@@ -19,7 +19,6 @@ const CaseDetailPage = lazy(() => import("./pages/admin/CaseDetailPage").then((m
 const IncidentsPage = lazy(() => import("./pages/admin/IncidentsPage").then((m) => ({ default: m.IncidentsPage })));
 const SentimentPage = lazy(() => import("./pages/admin/SentimentPage").then((m) => ({ default: m.SentimentPage })));
 const TopicsPage = lazy(() => import("./pages/admin/TopicsPage").then((m) => ({ default: m.TopicsPage })));
-const ReviewQueuePage = lazy(() => import("./pages/admin/ReviewQueuePage").then((m) => ({ default: m.ReviewQueuePage })));
 const AssistantPage = lazy(() => import("./pages/admin/AssistantPage").then((m) => ({ default: m.AssistantPage })));
 
 const page = (el: ReactNode) => <Suspense fallback={<Loading label="Loading page…" />}>{el}</Suspense>;
@@ -84,7 +83,6 @@ export function AppRoutes() {
         <Route path="incidents" element={page(<IncidentsPage />)} />
         <Route path="sentiment" element={page(<SentimentPage />)} />
         <Route path="topics" element={page(<TopicsPage />)} />
-        <Route path="review" element={page(<ReviewQueuePage />)} />
         <Route path="assistant" element={page(<AssistantPage />)} />
       </Route>
       <Route path="*" element={<NotFound />} />

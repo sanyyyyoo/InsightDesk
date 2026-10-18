@@ -9,7 +9,6 @@ const NAV = [
   { to: "/admin/incidents", label: "Incident Response" },
   { to: "/admin/sentiment", label: "Sentiment" },
   { to: "/admin/topics", label: "Topics" },
-  { to: "/admin/review", label: "Review Queue (preview)" },
   { to: "/admin/assistant", label: "AI Assistant" },
 ];
 
@@ -43,7 +42,6 @@ export function AdminLayout() {
           {config.dataMode === "hybrid" && (
             <div className="dev-banner">
               Hybrid mode – dashboards read live data; {config.writesEnabled ? "write actions are LIVE" : "RCA generation, escalation and complaint submission are simulated (nothing is written)"}
-              ; v2 review queue is a preview.
               {config.authMode === "mock" && " Sign-in is simulated."}
             </div>
           )}

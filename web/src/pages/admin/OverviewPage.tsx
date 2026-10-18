@@ -4,7 +4,7 @@ import { useCaseTitle, useOverview } from "../../api/hooks";
 import { SpikeBadge } from "../../components/Badges";
 import { QueryState } from "../../components/DataState";
 import { Card, PageHeader } from "../../components/ui";
-import { formatNumber, sortBy, volumeSeries } from "../../lib/format";
+import { formatChance, formatNumber, sortBy, volumeSeries } from "../../lib/format";
 
 export function OverviewPage() {
   const overview = useOverview();
@@ -80,16 +80,18 @@ export function OverviewPage() {
                         <tr>
                           <th>Case</th>
                           <th>Problem</th>
-                          <th className="num">z-score</th>
+                          <th className="num">Reports now</th>
+                          <th className="num">Chance if normal</th>
                           <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {sortBy(data.spike_cases, (s) => s.z_score, "desc").map((s) => (
+                        {sortBy(data.spike_cases, (s) => -(s.p_value ?? 1), "desc").map((s) => (
                           <tr key={s.case_id} className="clickable" onClick={() => navigate(`/admin/cases/${s.case_id}`)}>
                             <td>#{s.case_id}</td>
                             <td className="clamp-2">{title(s)}</td>
-                            <td className="num">{s.z_score.toFixed(2)}</td>
+                            <td className="num">{formatNumber(s.current)}</td>
+                            <td className="num">{formatChance(s.p_value)}</td>
                             <td>
                               <SpikeBadge spike={s.spike} critical={s.critical} />
                             </td>

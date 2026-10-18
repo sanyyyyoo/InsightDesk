@@ -13,7 +13,8 @@ import type {
   EscalateResponse,
   Overview,
   Rca,
-  ReviewItem,
+  GroupSpike,
+  UnassignedSpikes,
   SpikeCase,
   SubmitResult,
   Topic,
@@ -68,7 +69,8 @@ const cases: Case[] = seeds.map(([text, topic, sentiment, reports], i) => ({
 
 const spikeOf = (c: Case) => {
   const z = c.report_count >= 25 ? 3.4 : c.report_count >= 15 ? 2.3 : 0.6;
-  return { spike: z > 2, critical: z > 3, z_score: z, current: Math.max(1, Math.round(c.report_count / 4)) };
+  const current = Math.max(1, Math.round(c.report_count / 4));
+  return { spike: z > 2, critical: z > 3, z_score: z, current, baseline_rate: 0.2, p_value: z > 3 ? 0.0001 : z > 2 ? 0.0008 : 0.3 };
 };
 
 const rcas: Record<number, Rca> = {
@@ -223,13 +225,13 @@ export const mockApi = {
       model_used: "sample",
     };
   },
-  async reviewQueue(): Promise<ReviewItem[]> {
+  async groupSpikes(): Promise<GroupSpike[]> {
     await delay();
-    return [
-      { review_id: 1, complaint_text: "Two-factor login is stuck because the SMS code never shows up.", received_at: iso(1), candidate_case_id: 101, candidate_text: cases[0].representative_text, cosine: 0.52, t_low: 0.4, t_high: 0.55 },
-      { review_id: 2, complaint_text: "Everything is painfully slow, loading a single page takes forever.", received_at: iso(2), candidate_case_id: 103, candidate_text: cases[2].representative_text, cosine: 0.54, t_low: 0.4, t_high: 0.55 },
-      { review_id: 3, complaint_text: "Wouldn't stop asking for a review", received_at: iso(4), candidate_case_id: 106, candidate_text: cases[5].representative_text, cosine: 0.43, t_low: 0.4, t_high: 0.55 },
-    ];
+    return [];
+  },
+  async unassignedSpikes(): Promise<UnassignedSpikes> {
+    await delay();
+    return { enabled: false, products: [] };
   },
   async submitComplaint(body: ComplaintSubmit): Promise<SubmitResult> {
     await delay(700);

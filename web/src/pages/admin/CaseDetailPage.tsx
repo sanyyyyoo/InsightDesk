@@ -10,7 +10,7 @@ import { SampleBadge } from "../../components/SampleBadge";
 import { useToast } from "../../components/Toast";
 import { isSample } from "../../config";
 import { Card, Kpi, PageHeader } from "../../components/ui";
-import { formatDateTime, formatNumber, formatPercent, sortBy, timeAgo } from "../../lib/format";
+import { formatChance, formatDateTime, formatExpected, formatNumber, formatPercent, sortBy, timeAgo } from "../../lib/format";
 
 export function CaseDetailPage() {
   const { caseId } = useParams();
@@ -82,8 +82,9 @@ export function CaseDetailPage() {
               badges={<SpikeBadge spike={spike.spike} critical={spike.critical} />}
               stats={[
                 { label: "Reports", value: formatNumber(c.report_count) },
-                { label: "Spike z-score", value: spike.z_score.toFixed(2) },
-                { label: "Current 6-h window", value: formatNumber(spike.current) },
+                { label: "Reports this 6-h window", value: formatNumber(spike.current) },
+                { label: "Usual per window", value: formatExpected(spike.baseline_rate) },
+                { label: "Chance if normal", value: formatChance(spike.p_value) },
                 { label: "Last report", value: timeAgo(c.last_reported_at) },
               ]}
             />

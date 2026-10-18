@@ -14,6 +14,8 @@ export const keys = {
   clusters: ["clusters"] as const,
   topics: ["topics"] as const,
   spikes: ["spikes"] as const,
+  groupSpikes: ["groupSpikes"] as const,
+  unassignedSpikes: ["unassignedSpikes"] as const,
   benchmarks: ["benchmarks"] as const,
 };
 
@@ -46,6 +48,8 @@ export function useCaseTitle() {
 export const useTopics = () => useQuery({ queryKey: keys.topics, queryFn: api.topics, staleTime: 5 * STALE });
 export const useClusters = () => useQuery({ queryKey: keys.clusters, queryFn: api.clusters, staleTime: STALE });
 export const useSpikes = () => useQuery({ queryKey: keys.spikes, queryFn: api.spikes, staleTime: STALE });
+export const useGroupSpikes = () => useQuery({ queryKey: keys.groupSpikes, queryFn: api.groupSpikes, staleTime: STALE });
+export const useUnassignedSpikes = () => useQuery({ queryKey: keys.unassignedSpikes, queryFn: api.unassignedSpikes, staleTime: STALE });
 export const useBenchmarks = () => useQuery({ queryKey: keys.benchmarks, queryFn: api.benchmarks, staleTime: 5 * STALE });
 
 export function useCaseIntelligence(caseId: number | null) {
@@ -76,8 +80,6 @@ export function useGenerateRca() {
     },
   });
 }
-
-export const useReviewQueue = () => useQuery({ queryKey: ["reviewQueue"], queryFn: api.reviewQueue, staleTime: STALE });
 
 export function useSubmitComplaint() {
   return useMutation({ mutationFn: (body: ComplaintSubmit) => api.submitComplaint(body) });
