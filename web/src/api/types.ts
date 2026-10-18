@@ -50,6 +50,30 @@ export interface SpikeResult {
   critical: boolean;
   z_score: number;
   current: number;
+  /** Detector v2: expected reports per 6-hour window (smoothed 7-day baseline). */
+  baseline_rate?: number;
+  /** Detector v2: chance of at least this many reports if nothing were wrong (Poisson tail). */
+  p_value?: number;
+}
+
+/** Related cases of one product whose combined count spiked (cases stay separate). */
+export interface GroupSpike extends SpikeResult {
+  group_id: string | number;
+  case_ids: number[];
+  representative_texts?: (string | null)[];
+  product?: string;
+}
+
+/** Vague complaints that fit no case, counted per product. */
+export interface UnassignedProduct extends SpikeResult {
+  product: string;
+  window_start?: string;
+  unassigned_cases?: number;
+}
+
+export interface UnassignedSpikes {
+  enabled: boolean;
+  products: UnassignedProduct[];
 }
 
 export interface SpikeCase extends SpikeResult {
@@ -150,16 +174,7 @@ export interface ChatResponse {
 }
 
 /** v2 pipeline: a complaint whose best cosine match fell in the uncertain band. */
-export interface ReviewItem {
-  review_id: number;
-  complaint_text: string;
-  received_at: string;
-  candidate_case_id: number;
-  candidate_text: string;
-  cosine: number;
-  t_low: number;
-  t_high: number;
-}
+
 
 /** case_id -> original text of the case's first complaint (GET /dashboard/case-texts). */
 export type CaseTexts = Record<string, string>;

@@ -13,11 +13,12 @@ import type {
   Clusters,
   ComplaintSubmit,
   EscalateResponse,
+  GroupSpike,
   Overview,
   Rca,
-  ReviewItem,
   SpikeCase,
   SubmitResult,
+  UnassignedSpikes,
   Topic,
 } from "./types";
 
@@ -29,6 +30,8 @@ const real = {
   clusters: () => apiRequest<Clusters>("/dashboard/clusters"),
   topics: () => apiRequest<Topic[]>("/dashboard/topics"),
   spikes: () => apiRequest<SpikeCase[]>("/dashboard/spikes", { timeoutMs: 60_000 }),
+  groupSpikes: () => apiRequest<GroupSpike[]>("/dashboard/group-spikes", { timeoutMs: 60_000 }),
+  unassignedSpikes: () => apiRequest<UnassignedSpikes>("/dashboard/unassigned-spikes", { timeoutMs: 60_000 }),
   benchmarks: () => apiRequest<Benchmark[]>("/dashboard/benchmarks"),
   chat: (message: string) => apiRequest<ChatResponse>("/chat", { method: "POST", body: { message }, timeoutMs: 90_000 }),
   // ---- writes ----
@@ -37,8 +40,6 @@ const real = {
     apiRequest<Rca>(`/dashboard/cases/${caseId}/rca${force ? "?force=true" : ""}`, { method: "POST", timeoutMs: 120_000 }),
   submitComplaint: (body: ComplaintSubmit) =>
     apiRequest<SubmitResult>("/analyze", { method: "POST", body, timeoutMs: config.submitTimeoutMs }),
-  // ---- v2 pipeline (no backend endpoint yet) ----
-  reviewQueue: (): Promise<ReviewItem[]> => mockApi.reviewQueue(),
 };
 
 export type Api = typeof real;
@@ -54,10 +55,11 @@ export const api: Api = {
   clusters: pick("clusters", reads),
   topics: pick("topics", reads),
   spikes: pick("spikes", reads),
+  groupSpikes: pick("groupSpikes", reads),
+  unassignedSpikes: pick("unassignedSpikes", reads),
   benchmarks: pick("benchmarks", reads),
   chat: pick("chat", reads),
   escalate: pick("escalate", isSample("escalate")),
   generateRca: pick("generateRca", isSample("generateRca")),
   submitComplaint: pick("submitComplaint", isSample("submit")),
-  reviewQueue: pick("reviewQueue", true),
 };
