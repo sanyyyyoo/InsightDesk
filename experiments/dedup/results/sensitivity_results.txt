@@ -1,0 +1,88 @@
+SENSITIVITY CHECKS (rule: results/sensitivity_rule.md)
+
+B. CUSUM grid, Play Store: detection / false alerts per 100 windows (cases | alert groups)
+  delta 0.5  h 1.0   cases 0.64 / 3.60   groups 0.67 / 3.97
+  delta 0.5  h 1.5   cases 0.59 / 1.41   groups 0.60 / 1.52
+  delta 0.5  h 2.0   cases 0.45 / 0.22   groups 0.45 / 0.23
+  delta 0.5  h 3.0   cases 0.26 / 0.01   groups 0.30 / 0.01
+  delta 0.5  h 4.0   cases 0.15 / 0.00   groups 0.18 / 0.00
+  delta 1.0  h 1.0   cases 0.62 / 2.24   groups 0.65 / 2.49
+  delta 1.0  h 1.5   cases 0.56 / 0.78   groups 0.57 / 0.88
+  delta 1.0  h 2.0   cases 0.42 / 0.06   groups 0.43 / 0.06
+  delta 1.0  h 3.0   cases 0.25 / 0.00   groups 0.29 / 0.00
+  delta 1.0  h 4.0   cases 0.14 / 0.00   groups 0.16 / 0.00
+  delta 2.0  h 1.0   cases 0.57 / 0.93   groups 0.59 / 1.02
+  delta 2.0  h 1.5   cases 0.47 / 0.15   groups 0.48 / 0.16
+  delta 2.0  h 2.0   cases 0.33 / 0.02   groups 0.37 / 0.02
+  delta 2.0  h 3.0   cases 0.21 / 0.00   groups 0.22 / 0.00
+  delta 2.0  h 4.0   cases 0.09 / 0.00   groups 0.10 / 0.00
+
+C. EWMA baseline, Play Store: detection / false alerts per 100 windows (cases | alert groups)
+  alpha 0.2  L 2.0   cases 0.56 / 0.72   groups 0.57 / 0.81
+  alpha 0.2  L 2.5   cases 0.56 / 0.70   groups 0.57 / 0.79
+  alpha 0.2  L 3.0   cases 0.55 / 0.67   groups 0.57 / 0.76
+  alpha 0.3  L 2.0   cases 0.56 / 0.72   groups 0.57 / 0.81
+  alpha 0.3  L 2.5   cases 0.56 / 0.72   groups 0.57 / 0.81
+  alpha 0.3  L 3.0   cases 0.56 / 0.71   groups 0.57 / 0.80
+
+B. CUSUM grid, Firefox 3 + Thunderbird: detection / false alerts per 100 windows (cases | alert groups)
+  delta 0.5  h 1.0   cases 0.96 / 18.90   groups 0.99 / 27.24
+  delta 0.5  h 1.5   cases 0.92 / 7.09   groups 0.96 / 10.79
+  delta 0.5  h 2.0   cases 0.78 / 1.04   groups 0.91 / 1.91
+  delta 0.5  h 3.0   cases 0.51 / 0.06   groups 0.63 / 0.13
+  delta 0.5  h 4.0   cases 0.29 / 0.00   groups 0.40 / 0.00
+  delta 1.0  h 1.0   cases 0.96 / 11.16   groups 0.99 / 16.21
+  delta 1.0  h 1.5   cases 0.86 / 3.81   groups 0.95 / 5.86
+  delta 1.0  h 2.0   cases 0.76 / 0.38   groups 0.91 / 0.69
+  delta 1.0  h 3.0   cases 0.50 / 0.01   groups 0.60 / 0.02
+  delta 1.0  h 4.0   cases 0.28 / 0.00   groups 0.39 / 0.00
+  delta 2.0  h 1.0   cases 0.90 / 4.89   groups 0.95 / 7.18
+  delta 2.0  h 1.5   cases 0.78 / 0.82   groups 0.92 / 1.17
+  delta 2.0  h 2.0   cases 0.67 / 0.10   groups 0.79 / 0.19
+  delta 2.0  h 3.0   cases 0.37 / 0.00   groups 0.47 / 0.00
+  delta 2.0  h 4.0   cases 0.20 / 0.00   groups 0.28 / 0.00
+
+C. EWMA baseline, Firefox 3 + Thunderbird: detection / false alerts per 100 windows (cases | alert groups)
+  alpha 0.2  L 2.0   cases 0.86 / 3.55   groups 0.95 / 5.43
+  alpha 0.2  L 2.5   cases 0.86 / 3.47   groups 0.95 / 5.30
+  alpha 0.2  L 3.0   cases 0.86 / 3.19   groups 0.95 / 4.84
+  alpha 0.3  L 2.0   cases 0.86 / 3.56   groups 0.95 / 5.45
+  alpha 0.3  L 2.5   cases 0.86 / 3.55   groups 0.95 / 5.43
+  alpha 0.3  L 3.0   cases 0.86 / 3.49   groups 0.95 / 5.33
+
+A. Threshold grid, Play Store held-out halves pooled: P / R / F1 | share judged | cache misses
+  t_low 0.26  t_high 0.7000   P 0.829  R 0.149  F1 0.253 | judged 86% | misses 234
+  t_low 0.26  t_high 0.7500   P 0.835  R 0.081  F1 0.147 | judged 89% | misses 289
+  t_low 0.26  t_high 0.8000   P 0.770  R 0.047  F1 0.088 | judged 91% | misses 299
+  t_low 0.26  t_high 0.8306   P 0.770  R 0.047  F1 0.088 | judged 91% | misses 299
+  t_low 0.30  t_high 0.7000   P 0.780  R 0.096  F1 0.170 | judged 82% | misses 247
+  t_low 0.30  t_high 0.7500   P 0.793  R 0.073  F1 0.133 | judged 85% | misses 282
+  t_low 0.30  t_high 0.8000   P 0.717  R 0.043  F1 0.081 | judged 87% | misses 292
+  t_low 0.30  t_high 0.8306   P 0.717  R 0.043  F1 0.081 | judged 87% | misses 292
+  t_low 0.35  t_high 0.7000   P 0.910  R 0.100  F1 0.181 | judged 75% | misses 297
+  t_low 0.35  t_high 0.7500   P 0.929  R 0.079  F1 0.145 | judged 78% | misses 319
+  t_low 0.35  t_high 0.8000   P 0.854  R 0.035  F1 0.067 | judged 80% | misses 331
+  t_low 0.35  t_high 0.8306   P 0.854  R 0.035  F1 0.067 | judged 80% | misses 331
+  t_low 0.40  t_high 0.7000   P 0.909  R 0.109  F1 0.195 | judged 65% | misses 266
+  t_low 0.40  t_high 0.7500   P 0.938  R 0.091  F1 0.165 | judged 68% | misses 285
+  t_low 0.40  t_high 0.8000   P 0.854  R 0.035  F1 0.067 | judged 70% | misses 299
+  t_low 0.40  t_high 0.8306   P 0.854  R 0.035  F1 0.067 | judged 70% | misses 299
+
+A2. Threshold grid around each half's calibrated thresholds (Play Store, 3 held-out halves pooled)
+    calibrated (t_high, t_low) per half: (0.767, 0.302), (0.707, 0.241), (0.696, 0.288)
+  t_low +0.00  t_high -0.00   P 0.810  R 0.259  F1 0.392 | judged 86% | misses 0
+  t_low +0.00  t_high -0.03   P 0.831  R 0.233  F1 0.364 | judged 84% | misses 30
+  t_low +0.00  t_high -0.08   P 0.808  R 0.277  F1 0.413 | judged 78% | misses 57
+  t_low +0.00  t_high -0.13   P 0.722  R 0.246  F1 0.367 | judged 68% | misses 158
+  t_low +0.04  t_high -0.00   P 0.878  R 0.063  F1 0.117 | judged 81% | misses 267
+  t_low +0.04  t_high -0.03   P 0.849  R 0.071  F1 0.130 | judged 79% | misses 264
+  t_low +0.04  t_high -0.08   P 0.849  R 0.114  F1 0.201 | judged 73% | misses 247
+  t_low +0.04  t_high -0.13   P 0.663  R 0.175  F1 0.277 | judged 63% | misses 209
+  t_low +0.09  t_high -0.00   P 0.908  R 0.057  F1 0.107 | judged 71% | misses 289
+  t_low +0.09  t_high -0.03   P 0.907  R 0.066  F1 0.123 | judged 69% | misses 285
+  t_low +0.09  t_high -0.08   P 0.889  R 0.108  F1 0.193 | judged 63% | misses 267
+  t_low +0.09  t_high -0.13   P 0.680  R 0.170  F1 0.272 | judged 53% | misses 223
+  t_low +0.14  t_high -0.00   P 0.900  R 0.061  F1 0.114 | judged 61% | misses 258
+  t_low +0.14  t_high -0.03   P 0.906  R 0.074  F1 0.137 | judged 59% | misses 252
+  t_low +0.14  t_high -0.08   P 0.897  R 0.126  F1 0.220 | judged 53% | misses 233
+  t_low +0.14  t_high -0.13   P 0.669  R 0.182  F1 0.286 | judged 43% | misses 191
