@@ -1,0 +1,4 @@
+Sentiment vs star-rating proxy, real Play Store reviews of master_complaints_v2 (1-2 stars negative, 3 neutral, 4-5 positive)
+  RoBERTa (cardiffnlp/twitter-roberta-base-sentiment-latest, 3-class): accuracy 0.707, macro F1 0.385, negative-class P 0.806 R 0.847
+  DistilBERT (distilbert-base-uncased-finetuned-sst-2-english, binary): accuracy 0.713, macro F1 0.282, negative-class P 0.765 R 0.947
+Ratings are a proxy for sentiment, not hand labels; macro F1 is low because neutral/positive complaints are rare and ratings disagree with text.
