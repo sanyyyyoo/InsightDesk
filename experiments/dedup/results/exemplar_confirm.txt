@@ -1,0 +1,6 @@
+EXEMPLAR FIX (EXA) vs R1, both + RJ1 (rule results/exemplar_auto_rule.md)
+  playstore R1 +RJ1  P 0.799 R 0.327 F1 0.464 | rejoin merges 24, correct 15 | new judge calls 0
+  playstore EXA+RJ1  P 0.817 R 0.168 F1 0.279 | rejoin merges 67, correct 51 | new judge calls 216
+  bugzilla  R1 +RJ1  P 0.911 R 0.690 F1 0.785 | rejoin merges 40, correct 37 | new judge calls 0
+  bugzilla  EXA+RJ1  P 0.936 R 0.183 F1 0.307 | rejoin merges 222, correct 211 | new judge calls 775
+RULE: keep R1 (EXA not adopted)

@@ -1,0 +1,7 @@
+EXTERNAL CE PIPELINE (threshold 0.4834, commit 8801740) vs R1, same held-out halves
+All held-out complaints (in-sample for CE: its threshold saw ~125 of these reviews) (505 complaints over 3 held-out halves)
+  R1         P 0.810 [0.63,0.96]  R 0.259 [0.16,0.37]  F1 0.392
+  R1+RJ1     P 0.799 [0.63,0.94]  R 0.327 [0.21,0.45]  F1 0.464
+  CE pf      P 0.377 [0.27,0.52]  R 0.083 [0.06,0.11]  F1 0.136
+  CE global  P 0.261 [0.17,0.40]  R 0.068 [0.04,0.10]  F1 0.107
+(calibration_pair_ids.csv not provided yet: held-out-for-both view pending)

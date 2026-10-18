@@ -1,0 +1,4 @@
+FIREFOX 3 (437 reports), thresholds from Play Store
+  BM25 (REP's text core)                     P 0.560 R 0.407 F1 0.472  threshold 0.2
+  Jaccard / MinHash-LSH (3-char shingles)    P 0.013 R 0.829 F1 0.025  threshold 0.2
+  SimHash (64-bit)                           P 0.021 R 0.320 F1 0.039  threshold 42.0

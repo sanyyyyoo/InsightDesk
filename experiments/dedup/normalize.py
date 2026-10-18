@@ -44,6 +44,8 @@ DATA_PATHS = {
     "firefox2": "data/external/firefox2.csv",
     "firefox3": "data/external/firefox3.csv",
     "thunderbird": "data/external/thunderbird.csv",
+    # Firefox 3 + Thunderbird as ONE company, product not given (one_company_no_product_rule.md)
+    "mozilla_combined": "data/external/mozilla_combined.csv",
     # new help-desk apps (new_apps_rule.md): the 588-review blind sheet, no labels at run time
     "new_apps": "data/external/new_apps_all.csv",
     # Jira Cloud alone (one company), separate blind run with its own caches

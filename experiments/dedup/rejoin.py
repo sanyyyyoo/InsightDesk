@@ -70,7 +70,7 @@ class PairJudge:
         return self.cache[key]
 
 
-def rebuild(data, seed, half, calibrate=False):
+def rebuild(data, seed, half, calibrate=False, prompt="gated"):
     """R1's frozen cases for one partition, from the cached judge answers."""
     from sentence_transformers import SentenceTransformer
     enc = SentenceTransformer(e5.EMBED_MODEL)
@@ -102,7 +102,7 @@ def rebuild(data, seed, half, calibrate=False):
         tune, test = (a, b) if half == "B" else (b, a)
         cache = "playstore"
     t_high, t_low = band_thresholds_wide(emb[tune], issues[tune], groups[tune])
-    judge = Judge(refs, issues, os.path.join(RES, f"llm_judge_cache_{cache}_founder_gated.jsonl"))
+    judge = Judge(refs, issues, os.path.join(RES, f"llm_judge_cache_{cache}_founder_{prompt}.jsonl"))
     labels, _, _ = by_group(lambda r: three_way(emb, r, t_high, t_low, judge, True), test, groups)
     return dict(texts=texts, emb=emb, issues=issues, groups=groups, refs=refs, test=test,
                 labels=np.asarray(labels), vague=set(judge.vague), t_low=t_low, misses=judge.misses)
