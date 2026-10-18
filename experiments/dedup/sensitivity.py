@@ -130,6 +130,44 @@ def part_bc():
                 say(f"  alpha {alpha:.1f}  L {L:.1f}   cases {c[0]:.2f} / {c[1]:.2f}   groups {gg[0]:.2f} / {gg[1]:.2f}")
 
 
-if __name__ == "__main__":
+def part_a3():
+    from sentence_transformers import SentenceTransformer
+    from normalize import boilerplate_suppress
+    enc = SentenceTransformer(e5.EMBED_MODEL)
+    e5.MAX_CANDIDATES = 5
+    df = apply_text_mode(load_ground_truth(path=DATA_PATHS["playstore"]), "boilerplate", enc)
+    texts = boilerplate_suppress(df["complaint_text"].astype(str).tolist(), enc)
+    emb = enc.encode(df["cleaned_text"].tolist(), normalize_embeddings=True, show_progress_bar=False)
+    issues = np.array(df["issue_id"].astype(str).tolist())
+    groups = np.array(df["department"].astype(str).tolist())
+    refs = df["complaint_ref"].values
+    ids = np.array(sorted(set(issues)))
+    halves = []
+    for seed, half in ((0, "A"), (1, "B"), (1, "A")):
+        rng = np.random.default_rng(seed)
+        h = set(rng.choice(ids, size=len(ids) // 2, replace=False))
+        a, b = np.where(np.isin(issues, list(h)))[0], np.where(~np.isin(issues, list(h)))[0]
+        tune, test = (a, b) if half == "B" else (b, a)
+        th, tl = e5.band_thresholds_wide(emb[tune], issues[tune], groups[tune])
+        halves.append((test, th, tl))
+    say("\nA3. t_low sensitivity with LIVE judge calls (Play Store, 3 held-out halves pooled, calibrated t_high)")
+    for dl in (0.0, 0.04, 0.09, 0.14):
+        tot, judged, n = np.zeros(3), 0, 0
+        for test, th, tl in halves:
+            judge = e5.LLMJudge(texts, refs, "playstore", "founder", "gated")
+            labels, banded, _ = e5.by_group(lambda r: e5.three_way(emb, r, th, tl + dl, judge, True), test, groups)
+            lab = np.array([f"{groups[i]}|{l}" for i, l in zip(test, labels)])
+            _, iss = np.unique(issues[test], return_inverse=True)
+            tot += counts(lab, iss, np.ones(iss.max() + 1))
+            judged += banded
+            n += len(test)
+        p, r, f = prf(*tot)[:3]
+        say(f"  t_low +{dl:.2f}   P {p:.3f}  R {r:.3f}  F1 {f:.3f} | judged {judged / n:.0%}")
+
+
+if __name__ == "__main__" and "--a3" in sys.argv:
+    lines.extend(open(OUT, encoding="utf-8").read().splitlines()[1:])
+    part_a3()
+elif __name__ == "__main__":
     lines.extend(open(OUT, encoding="utf-8").read().splitlines()[1:])
     part_a()

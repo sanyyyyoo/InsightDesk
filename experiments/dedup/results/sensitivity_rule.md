@@ -10,3 +10,4 @@ C. EWMA baseline on the same streams: Z_t = a c_t + (1 - a) Z_{t-1}, alert when 
    Z_t > lambda_t + L sqrt(a / (2 - a) lambda_t), lambda_t = the same smoothed baseline;
    a in {0.2, 0.3}, L in {2, 2.5, 3}. Compared with CUSUM h = 2, delta = 1 at matched false alerts.
 Amendment (2026-10-19, before re-running A): the first grid used fixed 0.26/0.8306, but published runs calibrate t_low/t_high on each tuning half, so its 'deployed' cell did not reproduce (299 cache misses). Re-run: per half, grid = calibrated (t_low + {0, .04, .09, .14}) x (t_high - {0, .03, .08, .13}); the (0, 0) cell must reproduce P 0.810 R 0.259.
+Addendum (2026-10-19, before running): A3 = t_low +0.04 / +0.09 / +0.14 at the calibrated t_high, with LIVE judge calls (same model, prompt and cache as the published runs) so no decision defaults to 'no merge'.
