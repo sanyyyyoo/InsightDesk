@@ -86,3 +86,9 @@ A2. Threshold grid around each half's calibrated thresholds (Play Store, 3 held-
   t_low +0.14  t_high -0.03   P 0.906  R 0.074  F1 0.137 | judged 59% | misses 252
   t_low +0.14  t_high -0.08   P 0.897  R 0.126  F1 0.220 | judged 53% | misses 233
   t_low +0.14  t_high -0.13   P 0.669  R 0.182  F1 0.286 | judged 43% | misses 191
+
+A3. t_low sensitivity with LIVE judge calls (Play Store, 3 held-out halves pooled, calibrated t_high)
+  t_low +0.00   P 0.810  R 0.259  F1 0.392 | judged 86%
+  t_low +0.04   P 0.803  R 0.256  F1 0.388 | judged 81%
+  t_low +0.09   P 0.867  R 0.264  F1 0.404 | judged 71%
+  t_low +0.14   P 0.906  R 0.260  F1 0.404 | judged 61%
