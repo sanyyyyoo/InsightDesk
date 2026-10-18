@@ -1,0 +1,7 @@
+Mozilla as one company: 889 reports (Firefox 437, Thunderbird 452); 140 duplicate groups
+  R1, product filter (known product)   P 0.908 [0.76,0.99]  R 0.578 [0.50,0.65]  F1 0.706  case P 0.966 | multi-report cases 156, mixing products 0 (0.0%), complaints in them 0
+  R1, NO product filter (one stream)   P 0.899 [0.75,0.99]  R 0.567 [0.49,0.64]  F1 0.696  case P 0.963 | multi-report cases 157, mixing products 1 (0.6%), complaints in them 2
+  cosine only, no filter               P 1.000 [1.00,1.00]  R 0.031 [0.02,0.05]  F1 0.061  case P 1.000 | multi-report cases 25, mixing products 0 (0.0%), complaints in them 0
+  oracle, no filter (ceiling)          P 1.000 [1.00,1.00]  R 0.942 [0.90,0.97]  F1 0.970  case P 1.000 | multi-report cases 141, mixing products 0 (0.0%), complaints in them 0
+  no filter minus filter: P -0.009 [-0.050,+0.024], R -0.011 [-0.040,+0.017], F1 -0.011 [-0.035,+0.013]
+READING (pre-declared): R1 is usable without a product field

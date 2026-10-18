@@ -1,0 +1,279 @@
+item,complaint_ref,role,department,old_code
+1,288,rest,Freshdesk,notif_cannot_clear
+2,169,rest,HappyFox,ticket_search_broken
+3,114,rest,Zendesk,login_access_revoked
+4,35,rest,Help Scout,crash_on_open
+5,251,rest,Zendesk,no_internet_false_error
+6,47,rest,Zendesk,macros_not_working
+7,38,rest,Help Scout,login_credentials_rejected
+8,227,rest,Zendesk,macros_not_working
+9,92,rest,Zendesk,analytics_reports_broken
+10,293,rest,Freshdesk,canned_responses_broken
+11,291,rest,Zendesk,redesign_disliked
+12,193,rest,Freshdesk,login_forced_google
+13,102,rest,Zendesk,slow_performance
+14,257,rest,Freshdesk,dark_mode_missing
+15,113,rest,Zendesk,no_tablet_landscape
+16,316,rest,Help Scout,pull_to_refresh_missing
+17,43,rest,Zendesk,assign_team_missing
+18,280,rest,Zendesk,no_tablet_landscape
+19,163,rest,LiveAgent,text_input_buggy
+20,128,rest,Freshdesk,notif_sound
+21,122,rest,Zendesk,support_no_response
+22,236,rest,Zendesk,text_input_buggy
+23,106,rest,Zendesk,notif_sound
+24,284,rest,Freshdesk,dark_mode_missing
+25,262,rest,Zendesk,review_popup
+26,68,rest,Zendesk,account_signup_problem
+27,5,rest,Zendesk,redesign_disliked
+28,319,rest,Zendesk,agent_availability_toggle
+29,189,rest,Zendesk,ticket_filter_sort_missing
+30,329,rest,Freshdesk,dark_mode_missing
+31,176,rest,Freshdesk,support_no_response
+32,90,rest,Zendesk,login_credentials_rejected
+33,73,rest,Help Scout,notif_opens_blank
+34,290,rest,Zoho Desk,login_access_revoked
+35,108,rest,Help Scout,slow_performance
+36,164,rest,Zendesk,notif_sound
+37,314,rest,Freshdesk,notif_toggle_broken
+38,178,rest,Zoho Desk,slow_performance
+39,184,rest,Freshdesk,ticket_filter_sort_missing
+40,141,rest,Zendesk,ticket_filter_sort_missing
+41,144,rest,Freshdesk,notif_not_received
+42,69,rest,Help Scout,login_session_not_kept
+43,82,rest,Zendesk,login_sso_fails
+44,140,rest,Zendesk,tickets_not_showing
+45,132,rest,Zendesk,text_input_buggy
+46,245,rest,Zendesk,support_no_response
+47,148,rest,Freshdesk,review_popup
+48,139,rest,Zendesk,reply_fails
+49,100,rest,Zendesk,ticket_create_unavailable
+50,143,rest,Freshdesk,install_fails
+51,103,rest,Zendesk,macros_not_working
+52,6,rest,Zendesk,login_forced_google
+53,74,rest,Zendesk,crash_on_login
+54,241,rest,Freshdesk,notif_spurious_or_repeated
+55,286,rest,Freshdesk,dark_mode_missing
+56,99,rest,Zendesk,macros_not_working
+57,20,rest,Zendesk,ticket_field_save_resets
+58,324,rest,Freshdesk,tickets_not_showing
+59,39,rest,Zendesk,macros_not_working
+60,239,rest,Zendesk,slow_performance
+61,269,rest,Zendesk,login_credentials_rejected
+62,188,rest,HappyFox,analytics_reports_broken
+63,205,rest,LiveAgent,stuck_loading
+64,219,rest,Freshdesk,review_popup
+65,36,rest,Zendesk,account_signup_problem
+66,330,rest,Zendesk,login_credentials_rejected
+67,255,rest,Freshdesk,notif_spurious_or_repeated
+68,198,rest,Freshdesk,login_needs_browser
+69,55,rest,Zendesk,crash_on_login
+70,309,rest,Zendesk,no_internet_false_error
+71,225,rest,LiveAgent,notif_cannot_clear
+72,121,rest,Zendesk,macros_not_working
+73,231,rest,Zendesk,back_button_navigation
+74,246,rest,Zendesk,display_white_unreadable
+75,282,rest,Freshdesk,support_no_response
+76,289,rest,Zendesk,stuck_loading
+77,194,rest,Freshdesk,agent_availability_toggle
+78,2,rest,Zoho Desk,slow_performance
+79,58,rest,Help Scout,install_fails
+80,9,rest,Zendesk,review_popup
+81,250,rest,HappyFox,slow_performance
+82,191,rest,Freshdesk,crash_on_compose_or_edit
+83,1,rest,Zoho Desk,support_no_response
+84,24,rest,Zendesk,app_renamed
+85,93,rest,Zendesk,login_access_revoked
+86,296,rest,Zendesk,slow_performance
+87,311,rest,Zendesk,text_input_buggy
+88,209,rest,LiveAgent,crash_on_open
+89,76,rest,Zoho Desk,slow_performance
+90,302,rest,Zoho Desk,review_popup
+91,86,rest,Zendesk,login_credentials_rejected
+92,46,rest,Zendesk,login_credentials_rejected
+93,206,rest,Zendesk,login_credentials_rejected
+94,331,rest,Freshdesk,slow_performance
+95,52,rest,Help Scout,forced_update_loop
+96,275,rest,Freshdesk,ticket_filter_sort_missing
+97,57,rest,Help Scout,notif_opens_blank
+98,335,rest,Zoho Desk,crash_on_login
+99,303,rest,Zendesk,redesign_disliked
+100,200,rest,Zendesk,redesign_disliked
+101,233,rest,Freshdesk,macros_not_working
+102,124,rest,Freshdesk,login_access_revoked
+103,120,rest,Freshdesk,install_fails
+104,305,rest,Freshdesk,redesign_disliked
+105,263,rest,Zendesk,no_internet_false_error
+106,271,rest,Zendesk,slow_performance
+107,285,rest,Zoho Desk,text_input_buggy
+108,318,rest,Zendesk,notif_not_received
+109,40,rest,Zendesk,no_tablet_landscape
+110,315,rest,Zendesk,redesign_disliked
+111,17,rest,Zendesk,slow_performance
+112,65,rest,Zendesk,login_session_not_kept
+113,223,rest,Zendesk,no_tablet_landscape
+114,232,rest,Zendesk,login_access_revoked
+115,168,rest,Freshdesk,ticket_close_reopens
+116,98,rest,Help Scout,no_internet_false_error
+117,118,rest,Freshdesk,support_no_response
+118,298,rest,Zendesk,images_attachments_not_shown
+119,115,rest,Zendesk,dark_mode_missing
+120,297,rest,Help Scout,login_sso_fails
+121,222,rest,Zendesk,login_access_revoked
+122,301,rest,Zendesk,no_tablet_landscape
+123,299,rest,Freshdesk,privacy_spam
+124,278,rest,Freshdesk,install_fails
+125,336,rest,Zendesk,login_sso_fails
+126,135,rest,Zendesk,install_fails
+127,88,rest,Zendesk,billing_plan_complaint
+128,185,rest,Zoho Desk,support_no_response
+129,221,rest,Freshdesk,notif_sound
+130,295,rest,Help Scout,redesign_disliked
+131,149,rest,Zendesk,ticket_field_save_resets
+132,155,rest,Zoho Desk,redesign_disliked
+133,53,rest,Help Scout,forced_update_loop
+134,89,rest,Zoho Desk,login_needs_browser
+135,321,rest,Zendesk,back_button_navigation
+136,91,rest,Zendesk,dark_mode_missing
+137,130,rest,HappyFox,ticket_create_unavailable
+138,317,rest,Zendesk,support_no_response
+139,224,rest,Zendesk,no_internet_false_error
+140,48,rest,Zendesk,notif_sound
+141,226,rest,Zendesk,text_input_buggy
+142,230,rest,Freshdesk,login_subdomain_rejected
+143,15,rest,Zendesk,review_popup
+144,327,rest,Freshdesk,tickets_out_of_date
+145,281,rest,Zendesk,notif_spurious_or_repeated
+146,212,rest,Zendesk,cc_field_problem
+147,249,rest,Zendesk,text_input_buggy
+148,162,rest,Zendesk,ticket_filter_sort_missing
+149,177,rest,Zendesk,login_needs_browser
+150,300,rest,Zendesk,notif_not_received
+151,215,rest,Zendesk,login_subdomain_rejected
+152,165,rest,Freshdesk,crash_notification_settings
+153,304,rest,Zendesk,redesign_disliked
+154,80,rest,Zendesk,no_tablet_landscape
+155,21,rest,Zendesk,crash_notification_settings
+156,235,rest,Zendesk,text_input_buggy
+157,310,rest,Freshdesk,redesign_disliked
+158,45,rest,Zendesk,login_access_revoked
+159,125,rest,Zendesk,no_tablet_landscape
+160,37,rest,Help Scout,crash_on_open
+161,261,rest,Freshdesk,ticket_status_hidden
+162,42,rest,Zendesk,login_credentials_rejected
+163,197,rest,Freshdesk,login_needs_browser
+164,204,rest,Freshdesk,dark_mode_missing
+165,63,rest,Zendesk,macros_not_working
+166,333,rest,Freshdesk,ticket_field_save_resets
+167,190,rest,Zendesk,chat_problem
+168,54,rest,Help Scout,forced_update_loop
+169,203,rest,Zendesk,slow_performance
+170,13,rest,Zendesk,login_forced_google
+171,107,rest,Zendesk,notif_not_received
+172,292,rest,Freshdesk,billing_plan_complaint
+173,202,rest,Freshdesk,login_credentials_rejected
+174,96,rest,Zendesk,notif_spurious_or_repeated
+175,182,rest,Freshdesk,login_needs_browser
+176,210,rest,Freshdesk,ticket_filter_sort_missing
+177,272,rest,Zendesk,no_tablet_landscape
+178,127,rest,Zendesk,pull_to_refresh_missing
+179,308,rest,Freshdesk,redesign_disliked
+180,22,rest,Zendesk,login_after_update
+181,56,rest,Help Scout,login_after_update
+182,158,rest,Freshdesk,notif_spurious_or_repeated
+183,152,rest,Freshdesk,calls_not_working
+184,159,rest,Zendesk,slow_performance
+185,256,rest,Zendesk,support_no_response
+186,133,rest,Zendesk,images_attachments_not_shown
+187,78,rest,Zendesk,pull_to_refresh_missing
+188,243,rest,Zendesk,macros_not_working
+189,326,rest,Help Scout,no_tablet_landscape
+190,279,rest,Freshdesk,privacy_spam
+191,179,rest,Zendesk,crash_on_compose_or_edit
+192,252,rest,Zendesk,account_signup_problem
+193,217,rest,Freshdesk,back_button_navigation
+194,16,rest,Zendesk,macros_not_working
+195,97,rest,Help Scout,slow_performance
+196,186,rest,Zoho Desk,ticket_close_reopens
+197,87,rest,Zendesk,redesign_disliked
+198,337,rest,Freshdesk,crash_other_action
+199,196,rest,Freshdesk,login_needs_browser
+200,10,rest,Zendesk,app_renamed
+201,192,rest,Freshdesk,login_sso_fails
+202,126,rest,Zendesk,redesign_disliked
+203,313,rest,Zendesk,login_needs_browser
+204,276,rest,Zendesk,macros_not_working
+205,253,rest,HappyFox,login_session_not_kept
+206,229,rest,Zendesk,support_no_response
+207,150,rest,Zendesk,ticket_filter_sort_missing
+208,254,rest,Zendesk,crash_on_compose_or_edit
+209,142,rest,Freshdesk,calls_not_working
+210,23,rest,Zendesk,cc_field_problem
+211,266,rest,Zendesk,login_access_revoked
+212,334,rest,Freshdesk,billing_plan_complaint
+213,79,rest,Zendesk,crash_notification_settings
+214,26,rest,Zendesk,redesign_disliked
+215,320,rest,Zendesk,notif_not_received
+216,174,rest,Freshdesk,ticket_create_unavailable
+217,160,rest,Zoho Desk,slow_performance
+218,11,rest,Zendesk,tickets_not_showing
+219,95,rest,Zoho Desk,login_session_not_kept
+220,201,rest,Zendesk,slow_performance
+221,123,rest,Zoho Desk,calls_not_working
+222,171,rest,Freshdesk,install_fails
+223,134,rest,Zendesk,chat_problem
+224,59,rest,Zendesk,login_sso_fails
+225,156,rest,Zendesk,account_signup_problem
+226,208,rest,Freshdesk,ticket_search_broken
+227,264,rest,Zendesk,redesign_disliked
+228,70,rest,Zendesk,login_credentials_rejected
+229,51,rest,Help Scout,forced_update_loop
+230,258,rest,Freshdesk,dark_mode_missing
+231,242,rest,Freshdesk,pull_to_refresh_missing
+232,136,rest,Freshdesk,login_session_not_kept
+233,50,rest,Help Scout,forced_update_loop
+234,244,rest,Zoho Desk,ticket_status_hidden
+235,119,rest,Freshdesk,login_after_update
+236,322,rest,Zendesk,notif_not_received
+237,234,rest,Zoho Desk,account_signup_problem
+238,270,rest,Zendesk,analytics_reports_broken
+239,153,rest,Zendesk,slow_performance
+240,157,rest,Zendesk,support_no_response
+241,49,rest,Zendesk,support_no_response
+242,307,rest,Zendesk,back_button_navigation
+243,247,rest,Zendesk,login_subdomain_rejected
+244,207,rest,LiveAgent,stuck_loading
+245,3,rest,Zendesk,login_after_update
+246,312,rest,Freshdesk,crash_other_action
+247,172,rest,Zoho Desk,account_signup_problem
+248,85,rest,Zendesk,notif_not_received
+249,175,rest,Zendesk,ticket_filter_sort_missing
+250,60,rest,Help Scout,forced_update_loop
+251,277,rest,Freshdesk,notif_not_received
+252,41,rest,Zendesk,crash_on_login
+253,273,rest,Freshdesk,ticket_filter_sort_missing
+254,248,rest,Freshdesk,slow_performance
+255,28,rest,Zendesk,ticket_filter_sort_missing
+256,216,rest,Freshdesk,support_no_response
+257,27,rest,Zendesk,crash_other_action
+258,44,rest,Zendesk,login_credentials_rejected
+259,110,rest,Zendesk,calls_not_working
+260,84,rest,Zoho Desk,install_fails
+261,105,rest,Zendesk,macros_not_working
+262,283,rest,Zendesk,login_subdomain_rejected
+263,14,rest,Zendesk,login_access_revoked
+264,211,rest,Zoho Desk,privacy_spam
+265,67,rest,Zendesk,login_needs_browser
+266,131,rest,Zendesk,pull_to_refresh_missing
+267,25,rest,Zendesk,ticket_filter_sort_missing
+268,180,rest,Freshdesk,notif_sound
+269,81,rest,LiveAgent,ticket_filter_sort_missing
+270,328,rest,Zendesk,login_code_not_received
+271,138,rest,Freshdesk,dark_mode_missing
+272,195,rest,Freshdesk,crash_other_action
+273,147,rest,Zendesk,tickets_not_showing
+274,109,rest,Zendesk,dark_mode_missing
+275,62,rest,Zendesk,reply_fails
+276,238,rest,Freshdesk,notif_spurious_or_repeated
+277,173,rest,Zoho Desk,stuck_loading
+278,170,rest,Freshdesk,support_no_response

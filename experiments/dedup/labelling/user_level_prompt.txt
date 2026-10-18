@@ -1,0 +1,17 @@
+The attached spreadsheet has 450 app-store reviews of six help-desk / customer-support apps (Zendesk, Freshdesk, Zoho Desk, Help Scout, LiveAgent, HappyFox). Tab "Reviews": id, product, review_text.
+
+Please read the reviews yourself, the way a careful support analyst would. Do not write code, keyword rules or any automatic classifier.
+
+We group reviews by the problem the USER EXPERIENCES - what they cannot do, or what they see going wrong - not by its technical cause. Users are not developers: "I can't log in", "notifications stopped", "the app keeps crashing", "it's very slow" are each a real problem even with no further detail.
+
+Step 1 - for EACH product separately, list the user-level problems in its reviews in the "Problems" tab (product, problem, definition). Rules:
+- One problem = one thing the user cannot do or one visible failure, e.g. "cannot log in", "logged out repeatedly", "notifications don't arrive", "app crashes", "app very slow", "cannot filter tickets", "wants dark mode".
+- Different causes or details of the same experience are the SAME problem: "invalid password", "Google sign-in loops" and just "can't log in" are all "cannot log in".
+- Different experiences are DIFFERENT problems: "cannot log in" vs "keeps logging me out"; "notifications don't arrive" vs "too many notifications".
+- A feature request or a complaint about the design counts as a problem (e.g. "wants dark mode", "dislikes the new design").
+
+Step 2 - give EVERY review exactly one problem from its own product's list:
+- its MAIN problem (if it mentions several, put the others in notes);
+- "no_problem" only if it names no problem at all (praise, a question, "useless app", "worst ever", a rating with no reason) or is not about this app.
+
+Keep the id column unchanged and give me the completed spreadsheet (both tabs) as an .xlsx file to download. If you cannot finish all rows in one reply, continue when I say "continue".

@@ -1,0 +1,7 @@
+thunderbird: REP-style TEXT ONLY test RR@1 0.256 RR@5 0.427 RR@10 0.501 RR@20 0.583 | weights (3, 0, 0, 0, 0)
+thunderbird: REP-style FULL (with metadata) test RR@1 0.262 RR@5 0.436 RR@10 0.508 RR@20 0.589 | weights (3, 0, 1, 0, 0)
+eclipse_platform: REP-style TEXT ONLY test RR@1 0.272 RR@5 0.425 RR@10 0.477 RR@20 0.541 | weights (3, 0.5, 0, 0, 0)
+eclipse_platform: REP-style FULL (with metadata) test RR@1 0.286 RR@5 0.442 RR@10 0.505 RR@20 0.565 | weights (3, 0.5, 2, 1, 0.5)
+firefox: REP-style TEXT ONLY test RR@1 0.265 RR@5 0.413 RR@10 0.477 RR@20 0.544 | weights (3, 0.5, 0, 0, 0)
+firefox: REP-style TEXT ONLY test RR@1 0.265 RR@5 0.413 RR@10 0.477 RR@20 0.544 | weights (3, 0.5, 0, 0, 0)
+firefox: REP-style FULL (with metadata) test RR@1 0.276 RR@5 0.433 RR@10 0.498 RR@20 0.562 | weights (3, 0.5, 2, 0.5, 0.5)

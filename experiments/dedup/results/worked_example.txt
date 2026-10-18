@@ -1,0 +1,233 @@
+
+====================================================================================================
+PART 1 · STEP 0 · the sample: 8 real complaints from data/synthetic_ground_truth.csv, in arrival order
+====================================================================================================
+C1  issue=login_otp_not_received       ref=   1  I never received the OTP when trying to log in.
+C2  issue=login_otp_not_received       ref=   2  The verification code never arrived on my phone, so I can't sign in. Happening consistently, not a one-off.
+C3  issue=login_otp_not_received       ref=   3  OTP delivery is broken, I've waited 20 minutes and nothing came through.
+C4  issue=session_logs_out_randomly    ref=  45  I keep getting logged out randomly in the middle of work.
+C5  issue=session_logs_out_randomly    ref=  46  Update: My session expires every few minutes even though I'm active.
+C6  issue=sso_login_fails              ref=  65  Just ran into this once more: Single sign-on through our company account fails with an authentication error.
+C7  issue=dashboard_extremely_slow     ref= 237  The dashboard takes over a minute to load basic data. Happening consistently, not a one-off.
+C8  issue=dashboard_extremely_slow     ref= 238  Everything is painfully slow, loading a single page takes forever.
+
+====================================================================================================
+STEP 1 · boilerplate rule (learned from all 488 complaints; no labels, no phrase list)
+====================================================================================================
+A sentence is filler if (a) near-copies (cosine >= 0.90) occur in >= 8 complaints AND
+(b) those complaints are otherwise unrelated: cohesion of their remaining text <= 0.30, where
+    cohesion = ( sum_i sum_j cos(rest_i, rest_j) - n ) / ( n (n - 1) )   (mean over the n(n-1) off-diagonal pairs)
+C1: 'I never received the OTP when trying to log in.'
+    -> 'I never received the OTP when trying to log in.'
+C2: "The verification code never arrived on my phone, so I can't sign in. Happening consistently, not a one-off."
+    -> "The verification code never arrived on my phone, so I can't sign in."
+C3: "OTP delivery is broken, I've waited 20 minutes and nothing came through."
+    -> "OTP delivery is broken, I've waited 20 minutes and nothing came through."
+C4: 'I keep getting logged out randomly in the middle of work.'
+    -> 'I keep getting logged out randomly in the middle of work.'
+C5: "Update: My session expires every few minutes even though I'm active."
+    -> "My session expires every few minutes even though I'm active."
+C6: 'Just ran into this once more: Single sign-on through our company account fails with an authentication error.'
+    -> 'Single sign-on through our company account fails with an authentication error.'
+C7: 'The dashboard takes over a minute to load basic data. Happening consistently, not a one-off.'
+    -> 'The dashboard takes over a minute to load basic data.'
+C8: 'Everything is painfully slow, loading a single page takes forever.'
+    -> 'Everything is painfully slow, loading a single page takes forever.'
+   dropped segment 'happening consistently, not a one-off.': found in 77 complaints, rest cohesion 0.209 <= 0.30
+   dropped segment 'update': found in 52 complaints, rest cohesion 0.200 <= 0.30
+   dropped segment 'just ran into this once more': found in 58 complaints, rest cohesion 0.192 <= 0.30
+
+  Worked cohesion for 'update' (exact-substring hosts only, for illustration; the rule also counts near-copies):
+   n = 85 complaints, sum of all n x n cosines = 1442.327, diagonal (self) = n = 85
+   cohesion = (1442.327 - 85) / (85 x 84) = 0.190
+
+====================================================================================================
+STEP 2 · clean_text (production preprocessing) and MiniLM embeddings
+====================================================================================================
+C1: v1 text: 'never received otp when trying log'
+    v2 text: 'never received otp when trying log'
+C2: v1 text: 'verification code never arrived phone so t sign happening consistently not one off'
+    v2 text: 'verification code never arrived phone so t sign'
+C3: v1 text: 'otp delivery broken ve waited 20 minutes nothing came'
+    v2 text: 'otp delivery broken ve waited 20 minutes nothing came'
+C4: v1 text: 'keep getting logged out randomly middle work'
+    v2 text: 'keep getting logged out randomly middle work'
+C5: v1 text: 'update session expires every minutes even though m active'
+    v2 text: 'session expires every minutes even though m active'
+C6: v1 text: 'just ran once more single sign company account fails authentication error'
+    v2 text: 'single sign company account fails authentication error'
+C7: v1 text: 'dashboard takes minute load basic data happening consistently not one off'
+    v2 text: 'dashboard takes minute load basic data'
+C8: v1 text: 'everything painfully slow loading single page takes forever'
+    v2 text: 'everything painfully slow loading single page takes forever'
+
+Each vector has 384 numbers and length 1 (|C1| = 1.000000).
+C1 first 5 numbers: [ 0.015  0.002  0.108 -0.05   0.018]
+
+Cosine by hand, C1 vs C2 (v2 text):  cos = sum_k C1[k]*C2[k] / (|C1| |C2|)
+   first 5 products: [-0.001  0.     0.004  0.003 -0.   ]  ... (384 products)
+   sum of all 384 products = 0.340740;  |C1||C2| = 1.000000
+   cos(C1,C2) = 0.3407
+
+====================================================================================================
+STEP 3 · cosine matrix (v2 text) and STS-B cross-encoder scores (v1 text)
+====================================================================================================
+       C1     C2     C3     C4     C5     C6     C7     C8
+C1  1.000  0.341  0.621  0.304  0.225  0.303  0.113  0.085
+C2  0.341  1.000  0.393  0.159  0.199  0.450  0.032  0.084
+C3  0.621  0.393  1.000  0.205  0.189  0.199  0.157  0.191
+C4  0.304  0.159  0.205  1.000  0.514  0.200  0.256  0.165
+C5  0.225  0.199  0.189  0.514  1.000  0.232  0.214  0.150
+C6  0.303  0.450  0.199  0.200  0.232  1.000 -0.021  0.107
+C7  0.113  0.032  0.157  0.256  0.214 -0.021  1.000  0.545
+C8  0.085  0.084  0.191  0.165  0.150  0.107  0.545  1.000
+
+STS-B scores (v1 decision score, 0..1):
+       C1     C2     C3     C4     C5     C6     C7     C8
+C1  0.000  0.234  0.320  0.189  0.037  0.082  0.037  0.022
+C2  0.234  0.000  0.053  0.103  0.135  0.260  0.450  0.019
+C3  0.320  0.053  0.000  0.044  0.071  0.011  0.046  0.058
+C4  0.189  0.103  0.044  0.000  0.064  0.055  0.109  0.011
+C5  0.037  0.135  0.071  0.064  0.000  0.034  0.102  0.022
+C6  0.082  0.260  0.011  0.055  0.034  0.000  0.025  0.042
+C7  0.037  0.450  0.046  0.109  0.102  0.025  0.000  0.133
+C8  0.022  0.019  0.058  0.011  0.022  0.042  0.133  0.000
+
+====================================================================================================
+STEP 4 · decisions, complaint by complaint
+====================================================================================================
+v1: MiniLM top-5 founders (v1 text) -> STS-B vs each founder -> merge if best >= 0.6469
+  C1: no cases yet -> NEW case
+  C2: STS-B vs founders [C1:0.234] -> best 0.234 <  0.6469 -> NEW case
+  C3: STS-B vs founders [C1:0.320, C2:0.053] -> best 0.320 <  0.6469 -> NEW case
+  C4: STS-B vs founders [C1:0.189, C2:0.103, C3:0.044] -> best 0.189 <  0.6469 -> NEW case
+  C5: STS-B vs founders [C4:0.064, C2:0.135, C1:0.037, C3:0.071] -> best 0.135 <  0.6469 -> NEW case
+  C6: STS-B vs founders [C2:0.260, C1:0.082, C4:0.055, C3:0.011, C5:0.034] -> best 0.260 <  0.6469 -> NEW case
+  C7: STS-B vs founders [C4:0.109, C5:0.102, C3:0.046, C2:0.450, C1:0.037] -> best 0.450 <  0.6469 -> NEW case
+  C8: STS-B vs founders [C7:0.133, C3:0.058, C4:0.011, C6:0.042, C2:0.019] -> best 0.133 <  0.6469 -> NEW case
+
+v2: cosine (v2 text) vs each founder -> merge if best >= 0.44 (median held-out threshold)
+  C1: no cases yet -> NEW case
+  C2: cosine vs founders [C1:0.341] -> best 0.341 <  0.44 -> NEW case
+  C3: cosine vs founders [C1:0.621, C2:0.393] -> best 0.621 >= 0.44 -> MERGE into case of C1
+  C4: cosine vs founders [C1:0.304, C2:0.159] -> best 0.304 <  0.44 -> NEW case
+  C5: cosine vs founders [C1:0.225, C2:0.199, C4:0.514] -> best 0.514 >= 0.44 -> MERGE into case of C4
+  C6: cosine vs founders [C1:0.303, C2:0.450, C4:0.200] -> best 0.450 >= 0.44 -> MERGE into case of C2
+  C7: cosine vs founders [C1:0.113, C2:0.032, C4:0.256] -> best 0.256 <  0.44 -> NEW case
+  C8: cosine vs founders [C1:0.085, C2:0.084, C4:0.165, C7:0.545] -> best 0.545 >= 0.44 -> MERGE into case of C7
+  (check: identical to compare_pipelines.online_cos)
+
+====================================================================================================
+STEP 5 · all 8x7/2 = 28 pairs -> TP / FP / FN -> precision, recall, F1
+====================================================================================================
+pair     same issue  v1 same case   v1  v2 same case   v2
+C1-C2          True         False   FN         False   FN
+C1-C3          True         False   FN          True   TP
+C1-C4         False         False   TN         False   TN
+C1-C5         False         False   TN         False   TN
+C1-C6         False         False   TN         False   TN
+C1-C7         False         False   TN         False   TN
+C1-C8         False         False   TN         False   TN
+C2-C3          True         False   FN         False   FN
+C2-C4         False         False   TN         False   TN
+C2-C5         False         False   TN         False   TN
+C2-C6         False         False   TN          True   FP
+C2-C7         False         False   TN         False   TN
+C2-C8         False         False   TN         False   TN
+C3-C4         False         False   TN         False   TN
+C3-C5         False         False   TN         False   TN
+C3-C6         False         False   TN         False   TN
+C3-C7         False         False   TN         False   TN
+C3-C8         False         False   TN         False   TN
+C4-C5          True         False   FN          True   TP
+C4-C6         False         False   TN         False   TN
+C4-C7         False         False   TN         False   TN
+C4-C8         False         False   TN         False   TN
+C5-C6         False         False   TN         False   TN
+C5-C7         False         False   TN         False   TN
+C5-C8         False         False   TN         False   TN
+C6-C7         False         False   TN         False   TN
+C6-C8         False         False   TN         False   TN
+C7-C8          True         False   FN          True   TP
+
+v1: TP=0 FP=0 FN=5
+   precision = TP/(TP+FP) = 0/0 = 1.000
+   recall    = TP/(TP+FN) = 0/5 = 0.000
+   F1 = 2PR/(P+R) = 2 x 1.000 x 0.000 / (1.000+0.000) = 0.000
+
+v2: TP=3 FP=1 FN=2
+   precision = TP/(TP+FP) = 3/4 = 0.750
+   recall    = TP/(TP+FN) = 3/5 = 0.600
+   F1 = 2PR/(P+R) = 2 x 0.750 x 0.600 / (0.750+0.600) = 0.667
+   (check: identical counts from scikit-learn pair_confusion_matrix)
+
+====================================================================================================
+STEP 6 · uncertain band from a real tuning half (split seed 0, tune on half A, boilerplate text)
+====================================================================================================
+tuning half: 280 complaints -> 39060 pairs, 2772 of them true duplicates
+t_high = lowest cosine t such that precision of {pairs with cosine >= t} >= 0.97
+   pairs with cos >= 0.4683:  1767 pairs,  1716 duplicates -> precision 0.9711
+   pairs with cos >= 0.4683:  1769 pairs,  1716 duplicates -> precision 0.9700
+   pairs with cos >= 0.4683:  1770 pairs,  1716 duplicates -> precision 0.9695
+   pairs with cos >= 0.4647:  1819 pairs,  1755 duplicates -> precision 0.9648
+   -> t_high = 0.4683
+t_low: walk down from t_high in 0.02 bins; stop at the first bin where < 20% of pairs are duplicates
+   bin [0.448, 0.468):   288 pairs,  192 duplicates -> share 0.667
+   bin [0.428, 0.448):   160 pairs,   48 duplicates -> share 0.300
+   bin [0.408, 0.428):   208 pairs,  144 duplicates -> share 0.692
+   bin [0.388, 0.408):   304 pairs,  112 duplicates -> share 0.368
+   bin [0.368, 0.388):   320 pairs,  128 duplicates -> share 0.400
+   bin [0.348, 0.368):   432 pairs,  112 duplicates -> share 0.259
+   bin [0.328, 0.348):   544 pairs,   96 duplicates -> share 0.176
+   -> t_low = 0.3483   band = [0.348, 0.468)
+Three-way decision for our sample with this band:
+   C2: best cosine to an earlier complaint 0.341 -> NEW case
+   C3: best cosine to an earlier complaint 0.621 -> MERGE (auto)
+   C4: best cosine to an earlier complaint 0.304 -> NEW case
+   C5: best cosine to an earlier complaint 0.514 -> MERGE (auto)
+   C6: best cosine to an earlier complaint 0.450 -> REVIEW QUEUE
+   C7: best cosine to an earlier complaint 0.256 -> NEW case
+   C8: best cosine to an earlier complaint 0.545 -> MERGE (auto)
+
+====================================================================================================
+STEP 7 · ROC AUC by counting (150 calibration pairs, same pairs for every scorer)
+====================================================================================================
+MiniLM cosine: 75 duplicates x 75 non-duplicates = 5625 comparisons; duplicate scored higher in 5166.0 -> AUC = 5166.0/5625 = 0.9184   (sklearn: 0.9184)
+STS-B: 75 duplicates x 75 non-duplicates = 5625 comparisons; duplicate scored higher in 4649.0 -> AUC = 4649.0/5625 = 0.8265   (sklearn: 0.8265)
+
+====================================================================================================
+STEP 8 · spike z-score (backend/services/spike_detection.py) on an example window history
+====================================================================================================
+previous 6-h windows [2, 1, 3, 2, 2, 1], current window 9  (needs >= 7 windows in total)
+   mean = 11/6 = 1.8333
+   std (population) = sqrt( sum (x-mean)^2 / n ) = sqrt(2.8333/6) = 0.6872
+   z = (current - mean)/std = (9 - 1.8333)/0.6872 = 10.43  -> spike if > 2, critical if > 3
+
+====================================================================================================
+STEP 9 · batch average-linkage on the 8 (distance = 1 - cosine), cut at t = 0.44
+====================================================================================================
+   merge ['C1', 'C3'] at average distance 0.379 (= average cosine 0.621)
+   merge ['C7', 'C8'] at average distance 0.455 (= average cosine 0.545)
+   merge ['C4', 'C5'] at average distance 0.486 (= average cosine 0.514)
+   merge ['C2', 'C6'] at average distance 0.550 (= average cosine 0.450)
+   merge ['C1', 'C3', 'C2', 'C6'] at average distance 0.691 (= average cosine 0.309)   <- above 1-0.44 = 0.56: not merged in the final cut
+   merge ['C4', 'C5', 'C1', 'C3', 'C2', 'C6'] at average distance 0.786 (= average cosine 0.214)   <- above 1-0.44 = 0.56: not merged in the final cut
+   merge ['C7', 'C8', 'C4', 'C5', 'C1', 'C3', 'C2', 'C6'] at average distance 0.872 (= average cosine 0.128)   <- above 1-0.44 = 0.56: not merged in the final cut
+   final groups at cut 0.56: [['C7', 'C8'], ['C4', 'C5'], ['C1', 'C3'], ['C2', 'C6']]
+
+====================================================================================================
+PART 2 · how strongly the main results hold (95% confidence intervals)
+====================================================================================================
+C1  AUC, paired bootstrap over the 150 pairs (2000 resamples):
+    cosine 0.918 [0.871, 0.959]   STS-B 0.826 [0.758, 0.887]   difference +0.092 [+0.038, +0.149]   share of resamples where cosine wins: 1.000
+C2  held-out F1, v2 (boilerplate+cosine, online) minus v1 (STS-B), same 10 splits: per-run differences [0.349, 0.423, 0.238, 0.514, 0.386, 0.478, 0.29, 0.477, 0.506, 0.534]
+    mean +0.420, sd 0.101, 95% CI = mean +/- 2.262 x sd/sqrt(10) = [+0.347, +0.492]; positive in 10/10 runs
+C2  held-out F1, LLM text minus no-LLM (both online cosine), same 10 splits: per-run differences [0.112, -0.0, 0.155, 0.034, 0.128, 0.01, 0.145, 0.001, -0.06, -0.075]
+    mean +0.045, sd 0.084, 95% CI = mean +/- 2.262 x sd/sqrt(10) = [-0.016, +0.105]; positive in 7/10 runs
+    note: the 10 runs reuse the same 488 complaints, so they are not fully independent; treat the t-interval as optimistic.
+C3  full 1,432 replay (point estimates): v1 STS-B 0.6469 P=0.954 R=0.200 F1=0.330 | v2 P=0.926 R=0.540 F1=0.682
+    (check: per-issue TP/FN/FP sum exactly to the full-data counts)
+    issue-level bootstrap (1000 resamples of the 32 issues): F1 v1 [0.303, 0.367], v2 [0.579, 0.796], difference v2-v1 [+0.245, +0.458]
+    precision v1 [0.901, 0.995]  v2 [0.816, 1.000]; v2 F1 higher in 1.000 of resamples
+C4  real mixed v2 cases judged wrong: 13/33 = 0.394, Wilson 95% CI [0.247, 0.563]
+C4  GitBugs top-30 cross-group pairs judged same bug: 2/30 = 0.067, Wilson 95% CI [0.018, 0.213]

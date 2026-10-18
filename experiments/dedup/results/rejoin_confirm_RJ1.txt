@@ -1,0 +1,2000 @@
+CONFIRM RJ1 (one shot)
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1417.74it/s]
+llm: key 1 limited, switching to key 2
+  s0A: R1 [0.82  0.231 0.36 ] -> RJ1 [0.802 0.285 0.42 ] | merges 8 (3 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1863.20it/s]
+llm: key 1 limited, switching to key 2
+  s1B: R1 [0.917 0.314 0.468] -> RJ1 [0.919 0.435 0.591] | merges 10 (8 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1877.91it/s]
+llm: key 1 limited, switching to key 2
+  s1A: R1 [0.707 0.238 0.357] -> RJ1 [0.676 0.274 0.39 ] | merges 6 (4 correct), cache misses 0
+PLAY STORE pooled: R1 P 0.810 R 0.259 F1 0.392 -> RJ1 P 0.799 R 0.327 F1 0.464
+  difference: P -0.011 [-0.069,+0.033], R +0.068 [+0.027,+0.119], F1 +0.071 [+0.027,+0.123]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1212.35it/s]
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm: key 10 limited, switching to key 2
+llm: key 2 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 10
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm: key 5 limited, switching to key 10
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm: key 7 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm: key 6 limited, switching to key 10
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm: key 8 limited, switching to key 10
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm: key 2 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm: key 6 limited, switching to key 10
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm: key 3 limited, switching to key 5
+llm: key 5 limited, switching to key 10
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm: key 4 limited, switching to key 10
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 10
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm: key 1 limited, switching to key 8
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm: key 7 limited, switching to key 10
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm: key 5 limited, switching to key 10
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm: key 8 limited, switching to key 7
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm: key 1 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 88s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 9
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 3
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 45s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 10
+llm retry in 74s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 75s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 3
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 8
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 9
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 6
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 112s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 7
+llm retry in 56s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 4
+llm retry in 41s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 4
+llm retry in 60s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 116s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 81s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 6
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 68s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 48s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 9
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 6
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 1
+llm: key 1 limited, switching to key 4
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 34s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 6
+llm retry in 71s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 74s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 10
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 45s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 4
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 6
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 106s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 10
+llm retry in 50s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 7
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 73s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 64s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 3
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 8
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 74s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 47s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 3
+llm retry in 64s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 2
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 27s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 9
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 74s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 2
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 8
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 7
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 6
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 59s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 65s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 77s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 49s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 58s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 82s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 4
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 8
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 112s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 4
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 35s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 37s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 77s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 116s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 8
+llm retry in 49s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 2
+llm retry in 53s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm retry in 102s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 7
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 8
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 90s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 3
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 7
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 34s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 79s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 2
+llm retry in 54s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 3
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 48s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 4
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 52s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 7
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 3
+llm retry in 62s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 65s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 70s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 7
+llm retry in 90s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 91s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 4
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm retry in 100s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm: key 2 limited, switching to key 9
+llm: key 9 limited, switching to key 1
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 9
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 10
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 7
+llm retry in 70s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 6
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 66s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 27s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 8
+llm retry in 184s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 34s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm retry in 72s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 83s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm: key 1 limited, switching to key 7
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 27s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 2
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 4
+llm retry in 99s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 8
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 2
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 3
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 4
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 8
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 51s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 77s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 84s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 55s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 68s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 100s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 52s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm retry in 77s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 57s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 7
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 49s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 8
+llm retry in 54s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 49s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 49s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 5
+llm retry in 73s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 41s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 2
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 48s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 34s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 4
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 58s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm retry in 62s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 37s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 2
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 55s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm retry in 129s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 2
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 55s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 4
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 55s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 54s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 66s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 4
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 4
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 8
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 62s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 75s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 83s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 80s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 6
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 54s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 27s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 2
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 55s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 119s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 49s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 58s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 56s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm: key 2 limited, switching to key 6
+llm retry in 84s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 104s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 10
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 34s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 77s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 104s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 4
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 53s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 129s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 9
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 41s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 7
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 56s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 83s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 4
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 41s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 52s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 3
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 2
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 8
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 7
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 59s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 2
+llm retry in 109s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 65s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 4
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 60s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 8
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 78s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 4
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 43s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 5
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 27s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 67s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 84s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 9
+llm retry in 35s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 84s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 60s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 8
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm: key 7 limited, switching to key 4
+llm: key 4 limited, switching to key 3
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 8
+llm retry in 66s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 2
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 54s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 6
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm retry in 65s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm: key 5 limited, switching to key 9
+llm: key 9 limited, switching to key 8
+llm: key 8 limited, switching to key 6
+llm: key 6 limited, switching to key 10
+llm: key 10 limited, switching to key 1
+llm: key 1 limited, switching to key 4
+llm retry in 56s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 7
+llm: key 7 limited, switching to key 10
+llm: key 10 limited, switching to key 1
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 6
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 8
+llm: key 8 limited, switching to key 1
+llm: key 1 limited, switching to key 5
+llm: key 5 limited, switching to key 7
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm: key 10 limited, switching to key 9
+llm: key 9 limited, switching to key 3
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 73s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm: key 8 limited, switching to key 10
+llm: key 10 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 37s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 1
+llm: key 1 limited, switching to key 8
+llm: key 8 limited, switching to key 4
+llm: key 4 limited, switching to key 9
+llm: key 9 limited, switching to key 5
+llm: key 5 limited, switching to key 1
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 4
+llm retry in 87s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm: key 5 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 37s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 8
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 35s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 1
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 76s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 5
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 84s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 7
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 4
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 77s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 2
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm: key 6 limited, switching to key 8
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 2
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 41s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 8
+llm retry in 62s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 6
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 3
+llm retry in 67s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 9
+llm: key 9 limited, switching to key 5
+llm: key 5 limited, switching to key 2
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm retry in 71s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm: key 10 limited, switching to key 8
+llm: key 8 limited, switching to key 4
+llm: key 4 limited, switching to key 6
+llm: key 6 limited, switching to key 4
+llm retry in 65s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 45s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 7
+llm: key 7 limited, switching to key 4
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 6
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 104s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 57s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 8
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm: key 5 limited, switching to key 4
+llm: key 4 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm: key 10 limited, switching to key 8
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 6
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm retry in 97s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm: key 8 limited, switching to key 6
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 4
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 64s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 2
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 8
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm retry in 81s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 4
+llm retry in 51s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 7
+llm retry in 51s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 8
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 3
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 4
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 2
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 9
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 2
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 98s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 6
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 3
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 42s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 9
+llm retry in 60s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 2
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 4
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm: key 3 limited, switching to key 1
+llm: key 1 limited, switching to key 5
+llm: key 5 limited, switching to key 2
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 8
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 1
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 35s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 8
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 8
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 7
+llm: key 7 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 6
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 1
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm retry in 27s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm: key 9 limited, switching to key 8
+llm: key 8 limited, switching to key 5
+llm retry in 18s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm: key 4 limited, switching to key 1
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 9
+llm retry in 41s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 5
+llm retry in 45s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm: key 2 limited, switching to key 10
+llm: key 10 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 9
+llm: key 9 limited, switching to key 4
+llm: key 4 limited, switching to key 3
+llm: key 3 limited, switching to key 1
+llm: key 1 limited, switching to key 8
+llm: key 8 limited, switching to key 3
+llm retry in 80s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 59s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm: key 5 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm: key 2 limited, switching to key 1
+llm: key 1 limited, switching to key 9
+llm: key 9 limited, switching to key 7
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 6
+llm: key 6 limited, switching to key 3
+llm: key 3 limited, switching to key 1
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 8
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm: key 10 limited, switching to key 9
+llm: key 9 limited, switching to key 2
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm retry in 52s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 1
+llm: key 1 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 6
+llm: key 6 limited, switching to key 5
+llm: key 5 limited, switching to key 1
+llm: key 1 limited, switching to key 3
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 27s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 6
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 10
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm: key 5 limited, switching to key 4
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm: key 3 limited, switching to key 2
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 10
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 7
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm: key 1 limited, switching to key 8
+llm: key 8 limited, switching to key 6
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 5
+llm: key 5 limited, switching to key 4
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 3
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 6
+llm retry in 35s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 1
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 10
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm retry in 47s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 9
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 2
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 64s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 5
+llm retry in 90s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 3
+llm retry in 62s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 6
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 10
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 5
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm: key 4 limited, switching to key 1
+llm: key 1 limited, switching to key 2
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm retry in 56s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 9
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm retry in 35s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 8
+llm: key 8 limited, switching to key 2
+llm: key 2 limited, switching to key 10
+llm: key 10 limited, switching to key 4
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 1
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 40s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 38s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 7
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 70s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 4
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 9
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 8
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 37s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 8
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm retry in 49s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 9
+llm: key 9 limited, switching to key 2
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 5
+llm: key 5 limited, switching to key 10
+llm: key 10 limited, switching to key 1
+  firefox3: R1 P 0.963 R 0.546 F1 0.697 -> RJ1 P 0.961 R 0.657 F1 0.780 | merges 22 (20 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1299.48it/s]
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm: key 10 limited, switching to key 1
+llm retry in 91s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 10
+llm: key 10 limited, switching to key 9
+llm: key 9 limited, switching to key 8
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm: key 2 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm: key 2 limited, switching to key 10
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 3
+llm: key 3 limited, switching to key 5
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm: key 9 limited, switching to key 4
+llm: key 4 limited, switching to key 1
+llm: key 1 limited, switching to key 8
+llm retry in 47s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 10
+llm: key 10 limited, switching to key 6
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 3
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 7
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 10
+llm: key 10 limited, switching to key 9
+llm: key 9 limited, switching to key 5
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 3
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 46s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 4
+llm: key 4 limited, switching to key 6
+llm: key 6 limited, switching to key 8
+llm: key 8 limited, switching to key 10
+llm: key 10 limited, switching to key 7
+llm: key 7 limited, switching to key 2
+llm: key 2 limited, switching to key 9
+llm: key 9 limited, switching to key 3
+llm: key 3 limited, switching to key 1
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 4
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 37s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 3
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 10
+llm retry in 11s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 9
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 7
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 6
+llm retry in 37s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 1
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm: key 10 limited, switching to key 4
+llm: key 4 limited, switching to key 8
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 5
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 7
+llm retry in 54s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 9
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 10
+llm: key 10 limited, switching to key 6
+llm: key 6 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 3
+llm: key 3 limited, switching to key 7
+llm retry in 21s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm retry in 94s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 1
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 10
+llm: key 10 limited, switching to key 6
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm: key 4 limited, switching to key 9
+llm: key 9 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 3
+llm: key 3 limited, switching to key 5
+llm: key 5 limited, switching to key 2
+llm: key 2 limited, switching to key 4
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 1
+llm: key 1 limited, switching to key 3
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm retry in 23s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 1
+llm: key 1 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 2
+llm: key 2 limited, switching to key 5
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 10
+llm: key 10 limited, switching to key 4
+llm: key 4 limited, switching to key 7
+llm retry in 32s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 9
+llm retry in 19s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 5
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 2
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 8
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 6
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 4
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 10
+llm: key 10 limited, switching to key 1
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 34s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 7
+llm: key 7 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 8
+llm: key 8 limited, switching to key 6
+llm: key 6 limited, switching to key 1
+llm retry in 28s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 2
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 9
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 3
+llm: key 3 limited, switching to key 1
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 4
+llm retry in 13s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 2
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 7
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 5
+llm retry in 20s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 15s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 6
+llm: key 6 limited, switching to key 2
+llm: key 2 limited, switching to key 5
+llm: key 5 limited, switching to key 3
+llm: key 3 limited, switching to key 9
+llm: key 9 limited, switching to key 8
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm retry in 44s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 1
+llm: key 1 limited, switching to key 4
+llm: key 4 limited, switching to key 6
+llm retry in 22s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm: key 10 limited, switching to key 9
+llm: key 9 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 6
+llm retry in 39s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 2
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 5
+llm: key 5 limited, switching to key 4
+llm retry in 25s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 9
+llm: key 9 limited, switching to key 8
+llm: key 8 limited, switching to key 6
+llm: key 6 limited, switching to key 1
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 10
+llm: key 10 limited, switching to key 7
+llm: key 7 limited, switching to key 4
+llm: key 4 limited, switching to key 2
+llm: key 2 limited, switching to key 5
+llm: key 5 limited, switching to key 9
+llm: key 9 limited, switching to key 8
+llm retry in 2s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 4
+llm: key 4 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm retry in 24s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 3
+llm: key 3 limited, switching to key 2
+llm: key 2 limited, switching to key 10
+llm: key 10 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 8
+llm retry in 31s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 9
+llm: key 9 limited, switching to key 6
+llm: key 6 limited, switching to key 3
+llm: key 3 limited, switching to key 2
+llm: key 2 limited, switching to key 7
+llm retry in 1s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 1
+llm retry in 0s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 5
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 4
+llm retry in 7s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 6
+llm retry in 26s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 8
+llm retry in 5s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 10
+llm: key 10 limited, switching to key 7
+llm retry in 36s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 1
+llm: key 1 limited, switching to key 5
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 9
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 4
+llm retry in 12s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 4 limited, switching to key 7
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 10
+llm retry in 33s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 10 limited, switching to key 5
+llm retry in 17s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 5 limited, switching to key 6
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 9
+llm retry in 14s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 9 limited, switching to key 2
+llm retry in 6s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 2 limited, switching to key 3
+llm retry in 16s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 1
+llm retry in 30s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm retry in 10s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 6 limited, switching to key 7
+llm retry in 3s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 8
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 8 limited, switching to key 2
+llm: key 2 limited, switching to key 9
+llm: key 9 limited, switching to key 3
+llm retry in 8s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 10
+llm: key 10 limited, switching to key 5
+llm: key 5 limited, switching to key 1
+llm retry in 4s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 1 limited, switching to key 6
+llm: key 6 limited, switching to key 2
+llm: key 2 limited, switching to key 7
+llm retry in 9s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+llm: key 7 limited, switching to key 3
+llm retry in 29s: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organ
+  jira_agreed: R1 P 0.650 R 0.101 F1 0.174 -> RJ1 P 0.500 R 0.124 F1 0.199 | merges 5 (2 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1627.44it/s]
+  thunderbird: R1 run incomplete (213 uncached decisions), skipped
+
+RULE: ADOPT (P 0.799 >= 0.78? recall CI low +0.027 > 0? Firefox 3 P 0.961 >= 0.90?)

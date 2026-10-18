@@ -1,0 +1,31 @@
+pair_precision,pair_recall,pair_f1,cases,contaminated_cases,cross_issue_assignments,pipeline,split_seed,threshold
+1.0,0.0,0.0,251,0,0,v1-online (MiniLM + STS-B CE),0,0.85
+0.8461538461538461,0.10543130990415335,0.18749999999999997,222,4,4,online-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.68
+0.8181818181818182,0.08626198083067092,0.1560693641618497,223,4,4,batch-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.68
+1.0,0.003745318352059925,0.007462686567164179,248,0,0,v1-online (MiniLM + STS-B CE),0,0.85
+1.0,0.0,0.0,249,0,0,online-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.82
+1.0,0.0,0.0,249,0,0,batch-cos (sentence-transformers/all-MiniLM-L6-v2),0,0.82
+1.0,0.0,0.0,258,0,0,v1-online (MiniLM + STS-B CE),1,0.85
+0.75,0.008645533141210375,0.017094017094017096,254,1,1,online-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.8
+0.75,0.008645533141210375,0.017094017094017096,254,1,1,batch-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.8
+0.5,0.004291845493562232,0.00851063829787234,240,1,1,v1-online (MiniLM + STS-B CE),1,0.85
+0.7428571428571429,0.11158798283261803,0.19402985074626866,212,6,6,online-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.68
+0.84375,0.2317596566523605,0.36363636363636365,200,8,8,batch-cos (sentence-transformers/all-MiniLM-L6-v2),1,0.64
+1.0,0.0,0.0,231,0,0,v1-online (MiniLM + STS-B CE),2,0.85
+1.0,0.0,0.0,231,0,0,online-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.86
+1.0,0.0,0.0,231,0,0,batch-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.86
+1.0,0.0027100271002710027,0.005405405405405406,268,0,0,v1-online (MiniLM + STS-B CE),2,0.85
+0.0,0.0,0.0,268,1,1,online-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.82
+0.8297872340425532,0.10569105691056911,0.1875,234,4,5,batch-cos (sentence-transformers/all-MiniLM-L6-v2),2,0.68
+1.0,0.003236245954692557,0.0064516129032258064,253,0,0,v1-online (MiniLM + STS-B CE),3,0.85
+1.0,0.0,0.0,254,0,0,online-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.86
+1.0,0.0,0.0,254,0,0,batch-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.86
+0.0,0.0,0.0,245,1,1,v1-online (MiniLM + STS-B CE),3,0.85
+0.7358490566037735,0.14391143911439114,0.24074074074074076,207,7,8,online-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.66
+0.7894736842105263,0.2767527675276753,0.4098360655737705,187,12,12,batch-cos (sentence-transformers/all-MiniLM-L6-v2),3,0.62
+1.0,0.0,0.0,256,0,0,v1-online (MiniLM + STS-B CE),4,0.85
+0.66,0.10749185667752444,0.18487394957983194,218,7,9,online-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.66
+0.7777777777777778,0.18241042345276873,0.2955145118733509,208,11,11,batch-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.64
+1.0,0.003663003663003663,0.0072992700729927005,243,0,0,v1-online (MiniLM + STS-B CE),4,0.85
+1.0,0.003663003663003663,0.0072992700729927005,243,0,0,online-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.82
+1.0,0.003663003663003663,0.0072992700729927005,243,0,0,batch-cos (sentence-transformers/all-MiniLM-L6-v2),4,0.82

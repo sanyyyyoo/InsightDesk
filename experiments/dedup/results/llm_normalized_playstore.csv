@@ -1,0 +1,339 @@
+complaint_ref,issue_statement
+1,Support email replies not received for a week.
+2,"Application performance extremely slow, reducing work speed."
+3,Login fails; user cannot sign in after update.
+4,Ticket list no longer shows status colors after update.
+5,Response attribution unclear; cannot identify who replied after update.
+6,"App forces Google sign-in, blocking login with existing email."
+7,"Login intermittently fails, shows loading spinner then token expired message."
+8,Ticket status removed from views; app rename hinders discovery.
+9,Notifications and views broken after removal of Google integration.
+10,App icon replaced with generic image and renamed to 'Support'.
+11,Ticket view fails with 'Could not connect' error when opening tickets.
+12,Login logs out with 'access token revoked' and copy/paste disabled in reply editor.
+13,"Forced Google login required for private Zendesk instance, breaking agent authentication."
+14,"Built-in browser fails to display corporate ADFS login, preventing user authentication."
+15,Rating flow redirects to Google Play Store or private feedback form based on response.
+16,"Macros fail, fields cannot be updated, and ticket submission returns errors."
+17,App performance extremely slow and nonfunctional in China despite VPN usage.
+18,"New UI design obscures information, causing missed tickets and navigation difficulty."
+19,Android tablet login fails with 'access token has expired or been revoked' error.
+20,"Persistent bottom-screen message appears 99% of the time, blocking all actions."
+21,"Opening Settings > Notifications crashes the app every time, even after reinstall."
+22,"Recent update prevents login, making the app unusable."
+23,Cannot add CC email address unless it exists in the system.
+24,App now appears as 'Support' in app drawer instead of Zendesk branding.
+25,"Ticket view groups all tickets, shows conversations oldest‑first, and opening tickets redirects to home screen."
+26,User requests return to previous version of the app.
+27,App continuously crashes after recent update.
+28,"Support app lost sorting by views, showing all tickets regardless of status."
+29,"App loses login token on each launch, requiring re‑sign‑in."
+30,App logs out multiple times daily without apparent reason.
+31,Authentication: token expired or revoked error causing automatic sign‑out.
+32,Session handling after update logs agents out or prevents app operation.
+33,Session persistence fails; app repeatedly logs out and loses session token.
+34,Session timeout too short; app logs out every few hours.
+35,App launch crashes on opening across various Android devices.
+36,Sign‑in flow lacks account creation; only sign‑in option displayed.
+37,App startup fails after latest update; error reports submitted.
+38,"Login attempts return Bad Request Error, preventing authentication."
+39,Macro loading fails; macros do not load in the application.
+40,Application lacks tablet support; not usable on tablet devices.
+41,Login feature crashes during login attempt.
+42,Authentication shows 'invalid credentials' error after latest release.
+43,Admin panel cannot assign work to agents.
+44,Sign‑in displays 'invalid credentials' error.
+45,Login blocked by IP restrictions despite website access.
+46,Login repeatedly returns 'invalid email and password' error.
+47,"Macros unusable, ticket updates delayed up to 10 minutes, and sorting does not work."
+48,Notifications missing or play default sound instead of selected custom tone.
+49,Ticket view forces agent assignment; need group view for all agents.
+50,App forces update despite no available version in Google Play.
+51,Update prompt forces update but no update applied; app not working.
+52,Cannot update; account locked out.
+53,Update caused endless loop; app unusable after successful prior version.
+54,Persistent update prompt; cannot exit loop.
+55,App crashes at login on Nexus 6P; reinstall unchanged.
+56,App stopped working after update.
+57,No notifications received; mobile app feature ineffective.
+58,App fails to open; reinstall won't start; missing emails.
+59,Login fails on new Galaxy S8; SSO integration poor.
+60,App says update required; Play Store shows latest version; accessibility unclear.
+61,Ticket merging feature fails to add two more tickets on Android app.
+62,Response submission repeatedly fails after five attempts.
+63,Macros unavailable; must type replies manually.
+64,Login rejects domains containing hyphens; hyphen field not allowed.
+65,"App logs out after ~10 minutes, loses subdomain, search, deeplinks, view updates, not listed."
+66,Login blocks hyphenated Zendesk subdomains; workaround needed via copy‑paste.
+67,App login fails for existing ID; web login works.
+68,App prevents sign‑in for my domain after installation.
+69,"App repeatedly forgets login credentials, requiring re‑login within hours."
+70,App shows error on login despite correct ID/password; works on laptop.
+71,Subdomain entry rejects hyphenated domain
+72,Login fails with 'access token expired or revoked' error
+73,Android notification opens blank white screen or mailbox error
+74,App crashes immediately after signing in
+75,No push notification for new tickets or chats
+76,"Reply submission on PC extremely slow, takes many attempts"
+77,App UI becomes blank white after update
+78,"Pull-to-refresh fails, only unsolved tickets visible, cannot view solved tickets"
+79,"Group notification toggle stuck in endless loop, cannot enable"
+80,App does not function in landscape orientation
+81,Ticket sorting and live chat joining are slow and difficult.
+82,"Login page fails to load, showing only white screen after selecting SSO."
+83,Unable to view unsolved tickets from past month using credentials; no support number provided.
+84,Download function does not work; file fails to download.
+85,Inbound client emails not routed to accounts; no messages received.
+86,"Login rejects correct password with 'password incorrect' error, but browser login succeeds."
+87,User interface is not as easy to use as website version.
+88,WhatsApp API integration poor; extra charges for add-ons; ticket system confusing.
+89,Cannot log into regularly used account on computer.
+90,Login fails despite correct email and password.
+91,"Ticket list lacks team filter, making tickets hard to locate."
+92,Quickie view not visible in mobile app.
+93,Login fails with error 'Access has been revoked'.
+94,Missing dark mode; grey text on white background hard to read.
+95,Mobile sign-in forces full application redo each attempt.
+96,"Notifications unreliable, missing updates for months."
+97,Message opening delays exceed 30 seconds.
+98,In-app search returns Server error consistently.
+99,Macros fail to execute in the app.
+100,Ticket creation fails; cannot create new ticket.
+101,Ticket screen blank after Sept 4th update; tickets not displayed in other views.
+102,"Web app feels clunky; slow performance, limited features, unintuitive UI."
+103,"Macros fail to apply in mobile app, preventing quick client responses."
+104,Tool hangs on loading after latest update; cannot navigate any views.
+105,"Macros not functioning in mobile app, undermining away‑office usage."
+106,No option to set louder ringtone; ticket notifications delayed.
+107,App stops working; notifications missing and sync delayed intermittently.
+108,App takes excessive time to load.
+109,Dark mode feature missing.
+110,Cannot make or receive calls; dialer missing in mobile app.
+111,Refresh/reload feature freezes and stops animating on all connections.
+112,Landscape and tablet support missing.
+113,Tablet mode forces portrait; keyboard covers textbox; website dropdowns malfunction on mobile.
+114,Login fails with 'access revoked' error; purchase attempts show 'page not found'.
+115,Form validation doesn't indicate missing fields; dark mode option unavailable.
+116,Ticket alerts not displayed in app.
+117,"After update app auto signs out, gets stuck in queue; options like note editing missing."
+118,"Intermittent login failures; sometimes login does not proceed, no reproducible error."
+119,"Post-update cannot login; support ticket opened, no resolution; cannot roll back."
+120,"App shows 'it's not you, it's us' screen; ticket display unreadable with many responses."
+121,Macros feature fails to execute; merge operation not working
+122,Trial period shows ended 13 days ago despite new account creation
+123,Outgoing calls and SMS tickets cannot be made using CS number
+124,Access denied error appears frequently; requires daily uninstall and reinstall
+125,App does not rotate to landscape orientation on tablet
+126,Mobile app UI is confusing compared to desktop version
+127,Auto-refresh cannot be set to manual; ticket view always refreshes first
+128,Notification sound triggers on any agent reply; sorting feature malfunctioning
+129,App logs out automatically each time it is opened
+130,Cannot create new ticket in mobile app; old version lacks Android SSO support
+131,Refresh feature fails to update data on Lenovo Tab M10.
+132,Sign-in fails; cannot type URL domain in login field.
+133,Ticket images do not render within ticket view.
+134,Live chat unavailable; tickets cannot be fully viewed or replied to as admin.
+135,App fails to install on device.
+136,"App intermittently locks out user, preventing login."
+137,"Navigation is poor, causing users to abandon the app."
+138,Dark mode option is missing from the app.
+139,Phone replies disappear after posting; not visible later.
+140,"Opening tickets shows ""unsupported ticket"" error, preventing access."
+141,"Ticket UI: mobile layout hampers navigation, sorting, and viewing full response history."
+142,Call button: clicking 'click here to call the patient' does not initiate call.
+143,Download feature: unable to download BBMP COVID resource.
+144,"Availability status: automatically turns off, preventing receipt of notifications."
+145,Ticketing: no tickets received after 10 days of usage.
+146,Ticketing: user receives no tickets.
+147,"Ticket loading: intermittent failures cause tickets not to load, reducing reliability."
+148,Rating popup: repeatedly prompts for additional five-star rating.
+149,"Organization field: after update, display inconsistent with web GUI; field edits not syncing."
+150,"Mobile app: lacks tech and call monitoring, ticket updates, limiting remote support."
+151,Image display fails; notifications missing; UI/UX poor.
+152,Incoming calls not received.
+153,"Attachment upload extremely slow, taking excessive time."
+154,Calls fail to connect.
+155,"UI/UX inadequate, limiting product usefulness."
+156,Google and email sign‑in fail; app requires update.
+157,Mobile app fails to open; support request unanswered.
+158,Notifications sent with empty queue and outside configured hours; UI suboptimal.
+159,Application barely functional; frequent disconnections.
+160,App performance slow and consistently buggy.
+161,Notifications do not appear for new tickets.
+162,Ticket sorting/filtering UI is confusing and lacks functionality.
+163,URL validation shows 'oops the URL is invalid' error for correct URLs.
+164,"Notification sound stops after a while, no sound for incoming messages."
+165,Setting notification schedule time causes app crash and restart.
+166,Cannot log in after reinstalling the app.
+167,Login fails after reinstalling the application.
+168,"Deleted tickets reappear after refresh, persisting despite deletion."
+169,Ticket search and filtering functionality is missing.
+170,Support team response to service issues is not timely.
+171,App prompts reinstall; reinstall attempt only shows 'open' button.
+172,Account creation requires phone number; rejects input with '0-9 only' error.
+173,"Inbox sync extremely slow (5‑10 min) and shows 'error occurred, please try again later'."
+174,Missing guidance for raising tickets on Android app.
+175,Ticket view lacks filter for 'New' or 'Open' tickets in Android app.
+176,User cannot obtain any help or support within the app.
+177,"Zendesk app redirects D365-linked login to browser, preventing app usage."
+178,App performance slow and repeatedly crashes.
+179,App crashes on opening after notification and ticket reply attempt.
+180,App lacks option to customize phone notification sound.
+181,"Ticket filter feature missing; cannot filter tickets, only notifications available."
+182,URL login feature fails; login URL does not work.
+183,App logs out immediately after login; session unstable.
+184,Filter option absent; cannot apply ticket filters.
+185,"Support access difficult; cannot locate help, responses unhelpful."
+186,Ticket close action toggles; closing reopens ticket and vice versa.
+187,SSO login hangs on OneLogin screen; app never redirects after authentication.
+188,Dashboard ticket count inaccurate; updates every 15 minutes with incorrect daily totals.
+189,"Work order creation cumbersome; requires multiple screens, lacks location sorting and category options."
+190,Chat sessions timeout after five minutes; cannot respond to customers.
+191,App crashes when selecting Edit ticket from menu after recent update.
+192,"SSO sign-in fails after clicking Allow, showing an error."
+193,App refuses access unless Google reCAPTCHA tracking is enabled.
+194,Missing feature to enable/disable Freshdesk for agents.
+195,Latest version fails to operate for user.
+196,Login prompts to install a browser despite existing browsers.
+197,App requires browser installation to sign in; SSO fails on app.
+198,App on Redmi Note 11 shows 'install a browser' error during sign-in.
+199,Team assignment dropdown opens but cannot scroll to select teams.
+200,"Ticket view UI mixes Public Reply and Internal Notes, causing confusing sensitive layout."
+201,Server performance is extremely slow
+202,App logs out unexpectedly and password reset fails
+203,Ticket closing UI is unintuitive and overall performance is very slow
+204,Dark theme option is missing
+205,App hangs on launch and fails to open
+206,Login fails with generic error despite password reset attempts
+207,App shows 'initialising' message and does not log in
+208,Filter functions are poor and lack web version capabilities
+209,App fails to start and remains non-functional
+210,Cannot easily access tickets you created in customer portal
+211,Phone verification requires number; app repeatedly calls from multiple numbers despite blocking
+212,Ticket app missing CC field and deletes draft text when navigating away
+213,Analytics filters malfunction and are difficult to use on mobile app
+214,Ticket list lacks filters to sort by name or custom fields in app
+215,Sign-in fails with 'invalid sub domain' or 'sub domain not found' error
+216,Ticket 12816421 remains open for over a week without closure
+217,App's back button no longer exits the new version
+218,Raised ticket receives no response in app
+219,App repeatedly shows 'Please Rate The App' pop‑up without opt‑out
+220,"App logs out, then freezes when adding address and prevents login"
+221,"Custom notification ringtone removed, cannot hear new ticket alerts."
+222,Login shows 'access has revoked' and signs out automatically.
+223,App lacks horizontal mode and screen rotation on tablets with keyboards.
+224,Responding to tickets shows 'no internet connection' error despite active network.
+225,"Canned messages missing, chat rings 30 min late, notifications cannot be cleared."
+226,Switching apps discards entered text; input window small with no expand option.
+227,Cannot apply macro after recent update.
+228,Missing filter to view only own open/pending tickets; shows all company tickets.
+229,"Support ticket handling ineffective; issues remain unresolved, causing frustration."
+230,App requires URI link to proceed; blocks next step without it.
+231,Ticket list navigation loops after opening multiple tickets; Task type unavailable; duplicate Question type
+232,App login returns 'Access Revoked' error message
+233,Canned responses fail to sync hyperlink content
+234,"Portal login repeatedly prompts to create portal, preventing ticket sign‑in"
+235,"Agent‑added links display as plain text, not hyperlinked"
+236,"App input misbehaves with SwiftKey keyboard and voice‑to‑text, causing delete and spacing errors"
+237,"Chat widget crashes, kicking users out when closing chat on mobile"
+238,Duplicate ticket response notifications repeatedly fire for unchanged tickets
+239,"App remains buggy, slow, and unresponsive after two years"
+240,"Notifications pane blank after update, preventing admin from viewing ticket alerts"
+241,Ticket list: cannot customize visible fields and receives duplicate notifications per ticket.
+242,"Ticket queue: pull‑to‑refresh removed; ticket view lacks company details, notes, and dashboard."
+243,Reply macros: macro response templates are missing.
+244,Mobile app: cannot mark ticket as unread.
+245,Support: perceived unresponsive attitude from Zendesk staff.
+246,App UI: white screen hides menu option text.
+247,App setup: cannot type subdomain in login field.
+248,App performance: slow loading and creates duplicate tickets.
+249,Android app: pasting and dictation of text are buggy.
+250,"Ticket loading: extremely slow, comparable to 56 kbps dial‑up."
+251,App requires Wi‑Fi to respond to notifications; cellular data blocked.
+252,Cannot log in or create account; unable to view others' tickets.
+253,SSO login not persisted; must re‑login each time app opens.
+254,App crashes whenever compose button is tapped to create new ticket.
+255,Notifications show auto‑deleted tickets and cannot be cleared in app.
+256,Support team failed to follow up on sales rep contact request.
+257,Dark mode feature is missing.
+258,Dark mode still unavailable; user uninstalled app.
+259,Version 8.8.2 Android app fails to deliver notifications despite permissions.
+260,Ticket search returns no results; cannot find tickets by number.
+261,Copy/Paste functionality broken; ticket status changes are cumbersome.
+262,In-app suggestion prompts interrupt workflow repeatedly.
+263,"PoS app reports no Internet connection despite connectivity, preventing ticket opening."
+264,Request to revert to older two-year-old app version.
+265,Sales demo request pending three weeks; no account manager assigned.
+266,"App logs out unexpectedly, shows 'access revoked' error; website login works."
+267,Notifications stopped after October update; issue remains after two subsequent updates.
+268,Notifications missing after latest update.
+269,System incorrectly flags sole email address as invalid.
+270,First response time metric stuck at 70-75% for four months.
+271,Portrait mode: app slows down and becomes stuck.
+272,"Tablet UI: poor experience, requires update."
+273,Android tickets view: cannot see tickets after version 9.0.0 update.
+274,Ticket filter: cannot filter open tickets.
+275,"Assigned tickets list empty when filter enabled, app unusable with many tickets."
+276,"Macros: most used macros not saved, cannot replace words while selected."
+277,Waste notification: not working.
+278,Installation: unable to install Freshdesk app.
+279,"Privacy: app allegedly sells data, causing spam emails and calls."
+280,"Tablet support: no side view, lacks Android tablet compatibility for business travelers."
+281,Notifications not displayed when screen is off on Pixel 8 Pro.
+282,Onboarding and support provide inadequate training and slow issue resolution.
+283,Login fails with 'no found' error when accessing Zendesk.
+284,Dark mode option is missing from the user interface.
+285,Cannot copy text or links from tickets.
+286,"Dark mode unavailable, causing difficulty for users with sensitive eyes."
+287,No notifications are received at all.
+288,"Unable to delete notifications, leading to phone storage waste."
+289,"Application fails to connect, leaving user waiting 15 minutes."
+290,App cannot be accessed on the phone.
+291,"Ticket loading extremely slow; notifications, back button and navigation confusing."
+292,"Free plan agent limit reduced to 2, down from 10."
+293,Added notes and summary not viewable; canned responses missing on mobile app.
+294,Agent assignment message shows; sole agent cannot reply to tickets while away.
+295,Recent UI style changes degrade productivity; user requests revert.
+296,Opening tickets extremely slow; overall UI performance poor.
+297,Google SSO login loops indefinitely for linked account; other accounts show error.
+298,"Photos and attachments not visible in app, though they load in web browser."
+299,Email account compromised; spam sent to all Gmail contacts.
+300,New ticket updates not pushed to app; manual refresh required.
+301,Tablet version feature unavailable.
+302,"Rating prompt appears on every interaction, causing annoyance."
+303,Email input field rejects entered email address.
+304,Post‑update message layout has broken spacing and altered message positioning.
+305,Ticket availability switch missing from interface.
+306,"Embedded browser login does not persist session, causing logout."
+307,"Back button fails to return to ticket list, requiring app restart."
+308,"Spam marking, custom fields view, and merge functions are non‑functional."
+309,Ticket list unclickable; app shows 'no internet connection' error.
+310,"Login requires navigating multiple domain options, creating a complex multi‑step process."
+311,Keyboard input: random capitalization and cursor jumps causing typing failures.
+312,App launch crashes immediately on opening the latest version.
+313,Login redirects to mobile browser instead of displaying the app interface.
+314,Notifications cannot be toggled in settings on S23 after latest release.
+315,Web interface UI cannot revert to previous version after new UI rollout.
+316,Ticket list pull-to-refresh and search broken; unavailable Snooze shows generic error.
+317,"Account email flagged across services, causing shadowban and unresponsive support."
+318,Mobile app notifications removed in latest update.
+319,Phone status cannot be changed; toggles offline when desktop tab closed.
+320,Notifications no longer appear in the app.
+321,Back button closes app unexpectedly when viewing ticket.
+322,Android push notifications stopped working after recent update.
+323,Ticket list UI shows only 3‑4 tickets per screen after layout change.
+324,Tickets fail to load initially and experience long loading times.
+325,Analytics report ticket links do not open tickets on mobile.
+326,"Android app displays single-column stretched layout, lacking iPad two‑column view."
+327,"Ticket view remains outdated, not reflecting current statuses or replies."
+328,App fails to send login verification code to email.
+329,Dark mode feature is missing.
+330,Login fails with 'not found' error.
+331,"Email editor/sender is slow, causing long edit and send times."
+332,"Push notifications delayed until phone unlocked, arriving up to an hour after ticket."
+333,"Ticket type field resets on save, preventing ticket closure."
+334,Upgrade prompts force paid plan purchase for legacy users.
+335,"Biometric and PIN login frequently crash, allowing login only intermittently."
+336,Single Sign-On (SSO) authentication is non-functional.
+337,App Lock crashes the app when attempting to disable after enabling.
+338,Latest app update causes unspecified issues.

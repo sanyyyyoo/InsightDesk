@@ -1,0 +1,5 @@
+PUBLISHED DUPLICATE FINDERS on Play Store held-out halves (same splits and scoring as R1)
+  BM25 (REP's text core)                     P 0.306  R 0.197  F1 0.240   thresholds [np.float64(0.2), np.float64(0.15), np.float64(0.15)]
+  Jaccard / MinHash-LSH (3-char shingles)    P 0.167  R 0.241  F1 0.197   thresholds [np.float64(0.15), np.float64(0.15), np.float64(0.15)]
+  SimHash (64-bit)                           P 0.072  R 0.290  F1 0.115   thresholds [np.int64(42), np.int64(36), np.int64(42)]
+  (InsightDesk on the same halves: R1 P 0.810 R 0.259 F1 0.392; with re-joining P 0.799 R 0.327 F1 0.464)

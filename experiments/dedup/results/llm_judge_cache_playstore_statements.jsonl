@@ -1,0 +1,76 @@
+{"ref": 6, "statement": "Login: must use Google account; cannot log in with existing email"}
+{"ref": 7, "statement": "login: intermittent login and endless loading spinner"}
+{"ref": 8, "statement": "ticket status visibility: status removed from views, requiring individual inspection"}
+{"ref": 17, "statement": "connectivity: app doesn't work in China, even with VPN, super slow"}
+{"ref": 29, "statement": "Login token persistence: loses token each launch, requires re-sign in"}
+{"ref": 27, "statement": "helpdesk app: crashes after recent update"}
+{"ref": 25, "statement": "Ticket grouping: tickets from all groups are lumped together, cannot organize by group"}
+{"ref": 30, "statement": "login: keeps logging out multiple times a day"}
+{"ref": 16, "statement": "Ticket submission: always getting errors while submitting tickets"}
+{"ref": 39, "statement": "Macros: dont load"}
+{"ref": 23, "statement": "CC addition: cannot add CC by email address unless address exists in system"}
+{"ref": 59, "statement": "login: unable to login on new Galaxy S8"}
+{"ref": 36, "statement": "sign in: cannot create account, only sign\u2011in option available"}
+{"ref": 64, "statement": "Login: Unable to login due to hyphen in domain not allowed"}
+{"ref": 68, "statement": "Sign-in: not allowing me to sign in for my domain"}
+{"ref": 61, "statement": "Ticket merging: Not able to merge 2 more tickets on Android app"}
+{"ref": 72, "statement": "login: access token expired or revoked error"}
+{"ref": 48, "statement": "notifications: not receiving alerts, default sound used instead of custom sound"}
+{"ref": 127, "statement": "Auto refresh: cannot switch to manual, page auto-refreshes on return causing delays"}
+{"ref": 85, "statement": "email routing: inbound mails haven't been directed to our accounts"}
+{"ref": 134, "statement": "ticket view: cannot fully see or reply to tickets despite administrator privileges"}
+{"ref": 102, "statement": "Performance: Slow to use with limited feature set"}
+{"ref": 139, "statement": "Replies: regularly disappear after posting"}
+{"ref": 82, "statement": "Login: login page shows white screen, not loading after SSO selection"}
+{"ref": 150, "statement": "mobile monitoring: not having the ability to monitor my techs from the mobile app"}
+{"ref": 190, "statement": "Chat timeout: chats end after 5 minutes, preventing responses to customers"}
+{"ref": 121, "statement": "macros/merge: Unable to properly use macros or merge."}
+{"ref": 212, "statement": "Reply editor: text deleted when leaving screen"}
+{"ref": 220, "statement": "login: unable to log back in after being kicked out"}
+{"ref": 201, "statement": "Performance: really really slow, weak server"}
+{"ref": 224, "statement": "ticket response: cannot respond, shows \"no internet connection\""}
+{"ref": 246, "statement": "UI rendering: app goes white and can't see letters from menu options"}
+{"ref": 231, "statement": "ticket navigation: cannot return to ticket list after opening multiple tickets via notifications"}
+{"ref": 164, "statement": "Notification sound: stops playing after some time, no sound for incoming messages"}
+{"ref": 319, "statement": "Phone status: cannot change, toggles offline on sign out/close tab"}
+{"ref": 50, "statement": "Update mechanism: forces update but no update available in Google Play"}
+{"ref": 52, "statement": "Update: Can't update. Locked out."}
+{"ref": 53, "statement": "update: stuck in endless loop, app unusable"}
+{"ref": 69, "statement": "Login persistence: credentials forgotten, requiring re-login after a few hours"}
+{"ref": 297, "statement": "Google SSO login: login loop indefinitely"}
+{"ref": 75, "statement": "notifications: no notification when ticket or chat arrives"}
+{"ref": 163, "statement": "URL validation: app reports URL invalid despite correct URL"}
+{"ref": 205, "statement": "App launch: hangs on opening"}
+{"ref": 81, "statement": "ticket sorting: difficult to sort tickets"}
+{"ref": 123, "statement": "outgoing calls: Can't make outgoing calls using the CS number or sms tickets"}
+{"ref": 211, "statement": "phone number requirement: mandatory and results in relentless spam calls from changing numbers"}
+{"ref": 244, "statement": "Unread ticket: cannot mark ticket as unread on mobile app"}
+{"ref": 117, "statement": "sign-in: automatically signs out after update and gets stuck in queue"}
+{"ref": 118, "statement": "login: intermittent failure, 2 out of 5 attempts do not succeed"}
+{"ref": 119, "statement": "login: cannot login after update"}
+{"ref": 145, "statement": "Ticket receipt: haven't received any ticket yet"}
+{"ref": 128, "statement": "notification sound: rings on agent replies to customers"}
+{"ref": 158, "statement": "notifications: receiving notifications without any tickets in the queue"}
+{"ref": 165, "statement": "notification scheduling: crashing and restarting every time when selecting time"}
+{"ref": 180, "statement": "notification sound customization: app lacks ability to customize notification sound"}
+{"ref": 166, "statement": "login: unable to log in after reinstall"}
+{"ref": 181, "statement": "filter tickets: cannot filter tickets in app"}
+{"ref": 138, "statement": "dark mode: no dark mode"}
+{"ref": 210, "statement": "Ticket access: cannot easily view tickets you created, only those assigned."}
+{"ref": 148, "statement": "rating prompt: popup repeatedly asks for five-star rating"}
+{"ref": 216, "statement": "ticket closure: ticket not closed after a week"}
+{"ref": 193, "statement": "access: forces tracking by Google via reCAPTCHA, otherwise refuses access"}
+{"ref": 202, "statement": "login: kicks you out then you can't reset password"}
+{"ref": 238, "statement": "notifications: duplicate alerts for unchanged tickets"}
+{"ref": 219, "statement": "Rating prompt: constantly pops up 'Please Rate The App' interrupting usage"}
+{"ref": 248, "statement": "Ticketing: gives double tickets"}
+{"ref": 255, "statement": "notifications: cannot clear accumulated notifications in app"}
+{"ref": 260, "statement": "search: valid ticket number returns no results"}
+{"ref": 265, "statement": "account manager assignment: promised three times, still no manager after three weeks"}
+{"ref": 267, "statement": "Notifications: haven't worked since the October update"}
+{"ref": 273, "statement": "Android ticket list: cannot see tickets, only shows count"}
+{"ref": 279, "statement": "Privacy: receiving emails and spam calls from unknown numbers"}
+{"ref": 299, "statement": "account security: hacked email sent to all contacts"}
+{"ref": 282, "statement": "Support: not readily available by phone, making issue resolution long"}
+{"ref": 312, "statement": "app launch: crashes on opening"}
+{"ref": 333, "statement": "ticket type field: field resets after saving"}

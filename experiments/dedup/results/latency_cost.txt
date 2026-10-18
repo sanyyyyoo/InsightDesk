@@ -1,0 +1,5 @@
+LATENCY AND COST per judge call (gpt-oss-120b on Groq, deployed prompt, 30 live calls, 5 candidates each)
+  latency: median 1.34 s, 90th percentile 2.09 s
+  tokens: input median 481, output median 273
+  cost per call: median $0.000244  (= $0.244 per 1,000 judged complaints; Groq list price $0.15/M in, $0.60/M out)
+  embedding (MiniLM, CPU): 20.6 ms per complaint

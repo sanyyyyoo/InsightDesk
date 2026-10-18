@@ -94,22 +94,23 @@ def get_complaint(
 # ==========================================================
 
 def create_case(
-    representative_text: str,
-    user_id: str
+    data: dict
 ):
     """
     Create a brand-new case.
-    """
-    payload = {
-        "representative_text": representative_text,
-        "report_count": 1,
-        "user_ids": [user_id],
-        "last_reported_at": datetime.now(timezone.utc).isoformat()
-    }
 
+    `data` is a fully-built payload (representative_text,
+    report_count, user_ids, created_at, last_reported_at, etc.).
+    Caller controls all fields - matches create_complaint()'s
+    existing passthrough pattern. This replaces the previous
+    (representative_text, user_id) signature, which did not match
+    how this function was actually being called from
+    duplicate_service.py (a single dict argument) and would have
+    raised a TypeError at every new-case creation.
+    """
     response = (
         supabase.table("cases")
-        .insert(payload)
+        .insert(data)
         .execute()
     )
     print("CREATE CASE RESPONSE:")
@@ -347,6 +348,12 @@ def get_clustering_metadata():
 from datetime import datetime
 
 
+from datetime import datetime, timezone
+
+
+from datetime import datetime, timezone
+
+
 def update_clustering_metadata(
     last_case_count: int = None,
     total_topics: int = None,
@@ -354,51 +361,137 @@ def update_clustering_metadata(
     clustering_version: int = None,
 ):
     """
-    Update clustering metadata after a successful BERTopic run.
+    Create or update clustering metadata.
+
+    If no metadata row exists:
+        INSERT the first row.
+
+    If metadata already exists:
+        UPDATE the latest row.
     """
 
     update_data = {
-        "last_clustered_at": datetime.utcnow().isoformat()
+        "last_clustered_at":
+            datetime.now(
+                timezone.utc
+            ).isoformat()
     }
 
     if last_case_count is not None:
-        update_data["last_case_count"] = last_case_count
+        update_data[
+            "last_case_count"
+        ] = last_case_count
 
     if total_topics is not None:
-        update_data["total_topics"] = total_topics
+        update_data[
+            "total_topics"
+        ] = total_topics
 
     if outlier_rate is not None:
-        update_data["outlier_rate"] = outlier_rate
+        update_data[
+            "outlier_rate"
+        ] = outlier_rate
 
     if clustering_version is not None:
-        update_data["clustering_version"] = clustering_version
+        update_data[
+            "clustering_version"
+        ] = clustering_version
 
-    response = (
-        supabase.table("clustering_metadata")
-        .update(update_data)
-        .eq("metadata_id", 1)
+    # =====================================================
+    # Check whether metadata exists
+    # =====================================================
+
+    existing = (
+        supabase
+        .table("clustering_metadata")
+        .select("metadata_id")
+        .order(
+            "metadata_id",
+            desc=True
+        )
+        .limit(1)
         .execute()
     )
 
-    return True
+    # =====================================================
+    # NO ROW EXISTS -> INSERT
+    # =====================================================
+
+    if not existing.data:
+
+        response = (
+            supabase
+            .table("clustering_metadata")
+            .insert(update_data)
+            .execute()
+        )
+
+        if not response.data:
+
+            raise RuntimeError(
+                "Failed to create "
+                "clustering metadata."
+            )
+
+        return response.data[0]
+
+    # =====================================================
+    # ROW EXISTS -> UPDATE LATEST
+    # =====================================================
+
+    metadata_id = (
+        existing.data[0][
+            "metadata_id"
+        ]
+    )
+
+    response = (
+        supabase
+        .table("clustering_metadata")
+        .update(update_data)
+        .eq(
+            "metadata_id",
+            metadata_id
+        )
+        .execute()
+    )
+
+    if not response.data:
+
+        raise RuntimeError(
+            "Failed to update "
+            "clustering metadata."
+        )
+
+    return response.data[0]
 def get_all_cases():
     """
-    Fetch all representative cases for BERTopic clustering.
+    Fetch all representative cases for BERTopic clustering
+    in deterministic case_id order.
     """
 
     response = (
         supabase.table("cases")
-        .select("case_id, representative_text")
+        .select(
+            "case_id, representative_text"
+        )
+        .order(
+            "case_id",
+            desc=False
+        )
         .execute()
     )
 
     return response.data
 def update_case_topic(
     case_id: int,
-    topic_id: int,
+    topic_id: int | None,
 ):
     """
     Assign a topic to a case.
+
+    topic_id=None clears the current topic assignment,
+    which is also used for BERTopic outliers.
     """
 
     response = (
@@ -488,6 +581,84 @@ def create_benchmark(
     )
 
     return response.data[0]
+def clear_all_case_topics():
+    """
+    Clear clustering-derived topic assignments from all cases.
+
+    Does NOT delete cases.
+    """
+
+    cases = (
+        supabase.table("cases")
+        .select("case_id")
+        .execute()
+    )
+
+    for case in cases.data:
+
+        (
+            supabase.table("cases")
+            .update(
+                {
+                    "topic_id": None
+                }
+            )
+            .eq(
+                "case_id",
+                case["case_id"]
+            )
+            .execute()
+        )
+
+    return len(cases.data)
+
+
+def delete_all_topics():
+    """
+    Delete all existing topic rows.
+
+    IMPORTANT:
+    Case topic references must be cleared first.
+    """
+
+    topics = get_all_topics()
+
+    deleted = 0
+
+    for topic in topics:
+
+        (
+            supabase.table("topics")
+            .delete()
+            .eq(
+                "topic_id",
+                topic["topic_id"]
+            )
+            .execute()
+        )
+
+        deleted += 1
+
+    return deleted
+def get_case_topic_assignments():
+    """
+    Fetch current case-to-topic assignments
+    in deterministic case_id order.
+    """
+
+    response = (
+        supabase.table("cases")
+        .select(
+            "case_id, topic_id"
+        )
+        .order(
+            "case_id",
+            desc=False
+        )
+        .execute()
+    )
+
+    return response.data
 def get_benchmarks():
 
     response = (
@@ -520,20 +691,31 @@ def get_sample_complaints(
     ]
 def create_case_history(
     case_id: int,
-    report_count: int
+    report_count: int,
+    recorded_at: datetime = None
 ):
+    """
+    recorded_at:
+        None (default) - DB default (now()) applies, unchanged
+        from previous behavior.
+        a datetime - historical ingestion: records the complaint's
+        real event time instead of insertion time.
+    """
+
+    payload = {
+        "case_id": case_id,
+        "report_count": report_count
+    }
+
+    if recorded_at is not None:
+        payload["recorded_at"] = recorded_at.isoformat()
 
     response = (
         supabase
         .table(
             "case_history"
         )
-        .insert(
-            {
-                "case_id": case_id,
-                "report_count": report_count
-            }
-        )
+        .insert(payload)
         .execute()
     )
 
@@ -549,6 +731,28 @@ def get_case_history(case_id):
         .eq(
             "case_id",
             case_id
+        )
+        .order(
+            "window_start"
+        )
+        .execute()
+    )
+
+    return response.data
+def get_case_history_bulk(case_ids):
+
+    if not case_ids:
+        return []
+
+    response = (
+        supabase
+        .table("complaint_windows")
+        .select(
+            "case_id, complaint_ct, window_start"
+        )
+        .in_(
+            "case_id",
+            case_ids
         )
         .order(
             "window_start"
@@ -590,7 +794,8 @@ def get_topics():
     return response.data
 def upsert_complaint_window(
     case_id: int,
-    window_hours: int = 6
+    window_hours: int = 6,
+    reference_time: datetime = None
 ):
     """
     Create or update a complaint window
@@ -601,11 +806,22 @@ def upsert_complaint_window(
     06:00 - 12:00
     12:00 - 18:00
     18:00 - 24:00
+
+    reference_time:
+        None (default) - live submission, uses current wall-clock
+        time. Unchanged from previous behavior.
+        a datetime - historical ingestion, buckets into the window
+        containing that historical timestamp instead of "now".
     """
 
-    now = datetime.now(
-        timezone.utc
+    now = (
+        reference_time
+        if reference_time is not None
+        else datetime.now(timezone.utc)
     )
+
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
 
     # Round down to nearest
     # 6-hour boundary
@@ -799,3 +1015,14 @@ def get_spike_cases():
     )
 
     return result.data
+def get_complaint_volume_by_day():
+
+    response = (
+        supabase
+        .table("complaints")
+        .select("created_at")
+        .order("created_at")
+        .execute()
+    )
+
+    return response.data

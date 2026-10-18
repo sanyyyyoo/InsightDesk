@@ -1,0 +1,66 @@
+problem_code,user_problem,scored,note,reviews
+login_credentials_rejected,cannot_log_in,True,,11
+login_sso_fails,cannot_log_in,True,,7
+login_needs_browser,cannot_log_in,True,,8
+login_subdomain_rejected,cannot_log_in,True,,6
+login_code_not_received,cannot_log_in,True,,1
+login_after_update,cannot_log_in,True,,5
+login_unspecified,cannot_log_in,True,was unscored; now scored,14
+login_access_revoked,cannot_log_in,True,user decision 2026-10-13: cannot log in,12
+login_forced_google,forced_google_signin,True,user can log in but objects to the method,3
+login_session_not_kept,logged_out_repeatedly,True,,14
+account_signup_problem,cannot_sign_up,True,,6
+crash_on_open,app_crashes,True,,3
+crash_on_login,app_crashes,True,,5
+crash_notification_settings,app_crashes,True,,3
+crash_on_compose_or_edit,app_crashes,True,,3
+crash_other_action,app_crashes,True,,5
+crash_unspecified,app_crashes,True,was unscored; now scored,4
+stuck_loading,app_wont_load,True,,6
+no_internet_false_error,false_no_internet_error,True,user decision 2026-10-13: own problem,5
+app_not_working_unspecified,app_wont_load,True,user decision 2026-10-13: app won't load (scored),8
+forced_update_loop,forced_update_loop,True,"visible, distinct: app demands a non-existent update",6
+install_fails,cannot_install,True,,8
+slow_performance,app_slow,True,,18
+notif_not_received,notifications_missing,True,,14
+notif_delayed_or_screen_off,notifications_missing,True,late = missing when needed,0
+notif_spurious_or_repeated,notifications_too_many,True,,6
+notif_cannot_clear,notifications_too_many,True,user decision 2026-10-13: merged,2
+notif_sound,notification_sound,True,,6
+notif_toggle_broken,notification_settings_broken,True,,1
+notif_opens_blank,notification_opens_blank,True,,3
+tickets_not_showing,tickets_wont_open,True,,7
+tickets_out_of_date,ticket_list_not_refreshing,True,,1
+pull_to_refresh_missing,ticket_list_not_refreshing,True,user decision 2026-10-13: merged,5
+ticket_filter_sort_missing,cannot_filter_sort_tickets,True,,17
+ticket_status_hidden,ticket_info_hidden,True,,3
+ticket_search_broken,ticket_search_broken,True,,3
+ticket_field_save_resets,ticket_changes_dont_stick,True,,3
+ticket_close_reopens,ticket_changes_dont_stick,True,user decision 2026-10-13: merged,2
+ticket_create_unavailable,cannot_create_ticket,True,,3
+reply_fails,reply_fails,True,,3
+ticket_merge_bulk_missing,cannot_merge_or_bulk_edit,True,,1
+assign_team_missing,cannot_assign_ticket,True,,2
+back_button_navigation,back_button_broken,True,,6
+macros_not_working,macros_canned_replies_broken,True,,12
+canned_responses_broken,macros_canned_replies_broken,True,,1
+images_attachments_not_shown,attachments_not_shown,True,,3
+text_input_buggy,typing_problems,True,,9
+cc_field_problem,cc_field_problem,True,,2
+calls_not_working,calls_not_working,True,,5
+chat_problem,chat_not_working,True,,3
+agent_availability_toggle,cannot_change_availability,True,,2
+analytics_reports_broken,reports_broken,True,,5
+redesign_disliked,dislikes_new_design,True,user-level complaint (no failure) - kept as one problem,20
+app_renamed,cannot_find_renamed_app,True,,2
+review_popup,rating_popups,True,,6
+no_tablet_landscape,no_landscape_tablet,True,,10
+dark_mode_missing,wants_dark_mode,True,,11
+display_white_unreadable,display_unreadable,True,,1
+support_no_response,support_unresponsive,True,,16
+billing_plan_complaint,billing_complaint,True,,4
+privacy_spam,privacy_spam,True,,3
+missing_features_vs_web,NOT_SCORED_topic,False,"general 'missing features' = a topic, kept unscored as before",32
+not_a_problem,NOT_SCORED_no_problem,False,,45
+not_about_this_app,NOT_SCORED_no_problem,False,,5
+other,NOT_SCORED_no_problem,False,,4

@@ -1,0 +1,15 @@
+InsightDesk duplicate labelling - pick the SPECIFIC problem for each review. Same product + same code = duplicates.
+
+1. problem_code: pick from the code list below (code | area | definition).
+2. Vague review ('can't login', 'keeps crashing', 'doesn't work' with no detail) -> the *_unspecified code. Do not guess.
+3. No failure (praise, question, rant) -> not_a_problem. About another company -> not_about_this_app. Two problems -> main one, other in notes.
+4. Nothing fits -> 'other' + describe in notes.
+5. Unsure -> pick the closest code and set confidence = unsure.
+
+Code list:
+{codebook}
+
+Reviews:
+{reviews}
+
+Answer only with JSON: {{"labels": [{{"id": <review id>, "code": "<code>", "confidence": "sure" or "unsure", "notes": "<optional>"}}, ...]}} with one entry per review.

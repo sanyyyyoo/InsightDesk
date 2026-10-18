@@ -1,0 +1,4 @@
+pair_precision,pair_recall,pair_f1,cases,contaminated_cases,cross_issue_assignments,judge,split_seed,held_out_half,t_low,t_high,banded_complaints,banded_share,judge_pairs,seconds,review_queue,vague_gated,vague_recovered
+1.0,0.031232254400908575,0.06057268722466961,851,0,0,single,ext,mozilla_combined,0.2596,0.8306086659431458,0,0.0,0,10.8,,,
+1.0,0.9415105053946621,0.9698742322316466,362,0,0,oracle,ext,mozilla_combined,0.2596,0.8306086659431458,854,0.9606299212598425,2342,1.8,,,
+0.8991899189918992,0.5672913117546848,0.6956824512534818,475,17,26,llm,ext,mozilla_combined,0.2596,0.8306086659431458,854,0.9606299212598425,854,30254.3,0.0,65.0,0.0

@@ -1,0 +1,7 @@
+END-TO-END ACCEPTANCE (ORACLE JUDGE - code check only), 40 incidents (Zendesk 24, Freshdesk 16)
+  alerted within 12 h                29/40 = 72% [57%,84%]  bar 80% -> FAIL
+  escalation-eligible within 12 h    38/40 = 95% [83%,99%]  bar 70% -> PASS
+  median count captured: largest case 84%, alert group 84%  (bar case >= 50% or group >= 70%) -> PASS
+  median cases per incident 2; incidents' complaints marked unassigned: 0%
+  false alarms (null streams): Zendesk 0.00/week, Freshdesk 0.00/week  (bar <= 1 per product per week) -> PASS
+  RCA right-symptom: second step (rca sheet), not in this run

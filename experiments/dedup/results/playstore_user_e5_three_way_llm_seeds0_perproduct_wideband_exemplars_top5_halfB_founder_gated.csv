@@ -1,0 +1,2 @@
+pair_precision,pair_recall,pair_f1,cases,contaminated_cases,cross_issue_assignments,review_queue,vague_gated,vague_recovered,judge,split_seed,held_out_half,t_low,t_high,banded_complaints,banded_share,judge_pairs,seconds
+0.7357142857142858,0.20892494929006086,0.32543443917851506,137,9,10,0,48,0,llm,0,B,0.1915,0.99,176,0.9411764705882353,176,6683.1

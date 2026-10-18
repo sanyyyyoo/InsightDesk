@@ -1,0 +1,42 @@
+{
+ "company": "HappyFox",
+ "history_reviews": 10,
+ "problems": [
+  {
+   "code": "main_screen_ticket_counts_not_refreshing",
+   "definition": "Ticket count on main screen does not refresh automatically"
+  },
+  {
+   "code": "push_notifications_not_working",
+   "definition": "Push notifications for new tickets never arrive"
+  },
+  {
+   "code": "app_performance_laggy",
+   "definition": "App experiences laggy performance and unresponsiveness"
+  },
+  {
+   "code": "update_notifications_not_working",
+   "definition": "Update notifications fail to appear"
+  },
+  {
+   "code": "android_notification_setting_missing",
+   "definition": "Android notification setting for app missing"
+  },
+  {
+   "code": "queue_search_missing",
+   "definition": "Search bar in queue does not exist"
+  },
+  {
+   "code": "delete_ticket_feature_missing",
+   "definition": "Delete ticket option missing for spam tickets"
+  },
+  {
+   "code": "sso_authentication_fails",
+   "definition": "SSO login no longer works after reinstall"
+  },
+  {
+   "code": "ticket_content_not_visible",
+   "definition": "Ticket view hides content for some tickets"
+  }
+ ]
+}

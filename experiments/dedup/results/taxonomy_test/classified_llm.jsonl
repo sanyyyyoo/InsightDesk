@@ -1,0 +1,338 @@
+{"complaint_ref": 116, "company": "Freshdesk", "code": "notifications_missing_alert"}
+{"complaint_ref": 117, "company": "Freshdesk", "code": "ticket_note_editing_limited_to_initial"}
+{"complaint_ref": 118, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 119, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 120, "company": "Freshdesk", "code": "mobile_ticket_detail_layout_unreadable"}
+{"complaint_ref": 124, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 128, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 129, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 136, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 137, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 138, "company": "Freshdesk", "code": "dark_mode_missing"}
+{"complaint_ref": 142, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 143, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 144, "company": "Freshdesk", "code": "availability_switch_missing"}
+{"complaint_ref": 145, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 146, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 148, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 152, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 154, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 158, "company": "Freshdesk", "code": "notifications_schedule_not_working"}
+{"complaint_ref": 161, "company": "Freshdesk", "code": "notifications_missing_alert"}
+{"complaint_ref": 165, "company": "Freshdesk", "code": "notifications_schedule_not_working"}
+{"complaint_ref": 166, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 167, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 168, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 170, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 171, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 174, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 176, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 180, "company": "Freshdesk", "code": "notification_sound_setting_missing"}
+{"complaint_ref": 181, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 182, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 183, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 184, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 191, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 192, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 193, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 194, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 195, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 196, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 197, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 198, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 199, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 202, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 204, "company": "Freshdesk", "code": "dark_mode_missing"}
+{"complaint_ref": 208, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 210, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 213, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 214, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 216, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 217, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 219, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 221, "company": "Freshdesk", "code": "notification_sound_setting_missing"}
+{"complaint_ref": 228, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 230, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 233, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 238, "company": "Freshdesk", "code": "notifications_inaccurate_content"}
+{"complaint_ref": 240, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 241, "company": "Freshdesk", "code": "notifications_inaccurate_content"}
+{"complaint_ref": 242, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 248, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 255, "company": "Freshdesk", "code": "notifications_inaccurate_content"}
+{"complaint_ref": 257, "company": "Freshdesk", "code": "dark_mode_missing"}
+{"complaint_ref": 258, "company": "Freshdesk", "code": "dark_mode_missing"}
+{"complaint_ref": 259, "company": "Freshdesk", "code": "notifications_missing_alert"}
+{"complaint_ref": 260, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 261, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 265, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 267, "company": "Freshdesk", "code": "notifications_missing_alert"}
+{"complaint_ref": 268, "company": "Freshdesk", "code": "notifications_missing_alert"}
+{"complaint_ref": 273, "company": "Freshdesk", "code": "account_features_not_visible_across_devices"}
+{"complaint_ref": 274, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 275, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 277, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 278, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 279, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 282, "company": "Freshdesk", "code": "vague"}
+{"complaint_ref": 284, "company": "Freshdesk", "code": "dark_mode_missing"}
+{"complaint_ref": 286, "company": "Freshdesk", "code": "dark_mode_missing"}
+{"complaint_ref": 287, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 288, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 292, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 293, "company": "Freshdesk", "code": "mobile_ticket_detail_layout_unreadable"}
+{"complaint_ref": 299, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 305, "company": "Freshdesk", "code": "availability_switch_missing"}
+{"complaint_ref": 308, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 310, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 312, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 314, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 323, "company": "Freshdesk", "code": "mobile_ticket_detail_layout_unreadable"}
+{"complaint_ref": 324, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 325, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 327, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 329, "company": "Freshdesk", "code": "dark_mode_missing"}
+{"complaint_ref": 331, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 333, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 334, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 337, "company": "Freshdesk", "code": "none"}
+{"complaint_ref": 130, "company": "HappyFox", "code": "none"}
+{"complaint_ref": 169, "company": "HappyFox", "code": "queue_search_missing"}
+{"complaint_ref": 188, "company": "HappyFox", "code": "main_screen_ticket_counts_not_refreshing"}
+{"complaint_ref": 250, "company": "HappyFox", "code": "app_performance_laggy"}
+{"complaint_ref": 253, "company": "HappyFox", "code": "sso_authentication_fails"}
+{"complaint_ref": 35, "company": "Help Scout", "code": "app_crashes_frequently"}
+{"complaint_ref": 37, "company": "Help Scout", "code": "app_crashes_frequently"}
+{"complaint_ref": 38, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 50, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 51, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 52, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 53, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 54, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 56, "company": "Help Scout", "code": "app_crashes_frequently"}
+{"complaint_ref": 57, "company": "Help Scout", "code": "push_notifications_missing"}
+{"complaint_ref": 58, "company": "Help Scout", "code": "app_crashes_frequently"}
+{"complaint_ref": 60, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 69, "company": "Help Scout", "code": "logout_continuous"}
+{"complaint_ref": 73, "company": "Help Scout", "code": "push_notifications_missing"}
+{"complaint_ref": 97, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 98, "company": "Help Scout", "code": "search_server_error"}
+{"complaint_ref": 108, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 295, "company": "Help Scout", "code": "vague"}
+{"complaint_ref": 297, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 316, "company": "Help Scout", "code": "search_server_error"}
+{"complaint_ref": 326, "company": "Help Scout", "code": "none"}
+{"complaint_ref": 75, "company": "LiveAgent", "code": "ticket_notifications_missing"}
+{"complaint_ref": 81, "company": "LiveAgent", "code": "cannot_answer_live_chats"}
+{"complaint_ref": 151, "company": "LiveAgent", "code": "outdated_ui_ux"}
+{"complaint_ref": 163, "company": "LiveAgent", "code": "none"}
+{"complaint_ref": 205, "company": "LiveAgent", "code": "app_fails_to_launch"}
+{"complaint_ref": 207, "company": "LiveAgent", "code": "stuck_on_initializing_screen"}
+{"complaint_ref": 209, "company": "LiveAgent", "code": "app_fails_to_launch"}
+{"complaint_ref": 225, "company": "LiveAgent", "code": "missing_canned_responses"}
+{"complaint_ref": 3, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 4, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 5, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 6, "company": "Zendesk", "code": "domain_login_missing"}
+{"complaint_ref": 7, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 8, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 9, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 10, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 11, "company": "Zendesk", "code": "false_no_network_error"}
+{"complaint_ref": 12, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 13, "company": "Zendesk", "code": "domain_login_missing"}
+{"complaint_ref": 14, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 15, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 16, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 17, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 18, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 19, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 20, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 21, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 22, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 23, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 24, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 25, "company": "Zendesk", "code": "notification_tap_no_navigation"}
+{"complaint_ref": 26, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 27, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 28, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 29, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 30, "company": "Zendesk", "code": "unexpected_logout"}
+{"complaint_ref": 31, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 32, "company": "Zendesk", "code": "unexpected_logout"}
+{"complaint_ref": 33, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 34, "company": "Zendesk", "code": "unexpected_logout"}
+{"complaint_ref": 36, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 39, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 40, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 41, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 42, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 43, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 44, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 45, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 46, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 47, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 48, "company": "Zendesk", "code": "notification_not_shown_android"}
+{"complaint_ref": 49, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 55, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 59, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 61, "company": "Zendesk", "code": "ticket_merge_missing"}
+{"complaint_ref": 62, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 63, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 64, "company": "Zendesk", "code": "domain_login_missing"}
+{"complaint_ref": 65, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 66, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 67, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 68, "company": "Zendesk", "code": "domain_login_missing"}
+{"complaint_ref": 70, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 71, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 72, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 74, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 77, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 78, "company": "Zendesk", "code": "pull_to_refresh_freeze"}
+{"complaint_ref": 79, "company": "Zendesk", "code": "notifications_auto_disable"}
+{"complaint_ref": 80, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 82, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 83, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 85, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 86, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 87, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 88, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 90, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 91, "company": "Zendesk", "code": "dark_mode_missing"}
+{"complaint_ref": 92, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 93, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 94, "company": "Zendesk", "code": "dark_mode_missing"}
+{"complaint_ref": 96, "company": "Zendesk", "code": "notification_ticket_updates_missing"}
+{"complaint_ref": 99, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 100, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 101, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 102, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 103, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 104, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 105, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 106, "company": "Zendesk", "code": "view_auto_update_infrequent"}
+{"complaint_ref": 107, "company": "Zendesk", "code": "notification_ticket_updates_missing"}
+{"complaint_ref": 109, "company": "Zendesk", "code": "dark_mode_missing"}
+{"complaint_ref": 110, "company": "Zendesk", "code": "zentalk_missing"}
+{"complaint_ref": 111, "company": "Zendesk", "code": "pull_to_refresh_freeze"}
+{"complaint_ref": 112, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 113, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 114, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 115, "company": "Zendesk", "code": "required_fields_missing_indicators"}
+{"complaint_ref": 121, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 122, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 125, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 126, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 127, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 131, "company": "Zendesk", "code": "pull_to_refresh_freeze"}
+{"complaint_ref": 132, "company": "Zendesk", "code": "domain_login_missing"}
+{"complaint_ref": 133, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 134, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 135, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 139, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 140, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 141, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 147, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 149, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 150, "company": "Zendesk", "code": "zentalk_missing"}
+{"complaint_ref": 153, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 156, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 157, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 159, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 162, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 164, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 175, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 177, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 179, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 187, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 189, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 190, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 200, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 201, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 203, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 206, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 212, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 215, "company": "Zendesk", "code": "domain_login_missing"}
+{"complaint_ref": 220, "company": "Zendesk", "code": "unexpected_logout"}
+{"complaint_ref": 222, "company": "Zendesk", "code": "unexpected_logout"}
+{"complaint_ref": 223, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 224, "company": "Zendesk", "code": "false_no_network_error"}
+{"complaint_ref": 226, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 227, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 229, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 231, "company": "Zendesk", "code": "notification_tap_no_navigation"}
+{"complaint_ref": 232, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 235, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 236, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 237, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 239, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 243, "company": "Zendesk", "code": "macros_apply_failure"}
+{"complaint_ref": 245, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 246, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 247, "company": "Zendesk", "code": "domain_login_missing"}
+{"complaint_ref": 249, "company": "Zendesk", "code": "comment_copy_paste_blocked"}
+{"complaint_ref": 251, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 252, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 254, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 256, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 262, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 263, "company": "Zendesk", "code": "false_no_network_error"}
+{"complaint_ref": 264, "company": "Zendesk", "code": "feature_removal_no_warning"}
+{"complaint_ref": 266, "company": "Zendesk", "code": "unexpected_logout"}
+{"complaint_ref": 269, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 270, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 271, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 272, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 276, "company": "Zendesk", "code": "macro_text_not_populated"}
+{"complaint_ref": 280, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 281, "company": "Zendesk", "code": "notification_not_shown_android"}
+{"complaint_ref": 283, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 289, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 291, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 294, "company": "Zendesk", "code": "app_freezes_general"}
+{"complaint_ref": 296, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 298, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 300, "company": "Zendesk", "code": "view_auto_update_infrequent"}
+{"complaint_ref": 301, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 303, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 304, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 306, "company": "Zendesk", "code": "session_token_expired"}
+{"complaint_ref": 307, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 309, "company": "Zendesk", "code": "false_no_network_error"}
+{"complaint_ref": 311, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 313, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 315, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 317, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 318, "company": "Zendesk", "code": "notifications_auto_disable"}
+{"complaint_ref": 319, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 320, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 321, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 322, "company": "Zendesk", "code": "notification_not_shown_android"}
+{"complaint_ref": 328, "company": "Zendesk", "code": "none"}
+{"complaint_ref": 330, "company": "Zendesk", "code": "sign_in_invalid_credentials_error"}
+{"complaint_ref": 332, "company": "Zendesk", "code": "notification_not_shown_android"}
+{"complaint_ref": 336, "company": "Zendesk", "code": "sso_cleartext_not_permitted"}
+{"complaint_ref": 338, "company": "Zendesk", "code": "vague"}
+{"complaint_ref": 1, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 2, "company": "Zoho Desk", "code": "overall_performance_slowness"}
+{"complaint_ref": 76, "company": "Zoho Desk", "code": "overall_performance_slowness"}
+{"complaint_ref": 84, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 89, "company": "Zoho Desk", "code": "sign_in_failure"}
+{"complaint_ref": 95, "company": "Zoho Desk", "code": "sign_in_failure"}
+{"complaint_ref": 123, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 155, "company": "Zoho Desk", "code": "vague"}
+{"complaint_ref": 160, "company": "Zoho Desk", "code": "overall_performance_slowness"}
+{"complaint_ref": 172, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 173, "company": "Zoho Desk", "code": "overall_performance_slowness"}
+{"complaint_ref": 178, "company": "Zoho Desk", "code": "overall_performance_slowness"}
+{"complaint_ref": 185, "company": "Zoho Desk", "code": "vague"}
+{"complaint_ref": 186, "company": "Zoho Desk", "code": "cannot_close_ticket"}
+{"complaint_ref": 211, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 218, "company": "Zoho Desk", "code": "vague"}
+{"complaint_ref": 234, "company": "Zoho Desk", "code": "sign_in_failure"}
+{"complaint_ref": 244, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 285, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 290, "company": "Zoho Desk", "code": "vague"}
+{"complaint_ref": 302, "company": "Zoho Desk", "code": "none"}
+{"complaint_ref": 335, "company": "Zoho Desk", "code": "sign_in_failure"}

@@ -1,0 +1,30 @@
+
+PLAY STORE s0A: 167 reviews, 131 cases | problems split into >= 2 cases: 30 | fragments: 96 | top-1 neighbour purity: 0.34
+  R1 as is: P 0.820 R 0.231 F1 0.360
+  k=1: sibling recall@1 0.46 | perfect re-join ceiling P 0.881 R 0.501 F1 0.639 (recall +0.270)
+  k=3: sibling recall@3 0.68 | perfect re-join ceiling P 0.894 R 0.808 F1 0.849 (recall +0.577)
+  k=5: sibling recall@5 0.74 | perfect re-join ceiling P 0.895 R 0.839 F1 0.866 (recall +0.608)
+
+PLAY STORE s1B: 170 reviews, 126 cases | problems split into >= 2 cases: 30 | fragments: 93 | top-1 neighbour purity: 0.37
+  R1 as is: P 0.917 R 0.314 F1 0.468
+  k=1: sibling recall@1 0.51 | perfect re-join ceiling P 0.943 R 0.635 F1 0.759 (recall +0.321)
+  k=3: sibling recall@3 0.71 | perfect re-join ceiling P 0.954 R 0.854 F1 0.901 (recall +0.540)
+  k=5: sibling recall@5 0.80 | perfect re-join ceiling P 0.955 R 0.873 F1 0.912 (recall +0.559)
+
+PLAY STORE s1A: 168 reviews, 123 cases | problems split into >= 2 cases: 26 | fragments: 84 | top-1 neighbour purity: 0.31
+  R1 as is: P 0.707 R 0.238 F1 0.357
+  k=1: sibling recall@1 0.45 | perfect re-join ceiling P 0.741 R 0.463 F1 0.570 (recall +0.225)
+  k=3: sibling recall@3 0.70 | perfect re-join ceiling P 0.778 R 0.748 F1 0.763 (recall +0.510)
+  k=5: sibling recall@5 0.75 | perfect re-join ceiling P 0.781 R 0.762 F1 0.771 (recall +0.523)
+
+FIREFOX 3: 437 reviews, 246 cases | problems split into >= 2 cases: 48 | fragments: 126 | top-1 neighbour purity: 0.35
+  R1 as is: P 0.963 R 0.546 F1 0.697
+  k=1: sibling recall@1 0.69 | perfect re-join ceiling P 0.971 R 0.827 F1 0.893 (recall +0.281)
+  k=3: sibling recall@3 0.80 | perfect re-join ceiling P 0.973 R 0.888 F1 0.928 (recall +0.342)
+  k=5: sibling recall@5 0.83 | perfect re-join ceiling P 0.973 R 0.896 F1 0.933 (recall +0.350)
+
+JIRA blind run (agreed key): 200 reviews, 183 cases | problems split into >= 2 cases: 30 | fragments: 82 | top-1 neighbour purity: 0.08
+  R1 as is: P 0.650 R 0.101 F1 0.174
+  k=1: sibling recall@1 0.18 | perfect re-join ceiling P 0.806 R 0.225 F1 0.352 (recall +0.124)
+  k=3: sibling recall@3 0.37 | perfect re-join ceiling P 0.839 R 0.403 F1 0.545 (recall +0.302)
+  k=5: sibling recall@5 0.45 | perfect re-join ceiling P 0.848 R 0.434 F1 0.574 (recall +0.333)
