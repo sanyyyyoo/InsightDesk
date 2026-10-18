@@ -38,3 +38,33 @@ Acceptance (all must hold for R1-as-deployed to be called fit for purpose; same 
 - RCA right symptom for >= 80% of rated incidents (both raters);
 - false alarms <= 1 per product per week.
 Results reported per measure, with the share of incidents and 95% Wilson intervals. Nothing tuned.
+
+## Amendment (2026-10-14 15:10, before any run; reason: a flaw found while implementing)
+Injected COPIES of real reviews would be near-identical to their originals (cosine >= 0.83), so R1
+would auto-merge them without the judge and "count captured" would be inflated. Changed to the
+spike-simulation design: no copies. In each stream every labelled review appears exactly once; for
+each incident problem (a user-level problem with >= 5 reviews) its own reviews are placed 30% in
+random earlier windows and 70% in windows b..b+1; all other reviews are spread at random. Several
+incidents share one stream at non-overlapping times (b at least 6 windows apart), so dedup runs
+once per stream: Zendesk and Freshdesk, 2 streams each (seeds 7 and 8); incidents = every problem
+with >= 5 reviews in that product (fewer than 20 per product - recorded as a deviation).
+Thresholds as deployed in the app (0.26 / 0.8306), not re-calibrated. False alarms: one null stream
+per product (all reviews at random times), units with no incident complaints. RCA right-symptom check
+is a second step (one RCA per incident on its largest case, rated blind), run after the counts.
+Systems: R1 as deployed; R1 + RJ1 if time allows (re-joining applied once per window).
+
+## Addendum 2026-10-16: Firefox 3 second-domain check (written before running)
+
+Why: on Play Store, R1 + RJ1 passed escalation (75%) and false alarms but failed alerts (35%) and
+count captured (31%); incidents split into a median 6 cases and 30% of their complaints were vague.
+Question: is that a property of short app reviews or of the pipeline? Firefox 3 (437 Bugzilla
+reports, independent duplicate links, 24 problems with >= 5 reports) is the second-domain check.
+Setup: identical to the main test (same stream builder, 30 days of 6-h windows, deployed thresholds
+T_HIGH 0.8306 / T_LOW 0.26 - not retuned, same detectors and escalation policy), one product stream
+"Firefox", incident seeds 7 and 8 (up to 16 incidents each), null stream seed 99. Systems: R1 and
+R1 + RJ1 (one pass, applied once to the whole stream - optimistic on timing, as in the Play Store run).
+Bars: unchanged (alerted within 12 h >= 80%; escalation-eligible within 12 h >= 70%; largest case
+>= 50% or alert group >= 70%; <= 1 false alarm per week).
+Reading: pass/fail is reported per bar for each system. Passing on Firefox but not Play Store would
+mean alerting is limited by complaint wording, not by the detector; failing on both would mean the
+alerting design needs work. Play Store verdicts are unchanged whatever this shows.

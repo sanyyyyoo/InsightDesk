@@ -1,0 +1,7 @@
+END-TO-END ACCEPTANCE (R1 + RJ1 re-joining), 40 incidents (Zendesk 24, Freshdesk 16)
+  alerted within 12 h                14/40 = 35% [22%,50%]  bar 80% -> FAIL
+  escalation-eligible within 12 h    30/40 = 75% [60%,86%]  bar 70% -> PASS
+  median count captured: largest case 31%, alert group 31%  (bar case >= 50% or group >= 70%) -> FAIL
+  median cases per incident 6; incidents' complaints marked unassigned: 30%
+  false alarms (null streams): Zendesk 0.00/week, Freshdesk 0.00/week  (bar <= 1 per product per week) -> PASS
+  RCA right-symptom: second step (rca sheet), not in this run

@@ -1,0 +1,25 @@
+CONFIRM RJ1 (one shot)
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3147.39it/s]
+  s0A: R1 [0.82  0.231 0.36 ] -> RJ1 [0.802 0.285 0.42 ] | merges 8 (3 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1711.84it/s]
+  s1B: R1 [0.917 0.314 0.468] -> RJ1 [0.919 0.435 0.591] | merges 10 (8 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1530.33it/s]
+  s1A: R1 [0.707 0.238 0.357] -> RJ1 [0.676 0.274 0.39 ] | merges 6 (4 correct), cache misses 0
+PLAY STORE pooled: R1 P 0.810 R 0.259 F1 0.392 -> RJ1 P 0.799 R 0.327 F1 0.464
+  difference: P -0.011 [-0.069,+0.033], R +0.068 [+0.027,+0.119], F1 +0.071 [+0.027,+0.123]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2084.06it/s]
+  firefox3: R1 P 0.963 R 0.546 F1 0.697 -> RJ1 P 0.961 R 0.657 F1 0.780 | merges 22 (20 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1242.83it/s]
+  jira_agreed: R1 P 0.650 R 0.101 F1 0.174 -> RJ1 P 0.500 R 0.124 F1 0.199 | merges 5 (2 correct), cache misses 0
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1268.34it/s]
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+  thunderbird: R1 P 0.867 R 0.609 F1 0.715 -> RJ1 P 0.873 R 0.721 F1 0.790 | merges 18 (17 correct), cache misses 0
+
+RULE: ADOPT (P 0.799 >= 0.78? recall CI low +0.027 > 0? Firefox 3 P 0.961 >= 0.90?)

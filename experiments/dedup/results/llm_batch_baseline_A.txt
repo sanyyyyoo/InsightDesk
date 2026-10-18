@@ -1,0 +1,7 @@
+
+A. PLAY STORE held-out halves pooled, fine-level human labels
+  R1 (InsightDesk, online)           P 0.810 [0.63,0.96]  R 0.259 [0.16,0.37]  F1 0.392 [0.25,0.53]
+  gpt-oss batch (one prompt per product) P 0.858 [0.74,0.95]  R 0.357 [0.22,0.49]  F1 0.504 [0.35,0.64]
+  (R1 + re-joining RJ1 on the same halves: P 0.799 R 0.327 F1 0.464)
+  batch calls 18, prompt characters 89792 (~22448 tokens), ~44 prompt tokens per review per run
+  stability (s0A run twice, identical prompts): 99.5% of review pairs grouped the same way

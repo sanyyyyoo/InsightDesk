@@ -1,0 +1,22 @@
+NO HARD GATE (NG) CONFIRMATION (rule: results/no_gate_confirm_rule.md)
+
+firefox3 (cache misses R1 0, NG 0; RJ1 merges on NG 19, 17 correct)
+  R1       P 0.963 R 0.546 F1 0.697
+  R1+RJ1   P 0.961 R 0.657 F1 0.780
+  NG       P 0.928 R 0.645 F1 0.761
+  NG+RJ1   P 0.929 R 0.740 F1 0.824
+
+thunderbird (cache misses R1 0, NG 0; RJ1 merges on NG 16, 14 correct)
+  R1       P 0.867 R 0.609 F1 0.715
+  R1+RJ1   P 0.873 R 0.721 F1 0.790
+  NG       P 0.845 R 0.678 F1 0.752
+  NG+RJ1   P 0.844 R 0.802 F1 0.822
+
+Firefox 3 + Thunderbird pooled: R1 P 0.908 R 0.578 F1 0.706 | NG P 0.882 R 0.662 F1 0.756 | NG - R1: P -0.026 [-0.070,+0.007], R +0.084 [+0.052,+0.116]
+  NG+RJ1 P 0.882 R 0.772 F1 0.823 | NG+RJ1 - NG: P -0.000 [-0.028,+0.017], R +0.110 [+0.069,+0.152]
+  (for reference) NG+RJ1 - R1+RJ1: P -0.030 [-0.074,+0.003], R +0.082 [+0.049,+0.113]
+
+new apps 588 (agreed key): R1 P 0.608 R 0.284 F1 0.387 | NG P 0.460 R 0.401 F1 0.429 | NG - R1: P -0.148 [-0.335,+0.026], R +0.118 [+0.019,+0.209]
+
+RULE 1 (NG): not adopted - Firefox 3 P 0.928 >= 0.90? Thunderbird P 0.845 >= 0.837? pooled recall CI low +0.052 > 0? new apps precision drop within 0.05? False
+RULE 2 (NG+RJ1 over NG): not adopted - pooled P 0.882 >= 0.88? recall CI low +0.069 > 0?

@@ -1,0 +1,6 @@
+playstore: 505 complaints | auto-join >= t_high 20 (4%) | auto-new < t_low or first 50 (10%) | judged in band 435 (86%) -> joined 105, not joined 330 (of which too vague 103)
+   re-joining: 513 candidate case pairs, 379 judged, 24 merges approved, 15 correct (62%)
+firefox3: 437 complaints | auto-join >= t_high 14 (3%) | auto-new < t_low or first 6 (1%) | judged in band 417 (95%) -> joined 177, not joined 240 (of which too vague 32)
+   re-joining: 491 candidate case pairs, 325 judged, 22 merges approved, 20 correct (91%)
+thunderbird: 452 complaints | auto-join >= t_high 14 (3%) | auto-new < t_low or first 4 (1%) | judged in band 434 (96%) -> joined 209, not joined 225 (of which too vague 33)
+   re-joining: 457 candidate case pairs, 317 judged, 18 merges approved, 17 correct (94%)

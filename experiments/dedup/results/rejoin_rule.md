@@ -33,3 +33,4 @@ difference P -0.011 [-0.069,+0.033], R +0.068 [+0.027,+0.119], F1 +0.071 [+0.027
 Firefox 3: 0.963 / 0.546 / 0.697 -> 0.961 / 0.657 / 0.780 (22 merges, 20 correct).
 Secondary, not decisive: Jira blind run (agreed LLM key) 0.650 / 0.101 / 0.174 -> 0.500 / 0.124 / 0.199
 (5 merges, 2 correct; small sample, precision drop reported). Thunderbird skipped (its R1 run incomplete).
+Thunderbird (added 2026-10-14 after its R1 run completed; reported, not decisive): see rejoin_confirm_RJ1_with_thunderbird.txt

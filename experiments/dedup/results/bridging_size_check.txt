@@ -1,0 +1,7 @@
+BRIDGING SIZE CHECK (current pipeline, cached decisions, no LLM): joins by how the matched exemplar joined
+Play Store (3 held-out halves): 505 complaints, 125 joins, 24 wrong joins in total
+   joins matched through a JUDGE-joined exemplar: 41 (6 wrong, 35 right)  <- the most the fix can prevent: 6 wrong joins, at the cost of up to 35 right ones
+   joins via founder/auto exemplars: wrong 18, right 66
+Firefox 3 + Thunderbird: 889 complaints, 414 joins, 32 wrong joins in total
+   joins matched through a JUDGE-joined exemplar: 163 (16 wrong, 147 right)  <- the most the fix can prevent: 16 wrong joins, at the cost of up to 147 right ones
+   joins via founder/auto exemplars: wrong 16, right 235

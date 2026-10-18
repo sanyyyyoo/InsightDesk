@@ -1,0 +1,30 @@
+SPIKE REVIEW CHECKS (rule: results/spike_review_rule.md)
+
+B. Real Firefox Bugzilla streams: 17236 reports, last 730 days, 6-hour windows, 22 components with mean >= 0.05 per window
+  variance-to-mean per component: median 1.60, IQR 1.21-2.09; pooled 2.37 [95% CI 1.70, 3.30]
+  detector v2 alert rate on these real streams (no injected outbreaks; includes real bursts): 0.61 per 100 component-windows (nominal at p = 0.001: at most 0.10)
+A. Simulated Play Store streams (300 trials, 120 six-hour windows each); detection within 12 h | false alerts per 100 windows
+  R1 cases               v2 (deployed)                            detected 0.43 | false 0.27/100w
+  R1 alert groups (v2)   v2 (deployed)                            detected 0.46 | false 0.28/100w
+  R1 cases               raw count >= 2                           detected 0.56 | false 0.72/100w
+  R1 alert groups (v2)   raw count >= 2                           detected 0.57 | false 0.81/100w
+  R1 cases               raw count >= 3                           detected 0.25 | false 0.01/100w
+  R1 alert groups (v2)   raw count >= 3                           detected 0.29 | false 0.01/100w
+  R1 cases               raw count >= 4                           detected 0.10 | false 0.00/100w
+  R1 alert groups (v2)   raw count >= 4                           detected 0.11 | false 0.00/100w
+  R1 cases               Poisson CUSUM, h matched (R1 cases)      detected 0.42 | false 0.06/100w  (h = 2.0)
+  R1 alert groups (v2)   Poisson CUSUM, h matched (R1 alert groups (v2)) detected 0.43 | false 0.06/100w  (h = 2.0)
+  R1 cases               Poisson CUSUM, h = 4                     detected 0.14 | false 0.00/100w
+  R1 alert groups (v2)   Poisson CUSUM, h = 4                     detected 0.16 | false 0.00/100w
+
+C. Vague alarm (vague_area_spike_results.txt, 300 simulated vague-only outages per size, 150 per product): n=5 detected 0.52, n=10/20 detected 1.00; false alerts 0.35-0.39/100w with the alarm vs 0.20-0.24 cases alone
+
+Firefox sample 2 (same simulation)
+  R1 cases               v2 (deployed)                detected 0.75 | false 1.69/100w
+  R1 alert groups (v2)   v2 (deployed)                detected 0.86 | false 2.18/100w
+  R1 cases               raw count >= 2               detected 0.89 | false 4.33/100w
+  R1 alert groups (v2)   raw count >= 2               detected 0.97 | false 5.96/100w
+  R1 cases               raw count >= 3               detected 0.49 | false 0.04/100w
+  R1 alert groups (v2)   raw count >= 3               detected 0.62 | false 0.08/100w
+  R1 cases               Poisson CUSUM, h matched     detected 0.81 | false 0.47/100w (h = 2.0)
+  R1 alert groups (v2)   Poisson CUSUM, h matched     detected 0.90 | false 0.77/100w (h = 2.0)

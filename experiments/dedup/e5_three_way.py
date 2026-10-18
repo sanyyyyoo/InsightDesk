@@ -597,11 +597,16 @@ MAX_EXEMPLARS = 5     # E8: up to 5 diverse member complaints per case
 DIVERSE_SIM = 0.85    # a member becomes an exemplar only if it is not a near-copy of one already kept
 
 
+EXEMPLAR_AUTO_ONLY = False   # exemplar_auto_rule.md
+TRACE = None                 # list -> records (complaint, case, matched exemplar, how that exemplar joined)
+
+
 def three_way(emb, rows, t_high, t_low, judge, exemplars=False):
     """Online three-way assignment. exemplars=False: a case is its first complaint.
     exemplars=True: a case is scored by its best-matching exemplar (E8), and the
     LLM judge sees the first complaint plus that matched exemplar."""
     reps, members, ex = [], [], []
+    src = {}                     # exemplar complaint -> 'founder' / 'auto' / 'judge'
     labels = np.empty(len(rows), dtype=int)
     banded = judged_pairs = 0
     for k, i in enumerate(rows):
@@ -618,8 +623,11 @@ def three_way(emb, rows, t_high, t_low, judge, exemplars=False):
             if best >= t_high:
                 labels[k] = order[0]
                 members[order[0]].append(i)
+                if TRACE is not None and exemplars:
+                    TRACE.append((i, members[order[0]][0], matched[order[0]], src.get(matched[order[0]], "founder"), "auto"))
                 if exemplars:
                     _add_exemplar(ex[order[0]], i, emb)
+                    src.setdefault(i, "auto")
                 continue
             if best >= t_low:
                 banded += 1
@@ -665,7 +673,10 @@ def three_way(emb, rows, t_high, t_low, judge, exemplars=False):
                 if chosen >= 0:
                     labels[k] = chosen
                     members[chosen].append(i)
-                    if exemplars:
+                    if TRACE is not None and exemplars:
+                        TRACE.append((i, members[chosen][0], matched[chosen], src.get(matched[chosen], "founder"), "judge"))
+                    if exemplars and not EXEMPLAR_AUTO_ONLY:
+                        src.setdefault(i, "judge")   # EXA: judge-joined complaints never become exemplars
                         _add_exemplar(ex[chosen], i, emb)
                     continue
         reps.append(emb[i])

@@ -1,0 +1,4 @@
+CUSUM CONFIRMATION (rule results/cusum_confirm_rule.md): Firefox 3 + Thunderbird pooled, 300 trials
+  R1 cases               v2 detected 0.71 false 1.20/100w | CUSUM h=2 detected 0.76 false 0.38/100w
+  R1 alert groups (v2)   v2 detected 0.84 false 1.75/100w | CUSUM h=2 detected 0.91 false 0.69/100w
+RULE: ADOPT Poisson CUSUM

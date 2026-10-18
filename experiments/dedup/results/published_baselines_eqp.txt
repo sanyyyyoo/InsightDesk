@@ -1,0 +1,5 @@
+EQUAL PRECISION (tuning precision >= 0.8) on Play Store held-out halves
+  BM25 (REP's text core)                     P 0.667  R 0.008  F1 0.015   threshold, reached floor on tuning: [(0.5, True), (0.5, True), (0.55, True)]
+  Jaccard / MinHash-LSH (3-char shingles)    P 0.889  R 0.008  F1 0.015   threshold, reached floor on tuning: [(0.3, True), (0.25, True), (0.3, True)]
+  SimHash (64-bit)                           P 0.476  R 0.010  F1 0.019   threshold, reached floor on tuning: [(48.0, True), (50.0, False), (50.0, True)]
+  InsightDesk (with re-joining): P 0.799 R 0.327 | without: P 0.810 R 0.259
