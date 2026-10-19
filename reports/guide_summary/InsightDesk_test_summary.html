@@ -1,0 +1,80 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>InsightDesk test summary</title>
+<style>
+@page { size: A4; margin: 11mm 12mm; }
+body { font: 9.4pt/1.32 "Segoe UI", Arial, sans-serif; color: #1a1a1a; margin: 0; }
+h1 { font-size: 15pt; margin: 0 0 2px; }
+.sub { color: #555; margin: 0 0 7px; }
+h2 { font-size: 10.6pt; margin: 9px 0 3px; color: #12355b; border-bottom: 1px solid #c9d6e4; padding-bottom: 1px; }
+table { border-collapse: collapse; width: 100%; margin: 2px 0 4px; }
+th, td { border: 1px solid #d3dbe4; padding: 2px 5px; text-align: left; vertical-align: top; }
+th { background: #eef3f8; font-weight: 600; }
+td.n { white-space: nowrap; }
+.good { color: #0b6b2f; font-weight: 600; }
+p { margin: 2px 0 4px; }
+ul { margin: 2px 0 4px 16px; padding: 0; }
+li { margin: 1px 0; }
+.box { background: #f6f8fa; border: 1px solid #d3dbe4; padding: 4px 7px; margin: 4px 0; }
+.small { font-size: 8.4pt; color: #444; }
+</style></head><body>
+
+<h1>InsightDesk - summary of tests for the paper</h1>
+<p class="sub">Support-complaint intelligence: raw complaints are grouped into problem cases, then spikes, cause hypotheses and escalation are computed per case. Every test below had its pass criteria written before it ran. P = precision (share of merges that are correct), R = recall (share of true duplicates found), F1 = their balance; "case P" = how pure each case is.</p>
+
+<h2>1. Real data: main results</h2>
+<table>
+<tr><th>Test</th><th>Data</th><th>Result</th><th>Why it matters</th></tr>
+<tr><td>Real Play Store reviews, human-labelled</td><td>338 reviews of 6 help-desk apps, 3 held-out test halves</td><td class="n">P <b>0.81</b> (95% CI 0.63-0.96), case P ~0.92</td><td>Main real-world test; labels by our team (agreement kappa 0.74)</td></tr>
+<tr><td>+ case re-joining step (adopted)</td><td>same</td><td class="n">Recall <span class="good">+26%</span> (0.26 &rarr; 0.33), P unchanged</td><td>Improvement confirmed on untouched data</td></tr>
+<tr><td>Unseen apps (no tuning on them)</td><td>588 reviews: Intercom, Jira, ServiceNow</td><td class="n">case P <b>0.92</b></td><td>Generalises to companies never seen</td></tr>
+<tr><td>Unseen company (thresholds from other companies)</td><td>Play Store, leave-one-company-out</td><td class="n">case P <b>0.89</b></td><td>Works for a new customer with no history</td></tr>
+<tr><td>One company, product not given</td><td>889 Firefox + Thunderbird reports as one stream</td><td class="n">P 0.90 vs 0.91 with product; 1 of 157 cases mixed</td><td>Companies do not need to supply a product field</td></tr>
+<tr><td>IT support tickets (partial run)</td><td>Endava tickets, first 350</td><td class="n">case P <b>0.94</b> vs 0.75 original</td><td>Third domain; full 1,000-ticket run pending</td></tr>
+<tr><td>Synthetic complaints (sanity check)</td><td>488 generated complaints</td><td class="n">P 0.98, F1 0.78</td><td>Pipeline behaves as designed; never used as headline</td></tr>
+</table>
+
+<h2>2. Second domain: public bug-report benchmarks</h2>
+<table>
+<tr><th>Test</th><th>Data</th><th>Result</th></tr>
+<tr><td>Duplicate grouping (thresholds from Play Store only)</td><td>Firefox samples 1-3, Thunderbird (Bugzilla duplicate links)</td><td class="n">P <b>0.87-0.96</b>, R 0.50-0.61; with re-joining Firefox R 0.55 &rarr; <span class="good">0.66</span>, Thunderbird 0.61 &rarr; <span class="good">0.72</span> (P up to 0.87)</td></tr>
+<tr><td>Retrieval on full histories (Recall-Rate@5)</td><td>233,521 Firefox, Thunderbird, Eclipse reports (public BugHub split)</td><td class="n">0.46-0.56 vs BM25 0.40-0.44; trained retriever up to 0.62</td></tr>
+</table>
+
+<h2>3. Against competitors and published methods (same data, same metric)</h2>
+<table>
+<tr><th>Method</th><th>Play Store F1</th><th>Firefox F1</th><th>Note</th></tr>
+<tr><td><b>InsightDesk (+ re-joining)</b></td><td class="n"><b>0.46</b></td><td class="n"><b>0.78</b></td><td>Decides each complaint on arrival</td></tr>
+<tr><td>Original InsightDesk pipeline</td><td class="n">0.14 (R1: 0.24, P 0.31 &rarr; 0.55, +77%)</td><td>-</td><td>Significant improvement</td></tr>
+<tr><td>CLAP (ICSE 2016), published / tuned</td><td class="n">0.05 / 0.24</td><td class="n">0.37 / 0.03</td><td>Classic app-review grouping</td></tr>
+<tr><td>BERTopic topic grouping (used by commercial tools)</td><td class="n">0.25</td><td class="n">0.54</td><td>Topics are not problems (P 0.16)</td></tr>
+<tr><td>Embedding threshold only</td><td class="n">~0.10</td><td class="n">0.07</td><td>Typical simple dedup</td></tr>
+<tr><td>Fine-tuned small models replacing the LLM</td><td colspan="2">precision 0.13-0.49</td><td>The LLM step is necessary</td></tr>
+</table>
+
+<h2>4. Against GPT and Claude, and human labels</h2>
+<table>
+<tr><th>Test</th><th>Result</th></tr>
+<tr><td>ChatGPT, Claude, gpt-oss labelling the same 450 reviews with the human codebook</td><td>Agree with humans (kappa 0.68-0.70) as well as humans agree with each other</td></tr>
+<tr><td>Same LLMs used as a "system" against the human labels</td><td>P 0.68-0.71; <span class="good">InsightDesk P 0.81 is higher</span>, without the codebook and online</td></tr>
+<tr><td>One LLM grouping a small batch at once</td><td>Groups more offline (F1 0.50) but is unstable: shuffling review order changes 46% of its groups, so it cannot keep stable cases for counting and alerts</td></tr>
+</table>
+
+<h2>5. Incident detection, explanations, method checks</h2>
+<table>
+<tr><th>Test</th><th>Result</th></tr>
+<tr><td>Spike detection on simulated outbreaks in real streams</td><td>Original z-score detector <b>0%</b> &rarr; new detector <span class="good">68-75%</span>, ~1 false alarm per 100 windows</td></tr>
+<tr><td>Outage of vague complaints ("app not working")</td><td><span class="good">0% &rarr; 100%</span> detected with the unassigned-complaint alarm, confirmed on a second dataset</td></tr>
+<tr><td>Cause explanations (prompt v3), two blind LLM raters</td><td>Preferred over earlier version 12:0 and 17:2; unsupported claims fell (12 &rarr; 9, 6 &rarr; 2)</td></tr>
+<tr><td>Statistical method</td><td>Error-bar method validated by simulation (92-99% coverage); every result has 95% intervals</td></tr>
+<tr><td>Software testing</td><td>Unit, equivalence and end-to-end tests (68% coverage, 82-100% on core modules); Postman API suite 60/60; 3 defects found and fixed</td></tr>
+</table>
+
+<h2>6. Questions reviewers are likely to ask (and our answer)</h2>
+<ul>
+<li><b>Why not just use ChatGPT/Claude?</b> They group well on small offline batches but change groups with input order (only 54% of groups survive a reshuffle) and cannot hold a company's full history; counting and alerts need stable cases. As labellers their precision (0.68-0.71) is below ours (0.81).</li>
+<li><b>Recall is low on reviews (0.33).</b> Short reviews (21 words) look no more alike than unrelated ones; even people agree only at kappa 0.57-0.74. Re-joining recovers +26%; alert groups and the outage alarm keep incident detection high despite split cases.</li>
+<li><b>Labels made by the team?</b> Benchmarks use independent Bugzilla labels (P 0.87-0.96); Play Store labels have documented agreement and a blind relabel round.</li>
+<li><b>Similar to Oracle 2026 (retrieve-then-verify)?</b> Cited openly; we add online cases, re-joining, per-case incident signals and the first labelled evaluation of this design.</li>
+</ul>
+<div class="box small"><b>Still to finish before submission:</b> end-to-end acceptance test (40 incidents), full Endava run, a "no hard gate" variant being confirmed (Firefox: recall 0.55 &rarr; 0.65, P 0.93), latency/cost per complaint, human spot check of the unseen-app labels. <b>Feedback welcome on:</b> framing, which results to lead with, target venue.</div>
+</body></html>

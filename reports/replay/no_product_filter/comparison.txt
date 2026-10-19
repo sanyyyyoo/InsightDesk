@@ -1,0 +1,14 @@
+labelled real reviews found in the 1,432 set: 338 of 338 scored
+
+real labelled reviews: 338, true duplicate pairs: 680 (95% intervals, cluster bootstrap)
+  pipeline                                                precision                 recall                     F1
+  production (main branch): MS-MARCO -2.21      0.309 [0.259,0.697]    0.088 [0.035,0.177]    0.137 [0.063,0.274]
+  v2 without LLM: cosine 0.44                   0.123 [0.124,0.364]    0.163 [0.087,0.269]    0.140 [0.108,0.292]
+  R1 (app, real judge), within product          0.547 [0.478,0.895]    0.154 [0.053,0.283]    0.241 [0.098,0.417]
+  R1 (app, real judge), NO product filter       0.457 [0.351,0.866]    0.134 [0.043,0.257]    0.207 [0.077,0.383]
+
+whole stream: cases, and cases mixing products (cross-company merges):
+  production (main branch): MS-MARCO -2.21   cases  689 | multi-product cases 113
+  v2 without LLM: cosine 0.44                cases  262 | multi-product cases 121
+  R1 (app, real judge), within product       cases  749 | multi-product cases 0
+  R1 (app, real judge), NO product filter    cases  708 | multi-product cases 72

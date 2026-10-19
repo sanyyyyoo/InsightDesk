@@ -1,0 +1,18 @@
+main branch (MS-MARCO -2.21): cases 549, multi-ticket 170, largest 36
+R1 (app, real judge): cases 535, multi-ticket 47, largest 7
+
+ALL TICKETS  (1000 tickets, 127 category codes)
+  main branch (MS-MARCO -2.21)   pair P 0.220 [0.159,0.649] | pair R 0.020 [0.010,0.044] | pair F1 0.037 [0.018,0.082] | case P 0.655 [0.704,0.804] | case R 0.153 [0.113,0.218] | case F1 0.248 [0.196,0.341]
+  R1 (app, real judge)           pair P 0.250 [0.189,0.664] | pair R 0.001 [0.000,0.004] | pair F1 0.002 [0.001,0.007] | case P 0.550 [0.534,0.605] | case R 0.084 [0.059,0.128] | case F1 0.145 [0.106,0.209]
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): pair P +0.030 [-0.107,+0.241], ahead in 68% of resamples
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): pair F1 -0.034 [-0.077,-0.017], ahead in 0% of resamples
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): case P -0.105 [-0.233,-0.135], ahead in 0% of resamples
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): case F1 -0.103 [-0.144,-0.084], ahead in 0% of resamples
+
+EXCLUDING the largest category (4-1-7)  (892 tickets, 126 category codes)
+  main branch (MS-MARCO -2.21)   pair P 0.221 [0.145,0.667] | pair R 0.024 [0.009,0.049] | pair F1 0.044 [0.017,0.089] | case P 0.666 [0.713,0.811] | case R 0.169 [0.128,0.234] | case F1 0.270 [0.219,0.359]
+  R1 (app, real judge)           pair P 0.278 [0.189,0.706] | pair R 0.001 [0.001,0.004] | pair F1 0.003 [0.001,0.008] | case P 0.555 [0.533,0.612] | case R 0.093 [0.066,0.137] | case F1 0.159 [0.119,0.222]
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): pair P +0.057 [-0.089,+0.283], ahead in 79% of resamples
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): pair F1 -0.041 [-0.084,-0.015], ahead in 0% of resamples
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): case P -0.111 [-0.242,-0.141], ahead in 0% of resamples
+  R1 (app, real judge) - main branch (MS-MARCO -2.21): case F1 -0.111 [-0.151,-0.093], ahead in 0% of resamples

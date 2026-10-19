@@ -1,0 +1,1 @@
+rejoin-only: {"enabled":true,"merges":[{"kept":84,"absorbed":107},{"kept":128,"absorbed":198},{"kept":239,"absorbed":264},{"kept":22,"absorbed":45},{"kept":58,"absorbed":63},{"kept":8,"absorbed":249},{"kept":61,"absorbed":125},{"kept":14,"absorbed":235},{"kept":206,"absorbed":263},{"kept":57,"absorbed":244},{"ke

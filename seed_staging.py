@@ -153,8 +153,6 @@ def main():
     for mod in (supa, dup, rca):
         if hasattr(mod, "datetime"):
             mod.datetime = FakeDateTime
-    import backend.routers.complaints as complaints_router
-    complaints_router.WEB_PORTAL_SOURCE = "google_play_store"   # these are Play Store reviews: short-text t_low 0.40
     llm = GroqRotating()
     provider.generate_json = llm
     if REJOIN_ONLY:
