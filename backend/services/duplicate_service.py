@@ -166,6 +166,7 @@ def process_complaint(complaint):
             embedding,
             complaint.complaint_text,
             product=complaint.product,
+            t_low=dedup_r1.t_low_for(getattr(complaint, "source", None)),
         )
 
         best_case_id = decision.case_id
