@@ -205,3 +205,22 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# kept locally, not part of the app (removed from the repo 2026-10-19)
+.streamlit
+frontend
+reset_pinecone.py
+scraper
+test_basemodel.py
+test_benchmark.py
+test_chatbot.py
+test_clustering.py
+test_enrich.py
+test_groq.py
+test_history.py
+test_pinecone.py
+test_roberta.py
+test_sentiment.py
+test_spike.py
+test_supabase.py
+test_window.py
