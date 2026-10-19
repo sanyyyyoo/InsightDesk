@@ -1,0 +1,2 @@
+Sentiment vs star-rating proxy, 944 real Play Store reviews (1-2 neg, 3 neu, 4-5 pos); class counts {'negative': 711, 'neutral': 233}
+  DistilBERT (SST-2, binary): accuracy 0.713, macro F1 0.282, negative-class P 0.765 R 0.947
