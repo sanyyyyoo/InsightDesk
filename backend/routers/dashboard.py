@@ -198,6 +198,14 @@ def get_dashboard_overview():
             "cases":
             len(cases),
 
+            # vague cases hold one non-specific complaint each ("app not working"); they are never
+            # grouped and are watched by the vague-complaint alarm, so they are counted apart
+            "vague_cases":
+            sum(1 for c in cases if c.get("is_vague")),
+
+            "problem_cases":
+            sum(1 for c in cases if not c.get("is_vague")),
+
             "topics":
             len(topics),
 
