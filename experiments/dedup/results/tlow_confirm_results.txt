@@ -1,0 +1,4 @@
+T_LOW 0.40 CONFIRMATION (rule results/tlow_confirm_rule.md), Firefox 3 + Thunderbird pooled
+  t_low 0.26: P 0.908  R 0.578  F1 0.706  judged 96%
+  t_low 0.4: P 0.912  R 0.571  F1 0.702  judged 90%
+RULE: keep t_low = 0.26 (0.40 not confirmed)
