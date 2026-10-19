@@ -1,4 +1,0 @@
-scope,reviews,topics,outlier_share,homogeneity,completeness,v_measure,ari,v_measure_non_outliers,ari_non_outliers
-Zendesk,243,33,0.14,0.61,0.46,0.53,0.17,0.59,0.24
-Freshdesk,124,14,0.05,0.59,0.64,0.61,0.34,0.61,0.35
-all 450 pooled (diagnostic),450,65,0.13,0.63,0.42,0.5,0.1,0.56,0.14
