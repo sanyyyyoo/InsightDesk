@@ -1,0 +1,27 @@
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+llm: key 1 limited, switching to key 2
+llm: key 2 limited, switching to key 3
+llm: key 3 limited, switching to key 4
+llm: key 4 limited, switching to key 5
+llm: key 5 limited, switching to key 6
+llm: key 6 limited, switching to key 7
+llm: key 7 limited, switching to key 8
+llm: key 8 limited, switching to key 9
+R1 decision cache misses 0 | rejoin pairs not cached 100
+R1 (t_low 0.40)        P 0.883 R 0.284 F1 0.430
+R1 + RJ1 (deployed)    P 0.834 R 0.351 F1 0.494 | merges 35 (23 correct)
+  RJ1 - R1: P -0.048 [-0.139,+0.002] R +0.067 [+0.032,+0.110] F1 +0.064 [+0.025,+0.112]

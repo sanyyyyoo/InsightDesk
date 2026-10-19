@@ -598,6 +598,7 @@ DIVERSE_SIM = 0.85    # a member becomes an exemplar only if it is not a near-co
 
 
 EXEMPLAR_AUTO_ONLY = False   # exemplar_auto_rule.md
+SCORE_TRACE = None           # list -> (complaint, top-case founder, best score) per decision
 TRACE = None                 # list -> records (complaint, case, matched exemplar, how that exemplar joined)
 
 
@@ -620,6 +621,8 @@ def three_way(emb, rows, t_high, t_low, judge, exemplars=False):
                 sims = np.array(reps) @ emb[i]
             order = np.argsort(-sims)
             best = sims[order[0]]
+            if SCORE_TRACE is not None:                  # (complaint, founder of the top case, best score)
+                SCORE_TRACE.append((i, members[order[0]][0], float(best)))
             if best >= t_high:
                 labels[k] = order[0]
                 members[order[0]].append(i)
