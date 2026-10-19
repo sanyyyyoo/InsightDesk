@@ -25,3 +25,4 @@ Metrics: pairwise precision / recall / F1 and case-level (B-cubed) with 95%
 cluster-bootstrap intervals, paired difference R1 - main branch; cases,
 multi-ticket cases, largest case. Descriptive: no tuning on this data.
 Top-20 R1 cases exported for review (text only; labels are anonymous codes).
+Note (2026-10-19): 1 ticket longer than the API's 5,000-character limit is truncated to its first 5,000 characters, as a customer would have to do.

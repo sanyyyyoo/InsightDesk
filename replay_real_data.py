@@ -36,6 +36,10 @@ import pandas as pd  # noqa: E402
 
 import test_e2e_local as env  # noqa: E402   (in-memory Supabase/Pinecone, clock, app client)
 
+if os.getenv("REPLAY_NO_SENTIMENT") == "1":           # grouping-only replays on low-memory machines:
+    import backend.services.duplicate_service as _dup  # sentiment never affects grouping, so skipping
+    _dup.enrich_case_with_sentiment = lambda *a, **k: None   # it frees the RoBERTa model's memory
+
 EXP = "D:/PBL/InsightDesk-dedup"
 DATA = os.getenv("REPLAY_DATA") or os.path.join(EXP, "data", "master_complaints_v2.csv")
 TRUTH = os.path.join(EXP, "data", "synthetic_ground_truth.csv")
@@ -131,7 +135,8 @@ def main():
     for idx, r in m.iterrows():
         env.CLOCK[0] = r.when.to_pydatetime().replace(tzinfo=env.timezone.utc)
         res = env.client.post("/analyze", json={
-            "complaint_text": r.complaint_text, "user_id": f"u{int(r.row)}", "rating": None if pd.isna(r.rating) else int(r.rating),
+            "complaint_text": str(r.complaint_text)[:5000],   # the API accepts at most 5,000 characters
+            "user_id": f"u{int(r.row)}", "rating": None if pd.isna(r.rating) else int(r.rating),
             "source": r.source, "product": r["product"], "is_synthetic": bool(r.is_synthetic)})
         assert res.status_code == 200, res.text
         j = res.json()
