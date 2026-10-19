@@ -1,0 +1,5 @@
+T_LOW 0.40 ON UNSEEN SHORT REVIEWS (rule results/tlow_short_text_rule.md): 588 unseen-app reviews, agreed LLM key
+  t_low 0.26: P 0.608  R 0.284  F1 0.387  judged 94%
+  t_low 0.4: P 0.635  R 0.255  F1 0.364  judged 77%
+RULE: ADOPT t_low = 0.40 for short-text channels
+Caveat: labels are the agreed key of two LLM labellers (kappa 0.38), not human labels.
