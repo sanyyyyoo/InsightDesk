@@ -27,7 +27,8 @@ export function OverviewPage() {
           d
             ? [
                 { label: "Complaints", value: formatNumber(d.complaints) },
-                { label: "Cases", value: formatNumber(d.cases) },
+                { label: "Cases", value: formatNumber(d.problem_cases ?? d.cases) },
+                { label: "Vague complaints", value: formatNumber(d.vague_cases ?? 0) },
                 { label: "Topics", value: formatNumber(d.topics) },
                 { label: "Spiking cases", value: formatNumber(d.spikes) },
               ]
