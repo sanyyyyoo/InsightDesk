@@ -29,6 +29,17 @@ import numpy as np
 
 T_HIGH = float(os.getenv("DEDUP_T_HIGH", "0.8306"))
 T_LOW = float(os.getenv("DEDUP_T_LOW", "0.26"))
+# Short-text channels (app reviews, chat) use a higher lower threshold: on unseen short reviews it cut LLM
+# calls by 17 points at equal precision and recall within 0.03 (tlow_short_text_rule.md); on long tickets and
+# bug reports it made no real difference, so they keep T_LOW (tlow_confirm_rule.md).
+T_LOW_SHORT = float(os.getenv("DEDUP_T_LOW_SHORT", "0.40"))
+SHORT_TEXT_SOURCES = {s.strip().lower() for s in os.getenv(
+    "DEDUP_SHORT_TEXT_SOURCES", "google_play_store,play_store,app_review,chat").split(",") if s.strip()}
+
+
+def t_low_for(source):
+    """The lower threshold for a complaint's channel."""
+    return T_LOW_SHORT if (source or "").strip().lower() in SHORT_TEXT_SOURCES else T_LOW
 TOP_K = int(os.getenv("DEDUP_TOP_K", "5"))
 REQUIRE_TOP1 = os.getenv("DEDUP_REQUIRE_TOP1", "false").lower() == "true"
 MAX_EXEMPLARS = 5
