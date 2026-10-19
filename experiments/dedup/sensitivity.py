@@ -130,7 +130,7 @@ def part_bc():
                 say(f"  alpha {alpha:.1f}  L {L:.1f}   cases {c[0]:.2f} / {c[1]:.2f}   groups {gg[0]:.2f} / {gg[1]:.2f}")
 
 
-def part_a3():
+def part_a3(fixed=None):
     from sentence_transformers import SentenceTransformer
     from normalize import boilerplate_suppress
     enc = SentenceTransformer(e5.EMBED_MODEL)
@@ -151,21 +151,25 @@ def part_a3():
         th, tl = e5.band_thresholds_wide(emb[tune], issues[tune], groups[tune])
         halves.append((test, th, tl))
     say("\nA3. t_low sensitivity with LIVE judge calls (Play Store, 3 held-out halves pooled, calibrated t_high)")
-    for dl in (0.0, 0.04, 0.09, 0.14):
+    for dl in ((None,) if fixed is not None else (0.0, 0.04, 0.09, 0.14)):
         tot, judged, n = np.zeros(3), 0, 0
         for test, th, tl in halves:
             judge = e5.LLMJudge(texts, refs, "playstore", "founder", "gated")
-            labels, banded, _ = e5.by_group(lambda r: e5.three_way(emb, r, th, tl + dl, judge, True), test, groups)
+            low = fixed if fixed is not None else tl + dl
+            labels, banded, _ = e5.by_group(lambda r: e5.three_way(emb, r, th, low, judge, True), test, groups)
             lab = np.array([f"{groups[i]}|{l}" for i, l in zip(test, labels)])
             _, iss = np.unique(issues[test], return_inverse=True)
             tot += counts(lab, iss, np.ones(iss.max() + 1))
             judged += banded
             n += len(test)
         p, r, f = prf(*tot)[:3]
-        say(f"  t_low +{dl:.2f}   P {p:.3f}  R {r:.3f}  F1 {f:.3f} | judged {judged / n:.0%}")
+        say(("  A4 t_low = 0.40 exactly" if fixed is not None else f"  t_low +{dl:.2f}") + f"   P {p:.3f}  R {r:.3f}  F1 {f:.3f} | judged {judged / n:.0%}")
 
 
-if __name__ == "__main__" and "--a3" in sys.argv:
+if __name__ == "__main__" and "--a4" in sys.argv:
+    lines.extend(open(OUT, encoding="utf-8").read().splitlines()[1:])
+    part_a3(fixed=0.40)
+elif __name__ == "__main__" and "--a3" in sys.argv:
     lines.extend(open(OUT, encoding="utf-8").read().splitlines()[1:])
     part_a3()
 elif __name__ == "__main__":
