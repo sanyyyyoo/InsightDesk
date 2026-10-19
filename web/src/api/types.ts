@@ -100,6 +100,8 @@ export interface VolumePoint {
 export interface Overview {
   complaints: number;
   cases: number;
+  problem_cases?: number;
+  vague_cases?: number;
   topics: number;
   spikes: number;
   spike_cases: SpikeCase[];
