@@ -91,11 +91,11 @@ def main():
     table_slide(23, "TEST DATASETS & LABEL CREDIBILITY",
                 [1800000, 1100000, 1600000, 2150000, 1500000],
                 ["Dataset", "Size", "Ground truth", "Credibility", "Used for"],
-                [["Play Store reviews (6 help-desk apps)", "338 labelled of 450", "2 team annotators, written codebook", "κ = 0.74; LLM labellers agree with humans at κ 0.68–0.70", "Tuning and held-out evaluation"],
+                [["Play Store reviews (6 help-desk apps)", "338 labelled of 450", "3 team annotators, written codebook", "Fleiss κ = 0.74 across all 3; LLM labellers agree with humans at κ 0.68–0.70", "Tuning and held-out evaluation"],
                  ["Firefox and Thunderbird (Bugzilla)", "437 + 452 reports", "Mozilla triagers' duplicate links", "Independent of us; some duplicates unlinked, so precision is conservative", "Transfer test"],
                  ["BugHub split: Firefox, Thunderbird, Eclipse", "233,521 reports", "Public duplicate links", "Standard public benchmark", "Duplicate retrieval (top-5)"],
                  ["Unseen apps: Intercom, Jira SM, ServiceNow", "588 reviews", "Agreed key of 2 LLM labellers", "κ 0.38 between LLMs; 50-pair human check pending", "Secondary transfer test"],
-                 ["Endava IT tickets", "350 of 1,000", "Ticket categories", "Partial run, preliminary", "Third domain"],
+                 ["Endava IT tickets", "1,000 tickets", "Ticket categories", "Case precision 0.90 vs 0.66 (cross-encoder); F1 tied", "Third domain"],
                  ["Synthetic complaints", "488", "Generator ground truth", "Sanity check only", "Never a headline result"]],
                 450000, None, 880)
 
