@@ -20,8 +20,12 @@ from docx.shared import Inches, Pt  # noqa: E402
 FONT = "Times New Roman"
 COL_W = Inches(3.45)
 
-FIGS = {"04f74690-b065": "img/fig1.png", "744a1564-8c9e": "img/fig2.png", "99700ab1-d770": "img/fig3.png",
-        "20ff9b7c-e968": "img/fig4.png", "0e9a5709-bc0f": "img/fig5.png", "47fef0a8-e40a": "img/fig6.png"}
+FIGS = {"04f74690-b065": ("img/fig1.png", 6.0, "Flowchart of the InsightDesk pipeline (t_low = 0.40 for app reviews and chat, 0.26 for tickets and bug reports)"),
+        "ff082679-c090": ("img/fig2.png", 7.0, "System architecture: nine phases over two stores"),
+        "99700ab1-d770": ("img/fig3c.png", 6.0, "Pairwise F1 against published methods on identical data (Play Store held-out halves; Firefox sample 3)"),
+        "20ff9b7c-e968": ("img/fig4c.png", 6.0, "Pairwise precision and recall of every method, Play Store held-out halves"),
+        "0e9a5709-bc0f": ("img/fig5c.png", 6.0, "Recall with and without one re-joining pass; precision shown below each pair"),
+        "47fef0a8-e40a": ("img/fig6c.png", 6.0, "Share of simulated incidents detected in 6-hour windows; InsightDesk under one false alarm per 100 windows")}
 
 EQS = {
     "6d855770-35fa": r"$\max_{m' \in E_C}\, s(m, m') < 0.85, \qquad |E_C| \leq 5$",
@@ -254,13 +258,20 @@ def short_table(doc, num, spec):
     para(doc, after=6)
 
 
-def figure(doc, path, width, full):
-    if full:
-        new_section(doc, 1)
-    p = para(doc, WD_ALIGN_PARAGRAPH.CENTER, 8)
-    p.add_run().add_picture(path, width=width)
-    if full:
-        new_section(doc, 2)
+FIG_N = [0]
+
+
+def figure(doc, ref):
+    path, width, cap = FIGS[ref]
+    FIG_N[0] += 1
+    new_section(doc, 1)
+    p = para(doc, WD_ALIGN_PARAGRAPH.CENTER, 2)
+    p.paragraph_format.space_before = Pt(6)
+    p.add_run().add_picture(path, width=Inches(width))
+    c = para(doc, WD_ALIGN_PARAGRAPH.CENTER, 8)
+    r = c.add_run(f"Fig. {FIG_N[0]}: {cap}")
+    r.italic, r.font.size = True, Pt(SMALL)
+    new_section(doc, 2)
 
 
 def main():
@@ -346,12 +357,8 @@ def main():
                 add_runs(p, li, BODY)
         elif tag == "embed":
             ref = re.search(r"ref='node/([^']+)'", b).group(1)
-            if ref == "04f74690-b065":
-                figure(doc, FIGS[ref], Inches(5.0), True)
-            elif ref == "744a1564-8c9e":
-                figure(doc, FIGS[ref], Inches(6.6), True)
-            elif ref in FIGS:
-                figure(doc, FIGS[ref], COL_W, False)
+            if ref in FIGS:
+                figure(doc, ref)
             elif ref in EQS:
                 eq_n += 1
                 from PIL import Image
