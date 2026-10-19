@@ -52,7 +52,7 @@ def load_env():
                 "DEDUP_MODE": env.get("DEDUP_MODE") or "r1", "REJOIN_ENABLED": "0", "UNASSIGNED_SPIKES": "1",
                 "LLM_PROVIDER": env.get("LLM_PROVIDER") or "groq",
                 "GROQ_MODEL": env.get("GROQ_MODEL") or "openai/gpt-oss-120b"})
-    exp = dotenv_values("D:/PBL/InsightDesk-dedup/.env.experiments")
+    exp = dotenv_values(os.path.join(HERE, ".env.experiments"))
     key = next((v for k, v in exp.items() if k.startswith("GROQ_API_KEY") and v and k not in
                 ("GROQ_API_KEY_3", "GROQ_API_KEY_4", "GROQ_API_KEY_12")), None)
     if key:

@@ -26,7 +26,6 @@ from dotenv import dotenv_values
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LIVE_ENV = "D:/PBL/InsightDesk/.env"
-EXP = "D:/PBL/InsightDesk-dedup"
 OUT = os.path.join(HERE, "reports", "staging")
 CACHE = os.path.join(OUT, "llm_cache.jsonl")
 REJOIN_ONLY = "--rejoin-only" in sys.argv          # finish an interrupted seed: only the re-joining pass
@@ -84,13 +83,10 @@ class FakeDateTime(datetime):
 # ---- 4. rotating Groq judge with a cache (as replay_real_data.py) ----
 class GroqRotating:
     def __init__(self):
-        cwd = os.getcwd()
-        os.chdir(EXP)
-        sys.path.append(os.path.join(EXP, "experiments", "dedup"))
-        os.environ.setdefault("EXPERIMENTS_ALLOW_APP_KEY", "1")
-        from normalize import experiment_groq_clients
-        self.clients = experiment_groq_clients()
-        os.chdir(cwd)
+        from groq import Groq
+        keys = dotenv_values(os.path.join(HERE, ".env.experiments"))
+        self.clients = [Groq(api_key=v.strip()) for k, v in sorted(keys.items())
+                        if k.startswith("GROQ_API_KEY") and v and k not in ("GROQ_API_KEY_3", "GROQ_API_KEY_4", "GROQ_API_KEY_12")]
         self.k, self.free_at, self.calls, self.cache = 0, [0.0] * len(self.clients), 0, {}
         if os.path.exists(CACHE):
             for line in open(CACHE, encoding="utf-8"):

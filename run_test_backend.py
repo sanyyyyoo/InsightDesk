@@ -41,7 +41,7 @@ env.update({
     "GROQ_MODEL": env.get("GROQ_MODEL") or "openai/gpt-oss-120b",
 })
 if "--staging" in sys.argv:                         # the test project's own Groq key is invalid: use an experiment key
-    exp = dotenv_values("D:/PBL/InsightDesk-dedup/.env.experiments")
+    exp = dotenv_values(os.path.join(HERE, ".env.experiments"))
     key = next((v for k, v in exp.items() if k.startswith("GROQ_API_KEY") and v), None)
     if key:
         env["GROQ_API_KEY"] = key.strip()
