@@ -62,76 +62,45 @@ export function OverviewPage() {
               )}
             </Card>
 
-            <div className="grid grid-2">
-              <Card
-                title="Spiking cases"
-                actions={
-                  <Link to="/admin/incidents" className="small">
-                    Incident response →
-                  </Link>
-                }
-              >
-                {data.spike_cases.length === 0 ? (
-                  <p className="muted">No spikes right now.</p>
-                ) : (
-                  <div className="table-wrap">
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th>Case</th>
-                          <th>Problem</th>
-                          <th className="num">Reports now</th>
-                          <th className="num">Chance if normal</th>
-                          <th>Status</th>
+            <Card
+              title="Spiking cases"
+              actions={
+                <Link to="/admin/incidents" className="small">
+                  Incident response →
+                </Link>
+              }
+            >
+              {data.spike_cases.length === 0 ? (
+                <p className="muted">No spikes right now.</p>
+              ) : (
+                <div className="table-wrap">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>Case</th>
+                        <th>Problem</th>
+                        <th className="num">Reports now</th>
+                        <th className="num">Chance if normal</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {sortBy(data.spike_cases, (s) => -(s.p_value ?? 1), "desc").map((s) => (
+                        <tr key={s.case_id} className="clickable" onClick={() => navigate(`/admin/cases/${s.case_id}`)}>
+                          <td>#{s.case_id}</td>
+                          <td><div className="clamp-2">{title(s)}</div></td>
+                          <td className="num">{formatNumber(s.current)}</td>
+                          <td className="num">{formatChance(s.p_value)}</td>
+                          <td>
+                            <SpikeBadge spike={s.spike} critical={s.critical} />
+                          </td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {sortBy(data.spike_cases, (s) => -(s.p_value ?? 1), "desc").map((s) => (
-                          <tr key={s.case_id} className="clickable" onClick={() => navigate(`/admin/cases/${s.case_id}`)}>
-                            <td>#{s.case_id}</td>
-                            <td><div className="clamp-2">{title(s)}</div></td>
-                            <td className="num">{formatNumber(s.current)}</td>
-                            <td className="num">{formatChance(s.p_value)}</td>
-                            <td>
-                              <SpikeBadge spike={s.spike} critical={s.critical} />
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-              </Card>
-
-              <Card title="Sentiment models">
-                {data.benchmarks.length === 0 ? (
-                  <p className="muted">No benchmark runs recorded.</p>
-                ) : (
-                  <div className="table-wrap">
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th>Model</th>
-                          <th className="num">Latency (ms)</th>
-                          <th className="num">Throughput/s</th>
-                          <th className="num">Memory (MB)</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {data.benchmarks.map((b, i) => (
-                          <tr key={`${b.model_name}-${b.benchmark_id ?? i}`}>
-                            <td>{b.model_name}</td>
-                            <td className="num">{b.average_latency_ms?.toFixed(1) ?? "–"}</td>
-                            <td className="num">{b.throughput?.toFixed(1) ?? "–"}</td>
-                            <td className="num">{b.memory_mb?.toFixed(0) ?? "–"}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-              </Card>
-            </div>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </Card>
           </>
         )}
       </QueryState>
