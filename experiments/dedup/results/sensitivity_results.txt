@@ -92,3 +92,6 @@ A3. t_low sensitivity with LIVE judge calls (Play Store, 3 held-out halves poole
   t_low +0.04   P 0.803  R 0.256  F1 0.388 | judged 81%
   t_low +0.09   P 0.867  R 0.264  F1 0.404 | judged 71%
   t_low +0.14   P 0.906  R 0.260  F1 0.404 | judged 61%
+
+A3. t_low sensitivity with LIVE judge calls (Play Store, 3 held-out halves pooled, calibrated t_high)
+  A4 t_low = 0.40 exactly   P 0.883  R 0.284  F1 0.430 | judged 66%
