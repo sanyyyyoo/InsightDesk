@@ -5,7 +5,7 @@ import re
 import build as b
 
 N = 25
-print(b.place_picture(N, "img_method.png", "methodology.png", 1620000, 1600000, 5900000))
+print(b.place_picture(N, "img_method.png", "methodology.png", 1800000, 1580000, 5550000))
 s = b.rd(N)
 s = re.sub(r"<a:srcRect[^>]*/>", "<a:srcRect/>", s)
 s = s.replace(">SYSTEM ARCHITECTURE<", ">SYSTEM ARCHITECTURE &amp; METHODOLOGY<", 1)
