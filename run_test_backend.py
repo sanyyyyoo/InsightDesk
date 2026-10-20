@@ -37,6 +37,7 @@ env.update({
     "DEDUP_MODE": env.get("DEDUP_MODE") or "r1",   # the current pipeline
     "REJOIN_ENABLED": "1" if "--staging" in sys.argv else "0",   # Postman checks the disabled path
     "UNASSIGNED_SPIKES": "1",                      # read-only alarm on, so its endpoint is exercised
+    "ADMIN_AUTH_REQUIRED": "1" if "--staging" in sys.argv else "0",   # staging: only admin accounts reach the dashboard
     "LLM_PROVIDER": env.get("LLM_PROVIDER") or "groq",
     "GROQ_MODEL": env.get("GROQ_MODEL") or "openai/gpt-oss-120b",
 })
