@@ -20,7 +20,7 @@ from docx.shared import Inches, Pt  # noqa: E402
 FONT = "Times New Roman"
 COL_W = Inches(3.45)
 
-FIGS = {"04f74690-b065": ("img/fig1.png", 6.0, "Flowchart of the InsightDesk pipeline (t_low = 0.40 for app reviews and chat, 0.26 for tickets and bug reports)"),
+FIGS = {"04f74690-b065": ("img/fig1.png", 5.2, "Flowchart of the InsightDesk pipeline (t_low = 0.40 for app reviews and chat, 0.26 for tickets and bug reports)"),
         "ff082679-c090": ("img/fig2.png", 7.0, "System architecture: nine phases over two stores"),
         "99700ab1-d770": ("img/fig3c.png", 6.0, "Pairwise F1 against published methods on identical data (Play Store held-out halves; Firefox sample 3)"),
         "20ff9b7c-e968": ("img/fig4c.png", 6.0, "Pairwise precision and recall of every method, Play Store held-out halves"),
@@ -259,19 +259,71 @@ def short_table(doc, num, spec):
 
 
 FIG_N = [0]
+DELAY = {"ff082679-c090": 2}   # anchor these figures a few paragraphs later so text fills the page first
+PENDING = []
+
+
+def with_caption(path, width_in, text, n):
+    """The figure image with its italic caption drawn underneath, so the two float together."""
+    from PIL import Image, ImageDraw, ImageFont
+    im = Image.open(path).convert("RGB")
+    w, h = im.size
+    px_per_pt = w / (width_in * 72)
+    font = ImageFont.truetype("C:/Windows/Fonts/timesi.ttf", int(SMALL * px_per_pt))
+    draw0 = ImageDraw.Draw(im)
+    words, lines, cur = text.split(), [], ""
+    for wd in words:                                           # wrap the caption to the image width
+        trial = (cur + " " + wd).strip()
+        if draw0.textlength(trial, font=font) > w * 0.94 and cur:
+            lines.append(cur)
+            cur = wd
+        else:
+            cur = trial
+    lines.append(cur)
+    line_h = int(SMALL * 1.25 * px_per_pt)
+    out = Image.new("RGB", (w, h + line_h * len(lines) + int(8 * px_per_pt)), "white")
+    out.paste(im, (0, 0))
+    d = ImageDraw.Draw(out)
+    for k, line in enumerate(lines):
+        d.text((w / 2, h + int(4 * px_per_pt) + k * line_h), line, font=font, fill="black", anchor="ma")
+    dest = f"img/fig{n}_cap.png"
+    out.save(dest)
+    return dest
+
+
+def float_top(run, width_in):
+    """Turn the run's inline picture into a floating one at the top of the page, across both columns,
+    with text above and below it (IEEE layout): text keeps filling the page instead of leaving a gap."""
+    from docx.oxml import parse_xml
+    drawing = run._r.find(qn("w:drawing"))
+    inline = drawing.find(qn("wp:inline"))
+    ext = inline.find(qn("wp:extent"))
+    docpr = inline.find(qn("wp:docPr"))
+    graphic = inline.find(qn("a:graphic"))
+    from lxml import etree
+    anchor = parse_xml(
+        '<wp:anchor xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" '
+        'distT="0" distB="114300" distL="0" distR="0" simplePos="0" relativeHeight="251659264" behindDoc="0" '
+        'locked="0" layoutInCell="1" allowOverlap="0">'
+        '<wp:simplePos x="0" y="0"/>'
+        '<wp:positionH relativeFrom="margin"><wp:align>center</wp:align></wp:positionH>'
+        '<wp:positionV relativeFrom="margin"><wp:align>top</wp:align></wp:positionV>'
+        f'<wp:extent cx="{ext.get("cx")}" cy="{ext.get("cy")}"/>'
+        '<wp:effectExtent l="0" t="0" r="0" b="0"/><wp:wrapTopAndBottom/>'
+        f'<wp:docPr id="{docpr.get("id")}" name="{docpr.get("name")}"/>'
+        '<wp:cNvGraphicFramePr/></wp:anchor>')
+    anchor.append(etree.fromstring(etree.tostring(graphic)))
+    drawing.replace(inline, anchor)
 
 
 def figure(doc, ref):
     path, width, cap = FIGS[ref]
     FIG_N[0] += 1
-    new_section(doc, 1)
-    p = para(doc, WD_ALIGN_PARAGRAPH.CENTER, 2)
-    p.paragraph_format.space_before = Pt(6)
-    p.add_run().add_picture(path, width=Inches(width))
-    c = para(doc, WD_ALIGN_PARAGRAPH.CENTER, 8)
-    r = c.add_run(f"Fig. {FIG_N[0]}: {cap}")
-    r.italic, r.font.size = True, Pt(SMALL)
-    new_section(doc, 2)
+    img = with_caption(path, width, f"Fig. {FIG_N[0]}: {cap}", FIG_N[0])
+    p = para(doc, WD_ALIGN_PARAGRAPH.CENTER, 0)
+    run = p.add_run()
+    run.add_picture(img, width=Inches(width))
+    float_top(run, width)
 
 
 def main():
@@ -358,7 +410,10 @@ def main():
         elif tag == "embed":
             ref = re.search(r"ref='node/([^']+)'", b).group(1)
             if ref in FIGS:
-                figure(doc, ref)
+                if DELAY.get(ref):
+                    PENDING.append([ref, DELAY[ref]])
+                else:
+                    figure(doc, ref)
             elif ref in EQS:
                 eq_n += 1
                 from PIL import Image
@@ -377,6 +432,11 @@ def main():
             p = para(doc)
             p.paragraph_format.first_line_indent = Inches(0.2)
             add_runs(p, b, BODY)
+            for item in PENDING[:]:
+                item[1] -= 1
+                if item[1] <= 0:
+                    figure(doc, item[0])
+                    PENDING.remove(item)
         i += 1
     doc.save("InsightDesk_paper.docx")
     print("saved InsightDesk_paper.docx,", eq_n, "equations")
