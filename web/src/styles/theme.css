@@ -138,6 +138,7 @@ button, input, select, textarea { font: inherit; }
 .pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; line-height: 1.4; white-space: nowrap; }
 .pill-live { background: var(--live); color: #fff; }
 .pill-spike { background: var(--spike); color: #fff; }
+.pill-vague { background: #FEF3C7; color: #92400E; margin-right: 6px; }
 .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .badge-neutral { background: var(--surface-2); color: var(--muted-2); border: 1px solid var(--border); }
 .badge-blue { background: var(--blue-50); color: var(--blue-700); }

@@ -19,6 +19,8 @@ export function CasesPage() {
   const q = params.get("q") ?? "";
   const sentiment = params.get("sentiment") ?? "all";
   const topic = params.get("topic") ?? "all";
+  // vague cases hold non-specific complaints ("app not working"); hidden by default, like the Overview count
+  const kind = params.get("kind") ?? "problem";
   const [sort, setSort] = useState<{ key: SortKey; dir: SortDir }>({ key: "report_count", dir: "desc" });
   const [page, setPage] = useState(0);
 
@@ -42,10 +44,12 @@ export function CasesPage() {
     if (term) rows = rows.filter((c) => title(c).toLowerCase().includes(term) || String(c.case_id) === term);
     if (sentiment !== "all") rows = rows.filter((c) => normaliseSentiment(c.sentiment) === sentiment);
     if (topic !== "all") rows = rows.filter((c) => String(c.topic_id ?? "none") === topic);
+    if (kind === "problem") rows = rows.filter((c) => !c.is_vague);
+    if (kind === "vague") rows = rows.filter((c) => c.is_vague);
     const key = (c: Case) =>
       sort.key === "last_reported_at" ? new Date(c.last_reported_at).getTime() : sort.key === "sentiment" ? normaliseSentiment(c.sentiment) : c[sort.key];
     return sortBy(rows, key, sort.dir);
-  }, [cases.data, q, sentiment, topic, sort, title]);
+  }, [cases.data, q, sentiment, topic, kind, sort, title]);
 
   const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const current = Math.min(page, pages - 1);
@@ -65,6 +69,11 @@ export function CasesPage() {
             value={q}
             onChange={(e) => update("q", e.target.value)}
           />
+          <select className="select" style={{ maxWidth: 200 }} aria-label="Filter by case type" value={kind} onChange={(e) => update("kind", e.target.value === "problem" ? "" : e.target.value)}>
+            <option value="problem">Problem cases</option>
+            <option value="vague">Vague complaints</option>
+            <option value="any">All cases</option>
+          </select>
           <select className="select" style={{ maxWidth: 180 }} aria-label="Filter by sentiment" value={sentiment} onChange={(e) => update("sentiment", e.target.value)}>
             <option value="all">All sentiment</option>
             <option value="negative">Negative</option>
@@ -104,7 +113,7 @@ export function CasesPage() {
                       {visible.map((c) => (
                         <tr key={c.case_id} className="clickable" onClick={() => navigate(`/admin/cases/${c.case_id}`)}>
                           <td>#{c.case_id}</td>
-                          <td><div className="clamp-2">{title(c)}</div></td>
+                          <td><div className="clamp-2">{c.is_vague && <span className="pill pill-vague" title="Too vague to match a specific problem; watched by the vague-complaint alarm">vague</span>}{title(c)}</div></td>
                           <td className="small">{(c.topic_id != null && topicName.get(c.topic_id)) || "–"}</td>
                           <td className="num">{formatNumber(c.report_count)}</td>
                           <td>

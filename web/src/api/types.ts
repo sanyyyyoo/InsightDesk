@@ -15,6 +15,7 @@ export interface Case {
   emotion?: string | null;
   emotion_confidence?: number | null;
   spike_status?: boolean | null;
+  is_vague?: boolean | null;
   spike_score?: number | null;
   spike_detected_at?: string | null;
   created_at: string;
