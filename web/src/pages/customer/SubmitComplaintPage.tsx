@@ -10,6 +10,9 @@ import { isSample } from "../../config";
 // Mirrors backend/models/complaint.py (ComplaintSubmit).
 export const LIMITS = { minChars: 10, maxChars: 5000, maxProduct: 200 };
 
+// backend status when the same user repeats a case within 24 hours (counted once)
+const REPEAT = "Merged with recent report";
+
 export function validateComplaint(text: string, product: string): string | null {
   const t = text.trim();
   if (t.length < LIMITS.minChars) return `Please describe the problem in at least ${LIMITS.minChars} characters.`;
@@ -117,9 +120,11 @@ export function SubmitComplaintPage() {
         {last && (
           <div className="alert alert-success" role="status">
             Thanks – your report was received.{" "}
-            {last.is_duplicate
-              ? `Others have reported the same problem; it was added to case #${last.case_id}.`
-              : `It opened a new case (#${last.case_id}) for the team.`}
+            {last.status === REPEAT
+              ? `You reported this problem recently, so it was added to case #${last.case_id} without counting you twice.`
+              : last.is_duplicate
+                ? `Others have reported the same problem; it was added to case #${last.case_id}.`
+                : `It opened a new case (#${last.case_id}) for the team.`}
           </div>
         )}
 
@@ -142,7 +147,7 @@ export function SubmitComplaintPage() {
                     <tr key={`${h.complaint_id}-${h.text}`}>
                       <td><div className="clamp-2">{h.text}</div></td>
                       <td>#{h.case_id}</td>
-                      <td>{h.is_duplicate ? "Grouped with similar reports" : "New case"}</td>
+                      <td>{h.status === REPEAT ? "Already reported by you" : h.is_duplicate ? "Grouped with similar reports" : "New case"}</td>
                     </tr>
                   ))}
                 </tbody>
