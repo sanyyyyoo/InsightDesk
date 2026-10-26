@@ -161,8 +161,7 @@ def _cache_put(key, answer):
         _cache[key] = answer
         os.makedirs(os.path.dirname(CACHE_PATH), exist_ok=True)
         with open(CACHE_PATH, "a", encoding="utf-8") as f:
-            f.write(json.dumps({"key": key, "answer": answer}) + "
-")
+            f.write(json.dumps({"key": key, "answer": answer}) + "\n")
 
 
 def generate_json(prompt, cache=False):
