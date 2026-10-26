@@ -110,7 +110,7 @@ LIT = [
      "A recent large study of duplicate bug-report detection [3] finds that classic retrieval such as REP [22] remains "
      "competitive with deep models, and Cupid [4] improves it by letting an LLM extract the essentials of each report "
      "first (Recall-Rate@10 0.60–0.65). Bi-encoders such as SBERT [23] give indexable embeddings, while cross-encoders "
-     "built on BERT [24] are more accurate but cannot be indexed. LLMs used zero-shot as matchers reach F1 89.6–98.4 on "
+     "built on BERT [24] are more accurate but cannot be indexed. LLMs used zero-shot as matchers reach F1 76.4–98.4 on six "
      "entity-matching benchmarks [5], and LLM judges agree with human preferences on many tasks [6], [7]; their known "
      "position and verbosity biases argue for bounding each decision, which InsightDesk does with retrieval and "
      "calibrated thresholds."),
@@ -135,7 +135,7 @@ TAB1 = ("COMPARATIVE LITERATURE SURVEY", ["Ref", "Title (venue, year)", "Paramet
     ["[10]", "iPACK (ICSE, 2023)", "Ticket–alert linking", "Needs cloud alerts", "Raw complaint text only"],
     ["[11]", "TickIt (FSE, 2025)", "Predefined categories", "Cannot open new problems", "Open-ended problem cases"],
     ["[13]", "RCACopilot (EuroSys, 2024)", "Telemetry + LLM", "Needs telemetry", "Root cause from complaints"],
-    ["[14]", "SentiSum (2025)", "z > 2 per tag", "Fails at 0–2 per window", "Poisson CUSUM + alert groups"],
+    ["[14]", "SentiSum (2025)", "z-score per tag, ~100-day baseline", "Fails at 0–2 per window", "Poisson CUSUM + alert groups"],
 ])
 
 TAB2 = ("COMPETITORS EVALUATED ON OUR DATA", ["Method", "Parameters", "Limitation", "Our Improvement"], [
@@ -146,18 +146,18 @@ TAB2 = ("COMPETITORS EVALUATED ON OUR DATA", ["Method", "Parameters", "Limitatio
     ["BERTopic [16]", "Library defaults", "Themes, not problems", "Symptom-level cases"],
     ["Embedding cut [23]", "One cosine threshold", "Unsafe or too narrow", "Two cuts + judge"],
     ["Cross-encoder [24]", "Score cut 0.4834", "Fails in a stream", "Stream-calibrated band"],
-    ["LLM labellers", "Full codebook", "Offline, needs codebook", "Online, no codebook"],
-    ["LLM batch grouping", "One prompt per batch", "Order-sensitive", "Stable cases"],
+    ["LLM labellers", "Codebook or own problem list", "Codebook knew the test problems; own list F1 0.32", "Online, no codebook"],
+    ["LLM batch grouping", "One prompt per batch", "Order-sensitive (89% of pairs kept); no memory", "Stable cases"],
     ["z-score rule [14]", "z > 2 per tag", "Unstable at small counts", "Poisson CUSUM"],
 ])
 
 TAB3 = ("RESULTS ON UNSEEN DATA (UPPER THRESHOLD FIXED)", ["Setting", "Data", "Precision", "Note"], [
-    ["Second domain", "Firefox, 3 samples", "0.87–0.96", "F1 0.78 with re-joining"],
+    ["Second domain", "Firefox, 3 samples", "0.92–0.96", "F1 0.78 with re-joining"],
     ["Second domain", "Thunderbird", "0.87", "F1 0.79 with re-joining"],
     ["Unseen products", "Intercom, Jira SM, ServiceNow", "case 0.92", "No tuning on them"],
     ["Unseen company", "Leave-one-company-out", "case 0.89", "Other companies' thresholds"],
     ["No product field", "889 bug reports, one stream", "0.90", "vs 0.91 with product"],
-    ["Retrieval at scale", "233,521 bug reports", "RR@5 0.46–0.56", "BM25F 0.41–0.44"],
+    ["Retrieval at scale", "233,521 bug reports", "RR@5 0.46–0.56", "BM25 0.40–0.44, REP 0.43–0.44"],
     ["Third domain", "1,000 Endava tickets", "case 0.90", "Cross-encoder 0.66"],
 ])
 

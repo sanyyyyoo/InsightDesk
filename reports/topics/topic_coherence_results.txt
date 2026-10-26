@@ -1,0 +1,13 @@
+cases 306, topics 44, outliers 41 (13%)
+topics scored 44 of 44; c_v = 0.489; random 5-word sets = 0.383
+departments: {'Authentication': 1, 'General': 25, 'Customer Success': 9, 'Engineering': 9}
+  Login + Sign + Browser                    19 cases -> Authentication  [login, sign, browser, account, allow]
+  Notification + Notifications + Settings   18 cases -> General  [notification, notifications, settings, phone, pixel]
+  Install + Longer + App Working            16 cases -> General  [install, longer, app working, working, works]
+  Support + Experience + Plan               15 cases -> Customer Success  [support, experience, plan, year, team]
+  Email + Email Address + Address           11 cases -> General  [email, email address, address, emails, data]
+  Crashes + Keeps Crashing + New Version    10 cases -> General  [crashes, keeps crashing, new version, crashing, literally]
+  Mobile + View + Mobile App                 9 cases -> Customer Success  [mobile, view, mobile app, ticket, useful]
+  Doesn Work + Doesn + Work                  9 cases -> General  [doesn work, doesn, work, works, 11]
+  Chat + Customers + Picture                 8 cases -> Customer Success  [chat, customers, picture, load, live]
+  Text + Keyboard + Google                   8 cases -> General  [text, keyboard, google, issues, apps]

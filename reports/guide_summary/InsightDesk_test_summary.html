@@ -55,7 +55,7 @@ li { margin: 1px 0; }
 <table>
 <tr><th>Test</th><th>Result</th></tr>
 <tr><td>ChatGPT, Claude, gpt-oss labelling the same 450 reviews with the human codebook</td><td>Agree with humans (kappa 0.68-0.70) as well as humans agree with each other</td></tr>
-<tr><td>Same LLMs used as a "system" against the human labels</td><td>P 0.68-0.71; <span class="good">InsightDesk P 0.81 is higher</span>, without the codebook and online</td></tr>
+<tr><td>Same LLMs used as a "system" against the human labels</td><td>With our codebook (written from these reviews): P 0.83-0.87, F1 0.64-0.67. With a problem list the LLM builds itself from earlier reviews: P 0.62, F1 0.32; <span class="good">InsightDesk P 0.81, F1 0.39</span>, online and without a codebook</td></tr>
 <tr><td>One LLM grouping a small batch at once</td><td>Groups more offline (F1 0.50) but is unstable: shuffling review order changes 46% of its groups, so it cannot keep stable cases for counting and alerts</td></tr>
 </table>
 
@@ -71,7 +71,7 @@ li { margin: 1px 0; }
 
 <h2>6. Questions reviewers are likely to ask (and our answer)</h2>
 <ul>
-<li><b>Why not just use ChatGPT/Claude?</b> They group well on small offline batches but change groups with input order (only 54% of groups survive a reshuffle) and cannot hold a company's full history; counting and alerts need stable cases. As labellers their precision (0.68-0.71) is below ours (0.81).</li>
+<li><b>Why not just use ChatGPT/Claude?</b> They group well on small offline batches but change groups with input order (78-95% of grouped pairs survive a reshuffle, vs 99% for an identical rerun) and cannot hold a company's full history; counting and alerts need stable cases. As labellers they do well only with our codebook, which was written from the test reviews; with a problem list they build themselves, precision drops to 0.62 (ours 0.81).</li>
 <li><b>Recall is low on reviews (0.33).</b> Short reviews (21 words) look no more alike than unrelated ones; even people agree only at kappa 0.57-0.74. Re-joining recovers +26%; alert groups and the outage alarm keep incident detection high despite split cases.</li>
 <li><b>Labels made by the team?</b> Benchmarks use independent Bugzilla labels (P 0.87-0.96); Play Store labels have documented agreement and a blind relabel round.</li>
 <li><b>Similar to Oracle 2026 (retrieve-then-verify)?</b> Cited openly; we add online cases, re-joining, per-case incident signals and the first labelled evaluation of this design.</li>
