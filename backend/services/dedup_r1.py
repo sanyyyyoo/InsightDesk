@@ -101,7 +101,7 @@ def llm_judge(new_id, new_text, candidates):
     from backend.llm.provider import generate_json
     cases = "\n".join(f"Case {n + 1}: {c.founder_text}" for n, c in enumerate(candidates))
     try:
-        reply = generate_json(PROMPT_GATED.format(new=new_text, cases=cases))
+        reply = generate_json(PROMPT_GATED.format(new=new_text, cases=cases), cache=True)
         return bool(reply.get("specific", True)), int(reply.get("case", 0) or 0)
     except Exception as exc:
         raise JudgeError(str(exc)) from exc

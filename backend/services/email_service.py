@@ -8,7 +8,8 @@ from email.mime.multipart import MIMEMultipart
 from backend.database.supabase import (
     get_case,
     get_topic,
-    get_rca
+    get_rca,
+    save_escalation
 )
 
 
@@ -421,11 +422,13 @@ def escalate_case(
     # FETCH DEPARTMENT
     # ------------------------
 
-    department = topic[
+    department = (                      # an operator's override in the dashboard wins
 
-        "department"
+        topic.get("department_override")
 
-    ]
+        or topic["department"]
+
+    )
 
 
     # ------------------------
@@ -466,13 +469,23 @@ def escalate_case(
     # SEND EMAIL
     # ------------------------
 
-    return send_email(
+    sent = send_email(
 
         receiver,
         subject,
         body
 
     )
+
+    if sent:                           # escalation record (case_escalations)
+        save_escalation(
+            case_id,
+            department,
+            receiver,
+            rca.get("rca_id") if isinstance(rca, dict) else None
+        )
+
+    return sent
 # ==================================
 # TESTING
 # ==================================

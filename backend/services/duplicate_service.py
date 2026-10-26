@@ -3,7 +3,7 @@ import os
 from backend.services.preprocess import clean_text
 from datetime import datetime, timezone
 
-from backend.services import dedup_r1
+from backend.services import boilerplate, dedup_r1
 
 from backend.services.embedding_service import (
     generate_embedding,
@@ -135,7 +135,7 @@ def process_complaint(complaint):
     # ----------------------------------------------------
 
     cleaned_text = clean_text(
-        complaint.complaint_text
+        boilerplate.strip(complaint.complaint_text)
     )
 
     update_complaint(

@@ -704,7 +704,7 @@ def dashboard_unassigned_spikes():
     Outage signal (separate from dedup): per product, complaints the judge could not place in a
     specific case (cases.is_vague), counted per 6-hour window with spike detector v2. An alert
     means "possible outage or widespread degradation", shown with the product's specific cases
-    active in the same window. Off unless UNASSIGNED_SPIKES=1. See services/unassigned_spikes.py.
+    active in the same window. On by default (UNASSIGNED_SPIKES=0 turns it off). See services/unassigned_spikes.py.
     """
 
     if not unassigned_spikes.enabled():
@@ -751,7 +751,7 @@ def dashboard_unassigned_spikes():
 def dashboard_rejoin():
     """
     One case re-joining pass (services/rejoin.py): merges cases that report the same problem,
-    as judged by the LLM on up to 3 complaints per case. Off unless REJOIN_ENABLED=1.
+    as judged by the LLM on up to 3 complaints per case. On by default (REJOIN_ENABLED=0 turns it off).
     Run it periodically (e.g. hourly); each pass merges a case at most once.
     """
 

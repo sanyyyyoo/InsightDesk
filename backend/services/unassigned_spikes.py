@@ -15,7 +15,7 @@ of these complaints are in fact specific but unplaced by the judge (its vague fl
 the people's "unspecified" label 17% of the time), hence "unassigned", not "vague".
 
 Windows are stamped when the app receives a complaint (upsert_complaint_window), so a late review
-counts in its arrival window. Off unless UNASSIGNED_SPIKES=1.
+counts in its arrival window. On by default (UNASSIGNED_SPIKES=0 turns it off).
 """
 
 import os
@@ -29,7 +29,7 @@ CONTEXT_CASES = 5               # specific cases shown next to an alert
 
 
 def enabled():
-    return os.getenv("UNASSIGNED_SPIKES", "0") == "1"
+    return os.getenv("UNASSIGNED_SPIKES", "1") == "1"
 
 
 def incident_start(counts, starts):

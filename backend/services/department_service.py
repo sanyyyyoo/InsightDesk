@@ -135,7 +135,7 @@ def assign_department_by_keywords(keywords: list[str]) -> str:
 
     if highest_score == 0:
 
-        return "General"
+        return "General Support"
 
 
     # -------------------------------

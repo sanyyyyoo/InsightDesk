@@ -1,6 +1,8 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from typing import Optional
 from datetime import datetime
+
+MAX_COMPLAINT_CHARS = 5000
 
 
 class ComplaintSubmit(BaseModel):
@@ -9,8 +11,14 @@ class ComplaintSubmit(BaseModel):
 
     Deliberately has no user_id: the server takes it from the verified
     Supabase token. Unknown fields (including a user_id) are ignored.
+    Text beyond MAX_COMPLAINT_CHARS characters is truncated, not rejected.
     """
-    complaint_text: str = Field(min_length=10, max_length=5000)
+    complaint_text: str = Field(min_length=10)
+
+    @field_validator("complaint_text", mode="before")
+    @classmethod
+    def truncate(cls, v):
+        return v[:MAX_COMPLAINT_CHARS] if isinstance(v, str) else v
     rating: Optional[int] = Field(default=None, ge=1, le=5)
     product: Optional[str] = Field(default=None, max_length=200)
 

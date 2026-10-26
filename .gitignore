@@ -208,3 +208,7 @@ __marimo__/
 
 # Groq keys for staging, the seed and the spike demo (never commit)
 .env.experiments
+
+# Runtime state written by the backend (judge decision cache, boilerplate list)
+backend/data/llm_decisions.jsonl
+backend/data/boilerplate_segments.json

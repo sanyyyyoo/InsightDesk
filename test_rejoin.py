@@ -152,7 +152,10 @@ def db_steps():
     involved = [c for m in m3 for c in m]
     check("a case merges at most once per pass (no chains)", len(involved) == len(set(involved)), f"{m3}")
     os.environ.pop("REJOIN_ENABLED", None)
-    check("off by default", not rejoin.enabled())
+    check("on by default (part of the pipeline)", rejoin.enabled())
+    os.environ["REJOIN_ENABLED"] = "0"
+    check("off with REJOIN_ENABLED=0", not rejoin.enabled())
+    os.environ.pop("REJOIN_ENABLED", None)
 
 
 def rejoin_safe(j):

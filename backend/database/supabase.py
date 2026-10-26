@@ -980,6 +980,28 @@ def save_rca(
     ).execute()
 
     return result.data
+def save_escalation(case_id, department, receiver, rca_id=None):
+    """Record an approved escalation (case_escalations, see schema.sql). A missing table is logged and
+    ignored, so escalation still works on a database that has not run the migration yet."""
+    try:
+        return supabase.table("case_escalations").insert({
+            "case_id": case_id,
+            "department": department,
+            "receiver": receiver,
+            "rca_id": rca_id,
+        }).execute().data
+    except Exception as exc:
+        print(f"Escalation not recorded (case_escalations): {exc}")
+        return None
+
+
+def get_escalations(case_id):
+    try:
+        return supabase.table("case_escalations").select("*").eq("case_id", case_id)             .order("escalated_at", desc=True).execute().data
+    except Exception:
+        return []
+
+
 def get_rca(
     case_id
 ):

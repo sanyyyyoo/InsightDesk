@@ -30,12 +30,19 @@ def enrich_case_with_sentiment(
 
     case_id: int,
 
-    model_name: str = "roberta"
+    model_name: str = "roberta",
+
+    force: bool = False
 ):
+    """Sentiment of the case's founding complaint (its representative text), computed once:
+    later reports do not change it. force=True recomputes."""
 
     case = get_case(
         case_id
     )
+
+    if case.get("sentiment") and not force:
+        return None
 
     result = analyze_sentiment(
 

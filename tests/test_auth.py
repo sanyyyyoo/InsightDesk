@@ -249,7 +249,6 @@ def test_too_vague_after_cleaning_is_400(client, pipeline, text):
 
 @pytest.mark.parametrize("body", [
     {"complaint_text": "too short"},                 # < 10 characters
-    {"complaint_text": "x" * 5001},                  # > 5000 characters
     {"complaint_text": VALID_TEXT, "rating": 6},     # rating out of 1-5
     {},                                              # missing text
 ])
@@ -258,6 +257,13 @@ def test_invalid_body_is_422(client, pipeline, body):
 
     assert response.status_code == 422
     assert pipeline.calls == []
+
+
+def test_long_text_is_truncated_to_5000_characters(client, pipeline):
+    response = submit(client, token=make_token(), complaint_text=VALID_TEXT + " more" * 2000)
+
+    assert response.status_code == 200
+    assert len(pipeline.calls[0].complaint_text) == 5000
 
 
 def test_pipeline_error_hides_internal_details(monkeypatch):

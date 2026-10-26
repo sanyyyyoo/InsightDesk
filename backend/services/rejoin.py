@@ -10,7 +10,7 @@ processed from most to least similar; a case merges at most once per pass (no ch
 Adopted by pre-declared rule (experiments/dedup/results/rejoin_rule.md): Play Store held-out halves
 recall 0.259 -> 0.327 at precision 0.810 -> 0.799 (difference not significant); Firefox 3 recall
 0.546 -> 0.657 at precision 0.963 -> 0.961. plan() is the tested pass word for word
-(test_rejoin_equivalence.py). A judge failure never merges. Off unless REJOIN_ENABLED=1.
+(test_rejoin_equivalence.py). A judge failure never merges. On by default; REJOIN_ENABLED=0 turns it off.
 """
 
 import os
@@ -39,7 +39,7 @@ Return JSON: {{"same": true or false}}"""
 
 
 def enabled():
-    return os.getenv("REJOIN_ENABLED", "0") == "1"
+    return os.getenv("REJOIN_ENABLED", "1") == "1"
 
 
 def plan(cases, emb, product_of, vague_cases, judge, t_low=None, arrival=None):
@@ -83,7 +83,7 @@ def llm_pair_judge(texts):
             a, b = b, a
         fmt = lambda rows: "\n".join(f"- {texts[i]}" for i in rows)
         try:
-            return bool(generate_json(PROMPT_REJOIN.format(a=fmt(a), b=fmt(b))).get("same", False))
+            return bool(generate_json(PROMPT_REJOIN.format(a=fmt(a), b=fmt(b)), cache=True).get("same", False))
         except Exception:
             return False
     return judge

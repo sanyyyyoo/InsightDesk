@@ -1,5 +1,7 @@
+import hashlib
 import os
 import json
+import threading
 import requests
 from langchain_groq import ChatGroq
 from langchain_ollama import ChatOllama
@@ -80,7 +82,7 @@ def _generate_local(prompt):
     return data["message"]["content"]
 
 
-def _generate_groq(prompt):
+def _generate_groq(prompt, json_mode=False):
     api_key = os.getenv("GROQ_API_KEY")
 
     if not api_key:
@@ -102,7 +104,8 @@ def _generate_groq(prompt):
                 "content": prompt
             }
         ],
-        temperature=0
+        temperature=0,
+        **({"response_format": {"type": "json_object"}} if json_mode else {})
     )
 
     return (
@@ -113,22 +116,68 @@ def _generate_groq(prompt):
     )
 
 
-def generate_text(prompt):
+def generate_text(prompt, json_mode=False):
     provider = get_provider()
 
     if provider == LOCAL_PROVIDER:
         return _generate_local(prompt)
 
     if provider == GROQ_PROVIDER:
-        return _generate_groq(prompt)
+        return _generate_groq(prompt, json_mode)
 
     raise ValueError(
         f"Unsupported LLM_PROVIDER: {provider}"
     )
 
 
-def generate_json(prompt):
-    content = generate_text(prompt)
+# Decision cache: judge and re-joining answers keyed by (provider, model, prompt), so a replay of the
+# same complaints gives the same decisions. Failed or malformed answers are never cached.
+CACHE_PATH = os.getenv("LLM_CACHE_PATH", os.path.join(os.path.dirname(os.path.dirname(__file__)), "data",
+                                                       "llm_decisions.jsonl"))
+_cache, _cache_lock = None, threading.Lock()
+
+
+def _cache_key(prompt):
+    return hashlib.sha256(f"{get_provider()}|{get_model_name()}|{prompt}".encode("utf-8")).hexdigest()
+
+
+def _cache_get(key):
+    global _cache
+    with _cache_lock:
+        if _cache is None:
+            _cache = {}
+            if os.path.exists(CACHE_PATH):
+                for line in open(CACHE_PATH, encoding="utf-8"):
+                    try:
+                        row = json.loads(line)
+                        _cache[row["key"]] = row["answer"]
+                    except (ValueError, KeyError):
+                        continue
+        return _cache.get(key)
+
+
+def _cache_put(key, answer):
+    with _cache_lock:
+        _cache[key] = answer
+        os.makedirs(os.path.dirname(CACHE_PATH), exist_ok=True)
+        with open(CACHE_PATH, "a", encoding="utf-8") as f:
+            f.write(json.dumps({"key": key, "answer": answer}) + "
+")
+
+
+def generate_json(prompt, cache=False):
+    """JSON answer of the configured LLM (Groq JSON mode, Ollama format=json) at temperature 0.
+    cache=True (judge decisions): reuse the stored answer for an identical prompt."""
+    if cache and os.getenv("LLM_CACHE", "1") == "1":
+        key = _cache_key(prompt)
+        hit = _cache_get(key)
+        if hit is not None:
+            return hit
+        answer = generate_json(prompt)
+        _cache_put(key, answer)
+        return answer
+
+    content = generate_text(prompt, json_mode=True)
 
     content = (
         content

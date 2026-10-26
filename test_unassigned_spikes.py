@@ -52,11 +52,12 @@ def one(counts):
     return us.detect({"Zendesk": ids}, rows)[0]
 
 
-# 1. feature flag: off by default
+# 1. feature flag: on by default (part of the pipeline), off with UNASSIGNED_SPIKES=0
 os.environ.pop("UNASSIGNED_SPIKES", None)
-check("off by default", not us.enabled())
+check("on by default", us.enabled())
+os.environ["UNASSIGNED_SPIKES"] = "0"
+check("off with UNASSIGNED_SPIKES=0", not us.enabled())
 os.environ["UNASSIGNED_SPIKES"] = "1"
-check("on with UNASSIGNED_SPIKES=1", us.enabled())
 
 # 2. outage: about 1 per 4 windows for a week, then 15 in one window
 base = [1 if i % 4 == 0 else 0 for i in range(28)]

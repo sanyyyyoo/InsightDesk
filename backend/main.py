@@ -17,18 +17,31 @@ async def lifespan(app: FastAPI):
     # Load MiniLM, the cross-encoder and Pinecone at startup so the
     # first customer submission doesn't wait for model loading.
     get_pipeline()
+    first = asyncio.create_task(_boilerplate_refresh())        # in the background: startup does not wait
     task = asyncio.create_task(_maintenance_every(float(os.getenv("REJOIN_INTERVAL_HOURS", "6"))))
     yield
+    first.cancel()
     task.cancel()
 
 
+async def _boilerplate_refresh():
+    from backend.services import boilerplate
+    try:
+        result = await asyncio.to_thread(boilerplate.refresh)
+        logging.getLogger(__name__).info("boilerplate refresh: %s", result)
+    except Exception:
+        logging.getLogger(__name__).exception("boilerplate refresh failed")
+
+
 async def _maintenance_every(hours):
-    """Maintenance that needs no operator: a case re-joining pass (when REJOIN_ENABLED=1) and topic
-    clustering, once per 6-hour window by default; a failure is logged and retried next interval."""
+    """Maintenance that needs no operator, once per 6-hour window by default: the boilerplate list
+    (Phase 1), a case re-joining pass (unless REJOIN_ENABLED=0) and topic clustering; a failure is
+    logged and retried next interval."""
     from backend.services import rejoin
 
     while True:
         await asyncio.sleep(hours * 3600)
+        await _boilerplate_refresh()
         try:
             if not rejoin.enabled():
                 raise LookupError("re-joining disabled")
