@@ -1,0 +1,5 @@
+Epoch,Training Loss,Validation Loss,Validation Accuracy
+1,0.912,0.874,71.2%
+5,0.431,0.468,84.9%
+10,0.218,0.301,90.3%
+20,0.104,0.257,92.4%

@@ -1,0 +1,15 @@
+# Times New Roman is licensed by Microsoft/Monotype and is not redistributed in this repository.
+# Put your own copies in template/fonts/ (see "Fonts" in README.md).
+template/fonts/*.ttf
+template/fonts/*.TTF
+
+# Compiled PDFs
+/*.pdf
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor settings (JetBrains IDEs)
+.idea/
