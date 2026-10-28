@@ -3,8 +3,8 @@ Spike detection for cases and alert groups: zero-filled 6-hour windows + Poisson
 
 complaint_windows holds one row per (case, 6-hour window) that received at least one complaint,
 so empty windows are missing; they are put back as 0. Each window's expected rate is a smoothed
-7-day baseline with a prior (a brand-new case is judged against "about one complaint every two
-weeks"). A Poisson CUSUM accumulates evidence of a rise of CUSUM_SHIFT reports per window above
+7-day baseline with a prior (a brand-new case is judged against "about one complaint every 3.5
+days"). A Poisson CUSUM accumulates evidence of a rise of CUSUM_SHIFT reports per window above
 that baseline and alerts when it reaches CUSUM_H (reset after each alarm).
 
 Chosen offline (experiments/dedup/spike_review.py, results/cusum_confirm_rule.md): on unseen
@@ -26,7 +26,7 @@ from backend.database.supabase import (
 
 WINDOW_HOURS = 6
 BASELINE_WINDOWS = 28          # 7 days of 6-hour windows
-PRIOR_COUNT = 0.5              # prior: about one complaint every two weeks
+PRIOR_COUNT = 0.5              # prior: about one complaint every 14 windows (3.5 days)
 PRIOR_WINDOWS = 7
 MIN_COUNT = 2
 GROUP_MIN_COUNT = 3            # alert groups (several related cases) need one more complaint

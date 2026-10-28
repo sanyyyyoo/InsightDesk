@@ -77,7 +77,7 @@ REFS = [
     "J. Gu et al., “A survey on LLM-as-a-judge,” arXiv:2411.15594, 2024.",
     "A. Abbas, K. Tirumala, D. Simig, S. Ganguli and A. S. Morcos, “SemDeDup: Data-efficient learning at web-scale through semantic deduplication,” arXiv:2303.09540, 2023.",
     "N. Muennighoff, N. Tazi, L. Magne and N. Reimers, “MTEB: Massive text embedding benchmark,” in Proc. EACL, 2023.",
-    "“iPACK: Incident-aware duplicate ticket aggregation for cloud systems,” in Proc. ICSE, 2023 (arXiv:2302.09520).",
+    "J. Liu et al., “Incident-aware duplicate ticket aggregation for cloud systems,” in Proc. ICSE, 2023 (arXiv:2302.09520).",
     "F. Liu et al., “TickIt: Leveraging large language models for automated ticket escalation,” in Proc. FSE (industry), 2025.",
     "T. Ahmed, S. Ghosh, C. Bansal, T. Zimmermann, X. Zhang and S. Rajmohan, “Recommending root-cause and mitigation steps for cloud incidents using large language models,” in Proc. ICSE, 2023.",
     "Y. Chen et al., “Automatic root cause analysis via large language models for cloud incidents,” in Proc. EuroSys, 2024.",
